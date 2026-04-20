@@ -14,7 +14,7 @@ Each change below includes:
 
 > **Important:** This is a reference guide — not a one-size-fits-all checklist. Assess each recommendation against your organization's operational requirements, risk tolerance, and the specific deployment model before making changes. Always test changes with a pilot group before broad rollout.
 
-> **Prerequisite for threat protection settings:** Settings under "Device Threat Protection" and "Max allowed device threat level" only take effect if Microsoft Defender for Endpoint (or another Mobile Threat Defense partner) is deployed and the MDE–Intune connector is active. See the [Defender for Endpoint for Android Devices guide](Defender%20for%20Endpoint%20for%20Android%20Devices.md) before enabling these settings.
+> **Prerequisite for threat protection settings:** Settings under "Device Threat Protection" and "Max allowed device threat level" only take effect if Microsoft Defender for Endpoint (or another Mobile Threat Defense partner) is deployed and the MDE–Intune connector is active. See the [Defender for Endpoint for Android Devices guide](11_Defender%20for%20Endpoint%20for%20Android%20Devices.md) before enabling these settings.
 
 > **Read Section 6 before deploying:** Section 6 documents settings already present in the baseline JSON policies that can block users, cause deployment failures unexpectedly — independent of the CIS hardening changes. Review it before any production rollout.
 
@@ -69,7 +69,7 @@ The following settings are already aligned with CIS recommendations and do not r
 | :--- | :--- | :--- |
 | Storage encryption required | Yes | All compliance policies ✓ |
 | Block jailbroken / rooted devices | Yes | All compliance policies ✓ |
-| Minimum OS version | 13.0 | All policies ✓ |
+| Minimum OS version | 10.0 | All policies ✓ |
 | Password type | numericComplex | All policies ✓ |
 | Password minimum length | 6 characters | All policies ✓ |
 | Password expiration | 365 days | All policies ✓ |

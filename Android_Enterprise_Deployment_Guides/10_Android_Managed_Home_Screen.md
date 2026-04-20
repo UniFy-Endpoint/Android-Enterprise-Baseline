@@ -10,7 +10,7 @@ MHS is the recommended launcher for:
 - **Multi-App Kiosk** — fixed set of apps, no personal use
 - **Shared Device (Managed Home Screen)** — shift workers sign in and out via QR code or PIN
 
-MHS is **not used** on Fully Managed, Corporate-Owned Work Profile, or BYOD Work Profile devices — those use the standard device launcher.
+As of the Intune August 2024 (2408) release, MHS is also supported on **Fully Managed** devices — see the note below. It is not used on Corporate-Owned Work Profile or BYOD Work Profile devices — those use the standard device launcher.
 
 ---
 
@@ -30,8 +30,11 @@ Before configuring MHS:
 | Deployment Model | MHS Role | Enrollment Profile Setting |
 | :--- | :--- | :--- |
 | Single-App Kiosk | Not used — single app runs in full screen | `dedicatedDevice` |
-| Multi-App Kiosk | Primary launcher — controls which apps and settings are visible | `dedicatedDevice` |
-| Shared Device (Shift Workers) | Primary launcher — handles user sign-in/sign-out sessions via QR or PIN | `dedicatedDevice` |
+| Multi-App Kiosk | Primary launcher — controls which apps and settings visible to the user | `dedicatedDevice` |
+| Shared Device (Shift Workers) | Primary launcher — handles user sign-in/sign-out sessions via QR code or PIN | `dedicatedDevice` |
+| Fully Managed | Optional launcher — supported since Intune 2408 (August 2024); replaces the standard launcher with the MHS interface | `fullyManaged` |
+
+> **Fully Managed note:** When deploying MHS on Fully Managed devices, set the **Device experience type** to **Not configured** in the Device Restrictions policy (do not set it to Kiosk mode). MHS handles the launcher experience; the Device Restrictions policy still applies all other restrictions.
 
 ---
 
@@ -79,7 +82,9 @@ The table below covers the most important Managed Home Screen configuration keys
 | :--- | :--- | :--- | :--- | :--- |
 | Show Wi-Fi settings | `show_wifi_setting` | Boolean | `false` | Hide for kiosk; `true` for shared if users need to switch networks |
 | Show Bluetooth settings | `show_bluetooth_setting` | Boolean | `false` | Hide unless Bluetooth peripheral pairing is required by users |
-| Show volume setting | `show_volume_setting` | Boolean | `true` | Recommend showing — frustrates users if locked |
+| Show volume setting | `show_volume_setting` | Boolean | `true` | Recommended — users unable to adjust volume are frequently frustrated |
+| Show brightness setting | `show_brightness_setting` | Boolean | `false` | Expose if devices are used in variable lighting conditions |
+| Show screen rotation setting | `show_rotate_setting` | Boolean | `false` | Expose if users need to switch between portrait and landscape |
 | Show notifications | `show_notifications_setting` | Boolean | `false` | Hide for kiosk |
 | Show managed settings | `show_managed_settings` | Boolean | `false` | Hide device management settings from users |
 
@@ -88,7 +93,7 @@ The table below covers the most important Managed Home Screen configuration keys
 | Setting Name | Key | Type | Notes |
 | :--- | :--- | :--- | :--- |
 | Enable sign-in session | `com.microsoft.launcher.managed.show.volume.setting` | — | See the QR Code Authentication App Configuration Policy (refer to [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current policy name) for Microsoft Authenticator configuration |
-| Session timeout | `inactive_timeout` | Integer | Minutes of inactivity before session ends and device returns to sign-in screen |
+| Session timeout | `inactive_timeout` | Integer | Minutes of inactivity before session ends and device returns to sign-in screen. On Android 14+, MHS requires the `SCHEDULE_EXACT_ALARM` permission (auto-grant in the App Configuration Policy permissions tab) for session timeouts to fire reliably. |
 | Inactivity screen | `show_managed_home_screen_inactivity_screen` | Boolean | Show a lock/screensaver screen during inactivity |
 | Inactivity screen apps | `inactive_app_list` | JSON string | App(s) displayed during the inactivity screensaver (e.g., a company logo app) |
 
@@ -131,10 +136,11 @@ The `com.microsoft.launcher.managed.applications` key takes a JSON array of app 
 ### Step 4: Assign the Policy
 
 1. Go to **Assignments** in the App Configuration Policy.
-2. **Include:** Assign to your Dedicated Kiosk or Shared device groups:
+2. **Include:** Assign to the applicable device groups:
    - `AND - DEV - Android-Corporate-Dedicated-Devices - Multi-App - Kiosk`
    - `AND - DEV - Android-Corporate-Dedicated-Devices - Shared`
-3. Do not assign to Fully Managed or Work Profile groups — MHS is not used there.
+   - `AND - DEV - Android-Corporate-Fully-Managed-Devices` (if deploying MHS on Fully Managed)
+3. Do not assign to Corporate-Owned Work Profile or BYOD Work Profile groups — MHS is not used on those device types.
 
 ---
 
