@@ -1,0 +1,131 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceCompliancePolicies(assignments(),scheduledActionsForRule(scheduledActionConfigurations()))/$entity",
+  "@odata.type": "#microsoft.graph.androidDeviceOwnerCompliancePolicy",
+  "@odata.id": "deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')",
+  "@odata.editLink": "deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy",
+  "roleScopeTagIds@odata.type": "#Collection(String)",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "id": "297466ae-13da-4f98-9b46-3a42819051d9",
+  "createdDateTime@odata.type": "#DateTimeOffset",
+  "createdDateTime": "2026-01-15T16:11:07.5833182Z",
+  "description": "This Compliance Policy applies to Android Enterprise Corporate-Owned-Dedicated-Devices in Kiosk Mode.",
+  "lastModifiedDateTime@odata.type": "#DateTimeOffset",
+  "lastModifiedDateTime": "2026-04-20T14:02:11.6512156Z",
+  "displayName": "AND - Compliance - DEV - Corporate-Dedicated-Devices - Kiosk",
+  "version": 13,
+  "deviceThreatProtectionEnabled": false,
+  "deviceThreatProtectionRequiredSecurityLevel@odata.type": "#microsoft.graph.deviceThreatProtectionLevel",
+  "deviceThreatProtectionRequiredSecurityLevel": "unavailable",
+  "advancedThreatProtectionRequiredSecurityLevel@odata.type": "#microsoft.graph.deviceThreatProtectionLevel",
+  "advancedThreatProtectionRequiredSecurityLevel": "unavailable",
+  "securityBlockJailbrokenDevices": true,
+  "securityRequireSafetyNetAttestationBasicIntegrity": true,
+  "securityRequireSafetyNetAttestationCertifiedDevice": null,
+  "osMinimumVersion": "13.0",
+  "osMaximumVersion": null,
+  "minAndroidSecurityPatchLevel": null,
+  "passwordRequired": true,
+  "passwordMinimumLength": 6,
+  "passwordMinimumLetterCharacters": null,
+  "passwordMinimumLowerCaseCharacters": null,
+  "passwordMinimumNonLetterCharacters": null,
+  "passwordMinimumNumericCharacters": null,
+  "passwordMinimumSymbolCharacters": null,
+  "passwordMinimumUpperCaseCharacters": null,
+  "passwordRequiredType@odata.type": "#microsoft.graph.androidDeviceOwnerRequiredPasswordType",
+  "passwordRequiredType": "numericComplex",
+  "passwordMinutesOfInactivityBeforeLock": 15,
+  "passwordExpirationDays": 365,
+  "passwordPreviousPasswordCountToBlock": 5,
+  "storageRequireEncryption": true,
+  "securityRequireIntuneAppIntegrity": true,
+  "requireNoPendingSystemUpdates": null,
+  "securityRequiredAndroidSafetyNetEvaluationType@odata.type": "#microsoft.graph.androidSafetyNetEvaluationType",
+  "securityRequiredAndroidSafetyNetEvaluationType": "basic",
+  "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/assignments",
+  "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/assignments/$ref",
+  "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/assignments",
+  "assignments": [
+    {
+      "@odata.type": "#microsoft.graph.deviceCompliancePolicyAssignment",
+      "@odata.id": "deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/assignments('297466ae-13da-4f98-9b46-3a42819051d9_7d424521-5949-48f0-8a61-c7ba7a96bfb4')",
+      "@odata.editLink": "deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/assignments('297466ae-13da-4f98-9b46-3a42819051d9_7d424521-5949-48f0-8a61-c7ba7a96bfb4')",
+      "id": "297466ae-13da-4f98-9b46-3a42819051d9_7d424521-5949-48f0-8a61-c7ba7a96bfb4",
+      "source@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentSource",
+      "source": "direct",
+      "sourceId": "297466ae-13da-4f98-9b46-3a42819051d9",
+      "target": {
+        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
+        "deviceAndAppManagementAssignmentFilterId": null,
+        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
+        "deviceAndAppManagementAssignmentFilterType": "none",
+        "groupId": "7d424521-5949-48f0-8a61-c7ba7a96bfb4"
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceCompliancePolicyAssignment",
+      "@odata.id": "deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/assignments('297466ae-13da-4f98-9b46-3a42819051d9_021faf62-ff4b-4ac9-a2c8-46cfab20d34f')",
+      "@odata.editLink": "deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/assignments('297466ae-13da-4f98-9b46-3a42819051d9_021faf62-ff4b-4ac9-a2c8-46cfab20d34f')",
+      "id": "297466ae-13da-4f98-9b46-3a42819051d9_021faf62-ff4b-4ac9-a2c8-46cfab20d34f",
+      "source@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentSource",
+      "source": "direct",
+      "sourceId": "297466ae-13da-4f98-9b46-3a42819051d9",
+      "target": {
+        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
+        "deviceAndAppManagementAssignmentFilterId": null,
+        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
+        "deviceAndAppManagementAssignmentFilterType": "none",
+        "groupId": "021faf62-ff4b-4ac9-a2c8-46cfab20d34f"
+      }
+    }
+  ],
+  "scheduledActionsForRule@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/scheduledActionsForRule(scheduledActionConfigurations())",
+  "scheduledActionsForRule@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/scheduledActionsForRule/$ref",
+  "scheduledActionsForRule@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/scheduledActionsForRule",
+  "scheduledActionsForRule": [
+    {
+      "@odata.type": "#microsoft.graph.deviceComplianceScheduledActionForRule",
+      "@odata.id": "deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionsForRule('297466ae-13da-4f98-9b46-3a42819051d9')",
+      "@odata.editLink": "deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionsForRule('297466ae-13da-4f98-9b46-3a42819051d9')",
+      "id": "297466ae-13da-4f98-9b46-3a42819051d9",
+      "ruleName": null,
+      "scheduledActionConfigurations@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/scheduledActionsForRule('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionConfigurations",
+      "scheduledActionConfigurations@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionsForRule('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionConfigurations/$ref",
+      "scheduledActionConfigurations@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionsForRule('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionConfigurations",
+      "scheduledActionConfigurations": [
+        {
+          "@odata.type": "#microsoft.graph.deviceComplianceActionItem",
+          "@odata.id": "deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionsForRule('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionConfigurations('3ecc31af-df13-4467-9946-00b8cd5cb2a2')",
+          "@odata.editLink": "deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionsForRule('297466ae-13da-4f98-9b46-3a42819051d9')/scheduledActionConfigurations('3ecc31af-df13-4467-9946-00b8cd5cb2a2')",
+          "id": "3ecc31af-df13-4467-9946-00b8cd5cb2a2",
+          "gracePeriodHours": 24,
+          "actionType@odata.type": "#microsoft.graph.deviceComplianceActionType",
+          "actionType": "block",
+          "notificationTemplateId": "00000000-0000-0000-0000-000000000000",
+          "notificationMessageCCList@odata.type": "#Collection(String)",
+          "notificationMessageCCList": []
+        }
+      ]
+    }
+  ],
+  "deviceSettingStateSummaries@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/deviceSettingStateSummaries/$ref",
+  "deviceSettingStateSummaries@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/deviceSettingStateSummaries",
+  "deviceStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/deviceStatuses/$ref",
+  "deviceStatuses@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/deviceStatuses",
+  "deviceStatusOverview@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/deviceStatusOverview/$ref",
+  "deviceStatusOverview@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/deviceStatusOverview",
+  "userStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/userStatuses/$ref",
+  "userStatuses@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/userStatuses",
+  "userStatusOverview@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/userStatusOverview/$ref",
+  "userStatusOverview@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.androidDeviceOwnerCompliancePolicy/userStatusOverview",
+  "#microsoft.graph.assign": {
+    "title": "microsoft.graph.assign",
+    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.deviceCompliancePolicy/microsoft.graph.assign"
+  },
+  "#microsoft.graph.scheduleActionsForRules": {
+    "title": "microsoft.graph.scheduleActionsForRules",
+    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('297466ae-13da-4f98-9b46-3a42819051d9')/microsoft.graph.deviceCompliancePolicy/microsoft.graph.scheduleActionsForRules"
+  }
+}

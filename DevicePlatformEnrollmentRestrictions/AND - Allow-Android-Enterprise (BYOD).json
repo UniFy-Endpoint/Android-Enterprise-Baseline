@@ -1,0 +1,63 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceEnrollmentConfigurations(assignments())/$entity",
+  "@odata.type": "#microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration",
+  "@odata.id": "deviceManagement/deviceEnrollmentConfigurations('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_SinglePlatformRestriction')",
+  "@odata.editLink": "deviceManagement/deviceEnrollmentConfigurations('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_SinglePlatformRestriction')/microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration",
+  "id": "fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_SinglePlatformRestriction",
+  "displayName": "AND - Allow-Android-Enterprise (BYOD)",
+  "description": "Enable Android Enterprise BYOD (Work Profile) Enrollment.",
+  "priority": 1,
+  "createdDateTime@odata.type": "#DateTimeOffset",
+  "createdDateTime": "2026-01-12T09:30:05.4960858Z",
+  "lastModifiedDateTime@odata.type": "#DateTimeOffset",
+  "lastModifiedDateTime": "2026-01-12T10:03:08.7294893Z",
+  "version": 2,
+  "roleScopeTagIds@odata.type": "#Collection(String)",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "deviceEnrollmentConfigurationType@odata.type": "#microsoft.graph.deviceEnrollmentConfigurationType",
+  "deviceEnrollmentConfigurationType": "singlePlatformRestriction",
+  "platformType@odata.type": "#microsoft.graph.enrollmentRestrictionPlatformType",
+  "platformType": "androidForWork",
+  "platformRestriction": {
+    "@odata.type": "#microsoft.graph.deviceEnrollmentPlatformRestriction",
+    "platformBlocked": false,
+    "personalDeviceEnrollmentBlocked": false,
+    "osMinimumVersion": null,
+    "osMaximumVersion": null,
+    "blockedManufacturers@odata.type": "#Collection(String)",
+    "blockedManufacturers": [],
+    "blockedSkus@odata.type": "#Collection(String)",
+    "blockedSkus": []
+  },
+  "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceEnrollmentConfigurations('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_SinglePlatformRestriction')/microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration/assignments",
+  "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceEnrollmentConfigurations('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_SinglePlatformRestriction')/microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration/assignments/$ref",
+  "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceEnrollmentConfigurations('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_SinglePlatformRestriction')/microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration/assignments",
+  "assignments": [
+    {
+      "@odata.type": "#microsoft.graph.enrollmentConfigurationAssignment",
+      "@odata.id": "deviceManagement/deviceEnrollmentConfigurations('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_SinglePlatformRestriction')/assignments('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_dccd4b68-db22-4e99-8d47-60e875a865dc_fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2')",
+      "@odata.editLink": "deviceManagement/deviceEnrollmentConfigurations('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_SinglePlatformRestriction')/assignments('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_dccd4b68-db22-4e99-8d47-60e875a865dc_fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2')",
+      "id": "fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_dccd4b68-db22-4e99-8d47-60e875a865dc_fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2",
+      "source@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentSource",
+      "source": "direct",
+      "sourceId": "fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2",
+      "target": {
+        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
+        "deviceAndAppManagementAssignmentFilterId": "00000000-0000-0000-0000-000000000000",
+        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
+        "deviceAndAppManagementAssignmentFilterType": "none",
+        "groupId": "dccd4b68-db22-4e99-8d47-60e875a865dc"
+      }
+    }
+  ],
+  "#microsoft.graph.assign": {
+    "title": "microsoft.graph.assign",
+    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceEnrollmentConfigurations('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_SinglePlatformRestriction')/microsoft.graph.deviceEnrollmentConfiguration/microsoft.graph.assign"
+  },
+  "#microsoft.graph.setPriority": {
+    "title": "microsoft.graph.setPriority",
+    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceEnrollmentConfigurations('fe81e1f8-379f-4c0d-a94d-a17fa7e4dcf2_SinglePlatformRestriction')/microsoft.graph.deviceEnrollmentConfiguration/microsoft.graph.setPriority"
+  }
+}

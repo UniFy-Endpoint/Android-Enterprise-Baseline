@@ -1,0 +1,28 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/assignmentFilters/$entity",
+  "@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilter",
+  "@odata.id": "deviceManagement/assignmentFilters('42ba3650-6c10-4b4a-bab2-de2590867ffc')",
+  "@odata.editLink": "deviceManagement/assignmentFilters('42ba3650-6c10-4b4a-bab2-de2590867ffc')",
+  "id": "42ba3650-6c10-4b4a-bab2-de2590867ffc",
+  "createdDateTime@odata.type": "#DateTimeOffset",
+  "createdDateTime": "2026-02-21T14:59:58.7038466Z",
+  "lastModifiedDateTime@odata.type": "#DateTimeOffset",
+  "lastModifiedDateTime": "2026-02-21T14:59:58.7038466Z",
+  "displayName": "AND-UMGD-USR",
+  "description": "Device Assigment Filter for Android Enterprise Personally-Owned Devices with Work-Profile BYOD Users.",
+  "platform@odata.type": "#microsoft.graph.devicePlatformType",
+  "platform": "androidMobileApplicationManagement",
+  "rule": "(app.deviceManagementType -eq \"Unmanaged\")",
+  "roleScopeTags@odata.type": "#Collection(String)",
+  "roleScopeTags": [
+    "0"
+  ],
+  "assignmentFilterManagementType@odata.type": "#microsoft.graph.assignmentFilterManagementType",
+  "assignmentFilterManagementType": "apps",
+  "payloads@odata.type": "#Collection(microsoft.graph.payloadByFilter)",
+  "payloads": [],
+  "#microsoft.graph.getSupportedProperties": {
+    "title": "microsoft.graph.getSupportedProperties",
+    "target": "https://graph.microsoft.com/beta/deviceManagement/assignmentFilters('42ba3650-6c10-4b4a-bab2-de2590867ffc')/microsoft.graph.getSupportedProperties"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "Objects": [
+    {
+      "Type": "Group",
+      "DisplayName": "AND - DEV - Android-Corporate-Work-Profile-Devices",
+      "Id": "ba3d799d-0dde-4a5f-9e6c-1f7fa5ee879c"
+    },
+    {
+      "Type": "Group",
+      "DisplayName": "AND - DEV - Android-Personal-Work-Profile-Devices - BYOD",
+      "Id": "64e2c8c6-de52-4eb4-a4a1-1f7b81d8c6fa"
+    },
+    {
+      "Type": "Group",
+      "DisplayName": "AND - DEV - Android-Corporate-Fully-Managed-Devices",
+      "Id": "7b809fc0-1d28-4233-9916-ce9c8f4efc91"
+    },
+    {
+      "Type": "Group",
+      "DisplayName": "AND - DEV - Android-Corporate-Work-Profile-Devices - Staging",
+      "Id": "fc6cd637-292d-424d-83eb-cb6d56a88578"
+    },
+    {
+      "Type": "Group",
+      "DisplayName": "AND - DEV - Android-Corporate-Fully-Managed-Devices - Staging",
+      "Id": "630ef010-3ae2-42a3-ab1d-c795c9aa030d"
+    },
+    {
+      "Type": "Group",
+      "DisplayName": "AND - DEV - Android-Corporate-Dedicated-Devices - Shared",
+      "Id": "14c8f20d-183d-41fc-9641-52bb8e3722f7"
+    },
+    {
+      "Type": "Group",
+      "DisplayName": "AND - DEV - Android-Corporate-Dedicated-Devices - Multi-App - Kiosk",
+      "Id": "021faf62-ff4b-4ac9-a2c8-46cfab20d34f"
+    }
+  ],
+  "TenantId": "e553939c-4b64-46fc-bd81-30ca2a9367f9",
+  "Organization": "UniFy-Endpoint"
+}
