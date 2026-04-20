@@ -42,9 +42,9 @@ The following table provides a consolidated view of all recommended changes and 
 | 1.1.1 | Corporate Compliance (all) | Device threat protection | Disabled | Enabled, Low | L2 |
 | 1.1.2 | Corporate Compliance (all) | SafetyNet evaluation type | Basic | Hardware-backed | L2 |
 | 1.1.3 | Corporate Compliance (all) | Min security patch level | Not configured | ≤ 12 months | L2 |
-| 1.1.4 | Corporate Compliance (all) | Screen lock inactivity | 60 min | 5 min | L2 |
+| 1.1.4 | Corporate Compliance (all) | Screen lock inactivity | 15 min | 5 min | L2 |
 | 1.2.1 | BYOD Compliance | Min security patch level | Not configured | ≤ 12 months | L1 |
-| 1.2.2 | BYOD Compliance | Screen lock inactivity | 60 min | 15 min | L1 |
+| 1.2.2 | BYOD Compliance | Screen lock inactivity | 15 min | 15 min | L1 |
 | 1.2.3 | BYOD Compliance | Require verify apps | Disabled | Enabled | L1 |
 | 1.2.4 | BYOD Compliance | Certified device attestation | Disabled | Enabled | L2 |
 | 1.2.5 | BYOD Compliance | Device threat protection | Fully disabled | Enabled, Low | L2 |
