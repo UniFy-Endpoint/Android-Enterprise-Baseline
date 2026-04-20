@@ -1,0 +1,28 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/assignmentFilters/$entity",
+  "@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilter",
+  "@odata.id": "deviceManagement/assignmentFilters('98e82584-4042-4964-aec4-12dd8cdd0a86')",
+  "@odata.editLink": "deviceManagement/assignmentFilters('98e82584-4042-4964-aec4-12dd8cdd0a86')",
+  "id": "98e82584-4042-4964-aec4-12dd8cdd0a86",
+  "createdDateTime@odata.type": "#DateTimeOffset",
+  "createdDateTime": "2026-02-21T14:57:36.6609458Z",
+  "lastModifiedDateTime@odata.type": "#DateTimeOffset",
+  "lastModifiedDateTime": "2026-02-21T14:57:36.6609458Z",
+  "displayName": "AND-COFM-DEV",
+  "description": "Device Assigment Filter for Android Enterprise Corporate-Owned Fully Managed Devices.",
+  "platform@odata.type": "#microsoft.graph.devicePlatformType",
+  "platform": "androidForWork",
+  "rule": "(device.deviceOwnership -eq \"Corporate\") and (device.enrollmentProfileName -eq \"AND - Corporate-Fully-Managed-Devices-Enrollment\") or (device.enrollmentProfileName -eq \"AND - Corporate-Fully-Managed-Devices-Enrollment - Staging\")",
+  "roleScopeTags@odata.type": "#Collection(String)",
+  "roleScopeTags": [
+    "0"
+  ],
+  "assignmentFilterManagementType@odata.type": "#microsoft.graph.assignmentFilterManagementType",
+  "assignmentFilterManagementType": "devices",
+  "payloads@odata.type": "#Collection(microsoft.graph.payloadByFilter)",
+  "payloads": [],
+  "#microsoft.graph.getSupportedProperties": {
+    "title": "microsoft.graph.getSupportedProperties",
+    "target": "https://graph.microsoft.com/beta/deviceManagement/assignmentFilters('98e82584-4042-4964-aec4-12dd8cdd0a86')/microsoft.graph.getSupportedProperties"
+  }
+}
