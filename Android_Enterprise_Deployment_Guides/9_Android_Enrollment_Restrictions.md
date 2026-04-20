@@ -4,7 +4,9 @@
 
 ### Overview
 
-Enrollment Restrictions in Microsoft Intune control **which devices are permitted to enroll** in your tenant. They act as a gatekeeper before enrollment begins — a device that doesn't meet the restriction criteria is blocked before it can enroll, regardless of which enrollment profile it uses.
+Enrollment Restrictions in Microsoft Intune control **which devices are permitted to enroll** in your tenant. They act as a gatekeeper before enrollment begins — a device that does not meet the restriction criteria is blocked before it can enroll, regardless of which enrollment profile it uses.
+
+> **Android Device Administrator (DA) deprecation:** This baseline covers only **Android Enterprise** (`androidForWork`). Android Device Administrator management has been deprecated for GMS devices and is no longer available for new enrollments as of December 2024. If your tenant still contains DA-managed devices, those devices should be migrated to Android Enterprise before they become unmanageable.
 
 Enrollment Restrictions are separate from Enrollment Profiles. The distinction is:
 
@@ -69,7 +71,7 @@ The baseline restriction does not enforce OS version or manufacturer restriction
 
 | Setting | Recommendation | Rationale |
 | :--- | :--- | :--- |
-| **Minimum OS Version** | Android 10.0 or higher | Android Enterprise Work Profile requires Android 5.0+, but Android 10+ provides the security patch baseline recommended by CIS. Older devices cannot receive security patches. |
+| **Minimum OS Version** | Android 10.0 or higher | Android 8.0 is the enrollment minimum for most Android Enterprise types (Work Profile, Dedicated, COPE) and Android 10.0 for Fully Managed. Android 10.0 or later is recommended as the practical minimum — older devices are likely out of support and cannot receive security patches. |
 | **Blocked Manufacturers** | Evaluate per org | Some organizations block manufacturers that do not participate in Android Enterprise recommended programs or have known supply-chain concerns. |
 | **Personal Device Enrollment Blocked** | Do NOT block for BYOD | This restriction is specifically for BYOD enrollment. Blocking personal enrollment defeats its purpose. |
 

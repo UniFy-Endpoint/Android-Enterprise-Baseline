@@ -54,8 +54,10 @@ Users must have **both** a Microsoft Defender for Endpoint license and a Microso
 
 - Devices are already enrolled in Intune.
 - Microsoft Authenticator App and Intune Company Portal App are installed on the device.
-- Android 13.0 or later.
+- Android 10.0 or later.
 - Microsoft Defender for Endpoint is configured as the default and only antivirus solution on the device.
+
+> **Android 10 end of support:** Microsoft will end support for Android 10 in MDE on **March 31, 2026**. Devices running Android 10 should be upgraded or replaced before that date to maintain MDE protection.
 - MDE is **not** supported on User-Less or Shared-Device configurations (Dedicated Kiosk, Dedicated Shared Mode).
 
 #### For Unenrolled Devices (MAM)

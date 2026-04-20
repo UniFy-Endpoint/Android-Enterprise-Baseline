@@ -2,7 +2,7 @@
 
 There is plenty of content out there on how to implement Android Enterprise with Microsoft Intune - enrollment steps, policy walkthroughs, and platform-specific procedures. What has been missing is a ready-to-import baseline. For each deployment model, you would still need to build everything from scratch: find the right settings, create all the components, and figure out what the right configuration actually looks like.
 
-This repository is intended to close that gap. It provides a practical, ready-to-import baseline for managing Android Enterprise devices with Microsoft Intune, covering all major deployment models. It is grounded in Microsoft's official deployment guidance, Android CIS Benchmarks recomendations, and insights from my real-world enterprise deployments.
+This repository is intended to close that gap. It provides a practical, ready-to-import baseline for managing Android Enterprise devices with Microsoft Intune, covering all major deployment models. It is grounded in Microsoft's official deployment guidance, Android CIS Benchmark recommendations, and insights from real-world enterprise deployments.
 
 - **Deployment guides** for each Android Enterprise enrollment / deployment method.
 - A **baseline configuration** set (policies and building blocks) organized by Intune policy type.
@@ -64,11 +64,11 @@ A deployment guide exists for each Android deployment method:
 
 Supplemental guides for security capabilities that apply across enrollment types:
 
-- [Defender for Endpoint for Android Devices.md](<Android_Enterprise_Deployment_Guides/Defender for Endpoint for Android Devices.md>)
+- [11_Defender for Endpoint for Android Devices.md](<Android_Enterprise_Deployment_Guides/11_Defender for Endpoint for Android Devices.md>)
   - Covers: MDE–Intune connector setup, Managed Google Play deployment, App Configuration Policy (low-touch onboarding), Always-On VPN for Web Protection, optional App Protection Policy risk signals, and Conditional Access exclusions.
   - Supported enrollment types: **Personally-Owned Work Profile, Corporate-Owned Work Profile, Fully Managed**. Not supported on Dedicated/Kiosk or Shared-Device configurations.
 
-- [Android_CIS_Compliance_Hardening_Guide.md](Android_Enterprise_Deployment_Guides/Android_CIS_Compliance_Hardening_Guide.md)
+- [12_Android_CIS_Compliance_Hardening_Guide.md](Android_Enterprise_Deployment_Guides/12_Android_CIS_Compliance_Hardening_Guide.md)
   - Step-by-step guide to harden the baseline Intune policies toward CIS Benchmark and Microsoft Security Configuration Framework compliance.
   - Covers: Compliance policy upgrades (SafetyNet, patch level, threat protection, inactivity timeout), Device Restriction corrections (camera consistency, permission policy), App Protection Policy hardening (threat level, PIN policy, device lock, patch version).
   - Applies across all enrollment types. Each change includes the current baseline JSON value, recommended CIS-aligned value, and exact Intune admin center steps.
@@ -84,7 +84,7 @@ Supplemental guides for security capabilities that apply across enrollment types
   - Explains how enrollment restrictions work alongside enrollment profiles, the baseline configuration settings, and hardening options (minimum OS version, blocked manufacturers).
 
 - [10_Android_Managed_Home_Screen.md](Android_Enterprise_Deployment_Guides/10_Android_Managed_Home_Screen.md)
-  - Configuration guide for the Microsoft Managed Home Screen (MHS) launcher app used on Dedicated Kiosk and Shared devices.
+  - Configuration guide for the Microsoft Managed Home Screen (MHS) launcher app used on Dedicated Kiosk, Shared, and Fully Managed devices.
   - Covers: key configuration settings (app list, session PIN, button visibility, session timeout, branding), scenario-specific minimal configurations for Multi-App Kiosk and Shared Device, and the relationship between MHS, Device Restrictions, and the QR Code App Configuration Policy.
 
 ## Baseline content (policy sets)

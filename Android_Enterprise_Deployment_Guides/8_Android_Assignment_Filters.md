@@ -91,6 +91,17 @@ This is the simplest filter in the baseline — it relies only on device ownersh
 
 ---
 
+### Service Limits
+
+| Limit | Value |
+| :--- | :--- |
+| **Maximum filters per tenant** | 200 |
+| **Maximum characters per filter rule** | 3,072 |
+
+> **Note:** Both limits are per-tenant and apply across all platforms (Android, iOS/iPadOS, Windows, macOS). If your tenant manages multiple platforms, filters from all platforms count toward the 200-filter limit.
+
+---
+
 ### How to Apply a Filter in the Intune Admin Center
 
 1. Navigate to the policy or app you want to assign.
