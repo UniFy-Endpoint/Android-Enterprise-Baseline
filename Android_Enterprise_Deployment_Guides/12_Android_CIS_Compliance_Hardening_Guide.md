@@ -47,15 +47,15 @@ The following table provides a consolidated view of all recommended changes and 
 | 1.2.2 | BYOD Compliance | Screen lock inactivity | 15 min | 15 min | L1 |
 | 1.2.3 | BYOD Compliance | Require verify apps | Disabled | Enabled | L1 |
 | 1.2.4 | BYOD Compliance | Certified device attestation | Disabled | Enabled | L2 |
-| 1.2.5 | BYOD Compliance | Device threat protection | Fully disabled | Enabled, Low | L2 |
+| 1.2.5 | BYOD Compliance | Device threat protection | Enabled, Low | Enabled, Low | L2 |
 | 2.1.1 | Fully Managed DC template | Camera | Allowed | Block | L2 |
-| 2.1.2 | Fully Managed SC | Apps default permission | Device default | Prompt | L2 |
-| 2.3.1 | BYOD SC | Cross-profile data sharing | Not configured | Work to personal blocked | L1 |
+| 2.1.2 | Fully Managed SC | Apps default permission |  Prompt | Prompt | L2 |
+| 2.3.1 | BYOD SC | Cross-profile data sharing |  Work to personal blocked | Work to personal blocked | L1 |
 | 3.1 | MAM App Protection | Max device threat level | Not configured | Low → Block | L1 |
-| 3.2 | MAM App Protection | Simple PIN | Allowed | Block | L1 |
-| 3.3 | MAM App Protection | Device lock required | Not required | Require | L1 |
-| 3.4 | MAM App Protection | PIN reset period | None (PT0S) | 90 days | L1 |
-| 3.5 | MAM App Protection | Previous PIN block count | 0 | 5 | L1 |
+| 3.2 | MAM App Protection | Simple PIN | Block | Block | L1 |
+| 3.3 | MAM App Protection | Device lock required | Require | Require | L1 |
+| 3.4 | MAM App Protection | PIN reset period | 90 day | 90 days | L1 |
+| 3.5 | MAM App Protection | Previous PIN block count | 5 | 5 | L1 |
 | 3.6 | MAM App Protection | Min required patch version | Not configured | ≤ 12 months | L1 |
 | 3.7 | MAM App Protection | SafetyNet evaluation type | Basic | Hardware-backed | L2 |
 
