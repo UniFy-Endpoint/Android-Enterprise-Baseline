@@ -41,6 +41,7 @@ This is the primary enrollment method for BYOD (Bring Your Own Device) scenarios
      ```
 3. Add owners, then select **Create**.
 
+---
 
 #### 2. Device Platform Restrictions
 
@@ -59,7 +60,7 @@ By default, personal device enrollment may be blocked by the tenant default rest
 7. **Create**.
 
 > **Note:** Ensure this restriction has a higher priority number (lower value) than the default policy. Custom restrictions must outrank the default to take effect.
-
+---
 
 #### 3. Managed Google Play Apps
 
@@ -71,12 +72,13 @@ By default, personal device enrollment may be blocked by the tenant default rest
 3. After approving each app, select **Sync**.
 4. Assign all apps to the Entra ID group created in Step 1 as **Required**.
 
+---
 
-#### 4. Compliance Policy
+#### 4. Import or create a new Compliance Policy
 
 Define the minimum security requirements a device must meet to be considered compliant.
 
-1. Go to **Devices** > **Android** > **Compliance** > **Create policy**.
+1. Go to **Devices** > **Android** > **Compliance** > **Edit the imported Compliance Policy**.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Personally-owned work profile.
 4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
@@ -91,12 +93,13 @@ Define the minimum security requirements a device must meet to be considered com
 8. **Assignments:** Assign to the Entra ID group created in Step 1.
 9. **Create**.
 
+---
 
-#### 5. Configuration Profile
+#### 5. Import or create a new Configuration Profile
 
 Configure work profile restrictions such as preventing copy/paste between work and personal profiles.
 
-1. Go to **Devices** > **Android** > **Configuration** > **Create** > **New Policy**.
+1. Go to **Devices** > **Android** > **Configuration** > **Edit the imported Device Restrictions Policy**.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Templates > **Device restrictions** (Personally-Owned Work Profile) or **Device restrictions** (Settings Catalog).
 4. **Basics:**
