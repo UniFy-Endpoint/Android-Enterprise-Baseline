@@ -161,17 +161,17 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - Compliance - DEV - Personally-Owned - Work-Profile
+### AND - Compliance - USR - Personally-Owned - Work-Profile
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - Compliance - DEV - Personally-Owned - Work-Profile |
-| Description | Compliance Policy for Android Enterprise BYOD Personally-Owned Work-Profile Devices |
+| Display Name | AND - Compliance - USR - Personally-Owned - Work-Profile |
+| Description | This compliance policy applies to Android Enterprise BYOD Personally-Owned Work-Profile users. |
 | Profile type | androidWorkProfileCompliancePolicy |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
-| Assigned groups | AND - DEV - Android-Personal-Work-Profile-Devices - BYOD |
+| Assigned groups | AND - USR - Android-Personal-Work-Profile-Users - BYOD |
 | Noncompliance action | Block access after 24-hour grace period |
 
 **Settings**
@@ -180,14 +180,15 @@ This document lists every Intune policy file included in the baseline with its k
 | :--- | :--- |
 | Minimum OS version | 13.0 |
 | Password required | Yes |
-| Password type | Numeric complex |
+| Password type | Device default |
 | Required password complexity | Medium |
-| Minimum password length | 6 |
+| Minimum password length | Not configured |
 | Inactivity before screen lock | 15 minutes |
 | Password expiration | 365 days |
 | Previous passwords blocked | 5 |
 | Work profile password required | Yes |
-| Work profile inactivity before screen lock | 15 minutes |
+| Work profile required password complexity | Medium |
+| Work profile inactivity before screen lock | Not configured |
 | Block rooted / jailbroken devices | Yes |
 | SafetyNet Basic Integrity | Required |
 | SafetyNet Certified Device (Play Protect) | Not required |
@@ -197,7 +198,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Require Google Play Services | Yes |
 | Up-to-date security providers | Required |
 | Company Portal app integrity | Required |
-| Block unknown sources | Yes |
+| Block unknown sources | No |
 | Block USB debugging | Yes |
 | Minimum security patch level | Not configured |
 
@@ -355,32 +356,38 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - DC - Device-Restrictions - DEV - Personally-Owned - Work-Profile
+### AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - Device-Restrictions - DEV - Personally-Owned - Work-Profile |
-| Description | Device Restrictions Configuration Policy for Android Enterprise Personally-Owned Work-Profile (BYOD) Devices |
+| Display Name | AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile |
+| Description | Device Restrictions Configuration Policy for Android Enterprise Personally Owned Work Profile (BYOD). |
 | Profile type | androidWorkProfileGeneralDeviceConfiguration |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
-| Assigned groups | AND - DEV - Android-Personal-Work-Profile-Devices - BYOD |
+| Assigned groups | AND - USR - Android-Personal-Work-Profile-Users - BYOD |
 
 **Settings**
 
 | Setting | Value |
 | :--- | :--- |
-| Work profile default app permission policy | Auto-grant all permissions ⚠ — see CIS Hardening Guide Section 6, W-7 |
+| Work profile default app permission policy | Prompt |
 | Work profile data sharing | Personal → Work allowed |
 | Block unified device/work profile password | Not blocked ⚠ — see CIS Hardening Guide Section 6, W-11 |
-| PIN failures before factory reset (device) | 11 |
+| Work profile password type | Numeric complex |
+| Work profile minimum password length | 6 |
+| Work profile inactivity before screen timeout | 5 minutes |
+| Work profile previous passwords blocked | 5 |
+| Work profile password expiration | 365 days |
+| PIN failures before factory reset (device) | Not configured |
 | PIN failures before factory reset (work profile) | 11 |
 | Work profile camera | Not blocked |
-| Work profile screen capture | Not blocked |
-| Work profile cross-profile copy/paste | Not blocked |
+| Work profile screen capture | Blocked |
+| Work profile cross-profile copy/paste | Blocked |
 | Work profile notifications while locked | Not blocked |
-| Work profile account modification | Not blocked |
+| Work profile account modification (add accounts) | Blocked |
+| Work profile account use | Block all |
 | Unknown sources (work profile) | Blocked |
 
 ---
@@ -481,7 +488,7 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - SC - Device-Restrictions - DEV - Personally-Owned - Work-Profile
+### AND - SC - Device-Restrictions - USR - Personally-Owned - Work-Profile
 
 **Basics**
 
@@ -564,27 +571,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Suggested replies | com.microsoft.outlook.Mail.SuggestedRepliesEnabled | Disabled |
 | External recipients tooltip | com.microsoft.outlook.Mail.ExternalRecipientsTooTipEnabled | Enabled |
 
----
-
-### AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication
-
-**Basics**
-
-| Property | Value |
-| :--- | :--- |
-| Display Name | AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication |
-| Description | Enables QR code authentication in Microsoft Authenticator for shared Android devices |
-| Target app | Microsoft Authenticator — com.azure.authenticator |
-| Profile applicability | androidDeviceOwner |
-| Target enrollment | Dedicated / Shared + Kiosk |
-| Assigned groups | AND - DEV - Android-Corporate-Dedicated-Devices - Shared; AND - DEV - Android-Corporate-Dedicated-Devices - Multi-App - Kiosk; AND - DEV - Android-Corporate-Dedicated-Devices - Single-App - Kiosk |
-| Credential provider | Allowed |
-
-**Settings**
-
-| Setting | Key | Value |
-| :--- | :--- | :--- |
-| Preferred authentication config | preferred_auth_config | qrpin |
 
 ---
 
@@ -667,11 +653,14 @@ This document lists every Intune policy file included in the baseline with its k
 | PIN required | Yes |
 | PIN type | Numeric |
 | Minimum PIN length | 6 |
-| Simple PIN | Allowed |
+| Simple PIN | Blocked |
 | Max PIN retries | 5 (then block) |
 | Biometrics | Allowed |
+| Require Class 3 biometrics (strong) | Yes |
+| Require PIN after biometric change | Yes |
 | Biometric PIN re-prompt timeout | 30 minutes |
 | App PIN when device PIN set | Required (not waived) |
+| Screen capture | Blocked |
 | Device compliance required | Yes (action: block) |
 
 **Conditional Launch**
@@ -681,6 +670,9 @@ This document lists every Intune policy file included in the baseline with its k
 | Offline grace period (block access) | 12 hours |
 | Offline grace period (wipe data) | 90 days |
 | Minimum required OS version | 13.0 |
+| SafetyNet device attestation | Basic Integrity and Device Certification (action: block) |
+| SafetyNet evaluation type | Basic |
+| Device passcode complexity | Low minimum (action: block) |
 | Mobile threat defense level | Not configured |
 | Action if device noncompliant | Block |
 
