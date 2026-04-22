@@ -111,8 +111,9 @@ App Protection Policies define the security boundaries within managed apps. The 
 | **PIN for access** | Require |
 | **PIN type** | Numeric |
 | **Simple PIN** | Block |
-| **Minimum PIN length** | 4 |
-| **Biometrics (fingerprint/Face ID)** | Allow |
+| **Minimum PIN length** | 6 |
+| **Class 3 biometrics (Strong)** | Require |
+| **PIN reset on biometric change** | Require |
 | **App PIN when device PIN is set** | Require |
 
 ##### D. Conditional Launch
@@ -123,6 +124,9 @@ App Protection Policies define the security boundaries within managed apps. The 
 | **Offline grace period** | 720 minutes | Block access |
 | **Offline grace period (wipe)** | 90 days | Wipe data |
 | **Disabled account** | — | Wipe data |
+| **SafetyNet attestation** | Basic integrity | Block access |
+| **SafetyNet evaluation type** | Basic (hardware attestation not required) | Block access |
+| **Device passcode complexity** | Block access if no device passcode is set | Block access |
 
 ---
 
