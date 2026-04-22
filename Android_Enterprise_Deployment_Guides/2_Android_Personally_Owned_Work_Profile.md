@@ -67,10 +67,12 @@ By default, personal device enrollment may be blocked by the tenant default rest
 1. Go to **Apps** > **Android** > **Add** > **Managed Google Play app**.
 2. Search for and approve the required apps. The following are recommended at minimum:
    - **Microsoft Authenticator** (required for Entra ID sign-in)
-   - **Intune Company Portal** (required for current enrollment flow; may be replaced by the Intune app in the AMAPI transition)
+   - **Intune Company Portal** (approve and make available — required for enrollment initiation only; do **not** assign as Required to the user group)
    - **Microsoft Outlook**, **Teams**, **Edge**, **OneDrive** (as applicable)
 3. After approving each app, select **Sync**.
-4. Assign all apps to the Entra ID group created in Step 1 as **Required**.
+4. Assign all apps to the Entra ID group created in Step 1 as **Required**, with the exception of Company Portal (see note below).
+
+> **Company Portal vs. Microsoft Intune app:** For personally-owned work profile devices, **Company Portal is only needed to initiate enrollment** — users download it from the Play Store to begin the work profile setup. After enrollment, the **Microsoft Intune app** acts as the primary management agent and is automatically provisioned to the work profile. Company Portal does not need to be assigned as a Required app to the BYOD user group. With the AMAPI transition, enrollment will shift to a web-based flow and users will not need to install Company Portal at all to enroll.
 
 ---
 
@@ -102,6 +104,9 @@ Configure work profile restrictions such as preventing copy/paste between work a
 1. Go to **Devices** > **Android** > **Configuration** > **Edit the imported Device Restrictions Policy**.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Templates > **Device restrictions** (Personally-Owned Work Profile).
+
+> **Settings Catalog does not support personally-owned work profiles.** The Settings Catalog in Microsoft Intune is scoped exclusively to corporate-owned Android Enterprise devices (Fully Managed, Corporate-Owned Work Profile, Dedicated/Kiosk). It cannot be used to configure device restrictions for BYOD work profile devices. Always use **Templates > Device restrictions (Personally-Owned Work Profile)** for this scenario.
+
 4. **Basics:**
    * **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
    * **Description:** Device restrictions for Android Enterprise personally-owned work profile (BYOD) users.
