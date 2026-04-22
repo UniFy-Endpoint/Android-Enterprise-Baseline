@@ -424,7 +424,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Configuration profile to deliver Defender for Endpoint web protection tunnel to Personally-Owned enrolled devices |
 | Profile type | androidWorkProfileGeneralDeviceConfiguration |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
-| Assigned groups | AND - DEV - Android-Personal-Work-Profile-Devices - BYOD |
+| Assigned groups | AND - USR - Android-Personal-Work-Profile-Users - BYOD |
 
 **Settings**
 
@@ -455,7 +455,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Target enrollment | Fully Managed (Default + Staging) |
 | Total settings configured | 31 |
 | Assigned groups | AND - DEV - Android-Corporate-Fully-Managed-Devices; AND - DEV - Android-Corporate-Fully-Managed-Devices - Staging |
-| Excluded groups | AND - DEV - Android-Personal-Work-Profile-Devices - BYOD |
 
 **Key Settings**
 
@@ -484,7 +483,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
 | Total settings configured | 32 |
 | Assigned groups | AND - DEV - Android-Corporate-Work-Profile-Devices; AND - DEV - Android-Corporate-Work-Profile-Devices - Staging |
-| Excluded groups | AND - DEV - Android-Personal-Work-Profile-Devices - BYOD |
 
 ---
 
@@ -494,13 +492,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - SC - Device-Restrictions - DEV - Personally-Owned - Work-Profile |
+| Display Name | AND - SC - Device-Restrictions - USR - Personally-Owned - Work-Profile |
 | Description | Device Restrictions Settings for Android Enterprise Personally-Owned Work-Profile Devices (BYOD) |
 | Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
 | Platform | androidEnterprise |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
 | Total settings configured | 19 |
-| Assigned groups | AND - DEV - Android-Personal-Work-Profile-Devices - BYOD |
+| Assigned groups | AND - USR - Android-Personal-Work-Profile-Users - BYOD |
 
 **Key Settings**
 
