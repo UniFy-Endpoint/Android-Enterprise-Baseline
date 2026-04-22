@@ -185,7 +185,6 @@ All policy names in this baseline follow a structured naming pattern:
 | :--- | :--- |
 | `AND - Compliance - DEV - Corporate-Fully-Managed-Devices` | Compliance policy — Fully Managed |
 | `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed` | DeviceConfiguration Device Restrictions — Fully Managed |
-| `AND - SC - Device-Restrictions - USR - Personally-Owned - Work-Profile` | Settings Catalog Device Restrictions — BYOD |
 | `AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN` | DeviceConfiguration — MDE Always-On VPN (Corporate) |
 | `AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint` | App Configuration — MDE low-touch onboarding |
 | `AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD` | App Protection Policy — MAM BYOD |

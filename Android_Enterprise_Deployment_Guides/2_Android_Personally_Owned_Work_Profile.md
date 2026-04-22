@@ -101,7 +101,7 @@ Configure work profile restrictions such as preventing copy/paste between work a
 
 1. Go to **Devices** > **Android** > **Configuration** > **Edit the imported Device Restrictions Policy**.
 2. **Platform:** Android Enterprise.
-3. **Profile type:** Templates > **Device restrictions** (Personally-Owned Work Profile) or **Device restrictions** (Settings Catalog).
+3. **Profile type:** Templates > **Device restrictions** (Personally-Owned Work Profile).
 4. **Basics:**
    * **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
    * **Description:** Device restrictions for Android Enterprise personally-owned work profile (BYOD) users.

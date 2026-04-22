@@ -182,6 +182,8 @@ This document lists every Intune policy file included in the baseline with its k
 | Password expiration | 365 days |
 | Previous passwords blocked | 5 |
 | Work profile password required | Yes |
+| Work profile password type | Numeric complex |
+| Work profile minimum password length | 6 |
 | Work profile required password complexity | Medium |
 | Work profile inactivity before screen lock | Not configured |
 | Block rooted / jailbroken devices | Yes |
@@ -471,28 +473,6 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - SC - Device-Restrictions - USR - Personally-Owned - Work-Profile
-
-**Basics**
-
-| Property | Value |
-| :--- | :--- |
-| Display Name | AND - SC - Device-Restrictions - USR - Personally-Owned - Work-Profile |
-| Description | Device Restrictions Settings for Android Enterprise Personally-Owned Work-Profile Devices (BYOD) |
-| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
-| Platform | androidEnterprise |
-| Target enrollment | Personally-Owned Work Profile (BYOD) |
-| Total settings configured | 19 |
-
-**Key Settings**
-
-| Setting | Value |
-| :--- | :--- |
-| Unknown sources | Blocked |
-| Apps auto-update | Configured |
-
----
-
 ## App Configuration Policies
 
 ---
@@ -770,10 +750,10 @@ See [9_Android_Enrollment_Restrictions.md](Android_Enterprise_Deployment_Guides/
 | :--- | :--- |
 | Compliance Policies | 5 |
 | Device Config — DC Template | 7 (5 restriction + 2 MDE VPN) |
-| Device Config — Settings Catalog | 3 |
+| Device Config — Settings Catalog | 2 |
 | App Configuration Policies | 4 |
 | App Protection Policies (MAM) | 1 |
 | Conditional Access Policies | 2 |
 | Assignment Filters | 4 |
 | Enrollment Restrictions | 1 |
-| **Total** | **27** |
+| **Total** | **26** |
