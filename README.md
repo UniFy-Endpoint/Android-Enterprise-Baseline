@@ -193,6 +193,26 @@ All policy names in this baseline follow a structured naming pattern:
 
 ---
 
+## Version history
+
+### v1.1 — April 2026
+
+- **Policy count:** 27 → 26 (removed `AND - SC - Device-Restrictions - USR - Personally-Owned - Work-Profile` — Settings Catalog does not support personally-owned work profile devices)
+- **Settings Catalog policies:** 3 → 2
+- **BYOD compliance policy:** Work profile password type updated to Numeric complex; minimum password length set to 6
+- **Documentation:** Clarified Company Portal role for BYOD — approval required for enrollment initiation only, not assigned as Required; Microsoft Intune app acts as the management agent post-enrollment
+- **Documentation:** Added explicit Settings Catalog limitation note to the BYOD work profile configuration guide
+- **Documentation:** Accuracy improvements across guides 2, 5, 6, 7, and the CIS hardening guide (12)
+
+### v1.0 — Initial release
+
+- Full baseline covering all major Android Enterprise enrollment types: Personally-Owned Work Profile, Dedicated Kiosk, Dedicated Shared, Fully Managed, Corporate-Owned Work Profile, and MAM
+- 27 Intune policy definitions across compliance, device restrictions (DC + SC), app configuration, app protection, and conditional access
+- 12 deployment and configuration guides (enrollment methods, security add-ons, supporting references)
+- 4 assignment filters, 1 enrollment restriction
+
+---
+
 ## Contributing
 
 Issues and PRs are welcome (especially improvements based on field experience, OS/version caveats, or Intune behavior changes).
