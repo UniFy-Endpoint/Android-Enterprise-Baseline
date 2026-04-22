@@ -81,12 +81,12 @@ The following settings are already aligned with CIS recommendations and do not r
 | Factory reset blocked | Yes | DC + SC device restriction policies ✓ |
 | USB file transfer blocked | Yes | SC device restriction policies ✓ |
 | Screen capture blocked (corporate) | Yes | SC + DC corporate device restriction policies ✓ |
-| Screen capture blocked (BYOD work profile) | Yes | DC + SC BYOD policies ✓ |
-| Work profile cross-profile copy/paste blocked | Yes | DC + SC BYOD policies ✓ |
+| Screen capture blocked (BYOD work profile) | Yes | DC BYOD policy ✓ |
+| Work profile cross-profile copy/paste blocked | Yes | DC BYOD policy ✓ |
 | Work profile add accounts blocked | Yes | DC BYOD policy ✓ |
-| Work profile app permission policy | Prompt | DC + SC BYOD policies ✓ |
+| Work profile app permission policy | Prompt | DC BYOD policy ✓ |
 | Work profile verify apps | Yes | DC BYOD policy ✓ |
-| Work profile cross-profile data sharing | Work → Personal blocked | SC BYOD policy ✓ |
+| Work profile cross-profile data sharing | Work → Personal blocked | DC BYOD policy ✓ |
 | Play Store mode | allowList | Corporate DC device restrictions ✓ |
 | Developer settings disabled | Yes | Settings Catalog policies ✓ |
 | Network escape hatch disabled | Yes | Settings Catalog policies ✓ |
