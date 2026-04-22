@@ -35,7 +35,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Dedicated Devices in Kiosk Mode |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Dedicated / Kiosk (Single-App + Multi-App) |
-| Assigned groups | AND - DEV - Android-Corporate-Dedicated-Devices - Single-App - Kiosk; AND - DEV - Android-Corporate-Dedicated-Devices - Multi-App - Kiosk |
 | Noncompliance action | Block access after 24-hour grace period |
 
 **Settings**
@@ -69,7 +68,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Dedicated / Shared (Multi-App Managed Home Screen) |
-| Assigned groups | AND - DEV - Android-Corporate-Dedicated-Devices - Shared |
 | Noncompliance action | Block access after 24-hour grace period |
 
 **Settings**
@@ -103,7 +101,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Fully Managed Devices |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Fully Managed (Default + Staging) |
-| Assigned groups | AND - DEV - Android-Corporate-Fully-Managed-Devices; AND - DEV - Android-Corporate-Fully-Managed-Devices - Staging |
 | Noncompliance action | Block access after 24-hour grace period |
 
 **Settings**
@@ -137,7 +134,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Work-Profile Devices |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
-| Assigned groups | AND - DEV - Android-Corporate-Work-Profile-Devices; AND - DEV - Android-Corporate-Work-Profile-Devices - Staging |
 | Noncompliance action | Block access after 24-hour grace period |
 
 **Settings**
@@ -171,7 +167,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | This compliance policy applies to Android Enterprise BYOD Personally-Owned Work-Profile users. |
 | Profile type | androidWorkProfileCompliancePolicy |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
-| Assigned groups | AND - USR - Android-Personal-Work-Profile-Users - BYOD |
 | Noncompliance action | Block access after 24-hour grace period |
 
 **Settings**
@@ -218,7 +213,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Fully Managed Devices |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Fully Managed (Default + Staging) |
-| Assigned groups | AND - DEV - Android-Corporate-Fully-Managed-Devices; AND - DEV - Android-Corporate-Fully-Managed-Devices - Staging |
 
 **Settings**
 
@@ -260,7 +254,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Work-Profile Devices |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
-| Assigned groups | AND - DEV - Android-Corporate-Work-Profile-Devices; AND - DEV - Android-Corporate-Work-Profile-Devices - Staging |
 
 **Settings**
 
@@ -288,7 +281,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Devices Single-App Kiosk-Mode |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Dedicated / Single-App Kiosk |
-| Assigned groups | AND - DEV - Android-Corporate-Dedicated-Devices - Single-App - Kiosk |
 
 **Settings**
 
@@ -314,7 +306,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Devices Multi-App Kiosk-Mode |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Dedicated / Multi-App Kiosk |
-| Assigned groups | AND - DEV - Android-Corporate-Dedicated-Devices - Multi-App - Kiosk |
 
 **Settings**
 
@@ -340,7 +331,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Managed Home Screen Shared Devices |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Dedicated / Multi-App Shared (Managed Home Screen) |
-| Assigned groups | AND - DEV - Android-Corporate-Dedicated-Devices - Shared |
 
 **Settings**
 
@@ -366,7 +356,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Device Restrictions Configuration Policy for Android Enterprise Personally Owned Work Profile (BYOD). |
 | Profile type | androidWorkProfileGeneralDeviceConfiguration |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
-| Assigned groups | AND - USR - Android-Personal-Work-Profile-Users - BYOD |
 
 **Settings**
 
@@ -402,7 +391,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Configuration profile to deliver Defender for Endpoint web protection tunnel to Corporate-Owned enrolled devices |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Fully Managed + Corporate-Owned Work Profile |
-| Assigned groups | AND - DEV - Android-Corporate-Fully-Managed-Devices; AND - DEV - Android-Corporate-Work-Profile-Devices (+ Staging groups) |
 
 **Settings**
 
@@ -424,7 +412,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Configuration profile to deliver Defender for Endpoint web protection tunnel to Personally-Owned enrolled devices |
 | Profile type | androidWorkProfileGeneralDeviceConfiguration |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
-| Assigned groups | AND - USR - Android-Personal-Work-Profile-Users - BYOD |
 
 **Settings**
 
@@ -454,7 +441,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Platform | androidEnterprise |
 | Target enrollment | Fully Managed (Default + Staging) |
 | Total settings configured | 31 |
-| Assigned groups | AND - DEV - Android-Corporate-Fully-Managed-Devices; AND - DEV - Android-Corporate-Fully-Managed-Devices - Staging |
 
 **Key Settings**
 
@@ -482,7 +468,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Platform | androidEnterprise |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
 | Total settings configured | 32 |
-| Assigned groups | AND - DEV - Android-Corporate-Work-Profile-Devices; AND - DEV - Android-Corporate-Work-Profile-Devices - Staging |
 
 ---
 
@@ -498,7 +483,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Platform | androidEnterprise |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
 | Total settings configured | 19 |
-| Assigned groups | AND - USR - Android-Personal-Work-Profile-Users - BYOD |
 
 **Key Settings**
 
@@ -524,7 +508,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Target app | Microsoft Outlook — com.microsoft.office.outlook |
 | Profile applicability | androidDeviceOwner (corporate-enrolled devices) |
 | Target enrollment | Fully Managed, Corporate-Owned Work Profile, Kiosk, Shared |
-| Assigned groups | AND - DEV - Android-Corporate-Fully-Managed-Devices; AND - DEV - Android-Corporate-Fully-Managed-Devices - Staging; AND - DEV - Android-Corporate-Work-Profile-Devices; AND - DEV - Android-Corporate-Work-Profile-Devices - Staging; AND - DEV - Android-Corporate-Dedicated-Devices - Shared; AND - DEV - Android-Corporate-Dedicated-Devices - Multi-App - Kiosk |
 
 **Settings**
 
@@ -554,7 +537,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Target app | Microsoft Outlook — com.microsoft.office.outlook |
 | Profile applicability | androidWorkProfile (BYOD work profile) |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
-| Assigned groups | AND - DEV - Android-Personal-Work-Profile-Devices - BYOD |
 
 **Settings**
 
@@ -626,7 +608,6 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | App Protection Policy for unmanaged BYOD devices — Level 1 Enterprise Basic Data Protection |
 | Platform | Android (androidManagedAppProtection) |
 | Target | Unmanaged / BYOD devices (MAM without enrollment) |
-| Assigned groups | AND - USR - Android-Personal-Work-Profile-Users - BYOD |
 
 **Data Protection Settings**
 
@@ -767,7 +748,6 @@ See [8_Android_Assignment_Filters.md](Android_Enterprise_Deployment_Guides/8_And
 | Description | Enable Android Enterprise BYOD (Work Profile) Enrollment |
 | Priority | 1 (highest priority) |
 | Platform type | androidForWork (Android Enterprise) |
-| Assigned groups | AND - USR - Android-Personal-Work-Profile-Users - BYOD |
 
 **Settings**
 
