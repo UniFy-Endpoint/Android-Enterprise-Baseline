@@ -12,6 +12,8 @@ Each change below includes:
 - The **exact steps** to make the change in the Microsoft Intune admin center.
 - The **security framework level** it applies to.
 
+This guide also includes a dedicated section — **Settings NOT Included in the Baseline** — documenting CIS recommendations that are intentionally excluded because they require infrastructure prerequisites (e.g., MDE deployment) or operational decisions. Administrators must evaluate and configure these manually if applicable.
+
 > **Important:** This is a reference guide — not a one-size-fits-all checklist. Assess each recommendation against your organization's operational requirements, risk tolerance, and the specific deployment model before making changes. Always test changes with a pilot group before broad rollout.
 
 > **Prerequisite for threat protection settings:** Settings under "Device Threat Protection" and "Max allowed device threat level" only take effect if Microsoft Defender for Endpoint (or another Mobile Threat Defense partner) is deployed and the MDE–Intune connector is active. See the [Defender for Endpoint for Android Devices guide](11_Defender%20for%20Endpoint%20for%20Android%20Devices.md) before enabling these settings.
@@ -47,13 +49,13 @@ The following table provides a consolidated view of all recommended changes and 
 | 1.2.2 | BYOD Compliance | Screen lock inactivity | 15 min | 15 min | L1 |
 | 1.2.3 | BYOD Compliance | Require verify apps | Disabled | Enabled | L1 |
 | 1.2.4 | BYOD Compliance | Certified device attestation | Disabled | Enabled | L2 |
-| 1.2.5 | BYOD Compliance | Device threat protection | Enabled, Low | Enabled, Low | L2 |
+| 1.2.5 | BYOD Compliance | Device threat protection | Disabled | Enabled, Low | L2 |
 | 2.1.1 | Fully Managed DC template | Camera | Allowed | Block | L2 |
 | 2.1.2 | Fully Managed SC | Apps default permission |  Prompt | Prompt | L2 |
 | 2.3.1 | BYOD SC | Cross-profile data sharing |  Work to personal blocked | Work to personal blocked | L1 |
 | 3.1 | MAM App Protection | Max device threat level | Not configured | Low → Block | L1 |
 | 3.2 | MAM App Protection | Simple PIN | Block | Block | L1 |
-| 3.3 | MAM App Protection | Device lock required | Require | Require | L1 |
+| 3.3 | MAM App Protection | Device lock required | Not required (block via conditional launch) | Require | L1 |
 | 3.4 | MAM App Protection | PIN reset period | 90 day | 90 days | L1 |
 | 3.5 | MAM App Protection | Previous PIN block count | 5 | 5 | L1 |
 | 3.6 | MAM App Protection | Min required patch version | Not configured | ≤ 12 months | L1 |
@@ -69,27 +71,43 @@ The following settings are already aligned with CIS recommendations and do not r
 | :--- | :--- | :--- |
 | Storage encryption required | Yes | All compliance policies ✓ |
 | Block jailbroken / rooted devices | Yes | All compliance policies ✓ |
-| Minimum OS version | 10.0 | All policies ✓ |
-| Password type | numericComplex | All policies ✓ |
-| Password minimum length | 6 characters | All policies ✓ |
-| Password expiration | 365 days | All policies ✓ |
-| Previous password block count | 5 | Corporate policies ✓ |
-| Factory reset blocked | Yes | Device restriction policies ✓ |
-| USB file transfer blocked | Yes | Device restriction policies ✓ |
-| Screen capture blocked | Yes | Device restriction policies ✓ |
-| Play Store mode | allowList | Corporate device restrictions ✓ |
+| Minimum OS version | 13.0 | All policies ✓ |
+| Password type (corporate) | numericComplex | Corporate compliance and SC/DC policies ✓ |
+| Password type (BYOD compliance) | Device default, Medium complexity | BYOD compliance uses complexity level instead of explicit type ✓ |
+| Password minimum length (corporate) | 6 characters | Corporate compliance and DC/SC policies ✓ |
+| Password minimum length (BYOD compliance) | Not configured (complexity-based) | BYOD compliance defers to complexity setting ✓ |
+| Password expiration | 365 days | All compliance and DC/SC policies ✓ |
+| Previous password block count | 5 | All policies ✓ |
+| Factory reset blocked | Yes | DC + SC device restriction policies ✓ |
+| USB file transfer blocked | Yes | SC device restriction policies ✓ |
+| Screen capture blocked (corporate) | Yes | SC + DC corporate device restriction policies ✓ |
+| Screen capture blocked (BYOD work profile) | Yes | DC + SC BYOD policies ✓ |
+| Work profile cross-profile copy/paste blocked | Yes | DC + SC BYOD policies ✓ |
+| Work profile add accounts blocked | Yes | DC BYOD policy ✓ |
+| Work profile app permission policy | Prompt | DC + SC BYOD policies ✓ |
+| Work profile verify apps | Yes | DC BYOD policy ✓ |
+| Work profile cross-profile data sharing | Work → Personal blocked | SC BYOD policy ✓ |
+| Play Store mode | allowList | Corporate DC device restrictions ✓ |
 | Developer settings disabled | Yes | Settings Catalog policies ✓ |
 | Network escape hatch disabled | Yes | Settings Catalog policies ✓ |
 | Private Space disallowed | Yes | Settings Catalog FM policy ✓ |
 | WiFi Direct disallowed | Yes | Settings Catalog policies ✓ |
-| Bluetooth contact sharing blocked | Yes | Device restrictions ✓ |
+| Bluetooth contact sharing blocked | Yes | DC + SC device restrictions ✓ |
+| NFC outgoing beam blocked | Yes | Settings Catalog policies ✓ |
+| Common Criteria Mode enabled | Yes | SC FM policy ✓ |
+| MAM Simple PIN | Blocked | MAM policy ✓ |
 | MAM SafetyNet attestation type | basicIntegrityAndDeviceCertification | Already at enhanced level ✓ |
+| MAM SafetyNet evaluation type | Basic | MAM policy ✓ |
 | MAM Class 3 biometrics required | Yes | MAM policy ✓ |
+| MAM PIN after biometric change | Yes | MAM policy ✓ |
 | MAM data backup blocked | Yes | MAM policy ✓ |
 | MAM outbound data transfer | Managed apps only | MAM policy ✓ |
 | MAM screen capture blocked | Yes | MAM policy ✓ |
 | MAM offline wipe period | 90 days | MAM policy ✓ |
 | MAM PIN minimum length | 6 | MAM policy ✓ |
+| MAM previous PIN block count | 5 | MAM policy ✓ |
+| MAM PIN reset period | 90 days | MAM policy ✓ |
+| MAM device passcode complexity | Low minimum (block if not met) | MAM conditional launch ✓ |
 | MDE low-touch onboarding | Enabled | MDE ACP ✓ |
 | MDE network protection | Enabled | MDE ACP ✓ |
 | MDE auto-remediation | Enabled | MDE ACP ✓ |
@@ -191,21 +209,13 @@ This section documents settings already present in the baseline JSON policies th
 
 ---
 
-#### W-7 — Work Profile Apps Auto-Granted All Permissions (BYOD)
+#### W-7 — Work Profile App Permission Policy (BYOD) ✅ RESOLVED in Baseline
 
 | | Value |
 | :--- | :--- |
 | **Policy** | DC Device Restrictions — Personally-Owned Work Profile |
-| **JSON field** | `workProfileDefaultAppPermissionPolicy: "autoGrant"` |
-| **Risk** | Every app installed in the work profile is automatically granted **all** runtime permissions (contacts, location, camera, microphone, storage) without any user prompt. Users have zero visibility into what permissions apps are using. This is both a security gap and contrary to CIS Level 1 recommendations. |
-| **Recommended** | Change to **Prompt** — users are asked before each permission is granted. |
-
-**Steps to fix:**
-1. Go to **Devices** > **Configuration** > open the DC Device Restrictions — Personally-Owned Work Profile policy.
-2. Click **Properties** > **Configuration settings** > **Edit**.
-3. Locate **Work profile default app permission policy**.
-4. Change from **Auto grant** to **Prompt**.
-5. Click **Review + save**.
+| **JSON field** | `workProfileDefaultAppPermissionPolicy: "prompt"` |
+| **Status** | **Resolved.** The baseline has been updated. Work profile app permission policy is now set to **Prompt** — users are asked before each permission is granted. No action required. |
 
 ---
 
@@ -294,6 +304,193 @@ This section documents settings already present in the baseline JSON policies th
 | W-15 | System update window: 00:00–06:00 only | FM DC | Updates install only if device is on and plugged in overnight | Verify devices remain powered on; extend window if needed |
 | W-16 | `factoryResetBlocked: true` + `passwordSignInFailureCountBeforeFactoryReset: 5` | FM DC | Users cannot manually factory reset — but the device CAN still be auto-wiped by 5 failed PIN attempts. These two settings are not the same. | Train helpdesk on this distinction |
 | W-17 | `googleAccountsBlocked: true` | FM DC | Personal Google services (Maps, Pay, Gmail) not available | Communicate to users before deployment |
+
+---
+
+---
+
+## Settings NOT Included in the Baseline — Administrator Action Required
+
+The following CIS and Microsoft security framework recommendations are **not configured** in the baseline JSON policies. They are intentionally omitted because they depend on your organization's infrastructure, risk tolerance, or third-party integrations. Administrators should evaluate each one and configure it manually in the Intune admin center if applicable.
+
+> These settings are not automatically applied when importing the baseline. Each one requires a deliberate decision and manual configuration.
+
+---
+
+### C-1 — Device Threat Protection (All Compliance Policies) — Not in Baseline
+
+| | |
+| :--- | :--- |
+| **Applies to** | All compliance policies (Corporate FM, COWP, Kiosk, Shared, BYOD) |
+| **JSON field** | `deviceThreatProtectionEnabled: false` / `deviceThreatProtectionRequiredSecurityLevel: "unavailable"` |
+| **CIS Level** | L2 (Corporate), L2 (BYOD) |
+| **Why not in baseline** | Requires Microsoft Defender for Endpoint (or an approved MTD partner) to be fully deployed and the MDE–Intune connector to be active. Enabling this without MDE will mark all devices non-compliant. |
+
+**Steps to enable when MDE is deployed:**
+1. Go to **Devices** > **Compliance** > open each compliance policy.
+2. Click **Properties** > **System Security** > **Edit**.
+3. Set **Require the device to be at or under the device threat level** to **Low**.
+4. Set **Microsoft Defender for Endpoint** to **Require the device to be at or under the machine risk score: Low**.
+5. Click **Review + save**.
+
+---
+
+### C-2 — SafetyNet Hardware-Backed Evaluation (Corporate Compliance) — Not in Baseline
+
+| | |
+| :--- | :--- |
+| **Applies to** | AND - Compliance - DEV - Corporate-Fully-Managed-Devices; AND - Compliance - DEV - Corporate-Owned - Work-Profile |
+| **JSON field** | `securityRequiredAndroidSafetyNetEvaluationType: "basic"` |
+| **CIS Level** | L2 |
+| **Why not in baseline** | Hardware-backed attestation requires devices with a dedicated secure enclave (Trusted Execution Environment). Older or budget devices may not support it, causing them to be incorrectly marked non-compliant. |
+
+**Steps to enable when device hardware supports it:**
+1. Go to **Devices** > **Compliance** > open the corporate compliance policy.
+2. Click **Properties** > **Device Health** > **Edit**.
+3. Set **SafetyNet evaluation type** to **Hardware backed key**.
+4. Click **Review + save**.
+
+> See [Support tip: Changes to Google Play strong integrity for Android 13+](https://techcommunity.microsoft.com/blog/intunecustomersuccess/support-tip-changes-to-google-play-strong-integrity-for-android-13-or-above/4176975)
+
+---
+
+### C-3 — Minimum Security Patch Level (All Compliance Policies) — Not in Baseline
+
+| | |
+| :--- | :--- |
+| **Applies to** | All compliance policies |
+| **JSON field** | `minAndroidSecurityPatchLevel: null` |
+| **CIS Level** | L2 (Corporate), L1 (BYOD) |
+| **Why not in baseline** | Patch level requirements vary by manufacturer and update cadence. A fixed date will cause newly enrolled devices from slow-update manufacturers to immediately fail compliance. |
+
+**Steps to configure:**
+1. Go to **Devices** > **Compliance** > open the target compliance policy.
+2. Click **Properties** > **System Security** > **Edit**.
+3. Set **Minimum security patch level** to a date no older than 12 months from today.
+4. Click **Review + save**.
+5. Repeat for each compliance policy.
+
+---
+
+### C-4 — Screen Lock Inactivity 5 Minutes (Corporate Compliance) — Not in Baseline
+
+| | |
+| :--- | :--- |
+| **Applies to** | AND - Compliance - DEV - Corporate-Fully-Managed-Devices; AND - Compliance - DEV - Corporate-Owned - Work-Profile |
+| **JSON field** | `passwordMinutesOfInactivityBeforeLock: 15` |
+| **CIS Level** | L2 |
+| **Recommended** | 5 minutes |
+| **Why not in baseline** | A 5-minute screen lock significantly impacts usability in most work environments. 15 minutes is retained as the baseline default. Tighten for high-security environments. |
+
+**Steps to configure:**
+1. Go to **Devices** > **Compliance** > open the corporate compliance policy.
+2. Click **Properties** > **System Security** > **Edit**.
+3. Set **Minutes of inactivity before the screen is locked** to **5**.
+4. Click **Review + save**.
+
+---
+
+### C-5 — SafetyNet Certified Device Attestation (BYOD Compliance) — Not in Baseline
+
+| | |
+| :--- | :--- |
+| **Applies to** | AND - Compliance - USR - Personally-Owned - Work-Profile |
+| **JSON field** | `securityRequireSafetyNetAttestationCertifiedDevice: false` |
+| **CIS Level** | L2 |
+| **Why not in baseline** | Certified Device attestation requires the device to be on Google's list of CTS-certified hardware. Some BYOD devices (older models, regional variants) may not be certified and would be permanently blocked from enrolling. |
+
+**Steps to enable:**
+1. Go to **Devices** > **Compliance** > open the BYOD compliance policy.
+2. Click **Properties** > **Device Health** > **Edit**.
+3. Set **Certified device (Play Integrity)** to **Require**.
+4. Click **Review + save**.
+
+---
+
+### C-6 — Verify Apps in BYOD Compliance Policy — Not in Baseline
+
+| | |
+| :--- | :--- |
+| **Applies to** | AND - Compliance - USR - Personally-Owned - Work-Profile |
+| **JSON field** | `securityRequireVerifyApps: false` (compliance policy) |
+| **Note** | Verify apps IS enforced via the BYOD device configuration policy (`securityRequireVerifyApps: true`). It is not separately enforced at the compliance policy level. |
+| **CIS Level** | L1 |
+| **Why not in baseline** | Enforcing Verify Apps at the compliance level means a user who disables it would immediately become non-compliant and lose access. Some BYOD users disable this for privacy. The device config policy already enables it on enrollment. |
+
+**Steps to add compliance enforcement:**
+1. Go to **Devices** > **Compliance** > open the BYOD compliance policy.
+2. Click **Properties** > **System Security** > **Edit**.
+3. Set **Require threat scan on apps** to **Require**.
+4. Click **Review + save**.
+
+---
+
+### C-7 — MAM Maximum Allowed Device Threat Level — Not in Baseline
+
+| | |
+| :--- | :--- |
+| **Applies to** | AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD |
+| **JSON field** | `maximumAllowedDeviceThreatLevel: "notConfigured"` |
+| **CIS Level** | L1 |
+| **Why not in baseline** | Requires a Mobile Threat Defense partner (MDE or equivalent) to be active. Without MTD, setting a threat level causes unpredictable app behavior on unmanaged devices. |
+
+**Steps to enable when MDE is deployed:**
+1. Go to **Apps** > **App protection policies** > open the MAM policy.
+2. Click **Properties** > **Conditional launch** > **Edit**.
+3. Under **Device conditions**, set **Max allowed device threat level** to **Low** with action **Block access**.
+4. Click **Review + save**.
+
+---
+
+### C-8 — MAM SafetyNet Hardware-Backed Evaluation — Not in Baseline
+
+| | |
+| :--- | :--- |
+| **Applies to** | AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD |
+| **JSON field** | `requiredAndroidSafetyNetEvaluationType: "basic"` |
+| **CIS Level** | L2 |
+| **Why not in baseline** | Same hardware dependency as C-2. BYOD devices are user-owned and hardware variety is even broader. Hardware-backed attestation may block a large portion of the BYOD user population with older devices. |
+
+**Steps to enable:**
+1. Go to **Apps** > **App protection policies** > open the MAM policy.
+2. Click **Properties** > **Conditional launch** > **Edit**.
+3. Under **Device conditions**, set **SafetyNet evaluation type** to **Hardware backed key**.
+4. Click **Review + save**.
+
+---
+
+### C-9 — MAM Minimum Security Patch Version — Not in Baseline
+
+| | |
+| :--- | :--- |
+| **Applies to** | AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD |
+| **JSON field** | `minimumRequiredPatchVersion: null` / `minimumWipePatchVersion: null` |
+| **CIS Level** | L1 |
+| **Why not in baseline** | Same operational concern as C-3. Patch update cadence varies significantly across BYOD manufacturers and user behavior. |
+
+**Steps to configure:**
+1. Go to **Apps** > **App protection policies** > open the MAM policy.
+2. Click **Properties** > **Conditional launch** > **Edit**.
+3. Under **Device conditions**, set **Min patch version** with a date no older than 12 months and action **Warn** (use **Block** only after validating patch compliance across your user population).
+4. Click **Review + save**.
+
+---
+
+### C-10 — MAM Device Lock Required Field — Not Explicitly Required
+
+| | |
+| :--- | :--- |
+| **Applies to** | AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD |
+| **JSON field** | `deviceLockRequired: false` |
+| **Conditional launch** | `appActionIfDeviceLockNotSet: "block"` (device lock enforced via conditional launch) |
+| **CIS Level** | L1 |
+| **Note** | The baseline does NOT check the **Require device lock** checkbox in the Access Requirements section. However, the **Conditional Launch** rule blocks app access if no device lock is set — achieving the same end result. If you want the compliance check to appear in the Intune UI status for the user, enable the Require device lock toggle explicitly. |
+
+**Steps to enable explicit require:**
+1. Go to **Apps** > **App protection policies** > open the MAM policy.
+2. Click **Properties** > **Access requirements** > **Edit**.
+3. Set **Device lock** to **Require**.
+4. Click **Review + save**.
 
 ---
 
