@@ -63,73 +63,7 @@
   "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/microsoft.graph.androidManagedStoreAppConfiguration/assignments",
   "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/microsoft.graph.androidManagedStoreAppConfiguration/assignments/$ref",
   "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/microsoft.graph.androidManagedStoreAppConfiguration/assignments",
-  "assignments": [
-    {
-      "@odata.type": "#microsoft.graph.managedDeviceMobileAppConfigurationAssignment",
-      "@odata.id": "deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/assignments('22984ea7-4a3a-43a2-b954-c17c6dc46507_ba3d799d-0dde-4a5f-9e6c-1f7fa5ee879c')",
-      "@odata.editLink": "deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/assignments('22984ea7-4a3a-43a2-b954-c17c6dc46507_ba3d799d-0dde-4a5f-9e6c-1f7fa5ee879c')",
-      "id": "22984ea7-4a3a-43a2-b954-c17c6dc46507_ba3d799d-0dde-4a5f-9e6c-1f7fa5ee879c",
-      "target": {
-        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
-        "deviceAndAppManagementAssignmentFilterId": null,
-        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
-        "deviceAndAppManagementAssignmentFilterType": "none",
-        "groupId": "ba3d799d-0dde-4a5f-9e6c-1f7fa5ee879c"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedDeviceMobileAppConfigurationAssignment",
-      "@odata.id": "deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/assignments('22984ea7-4a3a-43a2-b954-c17c6dc46507_64e2c8c6-de52-4eb4-a4a1-1f7b81d8c6fa')",
-      "@odata.editLink": "deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/assignments('22984ea7-4a3a-43a2-b954-c17c6dc46507_64e2c8c6-de52-4eb4-a4a1-1f7b81d8c6fa')",
-      "id": "22984ea7-4a3a-43a2-b954-c17c6dc46507_64e2c8c6-de52-4eb4-a4a1-1f7b81d8c6fa",
-      "target": {
-        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
-        "deviceAndAppManagementAssignmentFilterId": null,
-        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
-        "deviceAndAppManagementAssignmentFilterType": "none",
-        "groupId": "64e2c8c6-de52-4eb4-a4a1-1f7b81d8c6fa"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedDeviceMobileAppConfigurationAssignment",
-      "@odata.id": "deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/assignments('22984ea7-4a3a-43a2-b954-c17c6dc46507_7b809fc0-1d28-4233-9916-ce9c8f4efc91')",
-      "@odata.editLink": "deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/assignments('22984ea7-4a3a-43a2-b954-c17c6dc46507_7b809fc0-1d28-4233-9916-ce9c8f4efc91')",
-      "id": "22984ea7-4a3a-43a2-b954-c17c6dc46507_7b809fc0-1d28-4233-9916-ce9c8f4efc91",
-      "target": {
-        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
-        "deviceAndAppManagementAssignmentFilterId": null,
-        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
-        "deviceAndAppManagementAssignmentFilterType": "none",
-        "groupId": "7b809fc0-1d28-4233-9916-ce9c8f4efc91"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedDeviceMobileAppConfigurationAssignment",
-      "@odata.id": "deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/assignments('22984ea7-4a3a-43a2-b954-c17c6dc46507_fc6cd637-292d-424d-83eb-cb6d56a88578')",
-      "@odata.editLink": "deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/assignments('22984ea7-4a3a-43a2-b954-c17c6dc46507_fc6cd637-292d-424d-83eb-cb6d56a88578')",
-      "id": "22984ea7-4a3a-43a2-b954-c17c6dc46507_fc6cd637-292d-424d-83eb-cb6d56a88578",
-      "target": {
-        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
-        "deviceAndAppManagementAssignmentFilterId": null,
-        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
-        "deviceAndAppManagementAssignmentFilterType": "none",
-        "groupId": "fc6cd637-292d-424d-83eb-cb6d56a88578"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedDeviceMobileAppConfigurationAssignment",
-      "@odata.id": "deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/assignments('22984ea7-4a3a-43a2-b954-c17c6dc46507_630ef010-3ae2-42a3-ab1d-c795c9aa030d')",
-      "@odata.editLink": "deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/assignments('22984ea7-4a3a-43a2-b954-c17c6dc46507_630ef010-3ae2-42a3-ab1d-c795c9aa030d')",
-      "id": "22984ea7-4a3a-43a2-b954-c17c6dc46507_630ef010-3ae2-42a3-ab1d-c795c9aa030d",
-      "target": {
-        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
-        "deviceAndAppManagementAssignmentFilterId": null,
-        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
-        "deviceAndAppManagementAssignmentFilterType": "none",
-        "groupId": "630ef010-3ae2-42a3-ab1d-c795c9aa030d"
-      }
-    }
-  ],
+  "assignments": [],
   "deviceStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/microsoft.graph.androidManagedStoreAppConfiguration/deviceStatuses/$ref",
   "deviceStatuses@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/microsoft.graph.androidManagedStoreAppConfiguration/deviceStatuses",
   "deviceStatusSummary@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('22984ea7-4a3a-43a2-b954-c17c6dc46507')/microsoft.graph.androidManagedStoreAppConfiguration/deviceStatusSummary/$ref",

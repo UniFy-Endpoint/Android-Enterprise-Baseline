@@ -8,13 +8,13 @@
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2025-11-27T18:06:51.1329042Z",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
-  "lastModifiedDateTime": "2026-04-20T12:44:43Z",
+  "lastModifiedDateTime": "2026-04-22T16:08:54Z",
   "roleScopeTagIds@odata.type": "#Collection(String)",
   "roleScopeTagIds": [
     "0"
   ],
   "id": "T_0bf995fe-0369-490f-9398-600f61c236df",
-  "version": "\"8d065410-0000-1600-0000-69e61fbb0000\"",
+  "version": "\"33020f67-0000-1600-0000-69e8f2960000\"",
   "periodOfflineBeforeAccessCheck@odata.type": "#Duration",
   "periodOfflineBeforeAccessCheck": "PT12H",
   "periodOnlineBeforeAccessCheck@odata.type": "#Duration",
@@ -94,11 +94,11 @@
   "targetedAppManagementLevels@odata.type": "#microsoft.graph.appManagementLevel",
   "targetedAppManagementLevels": "unspecified",
   "appGroupType@odata.type": "#microsoft.graph.targetedManagedAppGroupType",
-  "appGroupType": "allMicrosoftApps",
+  "appGroupType": "allCoreMicrosoftApps",
   "screenCaptureBlocked": true,
   "disableAppEncryptionIfDeviceEncryptionIsEnabled": false,
   "encryptAppData": true,
-  "deployedAppCount": 40,
+  "deployedAppCount": 12,
   "minimumRequiredPatchVersion": null,
   "minimumWarningPatchVersion": null,
   "minimumWipePatchVersion": null,
@@ -112,7 +112,7 @@
   "appActionIfAndroidSafetyNetDeviceAttestationFailed@odata.type": "#microsoft.graph.managedAppRemediationAction",
   "appActionIfAndroidSafetyNetDeviceAttestationFailed": "block",
   "requiredAndroidSafetyNetAppsVerificationType@odata.type": "#microsoft.graph.androidManagedAppSafetyNetAppsVerificationType",
-  "requiredAndroidSafetyNetAppsVerificationType": "enabled",
+  "requiredAndroidSafetyNetAppsVerificationType": "none",
   "appActionIfAndroidSafetyNetAppsVerificationFailed@odata.type": "#microsoft.graph.managedAppRemediationAction",
   "appActionIfAndroidSafetyNetAppsVerificationFailed": "block",
   "customBrowserPackageId": "",
@@ -153,116 +153,10 @@
   "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/assignments",
   "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/assignments/$ref",
   "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/assignments",
-  "assignments": [
-    {
-      "@odata.type": "#microsoft.graph.targetedManagedAppPolicyAssignment",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/assignments('dccd4b68-db22-4e99-8d47-60e875a865dc_incl')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/assignments('dccd4b68-db22-4e99-8d47-60e875a865dc_incl')",
-      "id": "dccd4b68-db22-4e99-8d47-60e875a865dc_incl",
-      "source@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentSource",
-      "source": "direct",
-      "sourceId": "00000000-0000-0000-0000-000000000000",
-      "target": {
-        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
-        "deviceAndAppManagementAssignmentFilterId": "42ba3650-6c10-4b4a-bab2-de2590867ffc",
-        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
-        "deviceAndAppManagementAssignmentFilterType": "include",
-        "groupId": "dccd4b68-db22-4e99-8d47-60e875a865dc"
-      }
-    }
-  ],
   "apps@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps",
   "apps@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps/$ref",
   "apps@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps",
   "apps": [
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.azure.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.azure.android')",
-      "id": "com.microsoft.azure.android",
-      "version": "-986385631",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.azure"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.cortana.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.cortana.android')",
-      "id": "com.microsoft.cortana.android",
-      "version": "1239242880",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.cortana"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.crm.crmphone.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.crm.crmphone.android')",
-      "id": "com.microsoft.crm.crmphone.android",
-      "version": "-1708416158",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.crm.crmphone"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.crm.crmphone.fieldservices.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.crm.crmphone.fieldservices.android')",
-      "id": "com.microsoft.crm.crmphone.fieldservices.android",
-      "version": "-2050426900",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.crm.crmphone.fieldservices"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.crm.crmphone.sales.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.crm.crmphone.sales.android')",
-      "id": "com.microsoft.crm.crmphone.sales.android",
-      "version": "-2031984416",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.crm.crmphone.sales"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.crm.crmtablet.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.crm.crmtablet.android')",
-      "id": "com.microsoft.crm.crmtablet.android",
-      "version": "1872338160",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.crm.crmtablet"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.designer.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.designer.android')",
-      "id": "com.microsoft.designer.android",
-      "version": "-1999652223",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.designer"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.dynamics.invoice.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.dynamics.invoice.android')",
-      "id": "com.microsoft.dynamics.invoice.android",
-      "version": "1413520457",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.dynamics.invoice"
-      }
-    },
     {
       "@odata.type": "#microsoft.graph.managedMobileApp",
       "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.emmx.android')",
@@ -276,83 +170,6 @@
     },
     {
       "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.flow.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.flow.android')",
-      "id": "com.microsoft.flow.android",
-      "version": "-496779816",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.flow"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.ipviewer.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.ipviewer.android')",
-      "id": "com.microsoft.ipviewer.android",
-      "version": "522412547",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.ipviewer"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.launcher.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.launcher.android')",
-      "id": "com.microsoft.launcher.android",
-      "version": "-1429615568",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.launcher"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.loop.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.loop.android')",
-      "id": "com.microsoft.loop.android",
-      "version": "1110081234",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.loop"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.mobile.polymer.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.mobile.polymer.android')",
-      "id": "com.microsoft.mobile.polymer.android",
-      "version": "2129189606",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.mobile.polymer"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.msapps.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.msapps.android')",
-      "id": "com.microsoft.msapps.android",
-      "version": "986978680",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.msapps"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.o365smb.connections.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.o365smb.connections.android')",
-      "id": "com.microsoft.o365smb.connections.android",
-      "version": "1379963506",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.o365smb.connections"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
       "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.office.excel.android')",
       "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.office.excel.android')",
       "id": "com.microsoft.office.excel.android",
@@ -360,28 +177,6 @@
       "mobileAppIdentifier": {
         "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
         "packageId": "com.microsoft.office.excel"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.office.lync15.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.office.lync15.android')",
-      "id": "com.microsoft.office.lync15.android",
-      "version": "-1419864878",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.office.lync15"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.office.officehub.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.office.officehub.android')",
-      "id": "com.microsoft.office.officehub.android",
-      "version": "-1091809935",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.office.officehub"
       }
     },
     {
@@ -404,17 +199,6 @@
       "mobileAppIdentifier": {
         "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
         "packageId": "com.microsoft.office.officehubrow"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.office.officelens.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.office.officelens.android')",
-      "id": "com.microsoft.office.officelens.android",
-      "version": "-641720584",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.office.officelens"
       }
     },
     {
@@ -463,61 +247,6 @@
     },
     {
       "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.outlookgroups.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.outlookgroups.android')",
-      "id": "com.microsoft.outlookgroups.android",
-      "version": "-1510063479",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.outlookgroups"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.planner.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.planner.android')",
-      "id": "com.microsoft.planner.android",
-      "version": "-1658524342",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.planner"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.powerbim.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.powerbim.android')",
-      "id": "com.microsoft.powerbim.android",
-      "version": "1564653697",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.powerbim"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.rdc.androidx.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.rdc.androidx.android')",
-      "id": "com.microsoft.rdc.androidx.android",
-      "version": "1849989238",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.rdc.androidx"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.scmx.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.scmx.android')",
-      "id": "com.microsoft.scmx.android",
-      "version": "1440552745",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.scmx"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
       "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.sharepoint.android')",
       "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.sharepoint.android')",
       "id": "com.microsoft.sharepoint.android",
@@ -558,61 +287,6 @@
       "mobileAppIdentifier": {
         "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
         "packageId": "com.microsoft.todos"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.whiteboard.publicpreview.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.whiteboard.publicpreview.android')",
-      "id": "com.microsoft.whiteboard.publicpreview.android",
-      "version": "-405842818",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.whiteboard.publicpreview"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.workfolders.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.microsoft.workfolders.android')",
-      "id": "com.microsoft.workfolders.android",
-      "version": "-1290240016",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.microsoft.workfolders"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.ms.office365admin.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.ms.office365admin.android')",
-      "id": "com.ms.office365admin.android",
-      "version": "1040477753",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.ms.office365admin"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.yammer.v1.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('com.yammer.v1.android')",
-      "id": "com.yammer.v1.android",
-      "version": "-1248070370",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "com.yammer.v1"
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.managedMobileApp",
-      "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('ols.microsoft.com.shiftr.android')",
-      "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')/apps('ols.microsoft.com.shiftr.android')",
-      "id": "ols.microsoft.com.shiftr.android",
-      "version": "1462285532",
-      "mobileAppIdentifier": {
-        "@odata.type": "#microsoft.graph.androidMobileAppIdentifier",
-        "packageId": "ols.microsoft.com.shiftr"
       }
     }
   ],

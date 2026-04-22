@@ -476,26 +476,7 @@
   "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments",
   "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments/$ref",
   "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments",
-  "assignments": [
-    {
-      "@odata.type": "#microsoft.graph.deviceConfigurationAssignment",
-      "@odata.id": "deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/assignments('2067715d-11fa-4330-a70b-4b33b0af18a2_14c8f20d-183d-41fc-9641-52bb8e3722f7')",
-      "@odata.editLink": "deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/assignments('2067715d-11fa-4330-a70b-4b33b0af18a2_14c8f20d-183d-41fc-9641-52bb8e3722f7')",
-      "id": "2067715d-11fa-4330-a70b-4b33b0af18a2_14c8f20d-183d-41fc-9641-52bb8e3722f7",
-      "source@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentSource",
-      "source": "direct",
-      "sourceId": "2067715d-11fa-4330-a70b-4b33b0af18a2",
-      "intent@odata.type": "#microsoft.graph.deviceConfigAssignmentIntent",
-      "intent": "apply",
-      "target": {
-        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
-        "deviceAndAppManagementAssignmentFilterId": null,
-        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
-        "deviceAndAppManagementAssignmentFilterType": "none",
-        "groupId": "14c8f20d-183d-41fc-9641-52bb8e3722f7"
-      }
-    }
-  ],
+  "assignments": [],
   "deviceSettingStateSummaries@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceSettingStateSummaries/$ref",
   "deviceSettingStateSummaries@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceSettingStateSummaries",
   "deviceStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceStatuses/$ref",
