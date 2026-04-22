@@ -197,7 +197,7 @@ All policy names in this baseline follow a structured naming pattern:
 
 ### v1.1 — April 2026
 
-- **Policy refinements:** Removed a device restrictions policy that does not apply to personally-owned work profile devices; total policy count updated to 26
+- **Policy refinements:** Removed some settings that do not apply to personally-owned work profile devices
 - **BYOD compliance policy:** Work profile password type updated to Numeric complex; minimum password length set to 6
 - **Documentation:** Clarified Company Portal role for BYOD — approval required for enrollment initiation only, not assigned as Required; Microsoft Intune app acts as the management agent post-enrollment
 - **Documentation:** Added explicit Settings Catalog limitation note to the BYOD work profile configuration guide
