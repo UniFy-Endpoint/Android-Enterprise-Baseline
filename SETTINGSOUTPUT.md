@@ -235,7 +235,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Play Store mode | AllowList — only MGP-approved apps available |
 | Apps auto-update | Always |
 | Apps default permission policy | Auto-grant all permissions |
-| **PIN failures before factory reset** | **5  — see CIS Hardening Guide , W-1** |
+| **PIN failures before factory reset** | **5 ⚠ — see CIS Hardening Guide Section 6, W-1** |
 | Screen timeout (inactivity) | 1 minute |
 | Require unlock | Daily (biometric handles subsequent unlocks) |
 | Data roaming | Blocked |
@@ -371,9 +371,9 @@ This document lists every Intune policy file included in the baseline with its k
 
 | Setting | Value |
 | :--- | :--- |
-| Work profile default app permission policy | Auto-grant all permissions  — see CIS Hardening Guide  |
+| Work profile default app permission policy | Auto-grant all permissions ⚠ — see CIS Hardening Guide Section 6, W-7 |
 | Work profile data sharing | Personal → Work allowed |
-| Block unified device/work profile password | Not blocked  — see CIS Hardening Guide , W-11 |
+| Block unified device/work profile password | Not blocked ⚠ — see CIS Hardening Guide Section 6, W-11 |
 | PIN failures before factory reset (device) | 11 |
 | PIN failures before factory reset (work profile) | 11 |
 | Work profile camera | Not blocked |
@@ -454,13 +454,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 | Setting | Value |
 | :--- | :--- |
-| Camera | Blocked  inconsistent with DC template (Allowed) — see CIS Hardening Guide , W-12 |
-| Bluetooth configuration by user | Blocked  inconsistent with DC template (null) — see CIS Hardening Guide , W-3 |
-| Network escape hatch | Disabled  — see CIS Hardening Guide , W-4 |
+| Camera | Blocked ⚠ inconsistent with DC template (Allowed) — see CIS Hardening Guide Section 6, W-12 |
+| Bluetooth configuration by user | Blocked ⚠ inconsistent with DC template (null) — see CIS Hardening Guide Section 6, W-3 |
+| Network escape hatch | Disabled ⚠ — see CIS Hardening Guide Section 6, W-4 |
 | System update type | Windowed |
 | Apps default permission policy | Device default |
 
->  **This policy is assigned to the same Fully Managed device groups as the DC template. Camera and Bluetooth values conflict. See CIS Hardening Guide , W-12.**
+> ⚠ **This policy is assigned to the same Fully Managed device groups as the DC template. Camera and Bluetooth values conflict. See CIS Hardening Guide Section 6, W-12.**
 
 ---
 

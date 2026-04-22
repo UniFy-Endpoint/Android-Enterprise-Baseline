@@ -47,24 +47,7 @@
   "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceCompliancePolicies('33310df9-717a-429e-8235-55eea35c4737')/microsoft.graph.androidDeviceOwnerCompliancePolicy/assignments",
   "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('33310df9-717a-429e-8235-55eea35c4737')/microsoft.graph.androidDeviceOwnerCompliancePolicy/assignments/$ref",
   "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('33310df9-717a-429e-8235-55eea35c4737')/microsoft.graph.androidDeviceOwnerCompliancePolicy/assignments",
-  "assignments": [
-    {
-      "@odata.type": "#microsoft.graph.deviceCompliancePolicyAssignment",
-      "@odata.id": "deviceManagement/deviceCompliancePolicies('33310df9-717a-429e-8235-55eea35c4737')/assignments('33310df9-717a-429e-8235-55eea35c4737_14c8f20d-183d-41fc-9641-52bb8e3722f7')",
-      "@odata.editLink": "deviceManagement/deviceCompliancePolicies('33310df9-717a-429e-8235-55eea35c4737')/assignments('33310df9-717a-429e-8235-55eea35c4737_14c8f20d-183d-41fc-9641-52bb8e3722f7')",
-      "id": "33310df9-717a-429e-8235-55eea35c4737_14c8f20d-183d-41fc-9641-52bb8e3722f7",
-      "source@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentSource",
-      "source": "direct",
-      "sourceId": "33310df9-717a-429e-8235-55eea35c4737",
-      "target": {
-        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
-        "deviceAndAppManagementAssignmentFilterId": null,
-        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
-        "deviceAndAppManagementAssignmentFilterType": "none",
-        "groupId": "14c8f20d-183d-41fc-9641-52bb8e3722f7"
-      }
-    }
-  ],
+  "assignments": [],
   "scheduledActionsForRule@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceCompliancePolicies('33310df9-717a-429e-8235-55eea35c4737')/microsoft.graph.androidDeviceOwnerCompliancePolicy/scheduledActionsForRule(scheduledActionConfigurations())",
   "scheduledActionsForRule@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('33310df9-717a-429e-8235-55eea35c4737')/microsoft.graph.androidDeviceOwnerCompliancePolicy/scheduledActionsForRule/$ref",
   "scheduledActionsForRule@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies('33310df9-717a-429e-8235-55eea35c4737')/microsoft.graph.androidDeviceOwnerCompliancePolicy/scheduledActionsForRule",

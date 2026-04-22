@@ -5,7 +5,7 @@
   "@odata.editLink": "deviceManagement/deviceConfigurations('a1dd1e60-7d2a-4150-a37a-960cd97cfd90')/microsoft.graph.androidWorkProfileGeneralDeviceConfiguration",
   "id": "a1dd1e60-7d2a-4150-a37a-960cd97cfd90",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
-  "lastModifiedDateTime": "2026-04-20T14:01:38.72344Z",
+  "lastModifiedDateTime": "2026-04-22T15:29:36.3448818Z",
   "roleScopeTagIds@odata.type": "#Collection(String)",
   "roleScopeTagIds": [
     "0"
@@ -18,7 +18,7 @@
   "createdDateTime": "2026-04-18T19:23:45.7116462Z",
   "description": "Cnfiguration profile to deliver Defender for Endpoint web protection tunnel to Android Enterprise Personally-Owned enrolled devices, so users don't need to manually configure a VPN during onboarding.",
   "displayName": "AND - DC - Defender-For-Endpoint - DEV - Personally-Owned - Always-On-VPN",
-  "version": 7,
+  "version": 10,
   "passwordBlockFaceUnlock": false,
   "passwordBlockFingerprintUnlock": false,
   "passwordBlockIrisUnlock": false,
@@ -29,7 +29,7 @@
   "passwordPreviousPasswordBlockCount": null,
   "passwordSignInFailureCountBeforeFactoryReset": null,
   "passwordRequiredType@odata.type": "#microsoft.graph.androidWorkProfileRequiredPasswordType",
-  "passwordRequiredType": "atLeastNumeric",
+  "passwordRequiredType": "deviceDefault",
   "requiredPasswordComplexity@odata.type": "#microsoft.graph.androidRequiredPasswordComplexity",
   "requiredPasswordComplexity": "none",
   "workProfileAllowAppInstallsFromUnknownSources": false,
@@ -78,26 +78,7 @@
   "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceConfigurations('a1dd1e60-7d2a-4150-a37a-960cd97cfd90')/microsoft.graph.androidWorkProfileGeneralDeviceConfiguration/assignments",
   "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('a1dd1e60-7d2a-4150-a37a-960cd97cfd90')/microsoft.graph.androidWorkProfileGeneralDeviceConfiguration/assignments/$ref",
   "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('a1dd1e60-7d2a-4150-a37a-960cd97cfd90')/microsoft.graph.androidWorkProfileGeneralDeviceConfiguration/assignments",
-  "assignments": [
-    {
-      "@odata.type": "#microsoft.graph.deviceConfigurationAssignment",
-      "@odata.id": "deviceManagement/deviceConfigurations('a1dd1e60-7d2a-4150-a37a-960cd97cfd90')/assignments('a1dd1e60-7d2a-4150-a37a-960cd97cfd90_64e2c8c6-de52-4eb4-a4a1-1f7b81d8c6fa')",
-      "@odata.editLink": "deviceManagement/deviceConfigurations('a1dd1e60-7d2a-4150-a37a-960cd97cfd90')/assignments('a1dd1e60-7d2a-4150-a37a-960cd97cfd90_64e2c8c6-de52-4eb4-a4a1-1f7b81d8c6fa')",
-      "id": "a1dd1e60-7d2a-4150-a37a-960cd97cfd90_64e2c8c6-de52-4eb4-a4a1-1f7b81d8c6fa",
-      "source@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentSource",
-      "source": "direct",
-      "sourceId": "a1dd1e60-7d2a-4150-a37a-960cd97cfd90",
-      "intent@odata.type": "#microsoft.graph.deviceConfigAssignmentIntent",
-      "intent": "apply",
-      "target": {
-        "@odata.type": "#microsoft.graph.groupAssignmentTarget",
-        "deviceAndAppManagementAssignmentFilterId": null,
-        "deviceAndAppManagementAssignmentFilterType@odata.type": "#microsoft.graph.deviceAndAppManagementAssignmentFilterType",
-        "deviceAndAppManagementAssignmentFilterType": "none",
-        "groupId": "64e2c8c6-de52-4eb4-a4a1-1f7b81d8c6fa"
-      }
-    }
-  ],
+  "assignments": [],
   "deviceSettingStateSummaries@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('a1dd1e60-7d2a-4150-a37a-960cd97cfd90')/microsoft.graph.androidWorkProfileGeneralDeviceConfiguration/deviceSettingStateSummaries/$ref",
   "deviceSettingStateSummaries@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('a1dd1e60-7d2a-4150-a37a-960cd97cfd90')/microsoft.graph.androidWorkProfileGeneralDeviceConfiguration/deviceSettingStateSummaries",
   "deviceStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('a1dd1e60-7d2a-4150-a37a-960cd97cfd90')/microsoft.graph.androidWorkProfileGeneralDeviceConfiguration/deviceStatuses/$ref",
