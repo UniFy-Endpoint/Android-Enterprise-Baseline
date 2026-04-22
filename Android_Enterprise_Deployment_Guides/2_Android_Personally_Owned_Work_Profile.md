@@ -12,7 +12,7 @@ This is the primary enrollment method for BYOD (Bring Your Own Device) scenarios
 
 ### Requirements
 
-* Compatible Android device running **Android 10.0 or later**.
+* Compatible Android device running **Android 13.0 or later** (required by the baseline compliance policy; devices below Android 13.0 will be marked non-compliant).
 * Devices must support Android Enterprise and carry **Play Protect certification**.
 * Android Enterprise must be available in your region.
 * An active **Managed Google Play** connection between your Intune tenant and Google (see Guide 1).

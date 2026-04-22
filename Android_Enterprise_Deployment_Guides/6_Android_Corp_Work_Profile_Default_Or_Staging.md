@@ -21,7 +21,7 @@ This model balances security and employee experience: corporate data is fully ma
 | **Device State on Delivery** | Factory reset — enrollment pending | Enrolled — Work Profile created, apps installed |
 | **Entra ID Group Type** | Assigned (static) — supports Enrollment Time Grouping | Dynamic — Enrollment Time Grouping not supported with staging tokens |
 
-> **Minimum OS version:** Android 8.0 or later is required for corporate-owned work profile enrollment.
+> **Minimum OS version:** Android 8.0 or later is required for corporate-owned work profile enrollment. The baseline compliance policy enforces **Android 13.0** as the minimum — devices below 13.0 will be marked non-compliant.
 >
 > **NFC enrollment limitation:** The `afw#setup` method and NFC enrollment are only supported on Android 8 through Android 10. They are **not available on Android 11 or later**. Use QR code enrollment for devices running Android 11 and above.
 

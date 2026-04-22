@@ -21,7 +21,7 @@ Intune supports two provisioning methods for fully managed devices: **Default (U
 | **Device State on Delivery** | Unenrolled — user completes enrollment | Enrolled and apps installed — user only signs in |
 | **Entra ID Group Type** | Assigned (static) — supports Enrollment Time Grouping | Dynamic — Enrollment Time Grouping not supported with staging tokens |
 
-> **Minimum OS version:** Android 10.0 or later is required for fully managed enrollment. Staging is also supported on Android 10 or later.
+> **Minimum OS version:** Android 10.0 or later is required for fully managed enrollment. Staging is also supported on Android 10 or later. The baseline compliance policy enforces **Android 13.0** as the minimum — devices below 13.0 will be marked non-compliant.
 
 ---
 
