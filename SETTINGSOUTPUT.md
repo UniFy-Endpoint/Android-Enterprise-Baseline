@@ -649,8 +649,8 @@ This document lists every Intune policy file included in the baseline with its k
 | :--- | :--- |
 | Display Name | CA209-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice |
 | State | Enabled |
-| Target enrollment | All corporate-enrolled Android devices |
-| Purpose | Require compliant device for all users accessing any cloud app from Android |
+| Target enrollment | All Intune-managed (enrolled) Android devices |
+| Purpose | Require compliant device for all users accessing any cloud app from an Intune-managed Android device |
 
 **Conditions**
 
@@ -662,6 +662,8 @@ This document lists every Intune policy file included in the baseline with its k
 | Excluded apps | Skype for Business (0000000a-...); Intune Enrollment (d4ebce55-...) |
 | Client app types | All |
 | Device platforms | Android |
+| Device filter mode | Include |
+| Device filter rule | `device.mdmAppId -eq "0000000a-0000-0000-c000-000000000000"` — Intune-managed devices only |
 
 **Grant Controls**
 
@@ -671,16 +673,16 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### CA212-User-Protection-AllUsers-AllApps-Android-Req-AppProtectionPolicy-BYOD
+### CA212-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | CA212-User-Protection-AllUsers-AllApps-Android-Req-AppProtectionPolicy-BYOD |
+| Display Name | CA212-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD |
 | State | Enabled |
-| Target enrollment | Personally-Owned / Unmanaged Android devices (BYOD) |
-| Purpose | Require App Protection Policy for BYOD users; exclude company-owned devices (covered by CA209) |
+| Target enrollment | Unmanaged Android devices (BYOD — no Intune enrollment) |
+| Purpose | Require App Protection Policy for unmanaged BYOD devices accessing Microsoft 365 apps; Intune-managed devices are excluded (covered by CA209) |
 
 **Conditions**
 
@@ -689,11 +691,11 @@ This document lists every Intune policy file included in the baseline with its k
 | Users | All users |
 | Excluded groups | CA212 exclusion group |
 | Excluded roles | 16 privileged admin roles (Global Admin, Intune Admin, Exchange Admin, and others) |
-| Target apps | All cloud apps |
+| Target apps | Microsoft 365 apps (Office365) |
 | Client app types | Mobile apps and desktop clients only |
 | Device platforms | Android |
 | Device filter mode | Exclude |
-| Device filter rule | `device.deviceOwnership -eq "Company"` — company-owned devices excluded |
+| Device filter rule | `device.mdmAppId -eq "0000000a-0000-0000-c000-000000000000"` — Intune-managed devices excluded; unmanaged BYOD devices targeted |
 
 **Grant Controls**
 

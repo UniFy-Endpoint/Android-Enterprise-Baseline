@@ -9,7 +9,7 @@
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2026-01-28T11:19:54.670101Z",
   "modifiedDateTime@odata.type": "#DateTimeOffset",
-  "modifiedDateTime": "2026-04-15T12:26:04.1922285Z",
+  "modifiedDateTime": "2026-04-24T10:12:42.1720148Z",
   "state@odata.type": "#microsoft.graph.conditionalAccessPolicyState",
   "state": "enabled",
   "deletedDateTime": null,
@@ -28,7 +28,6 @@
     "locations": null,
     "times": null,
     "deviceStates": null,
-    "devices": null,
     "clientApplications": null,
     "agents": null,
     "applications": {
@@ -78,6 +77,23 @@
       ],
       "excludePlatforms@odata.type": "#Collection(microsoft.graph.conditionalAccessDevicePlatform)",
       "excludePlatforms": []
+    },
+    "devices": {
+      "@odata.type": "#microsoft.graph.conditionalAccessDevices",
+      "includeDeviceStates@odata.type": "#Collection(String)",
+      "includeDeviceStates": [],
+      "excludeDeviceStates@odata.type": "#Collection(String)",
+      "excludeDeviceStates": [],
+      "includeDevices@odata.type": "#Collection(String)",
+      "includeDevices": [],
+      "excludeDevices@odata.type": "#Collection(String)",
+      "excludeDevices": [],
+      "deviceFilter": {
+        "@odata.type": "#microsoft.graph.conditionalAccessFilter",
+        "mode@odata.type": "#microsoft.graph.filterMode",
+        "mode": "include",
+        "rule": "device.mdmAppId -eq \"0000000a-0000-0000-c000-000000000000\""
+      }
     }
   },
   "grantControls": {

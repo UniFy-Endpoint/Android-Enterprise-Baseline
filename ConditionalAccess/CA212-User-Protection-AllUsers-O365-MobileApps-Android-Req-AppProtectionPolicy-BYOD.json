@@ -5,11 +5,11 @@
   "@odata.editLink": "identity/conditionalAccess/policies('bb19b550-319f-4edf-9122-0ddee34694c8')",
   "id": "bb19b550-319f-4edf-9122-0ddee34694c8",
   "templateId": null,
-  "displayName": "CA212-User-Protection-AllUsers-AllApps-Android-Req-AppProtectionPolicy-BYOD",
+  "displayName": "CA212-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD",
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2025-11-27T17:04:46.005725Z",
   "modifiedDateTime@odata.type": "#DateTimeOffset",
-  "modifiedDateTime": "2026-03-26T13:34:44.6887655Z",
+  "modifiedDateTime": "2026-04-24T12:47:55.7994196Z",
   "state@odata.type": "#microsoft.graph.conditionalAccessPolicyState",
   "state": "enabled",
   "deletedDateTime": null,
@@ -34,10 +34,13 @@
       "@odata.type": "#microsoft.graph.conditionalAccessApplications",
       "includeApplications@odata.type": "#Collection(String)",
       "includeApplications": [
-        "All"
+        "Office365"
       ],
       "excludeApplications@odata.type": "#Collection(String)",
-      "excludeApplications": [],
+      "excludeApplications": [
+        "0000000a-0000-0000-c000-000000000000",
+        "d4ebce55-015a-49b5-a083-c84d1797ae8c"
+      ],
       "includeUserActions@odata.type": "#Collection(String)",
       "includeUserActions": [],
       "includeAuthenticationContextClassReferences@odata.type": "#Collection(String)",
@@ -106,7 +109,7 @@
         "@odata.type": "#microsoft.graph.conditionalAccessFilter",
         "mode@odata.type": "#microsoft.graph.filterMode",
         "mode": "exclude",
-        "rule": "device.deviceOwnership -eq \"Company\""
+        "rule": "device.mdmAppId -eq \"0000000a-0000-0000-c000-000000000000\""
       }
     }
   },
