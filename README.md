@@ -195,6 +195,12 @@ All policy names in this baseline follow a structured naming pattern:
 
 ## Version history
 
+### v1.2 — April 2026
+
+- **Conditional Access — CA209:** Device filter added to scope policy to Intune-managed Android devices only; unmanaged devices are now handled exclusively by CA212
+- **Conditional Access — CA212:** Renamed and refined — scoped from All cloud apps to Microsoft 365 apps; device filter updated to exclude Intune-managed devices, ensuring only unmanaged BYOD devices are targeted
+- **Access model:** Users can now access Microsoft 365 apps from an unmanaged device protected by App Protection Policy (MAM), or enroll their personal device and access Microsoft 365 from a compliant managed device
+
 ### v1.1 — April 2026
 
 - **Policy refinements:** Removed some settings that do not apply to personally-owned work profile devices
