@@ -196,25 +196,15 @@ All policy names in this baseline follow a structured naming pattern:
 ## Version history
 
 ### v1.2 — April 2026
-
-- **Conditional Access — CA209:** Device filter added to scope policy to Intune-managed Android devices only; unmanaged devices are now handled exclusively by CA212
-- **Conditional Access — CA212:** Renamed and refined — scoped from All cloud apps to Microsoft 365 apps; device filter updated to exclude Intune-managed devices, ensuring only unmanaged BYOD devices are targeted
-- **Access model:** Users can now access Microsoft 365 apps from an unmanaged device protected by App Protection Policy (MAM), or enroll their personal device and access Microsoft 365 from a compliant managed device
+- Conditional Access: CA209 scoped to Intune-managed devices; CA212 refined for Microsoft 365 BYOD MAM only
 
 ### v1.1 — April 2026
-
-- **Policy refinements:** Removed some settings that do not apply to personally-owned work profile devices
-- **BYOD compliance policy:** Work profile password type updated to Numeric complex; minimum password length set to 6
-- **Documentation:** Clarified Company Portal role for BYOD — approval required for enrollment initiation only, not assigned as Required; Microsoft Intune app acts as the management agent post-enrollment
-- **Documentation:** Added explicit Settings Catalog limitation note to the BYOD work profile configuration guide
-- **Documentation:** Accuracy improvements across guides 2, 5, 6, 7, and the CIS hardening guide (12)
+- Compliance: hardware-backed SafetyNet, 5-min inactivity, push notifications on all policies
+- Dedicated devices: new Shared Mode config with auto sign-out; QR code auth app config added
+- Documentation sync and CIS hardening guide updates
 
 ### v1.0 — Initial release
-
-- Full baseline covering all major Android Enterprise enrollment types: Personally-Owned Work Profile, Dedicated Kiosk, Dedicated Shared, Fully Managed, Corporate-Owned Work Profile, and MAM
-- 27 Intune policy definitions across compliance, device restrictions (DC + SC), app configuration, app protection, and conditional access
-- 12 deployment and configuration guides (enrollment methods, security add-ons, supporting references)
-- 4 assignment filters, 1 enrollment restriction
+- Initial baseline for all major Android Enterprise enrollment types (compliance, device restrictions, app config, MAM, conditional access)
 
 ---
 
