@@ -32,7 +32,6 @@
   "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceAppManagement/mobileAppConfigurations('99979e3a-4e6f-40d3-b3f8-8ae7d3778a7d')/microsoft.graph.androidManagedStoreAppConfiguration/assignments",
   "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('99979e3a-4e6f-40d3-b3f8-8ae7d3778a7d')/microsoft.graph.androidManagedStoreAppConfiguration/assignments/$ref",
   "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('99979e3a-4e6f-40d3-b3f8-8ae7d3778a7d')/microsoft.graph.androidManagedStoreAppConfiguration/assignments",
-  "assignments": [],
   "deviceStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('99979e3a-4e6f-40d3-b3f8-8ae7d3778a7d')/microsoft.graph.androidManagedStoreAppConfiguration/deviceStatuses/$ref",
   "deviceStatuses@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('99979e3a-4e6f-40d3-b3f8-8ae7d3778a7d')/microsoft.graph.androidManagedStoreAppConfiguration/deviceStatuses",
   "deviceStatusSummary@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('99979e3a-4e6f-40d3-b3f8-8ae7d3778a7d')/microsoft.graph.androidManagedStoreAppConfiguration/deviceStatusSummary/$ref",

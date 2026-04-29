@@ -10,6 +10,8 @@ Intune supports two kiosk configurations for dedicated devices:
 - **Single-App Kiosk** — the device runs one app in full screen and nothing else is accessible.
 - **Multi-App Kiosk** — users can interact with a defined set of apps presented through the Managed Home Screen launcher.
 
+
+
 ---
 
 ### Token Types: Default vs. Shared Mode
@@ -37,7 +39,7 @@ Dedicated devices use **Enrollment Time Grouping** — the device is placed into
    * **Membership type:** Assigned
    * **Name:** `AND - DEV - Android-Corporate-Dedicated-Devices - Single-App - Kiosk`
      *or* `AND - DEV - Android-Corporate-Dedicated-Devices - Multi-App - Kiosk`
-   * **Description:** This group includes all Android Enterprise corporate-owned dedicated devices in kiosk mode.
+   * **Description:** This group includes all Android Enterprise Corporate-Owned Dedicated Devices in Single-App - Kiosk *(or Multi-App - Kiosk)*.
 
 2. **Assign Owner — this step is required for Enrollment Time Grouping to work.** Assign the **Intune Provisioning Client** service principal (App ID: `f1346770-5b25-470b-88bd-d5744ab7952c`) as the **Owner** of this group. Without this, the device will not be automatically placed into the group during enrollment.
 
@@ -51,7 +53,7 @@ Create a separate enrollment profile for each kiosk type (single-app or multi-ap
 3. Select **Create profile** and configure:
    * **Name:** `AND - Dedicated-Devices-Enrollment - Single-App - Kiosk`
      *or* `AND - Dedicated-Devices-Enrollment - Multi-App - Kiosk`
-   * **Description:** Enrollment token for Android Enterprise corporate-owned dedicated devices in single-app kiosk mode. *(or multi-app)*
+   * **Description:** Enrollment token for Android Enterprise Corporate-Owned Dedicated Devices in Single-App - Kiosk. *(or Multi-App - Kiosk)*
    * **Token type:** Corporate-owned dedicated device (Default).
    * **Token expiration date:** Set according to your lifecycle needs. Tokens can be set up to 65 years in the future (format: `MM/DD/YYYY` or `YYYY-MM-DD`).
    * **Apply device name template:** Yes.
@@ -80,12 +82,14 @@ Add the apps that should appear on the kiosk device.
 
 > **Note:** Only apps assigned as **Required** can be installed on dedicated devices. Apps not in the allowlist will not be accessible even if they appear in Managed Google Play.
 
+> **Important:** Make sure you deploy the Android **Managed Home Screen** App and assign it to the `AND - Dedicated-Devices-Enrollment - Multi-App - Kiosk` Microsoft Entra group. The **Managed Home Screen** App is require to be deployed as the launcher for the Multi-App - Kiosk Devices.
+
 
 #### 4. Compliance Policy
 
 Define minimum security requirements for the device to be considered compliant.
 
-1. Go to **Devices** > **Android** > **Compliance** > **Create policy**.
+1. **Import** the baseline JSON file for this compliance policy from the repository using the [IntuneManagement](https://github.com/Micke-K/IntuneManagement) tool or Microsoft Graph API. Once imported, review and adapt each setting to your organization's security requirements before assigning.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Fully managed, dedicated, and corporate-owned work profile.
 4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
@@ -103,9 +107,11 @@ Define minimum security requirements for the device to be considered compliant.
 
 #### 5. Configuration Profile — Single-App Kiosk
 
+> **Note:** To alllow users to sign in on Microsoft 365 apps (Outlook, Teams, Edge) on an Android Dedicated device, you must use Single-App Kiosk Mode or Shared Device Mode. These apps require a "Broker" (Microsoft Authenticator) to handle the login. In a strict Single-App Kiosk, the system blocks the Authenticator from appearing.
+
 Locks the device to one specific app running in full screen. No other app or system UI is accessible.
 
-1. Go to **Devices** > **Android** > **Configuration** > **Create**.
+1. **Import** the baseline JSON file for this configuration profile from the repository using the [IntuneManagement](https://github.com/Micke-K/IntuneManagement) tool or Microsoft Graph API. Once imported, review and adapt each setting to your organization's requirements.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Templates > **Device restrictions** (Fully Managed, Dedicated, and Corporate-Owned Work Profile).
 4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
@@ -113,16 +119,16 @@ Locks the device to one specific app running in full screen. No other app or sys
 6. Navigate to **Settings** > **Device Experience**:
    * **Enrollment type:** Dedicated device.
    * **Kiosk mode:** Single app.
-   * **Select app:** Choose the kiosk app (e.g., Microsoft Edge).
+   * **Select an app to use for kiosk mode:** > Choose the kiosk app (e.g., Microsoft Edge). 
 7. **Assignments:** Assign to the Entra ID group created in Step 1.
 8. **Create**.
 
 
 #### 6. Configuration Profile — Multi-App Kiosk
 
-Presents a curated launcher with a defined set of apps. Requires the **Managed Home Screen** app to be deployed as the launcher.
+Managed Home Screen must be previously configured as the device launcher for Multi-App - Kiosk mode to function.
 
-1. Go to **Devices** > **Android** > **Configuration** > **Create**.
+1. **Import** the baseline JSON file for this configuration profile from the repository using the [IntuneManagement](https://github.com/Micke-K/IntuneManagement) tool or Microsoft Graph API. Once imported, review and adapt each setting to your organization's requirements.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Templates > **Device restrictions** (Fully Managed, Dedicated, and Corporate-Owned Work Profile).
 4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
@@ -138,7 +144,6 @@ Presents a curated launcher with a defined set of apps. Requires the **Managed H
 
 > **Managed Home Screen — additional configuration:** The Device Restrictions policy above configures core kiosk behavior (launcher mode, app grid). For more granular control — such as wallpaper, session timeout, sign-in method, accessibility options, or virtual navigation buttons — deploy a dedicated **App Configuration Policy** targeting the Managed Home Screen app (`com.microsoft.launcher.enterprise`). Use the Configuration Designer with **Managed devices** and assign it to the same device group. See [Guide 10 — Managed Home Screen](10_Android_Managed_Home_Screen.md) for full configuration details.
 >
-> **Note:** As of the Intune August 2024 (2408) service release, Managed Home Screen is also supported on **Fully Managed** devices, in addition to Dedicated devices.
 
 ---
 

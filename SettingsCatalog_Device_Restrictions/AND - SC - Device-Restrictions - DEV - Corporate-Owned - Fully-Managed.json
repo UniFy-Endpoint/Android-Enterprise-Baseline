@@ -8,7 +8,7 @@
   "creationSource": null,
   "description": "Device Restrictions Settings for Android Enterprise Corporate-Owned Fully Managed Devices.",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
-  "lastModifiedDateTime": "2026-04-20T13:23:26.6082779Z",
+  "lastModifiedDateTime": "2026-04-28T14:08:59.6001506Z",
   "name": "AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed",
   "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
   "platforms": "androidEnterprise",
@@ -17,7 +17,7 @@
   "roleScopeTagIds": [
     "0"
   ],
-  "settingCount": 32,
+  "settingCount": 30,
   "technologies@odata.type": "#microsoft.graph.deviceManagementConfigurationTechnologies",
   "technologies": "android",
   "id": "89227b04-0532-48a8-a6ed-210a5667a2a6",
@@ -130,7 +130,7 @@
         "simpleSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
           "settingValueTemplateReference": null,
-          "value": 11
+          "value": 10
         }
       },
       "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('4')/settingDefinitions/$ref",
@@ -329,7 +329,7 @@
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.bluetoothblockconfiguration_true",
+          "value": "com.android.devicerestrictionpolicy.bluetoothblockconfiguration_false",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -344,13 +344,13 @@
       "id": "14",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.bluetoothblockcontactsharing",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.datetimeconfigurationblocked",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.bluetoothblockcontactsharing_true",
+          "value": "com.android.devicerestrictionpolicy.datetimeconfigurationblocked_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -365,13 +365,13 @@
       "id": "15",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.datetimeconfigurationblocked",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.factoryresetblocked",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.datetimeconfigurationblocked_true",
+          "value": "com.android.devicerestrictionpolicy.factoryresetblocked_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -386,13 +386,13 @@
       "id": "16",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.factoryresetblocked",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.locationmode",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.factoryresetblocked_true",
+          "value": "com.android.devicerestrictionpolicy.locationmode_notconfigured",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -407,13 +407,13 @@
       "id": "17",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.locationmode",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.storageblockexternalmedia",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.locationmode_notconfigured",
+          "value": "com.android.devicerestrictionpolicy.storageblockexternalmedia_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -428,13 +428,13 @@
       "id": "18",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.storageblockexternalmedia",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.dataroamingblocked",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.storageblockexternalmedia_true",
+          "value": "com.android.devicerestrictionpolicy.dataroamingblocked_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -449,13 +449,13 @@
       "id": "19",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.privatespacepolicy",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.screencaptureblocked",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.privatespacepolicy_disallowed",
+          "value": "com.android.devicerestrictionpolicy.screencaptureblocked_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -470,13 +470,13 @@
       "id": "20",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.dataroamingblocked",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.cellularblockwifitethering",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.dataroamingblocked_true",
+          "value": "com.android.devicerestrictionpolicy.cellularblockwifitethering_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -491,13 +491,13 @@
       "id": "21",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.screencaptureblocked",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.wifidirectsettings",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.screencaptureblocked_true",
+          "value": "com.android.devicerestrictionpolicy.wifidirectsettings_disallowed",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -512,13 +512,13 @@
       "id": "22",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.cellularblockwifitethering",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.wifiblockeditpolicydefinedconfigurations",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.cellularblockwifitethering_true",
+          "value": "com.android.devicerestrictionpolicy.wifiblockeditpolicydefinedconfigurations_false",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -533,13 +533,13 @@
       "id": "23",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.wifidirectsettings",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.appsdefaultpermissionpolicy",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.wifidirectsettings_disallowed",
+          "value": "com.android.devicerestrictionpolicy.appsdefaultpermissionpolicy_prompt",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -554,13 +554,13 @@
       "id": "24",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.wifiblockeditpolicydefinedconfigurations",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.appsrecommendskippingfirstusehints",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.wifiblockeditpolicydefinedconfigurations_true",
+          "value": "com.android.devicerestrictionpolicy.appsrecommendskippingfirstusehints_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -575,13 +575,13 @@
       "id": "25",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.appsdefaultpermissionpolicy",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.usbdataaccess",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.appsdefaultpermissionpolicy_prompt",
+          "value": "com.android.devicerestrictionpolicy.usbdataaccess_disallowusbdatatransfer",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -596,13 +596,13 @@
       "id": "26",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.appsrecommendskippingfirstusehints",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.securitycommoncriteriamodeenabled",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.appsrecommendskippingfirstusehints_true",
+          "value": "com.android.devicerestrictionpolicy.securitycommoncriteriamodeenabled_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -617,13 +617,13 @@
       "id": "27",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.usbdataaccess",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.securityrequireverifyapps",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.usbdataaccess_disallowusbdatatransfer",
+          "value": "com.android.devicerestrictionpolicy.securityrequireverifyapps_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -638,13 +638,13 @@
       "id": "28",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.securitycommoncriteriamodeenabled",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.accountsblockmodification",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.securitycommoncriteriamodeenabled_true",
+          "value": "com.android.devicerestrictionpolicy.accountsblockmodification_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -659,48 +659,6 @@
       "id": "29",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.securityrequireverifyapps",
-        "settingInstanceTemplateReference": null,
-        "auditRuleInformation": null,
-        "choiceSettingValue": {
-          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
-          "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.securityrequireverifyapps_true",
-          "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
-          "children": []
-        }
-      },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('29')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('29')/settingDefinitions"
-    },
-    {
-      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('30')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('30')",
-      "id": "30",
-      "settingInstance": {
-        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.accountsblockmodification",
-        "settingInstanceTemplateReference": null,
-        "auditRuleInformation": null,
-        "choiceSettingValue": {
-          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
-          "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.accountsblockmodification_true",
-          "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
-          "children": []
-        }
-      },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('30')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('30')/settingDefinitions"
-    },
-    {
-      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('31')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('31')",
-      "id": "31",
-      "settingInstance": {
-        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.certificatecredentialconfigurationdisabled",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
@@ -712,8 +670,8 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('31')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('31')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('29')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('89227b04-0532-48a8-a6ed-210a5667a2a6')/settings('29')/settingDefinitions"
     }
   ],
   "#microsoft.graph.assign": {

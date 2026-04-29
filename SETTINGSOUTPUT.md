@@ -1,6 +1,6 @@
 # Android Enterprise Baseline — Settings Output
 
-Baseline version: **1.0** | Last updated: **2026-04-20** | Author: **Yoennis Olmo (UniFy-Endpoint)**
+Baseline version: **1.1** | Last updated: **2026-04-29** | Author: **Yoennis Olmo (UniFy-Endpoint)**
 
 This document lists every Intune policy file included in the baseline with its key configuration settings, target enrollment type, and group assignments.
 
@@ -35,7 +35,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Dedicated Devices in Kiosk Mode |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Dedicated / Kiosk (Single-App + Multi-App) |
-| Noncompliance action | Block access after 24-hour grace period |
+| Noncompliance action | Block access after 24-hour grace period; push notification on detection |
 
 **Settings**
 
@@ -45,12 +45,12 @@ This document lists every Intune policy file included in the baseline with its k
 | Password required | Yes |
 | Password type | Numeric complex |
 | Minimum password length | 6 |
-| Inactivity before screen lock | 15 minutes |
+| Inactivity before screen lock | 5 minutes |
 | Password expiration | 365 days |
 | Previous passwords blocked | 5 |
 | Block rooted / jailbroken devices | Yes |
 | SafetyNet Basic Integrity | Required |
-| SafetyNet evaluation type | Basic |
+| SafetyNet evaluation type | Hardware Backed |
 | Device threat protection enabled | No |
 | Storage encryption | Required |
 | Intune app integrity | Required |
@@ -68,7 +68,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Dedicated / Shared (Multi-App Managed Home Screen) |
-| Noncompliance action | Block access after 24-hour grace period |
+| Noncompliance action | Block access after 24-hour grace period; push notification on detection |
 
 **Settings**
 
@@ -78,12 +78,12 @@ This document lists every Intune policy file included in the baseline with its k
 | Password required | Yes |
 | Password type | Numeric complex |
 | Minimum password length | 6 |
-| Inactivity before screen lock | 15 minutes |
+| Inactivity before screen lock | 5 minutes |
 | Password expiration | 365 days |
 | Previous passwords blocked | 5 |
 | Block rooted / jailbroken devices | Yes |
 | SafetyNet Basic Integrity | Required |
-| SafetyNet evaluation type | Basic |
+| SafetyNet evaluation type | Hardware Backed |
 | Device threat protection enabled | No |
 | Storage encryption | Required |
 | Intune app integrity | Required |
@@ -101,7 +101,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Fully Managed Devices |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Fully Managed (Default + Staging) |
-| Noncompliance action | Block access after 24-hour grace period |
+| Noncompliance action | Block access after 24-hour grace period; push notification on detection |
 
 **Settings**
 
@@ -111,12 +111,12 @@ This document lists every Intune policy file included in the baseline with its k
 | Password required | Yes |
 | Password type | Numeric complex |
 | Minimum password length | 6 |
-| Inactivity before screen lock | 15 minutes |
+| Inactivity before screen lock | 5 minutes |
 | Password expiration | 365 days |
 | Previous passwords blocked | 5 |
 | Block rooted / jailbroken devices | Yes |
 | SafetyNet Basic Integrity | Required |
-| SafetyNet evaluation type | Basic |
+| SafetyNet evaluation type | Hardware Backed |
 | Device threat protection enabled | No |
 | Storage encryption | Required |
 | Intune app integrity | Required |
@@ -134,7 +134,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Work-Profile Devices |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
-| Noncompliance action | Block access after 24-hour grace period |
+| Noncompliance action | Block access after 24-hour grace period; push notification on detection |
 
 **Settings**
 
@@ -144,12 +144,12 @@ This document lists every Intune policy file included in the baseline with its k
 | Password required | Yes |
 | Password type | Numeric complex |
 | Minimum password length | 6 |
-| Inactivity before screen lock | 15 minutes |
+| Inactivity before screen lock | 5 minutes |
 | Password expiration | 365 days |
 | Previous passwords blocked | 5 |
 | Block rooted / jailbroken devices | Yes |
 | SafetyNet Basic Integrity | Required |
-| SafetyNet evaluation type | Basic |
+| SafetyNet evaluation type | Hardware Backed |
 | Device threat protection enabled | No |
 | Storage encryption | Required |
 | Intune app integrity | Required |
@@ -167,7 +167,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Description | This compliance policy applies to Android Enterprise BYOD Personally-Owned Work-Profile users. |
 | Profile type | androidWorkProfileCompliancePolicy |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
-| Noncompliance action | Block access after 24-hour grace period |
+| Noncompliance action | Block access after 24-hour grace period; push notification on detection |
 
 **Settings**
 
@@ -188,8 +188,8 @@ This document lists every Intune policy file included in the baseline with its k
 | Work profile inactivity before screen lock | Not configured |
 | Block rooted / jailbroken devices | Yes |
 | SafetyNet Basic Integrity | Required |
-| SafetyNet Certified Device (Play Protect) | Not required |
-| SafetyNet evaluation type | Basic |
+| SafetyNet Certified Device (Play Protect) | Required |
+| SafetyNet evaluation type | Hardware Backed |
 | Device threat protection enabled | No |
 | Storage encryption | Required |
 | Require Google Play Services | Yes |
@@ -221,28 +221,32 @@ This document lists every Intune policy file included in the baseline with its k
 | Setting | Value |
 | :--- | :--- |
 | Camera blocked | Not blocked (Allowed) |
-| Bluetooth configuration by user | Not configured |
+| Bluetooth configuration by user | Blocked |
 | Bluetooth contact sharing | Not configured |
 | Certificate credential configuration | Disabled — users cannot manually install certificates |
 | Google accounts | Blocked |
 | Account modification | Blocked |
 | Factory reset by user | Blocked |
-| Wi-Fi configuration editing | Blocked |
+| Wi-Fi configuration editing | Not blocked |
 | Wi-Fi policy-defined config editing | Blocked |
 | Play Store mode | AllowList — only MGP-approved apps available |
 | Apps auto-update | Always |
-| Apps default permission policy | Auto-grant all permissions |
-| **PIN failures before factory reset** | **5 — see CIS Hardening Guide Section 6, W-1** |
+| Apps default permission policy | Device Default |
+| **PIN failures before factory reset** | **10 — see CIS Hardening Guide W-1** |
 | Screen timeout (inactivity) | 1 minute |
 | Require unlock | Daily (biometric handles subsequent unlocks) |
-| Data roaming | Blocked |
+| Data roaming | Not blocked in DC — enforced by SC FM policy |
 | External storage (SD cards / USB) | Blocked |
-| Screen capture | Not configured |
+| Screen capture | Blocked |
+| NFC outgoing beam | Blocked |
+| Security Common Criteria Mode | Enabled (Samsung Knox only — see CIS Hardening Guide W-25) |
+| Locate device (Lost Mode) | Enabled |
+| Device owner lock screen message | Configured |
 | System update type | Windowed |
 | Update window start | 00:00 (midnight) |
 | Update window end | 06:00 (360 minutes after midnight) |
 | Network escape hatch | Not configured |
-| USB file transfer | Not configured |
+| USB file transfer | Blocked |
 
 ---
 
@@ -261,15 +265,19 @@ This document lists every Intune policy file included in the baseline with its k
 
 | Setting | Value |
 | :--- | :--- |
-| Data roaming | Allowed |
+| Data roaming | Blocked |
 | Cross-profile data sharing | Work → Personal blocked; Personal → Work allowed |
+| Cross-profile show work contacts in personal profile | Blocked |
 | Certificate credential configuration | Disabled — users cannot manually install certificates |
 | Bluetooth contact sharing | Blocked |
 | Apps auto-update | Always |
-| Screen capture | Not configured |
+| Play Store mode | AllowList — only MGP-approved apps available |
+| Screen capture | Blocked |
+| NFC outgoing beam | Blocked |
 | Account modification | Not configured |
 | Factory reset by user | Not configured |
 | Google accounts | Not configured |
+| Locate device (Lost Mode) | Enabled |
 
 ---
 
@@ -288,13 +296,31 @@ This document lists every Intune policy file included in the baseline with its k
 
 | Setting | Value |
 | :--- | :--- |
-| Enrollment profile mode | dedicatedDevice |
-| Apps auto-update | Always |
+| Enrollment profile mode | Dedicated device |
+| Kiosk mode | Single-app |
+| Account modification | Blocked |
 | Apps default permission policy | Auto-grant all permissions |
-| Account modification | Not configured |
-| Camera | Not configured |
-| Bluetooth configuration | Not configured |
-| Certificate credential configuration | Not configured |
+| Camera | Not blocked |
+| Bluetooth configuration | Not blocked |
+| Screen capture | Blocked |
+| External storage (SD cards / USB) | Blocked |
+| USB file transfer | Blocked |
+| Wi-Fi tethering | Blocked |
+| Data roaming | Blocked |
+| Date/time configuration | Blocked |
+| Factory reset by user | Blocked |
+| Google accounts | Blocked |
+| Users — add / remove | Blocked |
+| System update type | Windowed |
+| Update window start | 00:00 (midnight) |
+| Update window end | 06:00 (360 minutes after midnight) |
+| Network escape hatch | Allowed (enrollment fallback) |
+| Password type | Numeric complex |
+| Minimum password length | 6 |
+| Password expiration | 365 days |
+| Previous passwords blocked | 5 |
+| PIN failures before factory reset | 10 |
+| Keyguard features blocked | Camera; notifications; remote input |
 
 ---
 
@@ -313,38 +339,89 @@ This document lists every Intune policy file included in the baseline with its k
 
 | Setting | Value |
 | :--- | :--- |
-| Enrollment profile mode | dedicatedDevice |
+| Enrollment profile mode | Dedicated device |
+| Kiosk mode | Multi-app (Managed Home Screen) |
 | Account modification | Blocked |
-| Apps auto-update | Always |
 | Apps default permission policy | Auto-grant all permissions |
-| Camera | Not configured |
-| Bluetooth configuration | Not configured |
-| Certificate credential configuration | Not configured |
+| Camera | Not blocked |
+| Bluetooth configuration | Not blocked |
+| Screen capture | Blocked |
+| External storage (SD cards / USB) | Blocked |
+| USB file transfer | Blocked |
+| Wi-Fi tethering | Blocked |
+| Data roaming | Blocked |
+| Date/time configuration | Blocked |
+| Factory reset by user | Blocked |
+| Google accounts | Blocked |
+| Users — add / remove | Blocked |
+| System update type | Windowed |
+| Update window start | 00:00 (midnight) |
+| Update window end | 06:00 (360 minutes after midnight) |
+| Network escape hatch | Allowed (enrollment fallback) |
+| Password type | Numeric complex |
+| Minimum password length | 6 |
+| Password expiration | 365 days |
+| Previous passwords blocked | 5 |
+| PIN failures before factory reset | 10 |
+| Keyguard features blocked | Camera; notifications; remote input |
+| Kiosk exit code | Configured |
+| Kiosk grid layout | 5 rows × 4 columns |
+| Kiosk screen orientation | Auto-rotate |
+| Kiosk status bar | System info only |
+| Kiosk system error warnings | Enabled |
+| Kiosk apps (8) | Outlook, Teams, OneDrive, SharePoint, Edge, Authenticator, Intune, Managed Home Screen |
 
 ---
 
-### AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Shared
+### AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Shared |
-| Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Managed Home Screen Shared Devices |
+| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared |
+| Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode (Managed Home Screen) |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
-| Target enrollment | Dedicated / Multi-App Shared (Managed Home Screen) |
+| Target enrollment | Dedicated / Shared (Managed Home Screen with auto sign-out) |
 
 **Settings**
 
 | Setting | Value |
 | :--- | :--- |
-| Enrollment profile mode | dedicatedDevice |
-| Account modification | Not configured |
-| Apps auto-update | Always |
+| Enrollment profile mode | Dedicated device |
+| Kiosk mode | Multi-app (Managed Home Screen) |
+| Account modification | Blocked |
 | Apps default permission policy | Auto-grant all permissions |
-| Camera | Not configured |
-| Bluetooth configuration | Not configured |
-| Certificate credential configuration | Not configured |
+| Camera | Not blocked |
+| Bluetooth configuration | Not blocked |
+| Screen capture | Blocked |
+| External storage (SD cards / USB) | Blocked |
+| USB file transfer | Blocked |
+| Wi-Fi tethering | Blocked |
+| Data roaming | Blocked |
+| Date/time configuration | Blocked |
+| Factory reset by user | Blocked |
+| Google accounts | Blocked |
+| Users — add / remove | Blocked |
+| System update type | Windowed |
+| Update window start | 00:00 (midnight) |
+| Update window end | 06:00 (360 minutes after midnight) |
+| Network escape hatch | Allowed (enrollment fallback) |
+| Password type | Numeric complex |
+| Minimum password length | 6 |
+| Password expiration | 365 days |
+| Previous passwords blocked | 5 |
+| PIN failures before factory reset | 10 |
+| Keyguard features blocked | Camera; notifications; remote input |
+| MHS sign-in enabled | Yes |
+| MHS auto sign-out | Enabled — 300 seconds inactive (60-second warning) |
+| Kiosk exit code | Configured |
+| Kiosk grid layout | 5 rows × 4 columns |
+| Kiosk icon size | Large |
+| Kiosk screen orientation | Auto-rotate |
+| Kiosk status bar | System info only |
+| Kiosk system error warnings | Enabled |
+| Kiosk apps (8) | Authenticator, Edge, OneDrive, Outlook, SharePoint, Teams, Intune, Managed Home Screen |
 
 ---
 
@@ -365,14 +442,14 @@ This document lists every Intune policy file included in the baseline with its k
 | :--- | :--- |
 | Work profile default app permission policy | Prompt |
 | Work profile data sharing | Personal → Work allowed |
-| Block unified device/work profile password | Not blocked — see CIS Hardening Guide Section 6, W-11 |
+| Block unified device/work profile password | Not blocked — see CIS Hardening Guide W-11 |
 | Work profile password type | Numeric complex |
 | Work profile minimum password length | 6 |
 | Work profile inactivity before screen timeout | 5 minutes |
 | Work profile previous passwords blocked | 5 |
 | Work profile password expiration | 365 days |
 | PIN failures before factory reset (device) | Not configured |
-| PIN failures before factory reset (work profile) | 11 |
+| PIN failures before factory reset (work profile) | 10 |
 | Work profile camera | Not blocked |
 | Work profile screen capture | Blocked |
 | Work profile cross-profile copy/paste | Blocked |
@@ -442,19 +519,20 @@ This document lists every Intune policy file included in the baseline with its k
 | Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
 | Platform | androidEnterprise |
 | Target enrollment | Fully Managed (Default + Staging) |
-| Total settings configured | 31 |
+| Total settings configured | 30 |
 
 **Key Settings**
 
 | Setting | Value |
 | :--- | :--- |
-| Camera | Blocked inconsistent with DC template (Allowed) — see CIS Hardening Guide Section 6, W-12 |
-| Bluetooth configuration by user | Blocked inconsistent with DC template (null) — see CIS Hardening Guide Section 6, W-3 |
-| Network escape hatch | Disabled — see CIS Hardening Guide Section 6, W-4 |
+| Camera | Not blocked (consistent with DC FM) |
+| Bluetooth configuration by user | Blocked (consistent with DC FM — see CIS Hardening Guide W-3, Resolved) |
+| Network escape hatch | Disabled — see CIS Hardening Guide W-4 |
 | System update type | Windowed |
-| Apps default permission policy | Device default |
+| Apps default permission policy | Prompt |
+| Security Common Criteria Mode | Enabled (Samsung Knox only — see CIS Hardening Guide W-25) |
 
-> **This policy is assigned to the same Fully Managed device groups as the DC template. Camera and Bluetooth values conflict. See CIS Hardening Guide Section 6, W-12.**
+> **This policy is assigned to the same Fully Managed device groups as the DC template. When settings overlap, Intune applies the most restrictive value. Review all overlapping settings before deployment.**
 
 ---
 
@@ -469,7 +547,16 @@ This document lists every Intune policy file included in the baseline with its k
 | Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
 | Platform | androidEnterprise |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
-| Total settings configured | 32 |
+| Total settings configured | 34 |
+
+**Additional Key Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Private Space Policy | Disallowed |
+| WiFi Direct Settings | Disallowed |
+| Cross-profile copy/paste | Blocked |
+| Cross-profile data sharing | Work → Personal blocked |
 
 ---
 
@@ -574,6 +661,26 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
+### AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication |
+| Description | Configures Microsoft Authenticator to use QR code + PIN authentication on shared dedicated devices |
+| Target app | Microsoft Authenticator — com.azure.authenticator |
+| Profile applicability | androidDeviceOwner (corporate-enrolled devices) |
+| Target enrollment | Dedicated / Shared (Managed Home Screen) |
+
+**Settings**
+
+| Setting | Key | Value |
+| :--- | :--- | :--- |
+| Preferred authentication method | preferred_auth_config | qrpin (QR code + PIN) |
+
+---
+
 ## App Protection Policies (MAM)
 
 ---
@@ -630,7 +737,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Offline grace period (wipe data) | 90 days |
 | Minimum required OS version | 13.0 |
 | SafetyNet device attestation | Basic Integrity and Device Certification (action: block) |
-| SafetyNet evaluation type | Basic |
+| SafetyNet evaluation type | Hardware Backed |
 | Device passcode complexity | Low minimum (action: block) |
 | Mobile threat defense level | Not configured |
 | Action if device noncompliant | Block |
@@ -690,7 +797,7 @@ This document lists every Intune policy file included in the baseline with its k
 | :--- | :--- |
 | Users | All users |
 | Excluded groups | CA212 exclusion group |
-| Excluded roles | 16 privileged admin roles (Global Admin, Intune Admin, Exchange Admin, and others) |
+| Excluded roles | 16 privileged admin roles (Global Admin, Intune Admin, Exchange Admin, and others — break-glass and admin accounts are excluded) |
 | Target apps | Microsoft 365 apps (Office365) |
 | Client app types | Mobile apps and desktop clients only |
 | Device platforms | Android |
@@ -753,9 +860,9 @@ See [9_Android_Enrollment_Restrictions.md](Android_Enterprise_Deployment_Guides/
 | Compliance Policies | 5 |
 | Device Config — DC Template | 7 (5 restriction + 2 MDE VPN) |
 | Device Config — Settings Catalog | 2 |
-| App Configuration Policies | 4 |
+| App Configuration Policies | 5 |
 | App Protection Policies (MAM) | 1 |
 | Conditional Access Policies | 2 |
 | Assignment Filters | 4 |
 | Enrollment Restrictions | 1 |
-| **Total** | **26** |
+| **Total** | **27** |

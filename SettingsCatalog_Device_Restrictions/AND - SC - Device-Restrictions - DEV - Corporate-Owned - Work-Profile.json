@@ -8,7 +8,7 @@
   "creationSource": null,
   "description": "Device Restrictions Settings for Android Enterprise Corporate-Owned with Work-Profile-Devices.",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
-  "lastModifiedDateTime": "2026-04-20T13:23:15.9899586Z",
+  "lastModifiedDateTime": "2026-04-27T11:23:38.0640019Z",
   "name": "AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile",
   "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
   "platforms": "androidEnterprise",
@@ -32,7 +32,6 @@
   "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/assignments",
   "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/assignments/$ref",
   "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/assignments",
-  "assignments": [],
   "settings@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings",
   "settings@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings/$ref",
   "settings@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings",
@@ -130,7 +129,7 @@
         "simpleSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
           "settingValueTemplateReference": null,
-          "value": 11
+          "value": 10
         }
       },
       "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('4')/settingDefinitions/$ref",
@@ -350,7 +349,7 @@
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.bluetoothblockconfiguration_true",
+          "value": "com.android.devicerestrictionpolicy.bluetoothblockconfiguration_false",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -602,7 +601,7 @@
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.wifiblockeditpolicydefinedconfigurations_true",
+          "value": "com.android.devicerestrictionpolicy.wifiblockeditpolicydefinedconfigurations_false",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }

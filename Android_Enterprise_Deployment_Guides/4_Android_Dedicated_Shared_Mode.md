@@ -32,7 +32,7 @@ Shared mode devices use **Enrollment Time Grouping**, so the device is placed in
    * **Group type:** Security
    * **Membership type:** Assigned
    * **Name:** `AND - DEV - Android-Corporate-Dedicated-Devices - Shared`
-   * **Description:** This group includes all Android Enterprise corporate-owned dedicated devices in Shared Mode.
+   * **Description:** This group includes all Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode.
 
 2. **Assign Owner — this step is required.** Assign the **Intune Provisioning Client** service principal (App ID: `f1346770-5b25-470b-88bd-d5744ab7952c`) as the **Owner** of this group. Without this, Enrollment Time Grouping will not function and the device will not be placed in the group automatically.
 
@@ -43,7 +43,7 @@ Shared mode devices use **Enrollment Time Grouping**, so the device is placed in
 2. Select **Corporate-owned dedicated devices**.
 3. Select **Create profile** and configure:
    * **Name:** `AND - Dedicated-Devices-Enrollment - Shared`
-   * **Description:** Enrollment token for Android Enterprise corporate-owned dedicated devices in Shared Mode.
+   * **Description:** Enrollment token for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode.
    * **Token type:** Corporate-owned dedicated device with Microsoft Entra shared mode.
    * **Token expiration date:** Set according to your lifecycle needs. Tokens can be set up to 65 years in the future (format: `MM/DD/YYYY` or `YYYY-MM-DD`).
    * **Apply device name template:** Yes.
@@ -66,14 +66,16 @@ Shared mode devices use **Enrollment Time Grouping**, so the device is placed in
 
 > **Note:** Ensure all deployed apps support Microsoft Entra Shared Device Mode. Apps that do not support shared mode will retain session data between users and must not be deployed to shared devices.
 
+> **Important:** Make sure you deploy the Android **Managed Home Screen** App and assign it to the `AND - DEV - Android-Corporate-Dedicated-Devices - Shared` Microsoft Entra group. The **Managed Home Screen** App is require to be deployed as the launcher for the Shared Devices.
+
 
 #### 4. Compliance Policy
 
-1. Go to **Devices** > **Android** > **Compliance** > **Create policy**.
+1. **Import** the baseline JSON file for this compliance policy from the repository using the [IntuneManagement](https://github.com/Micke-K/IntuneManagement) tool or Microsoft Graph API. Once imported, review and adapt each setting to your organization's security requirements before assigning.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Fully managed, dedicated, and corporate-owned work profile.
 4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
-5. **Description:** Compliance policy for Android Enterprise corporate-owned dedicated devices in Shared Mode.
+5. **Description:** Compliance policy for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode.
 6. **Compliance settings:** Adapt and configure each setting to your organization's requirements after importing the baseline JSON file.
 
 > **Security baseline note:** The compliance settings in the imported JSON are grounded in the [Android CIS Benchmarks](https://www.cisecurity.org/benchmark/google_android) and Microsoft's [Android Enterprise security configuration framework](https://learn.microsoft.com/en-us/mem/intune/enrollment/android-configuration-framework). Review and adapt all settings to your organization's requirements before deploying.
@@ -87,13 +89,13 @@ Shared mode devices use **Enrollment Time Grouping**, so the device is placed in
 
 #### 5. Configuration Profile
 
-Managed Home Screen must be configured as the device launcher for shared mode to function. The Device Restrictions policy sets this up.
+Managed Home Screen must be previously configured as the device launcher for Shared-Mode to function.
 
-1. Go to **Devices** > **Android** > **Configuration** > **Create**.
+1. **Import** the baseline JSON file for this configuration profile from the repository using the [IntuneManagement](https://github.com/Micke-K/IntuneManagement) tool or Microsoft Graph API. Once imported, review and adapt each setting to your organization's requirements.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Templates > **Device restrictions** (Fully Managed, Dedicated, and Corporate-Owned Work Profile).
 4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
-5. **Description:** Device restrictions for Android Enterprise corporate-owned dedicated devices in Shared Mode.
+5. **Description:** Device restrictions for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode.
 6. Navigate to **Settings** > **Device Experience** and adapt settings after importing the baseline JSON file:
    * **Device experience type:** Kiosk mode (dedicated and fully managed).
    * **Kiosk mode:** Multi-app.

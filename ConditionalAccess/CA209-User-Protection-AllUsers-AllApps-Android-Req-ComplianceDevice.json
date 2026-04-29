@@ -9,7 +9,7 @@
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2026-01-28T11:19:54.670101Z",
   "modifiedDateTime@odata.type": "#DateTimeOffset",
-  "modifiedDateTime": "2026-04-24T10:12:42.1720148Z",
+  "modifiedDateTime": "2026-04-29T12:49:43.2106988Z",
   "state@odata.type": "#microsoft.graph.conditionalAccessPolicyState",
   "state": "enabled",
   "deletedDateTime": null,

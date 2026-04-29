@@ -5,7 +5,7 @@
   "@odata.editLink": "deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration",
   "id": "2067715d-11fa-4330-a70b-4b33b0af18a2",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
-  "lastModifiedDateTime": "2026-04-20T13:24:25.7892651Z",
+  "lastModifiedDateTime": "2026-04-29T13:48:16.8182027Z",
   "roleScopeTagIds@odata.type": "#Collection(String)",
   "roleScopeTagIds": [
     "0"
@@ -16,16 +16,16 @@
   "deviceManagementApplicabilityRuleDeviceMode": null,
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2026-01-16T09:53:17.6229361Z",
-  "description": "Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned-Dedicated Managed Home Screen Shared Devices.",
-  "displayName": "AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Shared",
-  "version": 23,
-  "accountsBlockModification": null,
+  "description": "Device restrictions for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode.",
+  "displayName": "AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared",
+  "version": 61,
+  "accountsBlockModification": true,
   "appsAllowInstallFromUnknownSources": null,
   "appsAutoUpdatePolicy@odata.type": "#microsoft.graph.androidDeviceOwnerAppAutoUpdatePolicyType",
-  "appsAutoUpdatePolicy": "always",
+  "appsAutoUpdatePolicy": "notConfigured",
   "appsDefaultPermissionPolicy@odata.type": "#microsoft.graph.androidDeviceOwnerDefaultAppPermissionPolicyType",
   "appsDefaultPermissionPolicy": "autoGrant",
-  "appsRecommendSkippingFirstUseHints": null,
+  "appsRecommendSkippingFirstUseHints": true,
   "bluetoothBlockConfiguration": false,
   "bluetoothBlockContactSharing": null,
   "cameraBlocked": false,
@@ -56,11 +56,11 @@
   "factoryResetBlocked": true,
   "globalProxy": null,
   "googleAccountsBlocked": true,
-  "kioskCustomizationDeviceSettingsBlocked": null,
+  "kioskCustomizationDeviceSettingsBlocked": false,
   "kioskCustomizationPowerButtonActionsBlocked": null,
   "kioskCustomizationStatusBar@odata.type": "#microsoft.graph.androidDeviceOwnerKioskCustomizationStatusBar",
-  "kioskCustomizationStatusBar": "notConfigured",
-  "kioskCustomizationSystemErrorWarnings": null,
+  "kioskCustomizationStatusBar": "systemInfoOnly",
+  "kioskCustomizationSystemErrorWarnings": true,
   "kioskCustomizationSystemNavigation@odata.type": "#microsoft.graph.androidDeviceOwnerKioskCustomizationSystemNavigation",
   "kioskCustomizationSystemNavigation": "notConfigured",
   "kioskModeScreenSaverConfigurationEnabled": null,
@@ -69,8 +69,8 @@
   "kioskModeScreenSaverStartDelayInSeconds": null,
   "kioskModeScreenSaverDetectMediaDisabled": null,
   "kioskModeWallpaperUrl": null,
-  "kioskModeExitCode": null,
-  "isKioskModeExitCodeSet": false,
+  "kioskModeExitCode": "0365",
+  "isKioskModeExitCodeSet": true,
   "kioskModeVirtualHomeButtonEnabled": null,
   "kioskModeVirtualHomeButtonType@odata.type": "#microsoft.graph.androidDeviceOwnerVirtualHomeButtonType",
   "kioskModeVirtualHomeButtonType": "floating",
@@ -80,7 +80,7 @@
   "kioskModeMediaVolumeConfigurationEnabled": true,
   "kioskModeShowDeviceInfo": true,
   "kioskModeManagedSettingsEntryDisabled": null,
-  "kioskModeDebugMenuEasyAccessEnabled": null,
+  "kioskModeDebugMenuEasyAccessEnabled": true,
   "kioskModeShowAppNotificationBadge": true,
   "kioskModeScreenOrientation@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeScreenOrientation",
   "kioskModeScreenOrientation": "autoRotate",
@@ -108,11 +108,12 @@
   "kioskModeUseManagedHomeScreenApp@odata.type": "#microsoft.graph.kioskModeType",
   "kioskModeUseManagedHomeScreenApp": "multiAppMode",
   "microphoneForceMute": null,
-  "networkEscapeHatchAllowed": null,
-  "nfcBlockOutgoingBeam": true,
+  "networkEscapeHatchAllowed": true,
+  "nfcBlockOutgoingBeam": false,
   "passwordBlockKeyguard": null,
   "passwordBlockKeyguardFeatures@odata.type": "#Collection(microsoft.graph.androidKeyguardFeature)",
   "passwordBlockKeyguardFeatures": [
+    "camera",
     "notifications",
     "remoteInput"
   ],
@@ -129,10 +130,10 @@
   "passwordRequiredType@odata.type": "#microsoft.graph.androidDeviceOwnerRequiredPasswordType",
   "passwordRequiredType": "numericComplex",
   "passwordRequireUnlock@odata.type": "#microsoft.graph.androidDeviceOwnerRequiredPasswordUnlock",
-  "passwordRequireUnlock": "daily",
-  "passwordSignInFailureCountBeforeFactoryReset": 11,
+  "passwordRequireUnlock": "deviceDefault",
+  "passwordSignInFailureCountBeforeFactoryReset": 10,
   "playStoreMode@odata.type": "#microsoft.graph.androidDeviceOwnerPlayStoreMode",
-  "playStoreMode": "allowList",
+  "playStoreMode": "notConfigured",
   "screenCaptureBlocked": true,
   "securityDeveloperSettingsEnabled": null,
   "securityRequireVerifyApps": true,
@@ -147,9 +148,9 @@
   "systemUpdateWindowEndMinutesAfterMidnight": 360,
   "systemUpdateInstallType@odata.type": "#microsoft.graph.androidDeviceOwnerSystemUpdateInstallType",
   "systemUpdateInstallType": "windowed",
-  "systemWindowsBlocked": null,
-  "usersBlockAdd": null,
-  "usersBlockRemove": null,
+  "systemWindowsBlocked": true,
+  "usersBlockAdd": true,
+  "usersBlockRemove": true,
   "volumeBlockAdjustment": null,
   "vpnAlwaysOnLockdownMode": false,
   "vpnAlwaysOnPackageIdentifier": "",
@@ -227,17 +228,10 @@
     },
     {
       "@odata.type": "#microsoft.graph.appListItem",
-      "name": "Microsoft OneNote: Save Notes",
+      "name": "Microsoft Intune",
       "publisher": "Microsoft Corporation",
       "appStoreUrl": null,
-      "appId": "com.microsoft.office.onenote"
-    },
-    {
-      "@odata.type": "#microsoft.graph.appListItem",
-      "name": "Microsoft To Do: Lists & Tasks",
-      "publisher": "Microsoft Corporation",
-      "appStoreUrl": null,
-      "appId": "com.microsoft.todos"
+      "appId": "com.microsoft.intune"
     },
     {
       "@odata.type": "#microsoft.graph.appListItem",
@@ -245,20 +239,6 @@
       "publisher": "Microsoft Corporation",
       "appStoreUrl": null,
       "appId": "com.microsoft.launcher.enterprise"
-    },
-    {
-      "@odata.type": "#microsoft.graph.appListItem",
-      "name": "Microsoft Defender: Antivirus",
-      "publisher": "Microsoft Corporation",
-      "appStoreUrl": null,
-      "appId": "com.microsoft.scmx"
-    },
-    {
-      "@odata.type": "#microsoft.graph.appListItem",
-      "name": "Microsoft Intune",
-      "publisher": "Microsoft Corporation",
-      "appStoreUrl": null,
-      "appId": "com.microsoft.intune"
     }
   ],
   "kioskModeManagedFolders@odata.type": "#Collection(microsoft.graph.androidDeviceOwnerKioskModeManagedFolder)",
@@ -336,7 +316,7 @@
       "position": 7,
       "item": {
         "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-        "package": "com.microsoft.office.onenote",
+        "package": "com.microsoft.intune",
         "className": null,
         "offlineAppAccessEnabled": null,
         "preSignInAppAccessEnabled": null
@@ -347,40 +327,7 @@
       "position": 8,
       "item": {
         "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-        "package": "com.microsoft.todos",
-        "className": null,
-        "offlineAppAccessEnabled": null,
-        "preSignInAppAccessEnabled": null
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeAppPositionItem",
-      "position": 9,
-      "item": {
-        "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
         "package": "com.microsoft.launcher.enterprise",
-        "className": null,
-        "offlineAppAccessEnabled": null,
-        "preSignInAppAccessEnabled": null
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeAppPositionItem",
-      "position": 10,
-      "item": {
-        "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-        "package": "com.microsoft.scmx",
-        "className": null,
-        "offlineAppAccessEnabled": null,
-        "preSignInAppAccessEnabled": null
-      }
-    },
-    {
-      "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeAppPositionItem",
-      "position": 11,
-      "item": {
-        "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-        "package": "com.microsoft.intune",
         "className": null,
         "offlineAppAccessEnabled": null,
         "preSignInAppAccessEnabled": null
@@ -433,14 +380,7 @@
     },
     {
       "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-      "package": "com.microsoft.office.onenote",
-      "className": null,
-      "offlineAppAccessEnabled": false,
-      "preSignInAppAccessEnabled": false
-    },
-    {
-      "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-      "package": "com.microsoft.todos",
+      "package": "com.microsoft.intune",
       "className": null,
       "offlineAppAccessEnabled": false,
       "preSignInAppAccessEnabled": false
@@ -448,20 +388,6 @@
     {
       "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
       "package": "com.microsoft.launcher.enterprise",
-      "className": null,
-      "offlineAppAccessEnabled": false,
-      "preSignInAppAccessEnabled": false
-    },
-    {
-      "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-      "package": "com.microsoft.scmx",
-      "className": null,
-      "offlineAppAccessEnabled": false,
-      "preSignInAppAccessEnabled": false
-    },
-    {
-      "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-      "package": "com.microsoft.intune",
       "className": null,
       "offlineAppAccessEnabled": false,
       "preSignInAppAccessEnabled": false
@@ -476,7 +402,6 @@
   "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments",
   "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments/$ref",
   "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments",
-  "assignments": [],
   "deviceSettingStateSummaries@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceSettingStateSummaries/$ref",
   "deviceSettingStateSummaries@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceSettingStateSummaries",
   "deviceStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceStatuses/$ref",

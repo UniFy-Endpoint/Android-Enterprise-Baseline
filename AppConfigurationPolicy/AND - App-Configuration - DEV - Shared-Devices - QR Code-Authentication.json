@@ -1,0 +1,48 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceAppManagement/mobileAppConfigurations(assignments())/$entity",
+  "@odata.type": "#microsoft.graph.androidManagedStoreAppConfiguration",
+  "@odata.id": "deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')",
+  "@odata.editLink": "deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration",
+  "id": "4e7dc164-4ce5-4710-8c42-fd4f57e6c49f",
+  "targetedMobileApps@odata.type": "#Collection(String)",
+  "targetedMobileApps": [
+    "50575759-581c-41c8-bcdb-bb8ba2b8bef5"
+  ],
+  "roleScopeTagIds@odata.type": "#Collection(String)",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "createdDateTime@odata.type": "#DateTimeOffset",
+  "createdDateTime": "2026-04-05T18:25:52.0107636Z",
+  "description": "This app configuration will enable QR code authentication in the Microsoft Authenticator App for Android.",
+  "lastModifiedDateTime@odata.type": "#DateTimeOffset",
+  "lastModifiedDateTime": "2026-04-20T09:16:25.3193199Z",
+  "displayName": "AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication",
+  "version": 7,
+  "packageId": "app:com.azure.authenticator",
+  "payloadJson": "eyJraW5kIjoiYW5kcm9pZGVudGVycHJpc2UjbWFuYWdlZENvbmZpZ3VyYXRpb24iLCJwcm9kdWN0SWQiOiJhcHA6Y29tLmF6dXJlLmF1dGhlbnRpY2F0b3IiLCJtYW5hZ2VkUHJvcGVydHkiOlt7ImtleSI6InByZWZlcnJlZF9hdXRoX2NvbmZpZyIsInZhbHVlU3RyaW5nIjoicXJwaW4ifV19",
+  "appSupportsOemConfig": false,
+  "profileApplicability@odata.type": "#microsoft.graph.androidProfileApplicability",
+  "profileApplicability": "androidDeviceOwner",
+  "connectedAppsEnabled": false,
+  "credentialProviderRoleState@odata.type": "#microsoft.graph.androidAppCredentialProviderRoleState",
+  "credentialProviderRoleState": "allowed",
+  "permissionActions@odata.type": "#Collection(microsoft.graph.androidPermissionAction)",
+  "permissionActions": [],
+  "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/assignments",
+  "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/assignments/$ref",
+  "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/assignments",
+  "deviceStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/deviceStatuses/$ref",
+  "deviceStatuses@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/deviceStatuses",
+  "deviceStatusSummary@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/deviceStatusSummary/$ref",
+  "deviceStatusSummary@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/deviceStatusSummary",
+  "userStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/userStatuses/$ref",
+  "userStatuses@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/userStatuses",
+  "userStatusSummary@odata.associationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/userStatusSummary/$ref",
+  "userStatusSummary@odata.navigationLink": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.androidManagedStoreAppConfiguration/userStatusSummary",
+  "#microsoft.graph.assign": {
+    "title": "microsoft.graph.assign",
+    "target": "https://graph.microsoft.com/beta/deviceAppManagement/mobileAppConfigurations('4e7dc164-4ce5-4710-8c42-fd4f57e6c49f')/microsoft.graph.managedDeviceMobileAppConfiguration/microsoft.graph.assign"
+  },
+  "#CustomRefTargetedApps": "Microsoft Authenticator|!|50575759-581c-41c8-bcdb-bb8ba2b8bef5|!|#microsoft.graph.androidManagedStoreApp"
+}
