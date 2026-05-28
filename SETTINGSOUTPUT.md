@@ -609,7 +609,7 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
 | Platform | androidEnterprise |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
-| Total settings configured | 35 |
+| Total settings configured | 34 |
 
 **Additional Key Settings**
 
@@ -620,7 +620,6 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | Require unlock | Device Default (consistent with DC COWP) |
 | Cross-profile copy/paste | Blocked |
 | Cross-profile data sharing | Work → Personal blocked |
-| Disable lock screen | Enabled — blocks all keyguard features at the device level. Note: does not affect the work profile lock screen (work profile keyguard trust agents remain DC-only) |
 
 **SC Limitation — Settings only available in DC template (not configurable via Settings Catalog)**
 
@@ -629,7 +628,7 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | DC UI Name | DC JSON key | SC status |
 | :--- | :--- | :--- |
 | Allow access to all apps in Google Play store (Block) | `playStoreMode` | Not in SC — Applications only has "Allow installation from unknown sources" and "App auto-updates (work profile-level)" |
-| Disabled lock screen features — trust agents (work profile level) | `passwordBlockKeyguardFeatures` (trustAgents) | Not in SC — SC "Disable lock screen" applies at device level only (FM/Dedicated), not at work profile level. COWP work profile keyguard has no SC equivalent. |
+| Disabled lock screen features — trust agents (work profile level) | `passwordBlockKeyguardFeatures` (trustAgents) | Not in SC — "Disable lock screen" is not supported on COWP (COPE not listed as a supported enrollment type in MS docs). Work profile keyguard trust agents must be configured via Device Configuration (DC). |
 | Locate device (Allow) | `locateDeviceLostModeEnabled` | Not in SC — no locate device or lost mode setting in any SC category |
 | System update — maintenance window | system update settings | Not in SC — no system update category exists in SC |
 

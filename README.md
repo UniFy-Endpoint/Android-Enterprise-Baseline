@@ -129,7 +129,7 @@ The following settings are confirmed Device Configuration (DC)-only. Verified ag
 | Locate device | Allow (enables remote locate action) | Medium |
 | System update — maintenance window | Windowed 00:00–06:00 | Low |
 
-> **Keyguard note:** Settings Catalog (SC) "Disable lock screen" applies at device level only (FM and Dedicated). It does not cover the work profile lock screen on COWP devices. Work profile trust agents remain Device Configuration (DC)-only for COWP.
+> **Keyguard note:** Settings Catalog (SC) "Disable lock screen" is not supported on COWP — COPE is not listed as a supported enrollment type in Microsoft documentation. The setting has been removed from the COWP Settings Catalog (SC) policy. Work profile trust agents are configured exclusively via the Device Configuration (DC) policy (`passwordBlockKeyguardFeatures: trustAgents`).
 
 **Deployment options:** (1) Settings Catalog (SC) only — no conflicts, accepts the gaps above; (2) Device Configuration (DC) only — full coverage, legacy engine; (3) Trim Device Configuration (DC) to only the DC-only settings listed above and deploy both — no conflicts and full coverage. See [SETTINGSOUTPUT.md](SETTINGSOUTPUT.md) for the full per-policy breakdown.
 
