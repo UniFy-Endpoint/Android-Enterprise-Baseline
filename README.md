@@ -2,6 +2,14 @@
 
 ![GitHub Stars](https://badgen.net/github/stars/UniFy-Endpoint/Android-Enterprise-Baseline?label=Stars)  ![GitHub Forks](https://badgen.net/github/forks/UniFy-Endpoint/Android-Enterprise-Baseline?label=Forks)
 
+| | |
+|---|---|
+| **Author** | Sr. Modern Work Consultant |
+| **CIS Reference** | CIS Google Android Benchmark v1.6.0 |
+| **Last Updated** | May 2026 |
+
+---
+
 There is plenty of content out there on how to implement Android Enterprise with Microsoft Intune - enrollment steps, policy walkthroughs, and platform-specific procedures. What has been missing is a ready-to-import baseline. For each deployment model, you would still need to build everything from scratch: find the right settings, create all the components, and figure out what the right configuration actually looks like.
 
 This repository is intended to close that gap. It provides a practical, ready-to-import baseline for managing Android Enterprise devices with Microsoft Intune, covering all major deployment models. It is grounded in Microsoft's official deployment guidance, Android CIS Benchmark recommendations, and insights from real-world enterprise deployments.
