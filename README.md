@@ -18,14 +18,6 @@ This repository is intended to close that gap. It provides a practical, ready-to
 - A **baseline configuration** set (policies and building blocks) organized by Intune policy type.
 - Optional **import/export automation** support via the *IntuneManagement* tool.
 
-## CIS and Microsoft References
-
-| Source | Reference |
-|---|---|
-| CIS Google Android Benchmark v1.6.0 | https://www.cisecurity.org/benchmark/google_android |
-| Microsoft Android Enterprise Deployment Guide | https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/deployment-guide-platform-android |
-| Microsoft Android Enterprise Security Configuration Framework | https://learn.microsoft.com/en-us/mem/intune/enrollment/android-configuration-framework |
-
 ## Deployment models covered
 
 This baseline covers all major Android Enterprise deployment models:
@@ -195,6 +187,16 @@ All policy names in this baseline follow a structured naming pattern:
 | 1.2 | April 2026 | Conditional Access: CA209 scoped to Intune-managed devices; CA212 refined for Microsoft 365 BYOD MAM only |
 | 1.1 | April 2026 | Compliance: hardware-backed SafetyNet, 5-min inactivity, push notifications on all policies; Dedicated devices: new Shared Mode config with auto sign-out; QR code auth app config added; documentation sync and CIS hardening guide updates |
 | 1.0 | Initial release | Initial baseline for all major Android Enterprise enrollment types (compliance, device restrictions, app config, MAM, conditional access) |
+
+---
+
+## CIS and Microsoft References
+
+| Source | Reference |
+|---|---|
+| CIS Google Android Benchmark v1.6.0 | https://www.cisecurity.org/benchmark/google_android |
+| Microsoft Android Enterprise Deployment Guide | https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/deployment-guide-platform-android |
+| Microsoft Android Enterprise Security Configuration Framework | https://learn.microsoft.com/en-us/mem/intune/enrollment/android-configuration-framework |
 
 ---
 
