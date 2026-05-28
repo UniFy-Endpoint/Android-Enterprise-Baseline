@@ -101,15 +101,15 @@ The following policy and configuration areas are included in the baseline (align
 | `AssignmentFilters/` | Intune Assignment Filters |
 | `*/Groups/` | Microsoft Entra ID group definitions — stored as `Groups/` subfolders within each policy folder (e.g., `CompliancePolicies/Groups/`, `DeviceConfiguration_Device_Restrictions/Groups/`) |
 
-**DC vs SC — conflict and coverage note**
+**Device Configuration (DC) vs Settings Catalog (SC) — conflict and coverage note**
 
-The Settings Catalog (SC) is the modern Intune policy engine. However, SC does not expose all settings available in the legacy DeviceConfiguration (DC) template. If both a DC and SC policy are assigned to the same device with overlapping settings, Intune reports a **conflict** for those settings — neither value is reliably applied.
+The Settings Catalog (SC) is the modern Intune policy engine. However, the Settings Catalog (SC) does not expose all settings available in the legacy Device Configuration (DC) template. If both a Device Configuration (DC) and Settings Catalog (SC) policy are assigned to the same device with overlapping settings, Intune reports a **conflict** for those settings — neither value is reliably applied.
 
-The following settings are confirmed DC-only. Verified against the Intune SC settings picker and Microsoft documentation on 2026-05-28.
+The following settings are confirmed Device Configuration (DC)-only. Verified against the Intune Settings Catalog (SC) settings picker and Microsoft documentation on 2026-05-28.
 
 **Fully Managed (COBO)**
 
-| DC Setting (UI name) | Value | Importance |
+| Device Configuration (DC) Setting (UI name) | Value | Importance |
 | :--- | :--- | :--- |
 | Personal Google Accounts | Block | High |
 | Allow access to all apps in Google Play store | Block (allow-list only) | High |
@@ -118,20 +118,20 @@ The following settings are confirmed DC-only. Verified against the Intune SC set
 | Locate device | Allow (enables remote locate action) | Medium |
 | System update — maintenance window | Windowed 00:00–06:00 | Low |
 
-> **Keyguard:** Granular lock screen feature blocking (camera, trust agents, remote input, unredacted notifications) is DC-only. SC provides **"Disable lock screen"** which blocks all keyguard features at once. This setting is enabled in the baseline FM SC policy (`AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed`) and covers the keyguard security requirement.
+> **Keyguard:** Granular lock screen feature blocking (camera, trust agents, remote input, unredacted notifications) is Device Configuration (DC)-only. The Settings Catalog (SC) provides **"Disable lock screen"** which blocks all keyguard features at once. This setting is enabled in the baseline Settings Catalog (SC) FM policy (`AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed`) and covers the keyguard security requirement.
 
 **Corporate-Owned Work Profile (COPE)**
 
-| DC Setting (UI name) | Value | Importance |
+| Device Configuration (DC) Setting (UI name) | Value | Importance |
 | :--- | :--- | :--- |
 | Allow access to all apps in Google Play store | Block (allow-list only) | High |
 | Disabled lock screen features — trust agents (work profile level) | Block | Medium |
 | Locate device | Allow (enables remote locate action) | Medium |
 | System update — maintenance window | Windowed 00:00–06:00 | Low |
 
-> **Keyguard note:** SC "Disable lock screen" applies at device level only (FM and Dedicated). It does not cover the work profile lock screen on COWP devices. Work profile trust agents remain DC-only for COWP.
+> **Keyguard note:** Settings Catalog (SC) "Disable lock screen" applies at device level only (FM and Dedicated). It does not cover the work profile lock screen on COWP devices. Work profile trust agents remain Device Configuration (DC)-only for COWP.
 
-**Deployment options:** (1) SC only — no conflicts, accepts the gaps above; (2) DC only — full coverage, legacy engine; (3) Trim DC to only the DC-only settings listed above and deploy both — no conflicts and full coverage. See [SETTINGSOUTPUT.md](SETTINGSOUTPUT.md) for the full per-policy breakdown.
+**Deployment options:** (1) Settings Catalog (SC) only — no conflicts, accepts the gaps above; (2) Device Configuration (DC) only — full coverage, legacy engine; (3) Trim Device Configuration (DC) to only the DC-only settings listed above and deploy both — no conflicts and full coverage. See [SETTINGSOUTPUT.md](SETTINGSOUTPUT.md) for the full per-policy breakdown.
 
 ## Importing the baseline into Intune
 
