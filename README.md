@@ -159,7 +159,7 @@ All policy names in this baseline follow a structured naming pattern:
 | Segment | Values | Meaning |
 | :--- | :--- | :--- |
 | **Platform** | `AND` | Android. `ADN` = device-targeted policies (Compliance, DC, SC). `AND` = app-level policies (App Configuration, App Protection). |
-| **Policy Type** | `DC`, `SC`, `Compliance`, `App-Configuration`, `App-Protection` | The Intune policy template type. |
+| **Policy Type** | `DC`, `SC`, `CP`, `App-Configuration`, `App-Protection` | The Intune policy template type. `CP` = Compliance Policy. |
 | **Category** | `Device-Restrictions`, `Defender-For-Endpoint` | What the policy controls (omitted for Compliance policies). |
 | **Scope** | `DEV` (Device), `USR` (User) | Assignment targeting scope. |
 | **Enrollment / Description** | `Corporate-Owned - Fully-Managed`, `Personally-Owned - Work-Profile`, `MAM - All Microsoft Apps - BYOD`, etc. | The enrollment model or purpose. |
@@ -168,7 +168,7 @@ All policy names in this baseline follow a structured naming pattern:
 
 | Policy Name | Type |
 | :--- | :--- |
-| `AND - Compliance - DEV - Corporate-Fully-Managed-Devices` | Compliance policy — Fully Managed |
+| `AND - CP - DEV - Compliance - Corporate-Fully-Managed-Devices` | Compliance policy — Fully Managed |
 | `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed` | DeviceConfiguration Device Restrictions — Fully Managed |
 | `AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN` | DeviceConfiguration — MDE Always-On VPN (Corporate) |
 | `AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint` | App Configuration — MDE low-touch onboarding |
@@ -182,6 +182,7 @@ All policy names in this baseline follow a structured naming pattern:
 
 | Version | Date | Summary |
 |---|---|---|
+| 1.3 | May 2026 | Compliance: renamed all 5 policies to `AND - CP - ...` convention; extracted MDE threat protection into 2 dedicated MDE-only compliance policies (Corporate + Personal); SC FM/COWP DC-only setting limitations documented; CIS gap tracker and compliance findings merged into hardening guide |
 | 1.2 | April 2026 | Conditional Access: CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice scoped to Intune-managed devices; CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD refined for Microsoft 365 BYOD MAM only |
 | 1.1 | April 2026 | Compliance: hardware-backed SafetyNet, 5-min inactivity, push notifications on all policies; Dedicated devices: new Shared Mode config with auto sign-out; QR code auth app config added; documentation sync and CIS hardening guide updates |
 | 1.0 | Initial release | Initial baseline for all major Android Enterprise enrollment types (compliance, device restrictions, app config, MAM, conditional access) |
