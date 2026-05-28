@@ -18,15 +18,13 @@ This repository is intended to close that gap. It provides a practical, ready-to
 - A **baseline configuration** set (policies and building blocks) organized by Intune policy type.
 - Optional **import/export automation** support via the *IntuneManagement* tool.
 
-## Author
+## CIS and Microsoft References
 
-**Yoennis Olmo** - Modern Work Consultant.
-
-## Sources and references
-
-- Microsoft Deployment Guide (Android platform): [Manage Android devices in Microsoft Intune](https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/deployment-guide-platform-android)
-- Android CIS Benchmarks: [CIS Android Benchmarks](https://www.cisecurity.org/benchmark/google_android)
-- Microsoft Android Enterprise security configuration framework: [Android Enterprise security configuration framework](https://learn.microsoft.com/en-us/mem/intune/enrollment/android-configuration-framework)
+| Source | Reference |
+|---|---|
+| CIS Google Android Benchmark v1.6.0 | https://www.cisecurity.org/benchmark/google_android |
+| Microsoft Android Enterprise Deployment Guide | https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/deployment-guide-platform-android |
+| Microsoft Android Enterprise Security Configuration Framework | https://learn.microsoft.com/en-us/mem/intune/enrollment/android-configuration-framework |
 
 ## Deployment models covered
 
@@ -160,19 +158,6 @@ To add these apps, go to **Intune admin center → Apps → Android** and use **
 
 > **Tip:** Always import into a **test tenant** or a dedicated test scope first, then iterate before broad production rollout.
 
-## How to use this repo
-
-1. Read **Prerequisites + Managed Google Play** first.
-2. Pick your **deployment method guide**.
-3. Review the relevant baseline policies (restrictions, compliance, app config, app protection, CA, groups).
-4. Import (optional) and then validate assignments + device experience end-to-end.
-
-## Notes / disclaimers
-
-- This is a baseline and should be adapted to your organization's security requirements, regulatory needs, and operational constraints.
-- Always test changes with pilot groups and staged rollouts.
-- The author is not responsible for any impact this baseline may have on your environment. Use it carefully and deliberately. After importing the policies, test thoroughly with a pilot group of users or devices before deploying to production.
-
 ## Naming convention
 
 All policy names in this baseline follow a structured naming pattern:
@@ -203,18 +188,13 @@ All policy names in this baseline follow a structured naming pattern:
 
 ---
 
-## Version history
+## Version History
 
-### v1.2 — April 2026
-- Conditional Access: CA209 scoped to Intune-managed devices; CA212 refined for Microsoft 365 BYOD MAM only
-
-### v1.1 — April 2026
-- Compliance: hardware-backed SafetyNet, 5-min inactivity, push notifications on all policies
-- Dedicated devices: new Shared Mode config with auto sign-out; QR code auth app config added
-- Documentation sync and CIS hardening guide updates
-
-### v1.0 — Initial release
-- Initial baseline for all major Android Enterprise enrollment types (compliance, device restrictions, app config, MAM, conditional access)
+| Version | Date | Summary |
+|---|---|---|
+| 1.2 | April 2026 | Conditional Access: CA209 scoped to Intune-managed devices; CA212 refined for Microsoft 365 BYOD MAM only |
+| 1.1 | April 2026 | Compliance: hardware-backed SafetyNet, 5-min inactivity, push notifications on all policies; Dedicated devices: new Shared Mode config with auto sign-out; QR code auth app config added; documentation sync and CIS hardening guide updates |
+| 1.0 | Initial release | Initial baseline for all major Android Enterprise enrollment types (compliance, device restrictions, app config, MAM, conditional access) |
 
 ---
 
