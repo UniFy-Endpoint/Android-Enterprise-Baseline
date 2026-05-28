@@ -544,6 +544,15 @@ This document lists every Intune policy file included in the baseline with its k
 
 ## Device Configuration — Settings Catalog
 
+> **DC vs SC deployment note:** The Settings Catalog (SC) is the modern Intune policy engine and is the recommended approach going forward. However, SC does not expose all settings available in the legacy DeviceConfiguration (DC) template. If both a DC policy and an SC policy are assigned to the same device with overlapping settings, Intune will report a **conflict** for those settings — neither value is reliably applied.
+>
+> **Options:**
+> - **SC only** — No conflicts. Loses the DC-only settings listed in each section below. Recommended if Managed Google Play enrollment already restricts app installs.
+> - **DC only** — Full setting coverage. No conflicts. Uses the legacy engine.
+> - **Trim DC to complement SC** — Remove all overlapping settings from the DC policy, leaving only the DC-only settings. No conflicts and full coverage. Recommended long term but requires DC policy rework.
+>
+> The DC-only settings for each SC policy are listed at the end of each section below. These were verified against the SC settings picker in Intune Admin Center on 2026-05-28.
+
 ---
 
 ### AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed

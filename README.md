@@ -101,7 +101,15 @@ The following policy and configuration areas are included in the baseline (align
 | `AssignmentFilters/` | Intune Assignment Filters |
 | `*/Groups/` | Microsoft Entra ID group definitions — stored as `Groups/` subfolders within each policy folder (e.g., `CompliancePolicies/Groups/`, `DeviceConfiguration_Device_Restrictions/Groups/`) |
 
-> **Note:** The `SettingsCatalog_Device_Restrictions` policies appear to work correctly, but not all settings found in the `DeviceConfiguration_Device_Restrictions` templates are present in the Settings Catalog equivalent. Review both sets and apply them according to your organization's and client's requirements.
+> **DC vs SC — conflict and coverage note:** The Settings Catalog (SC) is the modern Intune policy engine. However, SC does not expose all settings available in the legacy DeviceConfiguration (DC) template. If both a DC and SC policy are assigned to the same device with overlapping settings, Intune reports a **conflict** for those settings — neither value is reliably applied.
+>
+> **Settings confirmed missing from SC (DC-only), verified 2026-05-28:**
+>
+> Fully Managed: Block Google accounts (High), Play Store mode allow-list (High), Block add/remove users (Medium), Block lock screen camera / remote input / trust agents / unredacted notifications (Medium).
+>
+> Corporate-Owned Work Profile: Play Store mode allow-list (High), Block lock screen trust agents (Medium), Enable lost mode / locate device (Medium), System update window 00:00–06:00 (Low).
+>
+> **Deployment options:** (1) SC only — no conflicts, accepts the gaps above; (2) DC only — full coverage, legacy engine; (3) Trim DC to only the DC-only settings above, deploy both — no conflicts and full coverage. See [SETTINGSOUTPUT.md](SETTINGSOUTPUT.md) for the full per-policy breakdown.
 
 ## Importing the baseline into Intune
 
