@@ -5,7 +5,7 @@
   "@odata.editLink": "identity/conditionalAccess/policies('bb19b550-319f-4edf-9122-0ddee34694c8')",
   "id": "bb19b550-319f-4edf-9122-0ddee34694c8",
   "templateId": null,
-  "displayName": "CA212-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD",
+  "displayName": "CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD",
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2025-11-27T17:04:46.005725Z",
   "modifiedDateTime@odata.type": "#DateTimeOffset",

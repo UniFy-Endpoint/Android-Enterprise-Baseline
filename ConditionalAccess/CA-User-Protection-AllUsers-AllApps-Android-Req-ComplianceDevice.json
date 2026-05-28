@@ -5,7 +5,7 @@
   "@odata.editLink": "identity/conditionalAccess/policies('8e32fb97-8ef0-4198-9f8b-5e77cbe222c2')",
   "id": "8e32fb97-8ef0-4198-9f8b-5e77cbe222c2",
   "templateId": null,
-  "displayName": "CA209-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice",
+  "displayName": "CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice",
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2026-01-28T11:19:54.670101Z",
   "modifiedDateTime@odata.type": "#DateTimeOffset",

@@ -434,7 +434,7 @@
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.dataroamingblocked_true",
+          "value": "com.android.devicerestrictionpolicy.dataroamingblocked_false",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -539,7 +539,7 @@
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.appsdefaultpermissionpolicy_prompt",
+          "value": "com.android.devicerestrictionpolicy.appsdefaultpermissionpolicy_devicedefault",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }

@@ -181,7 +181,7 @@
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.passwordrequireunlock_requiredpasswordunlockdailyoption",
+          "value": "com.android.devicerestrictionpolicy.passwordrequireunlock_devicedefault",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }

@@ -1,0 +1,40 @@
+{
+  "@odata.type": "#microsoft.graph.androidWorkProfileCompliancePolicy",
+  "roleScopeTagIds@odata.type": "#Collection(String)",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "description": "MDE threat protection compliance requirement for Android Enterprise BYOD Personally-Owned Work-Profile devices. Assign to the same groups as the personal device compliance policy.",
+  "displayName": "AND - CP - DEV - Compliance - MDE - Personal Devices",
+  "deviceThreatProtectionEnabled": true,
+  "deviceThreatProtectionRequiredSecurityLevel@odata.type": "#microsoft.graph.deviceThreatProtectionLevel",
+  "deviceThreatProtectionRequiredSecurityLevel": "unavailable",
+  "advancedThreatProtectionRequiredSecurityLevel@odata.type": "#microsoft.graph.deviceThreatProtectionLevel",
+  "advancedThreatProtectionRequiredSecurityLevel": "low",
+  "scheduledActionsForRule": [
+    {
+      "@odata.type": "#microsoft.graph.deviceComplianceScheduledActionForRule",
+      "ruleName": null,
+      "scheduledActionConfigurations": [
+        {
+          "@odata.type": "#microsoft.graph.deviceComplianceActionItem",
+          "gracePeriodHours": 24,
+          "actionType@odata.type": "#microsoft.graph.deviceComplianceActionType",
+          "actionType": "block",
+          "notificationTemplateId": "00000000-0000-0000-0000-000000000000",
+          "notificationMessageCCList@odata.type": "#Collection(String)",
+          "notificationMessageCCList": []
+        },
+        {
+          "@odata.type": "#microsoft.graph.deviceComplianceActionItem",
+          "gracePeriodHours": 0,
+          "actionType@odata.type": "#microsoft.graph.deviceComplianceActionType",
+          "actionType": "pushNotification",
+          "notificationTemplateId": "00000000-0000-0000-0000-000000000000",
+          "notificationMessageCCList@odata.type": "#Collection(String)",
+          "notificationMessageCCList": []
+        }
+      ]
+    }
+  ]
+}

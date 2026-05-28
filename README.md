@@ -182,7 +182,7 @@ All policy names in this baseline follow a structured naming pattern:
 
 | Version | Date | Summary |
 |---|---|---|
-| 1.2 | April 2026 | Conditional Access: CA209 scoped to Intune-managed devices; CA212 refined for Microsoft 365 BYOD MAM only |
+| 1.2 | April 2026 | Conditional Access: CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice scoped to Intune-managed devices; CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD refined for Microsoft 365 BYOD MAM only |
 | 1.1 | April 2026 | Compliance: hardware-backed SafetyNet, 5-min inactivity, push notifications on all policies; Dedicated devices: new Shared Mode config with auto sign-out; QR code auth app config added; documentation sync and CIS hardening guide updates |
 | 1.0 | Initial release | Initial baseline for all major Android Enterprise enrollment types (compliance, device restrictions, app config, MAM, conditional access) |
 

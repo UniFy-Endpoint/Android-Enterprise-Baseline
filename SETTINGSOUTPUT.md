@@ -1,6 +1,6 @@
 # Android Enterprise Baseline — Settings Output
 
-Baseline version: **1.1** | Last updated: **2026-04-29** | Author: **Yoennis Olmo (UniFy-Endpoint)**
+Baseline version: **1.3** | Last updated: **2026-05-28** | Author: **Yoennis Olmo (UniFy-Endpoint)**
 
 This document lists every Intune policy file included in the baseline with its key configuration settings, target enrollment type, and group assignments.
 
@@ -25,13 +25,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - Compliance - DEV - Corporate-Dedicated-Devices - Kiosk
+### AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Kiosk
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - Compliance - DEV - Corporate-Dedicated-Devices - Kiosk |
+| Display Name | AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Kiosk |
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Dedicated Devices in Kiosk Mode |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Dedicated / Kiosk (Single-App + Multi-App) |
@@ -51,20 +51,19 @@ This document lists every Intune policy file included in the baseline with its k
 | Block rooted / jailbroken devices | Yes |
 | SafetyNet Basic Integrity | Required |
 | SafetyNet evaluation type | Hardware Backed |
-| Device threat protection enabled | No |
 | Storage encryption | Required |
 | Intune app integrity | Required |
 | Minimum security patch level | Not configured |
 
 ---
 
-### AND - Compliance - DEV - Corporate-Dedicated-Devices - Shared
+### AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Shared
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - Compliance - DEV - Corporate-Dedicated-Devices - Shared |
+| Display Name | AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Shared |
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Dedicated / Shared (Multi-App Managed Home Screen) |
@@ -84,20 +83,19 @@ This document lists every Intune policy file included in the baseline with its k
 | Block rooted / jailbroken devices | Yes |
 | SafetyNet Basic Integrity | Required |
 | SafetyNet evaluation type | Hardware Backed |
-| Device threat protection enabled | No |
 | Storage encryption | Required |
 | Intune app integrity | Required |
 | Minimum security patch level | Not configured |
 
 ---
 
-### AND - Compliance - DEV - Corporate-Fully-Managed-Devices
+### AND - CP - DEV - Compliance - Corporate-Fully-Managed-Devices
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - Compliance - DEV - Corporate-Fully-Managed-Devices |
+| Display Name | AND - CP - DEV - Compliance - Corporate-Fully-Managed-Devices |
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Fully Managed Devices |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Fully Managed (Default + Staging) |
@@ -117,20 +115,19 @@ This document lists every Intune policy file included in the baseline with its k
 | Block rooted / jailbroken devices | Yes |
 | SafetyNet Basic Integrity | Required |
 | SafetyNet evaluation type | Hardware Backed |
-| Device threat protection enabled | No |
 | Storage encryption | Required |
 | Intune app integrity | Required |
 | Minimum security patch level | Not configured |
 
 ---
 
-### AND - Compliance - DEV - Corporate-Owned - Work-Profile
+### AND - CP - DEV - Compliance - Corporate-Owned - Work-Profile
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - Compliance - DEV - Corporate-Owned - Work-Profile |
+| Display Name | AND - CP - DEV - Compliance - Corporate-Owned - Work-Profile |
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Work-Profile Devices |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
@@ -150,20 +147,19 @@ This document lists every Intune policy file included in the baseline with its k
 | Block rooted / jailbroken devices | Yes |
 | SafetyNet Basic Integrity | Required |
 | SafetyNet evaluation type | Hardware Backed |
-| Device threat protection enabled | No |
 | Storage encryption | Required |
 | Intune app integrity | Required |
 | Minimum security patch level | Not configured |
 
 ---
 
-### AND - Compliance - USR - Personally-Owned - Work-Profile
+### AND - CP - USR - Compliance - Personally-Owned - Work-Profile
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - Compliance - USR - Personally-Owned - Work-Profile |
+| Display Name | AND - CP - USR - Compliance - Personally-Owned - Work-Profile |
 | Description | This compliance policy applies to Android Enterprise BYOD Personally-Owned Work-Profile users. |
 | Profile type | androidWorkProfileCompliancePolicy |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
@@ -190,7 +186,6 @@ This document lists every Intune policy file included in the baseline with its k
 | SafetyNet Basic Integrity | Required |
 | SafetyNet Certified Device (Play Protect) | Required |
 | SafetyNet evaluation type | Hardware Backed |
-| Device threat protection enabled | No |
 | Storage encryption | Required |
 | Require Google Play Services | Yes |
 | Up-to-date security providers | Required |
@@ -198,6 +193,48 @@ This document lists every Intune policy file included in the baseline with its k
 | Block unknown sources | No |
 | Block USB debugging | Yes |
 | Minimum security patch level | Not configured |
+
+---
+
+### AND - CP - DEV - Compliance - MDE - Corporate Devices
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - CP - DEV - Compliance - MDE - Corporate Devices |
+| Description | MDE threat protection compliance requirement for Android Enterprise Corporate-Owned devices (Fully Managed, Work Profile, Kiosk, Shared). Assign to the same groups as the corporate device compliance policies. |
+| Profile type | androidDeviceOwnerCompliancePolicy |
+| Target enrollment | Fully Managed + Corporate-Owned Work Profile + Dedicated (Kiosk + Shared) |
+| Noncompliance action | Block access after 24-hour grace period; push notification on detection |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Device threat protection enabled | Yes |
+| MDE required security level | Low |
+
+---
+
+### AND - CP - DEV - Compliance - MDE - Personal Devices
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - CP - DEV - Compliance - MDE - Personal Devices |
+| Description | MDE threat protection compliance requirement for Android Enterprise BYOD Personally-Owned Work-Profile devices. Assign to the same groups as the personal device compliance policy. |
+| Profile type | androidWorkProfileCompliancePolicy |
+| Target enrollment | Personally-Owned Work Profile (BYOD) |
+| Noncompliance action | Block access after 24-hour grace period; push notification on detection |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Device threat protection enabled | Yes |
+| MDE required security level | Low |
 
 ---
 
@@ -221,7 +258,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Setting | Value |
 | :--- | :--- |
 | Camera blocked | Not blocked (Allowed) |
-| Bluetooth configuration by user | Blocked |
+| Bluetooth configuration by user | Not blocked — users need to pair headsets and car systems |
 | Bluetooth contact sharing | Not configured |
 | Certificate credential configuration | Disabled — users cannot manually install certificates |
 | Google accounts | Blocked |
@@ -235,7 +272,7 @@ This document lists every Intune policy file included in the baseline with its k
 | **PIN failures before factory reset** | **10 — see CIS Hardening Guide W-1** |
 | Screen timeout (inactivity) | 1 minute |
 | Require unlock | Daily (biometric handles subsequent unlocks) |
-| Data roaming | Not blocked in DC — enforced by SC FM policy |
+| Data roaming | Not blocked — users travel and take devices home |
 | External storage (SD cards / USB) | Blocked |
 | Screen capture | Blocked |
 | NFC outgoing beam | Blocked |
@@ -267,15 +304,16 @@ This document lists every Intune policy file included in the baseline with its k
 | :--- | :--- |
 | Data roaming | Blocked |
 | Cross-profile data sharing | Work → Personal blocked; Personal → Work allowed |
-| Cross-profile show work contacts in personal profile | Blocked |
+| Cross-profile copy/paste | Blocked |
+| Cross-profile show work contacts in personal profile | Allowed — work contacts visible in personal dialler for better user experience |
 | Certificate credential configuration | Disabled — users cannot manually install certificates |
 | Bluetooth contact sharing | Blocked |
 | Apps auto-update | Always |
 | Play Store mode | AllowList — only MGP-approved apps available |
 | Screen capture | Blocked |
 | NFC outgoing beam | Blocked |
-| Account modification | Not configured |
-| Factory reset by user | Not configured |
+| Account modification | Blocked |
+| Factory reset by user | Blocked |
 | Google accounts | Not configured |
 | Locate device (Lost Mode) | Enabled |
 
@@ -526,10 +564,11 @@ This document lists every Intune policy file included in the baseline with its k
 | Setting | Value |
 | :--- | :--- |
 | Camera | Not blocked (consistent with DC FM) |
-| Bluetooth configuration by user | Blocked (consistent with DC FM — see CIS Hardening Guide W-3, Resolved) |
+| Bluetooth configuration by user | Not blocked — intentional, consistent with DC FM. Users need to pair personal devices. |
+| Data roaming | Not blocked — users travel and take devices home (consistent with DC FM) |
 | Network escape hatch | Disabled — see CIS Hardening Guide W-4 |
 | System update type | Windowed |
-| Apps default permission policy | Prompt |
+| Apps default permission policy | Device Default |
 | Security Common Criteria Mode | Enabled (Samsung Knox only — see CIS Hardening Guide W-25) |
 
 > **This policy is assigned to the same Fully Managed device groups as the DC template. When settings overlap, Intune applies the most restrictive value. Review all overlapping settings before deployment.**
@@ -555,6 +594,7 @@ This document lists every Intune policy file included in the baseline with its k
 | :--- | :--- |
 | Private Space Policy | Disallowed |
 | WiFi Direct Settings | Disallowed |
+| Require unlock | Device Default (consistent with DC COWP) |
 | Cross-profile copy/paste | Blocked |
 | Cross-profile data sharing | Work → Personal blocked |
 
@@ -748,13 +788,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### CA209-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice
+### CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | CA209-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice |
+| Display Name | CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice |
 | State | Enabled |
 | Target enrollment | All Intune-managed (enrolled) Android devices |
 | Purpose | Require compliant device for all users accessing any cloud app from an Intune-managed Android device |
@@ -764,7 +804,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Setting | Value |
 | :--- | :--- |
 | Users | All users |
-| Excluded groups | Emergency access group; CA209 exclusion group |
+| Excluded groups | Emergency access group; CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice exclusion group |
 | Target apps | All cloud apps |
 | Excluded apps | Skype for Business (0000000a-...); Intune Enrollment (d4ebce55-...) |
 | Client app types | All |
@@ -780,23 +820,23 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### CA212-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD
+### CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | CA212-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD |
+| Display Name | CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD |
 | State | Enabled |
 | Target enrollment | Unmanaged Android devices (BYOD — no Intune enrollment) |
-| Purpose | Require App Protection Policy for unmanaged BYOD devices accessing Microsoft 365 apps; Intune-managed devices are excluded (covered by CA209) |
+| Purpose | Require App Protection Policy for unmanaged BYOD devices accessing Microsoft 365 apps; Intune-managed devices are excluded (covered by CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice) |
 
 **Conditions**
 
 | Setting | Value |
 | :--- | :--- |
 | Users | All users |
-| Excluded groups | CA212 exclusion group |
+| Excluded groups | CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD exclusion group |
 | Excluded roles | 16 privileged admin roles (Global Admin, Intune Admin, Exchange Admin, and others — break-glass and admin accounts are excluded) |
 | Target apps | Microsoft 365 apps (Office365) |
 | Client app types | Mobile apps and desktop clients only |
@@ -857,7 +897,7 @@ See [9_Android_Enrollment_Restrictions.md](Android_Enterprise_Deployment_Guides/
 
 | Category | Policies |
 | :--- | :--- |
-| Compliance Policies | 5 |
+| Compliance Policies | 7 (5 device + 2 MDE) |
 | Device Config — DC Template | 7 (5 restriction + 2 MDE VPN) |
 | Device Config — Settings Catalog | 2 |
 | App Configuration Policies | 5 |
@@ -865,4 +905,4 @@ See [9_Android_Enrollment_Restrictions.md](Android_Enterprise_Deployment_Guides/
 | Conditional Access Policies | 2 |
 | Assignment Filters | 4 |
 | Enrollment Restrictions | 1 |
-| **Total** | **27** |
+| **Total** | **29** |

@@ -68,7 +68,7 @@ This policy enforces that users can only access corporate data on Android throug
 | Step | Action | Configuration |
 | :--- | :--- | :--- |
 | 1 | Navigate | **Intune Admin Center** > **Endpoint Security** > **Conditional Access** |
-| 2 | Name the policy | `CA-AllUsers-AllApps-Android-Req-AppProtectionPolicy-BYOD` |
+| 2 | Name the policy | `CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD` |
 | 3 | Users | **Include:** All users; **Exclude:** Break-glass and emergency accounts |
 | 4 | Target resources | Select **All cloud apps** |
 | 5 | Conditions | **Device platforms:** Include **Android** |
