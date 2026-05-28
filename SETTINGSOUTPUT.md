@@ -573,6 +573,23 @@ This document lists every Intune policy file included in the baseline with its k
 
 > **This policy is assigned to the same Fully Managed device groups as the DC template. When settings overlap, Intune applies the most restrictive value. Review all overlapping settings before deployment.**
 
+**SC Limitation — Settings only available in DC template (not configurable via Settings Catalog)**
+
+The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed` have no equivalent in the Settings Catalog for Android Enterprise Fully Managed. They must remain in the DC template and cannot be migrated to SC.
+
+| DC Setting | DC JSON key | Reason not in SC |
+| :--- | :--- | :--- |
+| Block Google accounts | `googleAccountsBlocked` | Not exposed in SC — Users and Accounts only offers "Block account changes" and "Block users from configuring credentials" |
+| Block keyguard camera | `passwordBlockKeyguardFeatures` (camera) | Keyguard feature blocking is not available in SC Device password or General categories |
+| Block keyguard remote input | `passwordBlockKeyguardFeatures` (remoteInput) | Same as above |
+| Block keyguard trust agents | `passwordBlockKeyguardFeatures` (trustAgents) | Same as above |
+| Block keyguard unredacted notifications | `passwordBlockKeyguardFeatures` (unredactedNotifications) | Same as above |
+| Play Store mode (allow list) | `playStoreMode` | Not exposed in SC — Applications only offers "Allow installation from unknown sources" and "App auto-updates" |
+| Block adding users | `usersBlockAdd` | Not exposed as a separate setting in SC |
+| Block removing users | `usersBlockRemove` | Not exposed as a separate setting in SC |
+
+Verified against the SC settings picker (Intune Admin Center, 2026-05-28). These settings are confirmed DC-only.
+
 ---
 
 ### AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile
@@ -597,6 +614,19 @@ This document lists every Intune policy file included in the baseline with its k
 | Require unlock | Device Default (consistent with DC COWP) |
 | Cross-profile copy/paste | Blocked |
 | Cross-profile data sharing | Work → Personal blocked |
+
+**SC Limitation — Settings only available in DC template (not configurable via Settings Catalog)**
+
+The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile` have no equivalent in the Settings Catalog for Android Enterprise Corporate-Owned Work Profile. They must remain in the DC template and cannot be migrated to SC.
+
+| DC Setting | DC JSON key | Reason not in SC |
+| :--- | :--- | :--- |
+| Play Store mode (allow list) | `playStoreMode` | Not exposed in SC — Applications only offers "Allow installation from unknown sources" and "App auto-updates (work profile-level)" |
+| Block keyguard trust agents | `passwordBlockKeyguardFeatures` (trustAgents) | Keyguard feature blocking is not available in SC Device password or General categories |
+| Locate device in lost mode | `locateDeviceLostModeEnabled` | Not exposed in SC — no locate or lost mode setting available in any category |
+| System update window (type / start / end) | system update settings | Not exposed in SC — no System updates category available in the COWP SC settings picker |
+
+Verified against the SC settings picker (Intune Admin Center, 2026-05-28). These settings are confirmed DC-only.
 
 ---
 
