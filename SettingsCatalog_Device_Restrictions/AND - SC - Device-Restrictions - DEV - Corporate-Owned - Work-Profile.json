@@ -1,14 +1,14 @@
 {
   "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies(assignments(),settings())/$entity",
   "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicy",
-  "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')",
-  "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')",
+  "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')",
+  "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')",
   "createdDateTime@odata.type": "#DateTimeOffset",
-  "createdDateTime": "2026-01-19T14:51:13.4333365Z",
+  "createdDateTime": "2026-05-28T17:34:21.2956503Z",
   "creationSource": null,
   "description": "Device Restrictions Settings for Android Enterprise Corporate-Owned with Work-Profile-Devices.",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
-  "lastModifiedDateTime": "2026-04-27T11:23:38.0640019Z",
+  "lastModifiedDateTime": "2026-05-28T18:47:55.7640984Z",
   "name": "AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile",
   "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
   "platforms": "androidEnterprise",
@@ -17,10 +17,10 @@
   "roleScopeTagIds": [
     "0"
   ],
-  "settingCount": 34,
+  "settingCount": 35,
   "technologies@odata.type": "#microsoft.graph.deviceManagementConfigurationTechnologies",
   "technologies": "android",
-  "id": "77368d44-4cb5-4d87-9230-a8d4ccd72f98",
+  "id": "27ad8e6b-c279-43c9-8e91-c8a4704c6c06",
   "templateReference": {
     "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicyTemplateReference",
     "templateId": "",
@@ -29,17 +29,18 @@
     "templateDisplayName": null,
     "templateDisplayVersion": null
   },
-  "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/assignments",
-  "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/assignments/$ref",
-  "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/assignments",
-  "settings@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings",
-  "settings@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings/$ref",
-  "settings@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings",
+  "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/assignments",
+  "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/assignments/$ref",
+  "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/assignments",
+  "assignments": [],
+  "settings@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings",
+  "settings@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings/$ref",
+  "settings@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings",
   "settings": [
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('0')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('0')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('0')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('0')",
       "id": "0",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -54,13 +55,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('0')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('0')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('0')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('0')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('1')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('1')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('1')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('1')",
       "id": "1",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -75,14 +76,35 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('1')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('1')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('1')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('1')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('2')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('2')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('2')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('2')",
       "id": "2",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.passwordblockkeyguard",
+        "settingInstanceTemplateReference": null,
+        "auditRuleInformation": null,
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "settingValueTemplateReference": null,
+          "value": "com.android.devicerestrictionpolicy.passwordblockkeyguard_true",
+          "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
+          "children": []
+        }
+      },
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('2')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('2')/settingDefinitions"
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('3')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('3')",
+      "id": "3",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.passwordexpirationdays",
@@ -94,14 +116,14 @@
           "value": 365
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('2')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('2')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('3')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('3')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('3')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('3')",
-      "id": "3",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('4')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('4')",
+      "id": "4",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.passwordpreviouspasswordcounttoblock",
@@ -113,14 +135,14 @@
           "value": 5
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('3')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('3')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('4')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('4')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('4')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('4')",
-      "id": "4",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('5')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('5')",
+      "id": "5",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.passwordsigninfailurecountbeforefactoryreset",
@@ -132,14 +154,14 @@
           "value": 10
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('4')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('4')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('5')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('5')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('5')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('5')",
-      "id": "5",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('6')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('6')",
+      "id": "6",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.passwordrequiredtype",
@@ -165,14 +187,14 @@
           ]
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('5')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('5')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('6')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('6')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('6')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('6')",
-      "id": "6",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('7')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('7')",
+      "id": "7",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.passwordrequireunlock",
@@ -186,14 +208,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('6')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('6')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('7')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('7')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('7')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('7')",
-      "id": "7",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('8')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('8')",
+      "id": "8",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.securitydevelopersettingsenabled",
@@ -207,14 +229,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('7')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('7')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('8')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('8')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('8')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('8')",
-      "id": "8",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('9')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('9')",
+      "id": "9",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.crossprofilepoliciesallowcopypaste",
@@ -228,14 +250,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('8')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('8')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('9')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('9')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('9')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('9')",
-      "id": "9",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('10')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('10')",
+      "id": "10",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.networkescapehatchallowed",
@@ -249,14 +271,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('9')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('9')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('10')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('10')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('10')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('10')",
-      "id": "10",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('11')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('11')",
+      "id": "11",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.storageallowusb",
@@ -270,14 +292,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('10')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('10')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('11')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('11')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('11')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('11')",
-      "id": "11",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('12')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('12')",
+      "id": "12",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.camerablocked",
@@ -291,14 +313,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('11')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('11')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('12')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('12')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('12')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('12')",
-      "id": "12",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('13')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('13')",
+      "id": "13",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.assistcontentpolicy",
@@ -312,14 +334,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('12')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('12')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('13')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('13')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('13')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('13')",
-      "id": "13",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('14')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('14')",
+      "id": "14",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.nfcblockoutgoingbeam",
@@ -333,14 +355,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('13')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('13')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('14')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('14')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('14')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('14')",
-      "id": "14",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('15')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('15')",
+      "id": "15",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.bluetoothblockconfiguration",
@@ -354,14 +376,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('14')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('14')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('15')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('15')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('15')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('15')",
-      "id": "15",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('16')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('16')",
+      "id": "16",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.bluetoothblockcontactsharing",
@@ -375,14 +397,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('15')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('15')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('16')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('16')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('16')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('16')",
-      "id": "16",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('17')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('17')",
+      "id": "17",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.datetimeconfigurationblocked",
@@ -396,14 +418,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('16')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('16')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('17')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('17')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('17')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('17')",
-      "id": "17",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('18')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('18')",
+      "id": "18",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.factoryresetblocked",
@@ -417,34 +439,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('17')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('17')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('18')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('18')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('18')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('18')",
-      "id": "18",
-      "settingInstance": {
-        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.locationmode",
-        "settingInstanceTemplateReference": null,
-        "auditRuleInformation": null,
-        "choiceSettingValue": {
-          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
-          "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.locationmode_notconfigured",
-          "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
-          "children": []
-        }
-      },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('18')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('18')/settingDefinitions"
-    },
-    {
-      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('19')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('19')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('19')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('19')",
       "id": "19",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -459,13 +460,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('19')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('19')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('19')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('19')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('20')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('20')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('20')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('20')",
       "id": "20",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -480,13 +481,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('20')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('20')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('20')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('20')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('21')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('21')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('21')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('21')",
       "id": "21",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -501,13 +502,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('21')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('21')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('21')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('21')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('22')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('22')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('22')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('22')",
       "id": "22",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -522,13 +523,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('22')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('22')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('22')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('22')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('23')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('23')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('23')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('23')",
       "id": "23",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -543,13 +544,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('23')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('23')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('23')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('23')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('24')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('24')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('24')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('24')",
       "id": "24",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -564,13 +565,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('24')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('24')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('24')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('24')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('25')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('25')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('25')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('25')",
       "id": "25",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -585,13 +586,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('25')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('25')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('25')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('25')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('26')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('26')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('26')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('26')",
       "id": "26",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -606,13 +607,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('26')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('26')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('26')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('26')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('27')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('27')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('27')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('27')",
       "id": "27",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -627,13 +628,13 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('27')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('27')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('27')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('27')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('28')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('28')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('28')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('28')",
       "id": "28",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
@@ -648,14 +649,35 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('28')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('28')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('28')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('28')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('29')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('29')",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('29')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('29')",
       "id": "29",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.locationmode",
+        "settingInstanceTemplateReference": null,
+        "auditRuleInformation": null,
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "settingValueTemplateReference": null,
+          "value": "com.android.devicerestrictionpolicy.locationmode_notconfigured",
+          "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
+          "children": []
+        }
+      },
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('29')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('29')/settingDefinitions"
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('30')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('30')",
+      "id": "30",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.appsrecommendskippingfirstusehints",
@@ -669,14 +691,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('29')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('29')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('30')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('30')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('30')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('30')",
-      "id": "30",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('31')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('31')",
+      "id": "31",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.usbdataaccess",
@@ -690,14 +712,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('30')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('30')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('31')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('31')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('31')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('31')",
-      "id": "31",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('32')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('32')",
+      "id": "32",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.securityrequireverifyapps",
@@ -711,14 +733,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('31')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('31')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('32')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('32')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('32')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('32')",
-      "id": "32",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('33')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('33')",
+      "id": "33",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.accountsblockmodification",
@@ -732,14 +754,14 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('32')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('32')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('33')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('33')/settingDefinitions"
     },
     {
       "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-      "@odata.id": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('33')",
-      "@odata.editLink": "deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('33')",
-      "id": "33",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('34')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('34')",
+      "id": "34",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
         "settingDefinitionId": "com.android.devicerestrictionpolicy.certificatecredentialconfigurationdisabled",
@@ -753,36 +775,36 @@
           "children": []
         }
       },
-      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('33')/settingDefinitions/$ref",
-      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/settings('33')/settingDefinitions"
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('34')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('34')/settingDefinitions"
     }
   ],
   "#microsoft.graph.assign": {
     "title": "microsoft.graph.assign",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/microsoft.graph.assign"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/microsoft.graph.assign"
   },
   "#microsoft.graph.clearEnrollmentTimeDeviceMembershipTarget": {
     "title": "microsoft.graph.clearEnrollmentTimeDeviceMembershipTarget",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/microsoft.graph.clearEnrollmentTimeDeviceMembershipTarget"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/microsoft.graph.clearEnrollmentTimeDeviceMembershipTarget"
   },
   "#microsoft.graph.createCopy": {
     "title": "microsoft.graph.createCopy",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/microsoft.graph.createCopy"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/microsoft.graph.createCopy"
   },
   "#microsoft.graph.reorder": {
     "title": "microsoft.graph.reorder",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/microsoft.graph.reorder"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/microsoft.graph.reorder"
   },
   "#microsoft.graph.retrieveEnrollmentTimeDeviceMembershipTarget": {
     "title": "microsoft.graph.retrieveEnrollmentTimeDeviceMembershipTarget",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/microsoft.graph.retrieveEnrollmentTimeDeviceMembershipTarget"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/microsoft.graph.retrieveEnrollmentTimeDeviceMembershipTarget"
   },
   "#microsoft.graph.setEnrollmentTimeDeviceMembershipTarget": {
     "title": "microsoft.graph.setEnrollmentTimeDeviceMembershipTarget",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/microsoft.graph.setEnrollmentTimeDeviceMembershipTarget"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/microsoft.graph.setEnrollmentTimeDeviceMembershipTarget"
   },
   "#microsoft.graph.retrieveLatestUpgradeDefaultBaselinePolicy": {
     "title": "microsoft.graph.retrieveLatestUpgradeDefaultBaselinePolicy",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('77368d44-4cb5-4d87-9230-a8d4ccd72f98')/microsoft.graph.retrieveLatestUpgradeDefaultBaselinePolicy"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/microsoft.graph.retrieveLatestUpgradeDefaultBaselinePolicy"
   }
 }

@@ -566,7 +566,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
 | Platform | androidEnterprise |
 | Target enrollment | Fully Managed (Default + Staging) |
-| Total settings configured | 30 |
+| Total settings configured | 31 |
 
 **Key Settings**
 
@@ -579,25 +579,22 @@ This document lists every Intune policy file included in the baseline with its k
 | System update type | Windowed |
 | Apps default permission policy | Device Default |
 | Security Common Criteria Mode | Enabled (Samsung Knox only — see CIS Hardening Guide W-25) |
-
-> **This policy is assigned to the same Fully Managed device groups as the DC template. When settings overlap, Intune applies the most restrictive value. Review all overlapping settings before deployment.**
+| Disable lock screen | Enabled — blocks all keyguard lock screen features (camera, trust agents, fingerprint, notifications) |
 
 **SC Limitation — Settings only available in DC template (not configurable via Settings Catalog)**
 
-The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed` have no equivalent in the Settings Catalog for Android Enterprise Fully Managed. They must remain in the DC template and cannot be migrated to SC.
+The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed` have no equivalent in the Settings Catalog for Android Enterprise Fully Managed. Verified against the SC settings picker (Intune Admin Center, 2026-05-28).
 
-| DC Setting | DC JSON key | Reason not in SC |
+| DC UI Name | DC JSON key | SC status |
 | :--- | :--- | :--- |
-| Block Google accounts | `googleAccountsBlocked` | Not exposed in SC — Users and Accounts only offers "Block account changes" and "Block users from configuring credentials" |
-| Block keyguard camera | `passwordBlockKeyguardFeatures` (camera) | Keyguard feature blocking is not available in SC Device password or General categories |
-| Block keyguard remote input | `passwordBlockKeyguardFeatures` (remoteInput) | Same as above |
-| Block keyguard trust agents | `passwordBlockKeyguardFeatures` (trustAgents) | Same as above |
-| Block keyguard unredacted notifications | `passwordBlockKeyguardFeatures` (unredactedNotifications) | Same as above |
-| Play Store mode (allow list) | `playStoreMode` | Not exposed in SC — Applications only offers "Allow installation from unknown sources" and "App auto-updates" |
-| Block adding users | `usersBlockAdd` | Not exposed as a separate setting in SC |
-| Block removing users | `usersBlockRemove` | Not exposed as a separate setting in SC |
+| Personal Google Accounts (Block) | `googleAccountsBlocked` | Not in SC — Users and Accounts only has "Block account changes" and "Block users from configuring credentials" |
+| Allow access to all apps in Google Play store (Block) | `playStoreMode` | Not in SC — Applications only has "Allow installation from unknown sources" and "App auto-updates" |
+| Add new users (Block) | `usersBlockAdd` | Not in SC — no add/remove user settings exist in SC |
+| User removal (Block) | `usersBlockRemove` | Not in SC — same as above |
+| Locate device (Allow) | `locateDeviceLostModeEnabled` | Not in SC — no locate device or lost mode setting in any SC category |
+| System update — maintenance window | system update settings | Not in SC — no system update category exists in SC |
 
-Verified against the SC settings picker (Intune Admin Center, 2026-05-28). These settings are confirmed DC-only.
+**Keyguard note:** The DC template provides granular keyguard control (block individual features: camera, trust agents, remote input, unredacted notifications). The SC provides **"Disable lock screen"** (Device password category) which blocks all keyguard features at once. This SC setting is now enabled in this policy and covers the keyguard security requirement without needing the DC granular setting.
 
 ---
 
@@ -612,7 +609,7 @@ Verified against the SC settings picker (Intune Admin Center, 2026-05-28). These
 | Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
 | Platform | androidEnterprise |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
-| Total settings configured | 34 |
+| Total settings configured | 35 |
 
 **Additional Key Settings**
 
@@ -623,19 +620,18 @@ Verified against the SC settings picker (Intune Admin Center, 2026-05-28). These
 | Require unlock | Device Default (consistent with DC COWP) |
 | Cross-profile copy/paste | Blocked |
 | Cross-profile data sharing | Work → Personal blocked |
+| Disable lock screen | Enabled — blocks all keyguard features at the device level. Note: does not affect the work profile lock screen (work profile keyguard trust agents remain DC-only) |
 
 **SC Limitation — Settings only available in DC template (not configurable via Settings Catalog)**
 
-The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile` have no equivalent in the Settings Catalog for Android Enterprise Corporate-Owned Work Profile. They must remain in the DC template and cannot be migrated to SC.
+The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile` have no equivalent in the Settings Catalog for Android Enterprise Corporate-Owned Work Profile. Verified against the SC settings picker (Intune Admin Center, 2026-05-28).
 
-| DC Setting | DC JSON key | Reason not in SC |
+| DC UI Name | DC JSON key | SC status |
 | :--- | :--- | :--- |
-| Play Store mode (allow list) | `playStoreMode` | Not exposed in SC — Applications only offers "Allow installation from unknown sources" and "App auto-updates (work profile-level)" |
-| Block keyguard trust agents | `passwordBlockKeyguardFeatures` (trustAgents) | Keyguard feature blocking is not available in SC Device password or General categories |
-| Locate device in lost mode | `locateDeviceLostModeEnabled` | Not exposed in SC — no locate or lost mode setting available in any category |
-| System update window (type / start / end) | system update settings | Not exposed in SC — no System updates category available in the COWP SC settings picker |
-
-Verified against the SC settings picker (Intune Admin Center, 2026-05-28). These settings are confirmed DC-only.
+| Allow access to all apps in Google Play store (Block) | `playStoreMode` | Not in SC — Applications only has "Allow installation from unknown sources" and "App auto-updates (work profile-level)" |
+| Disabled lock screen features — trust agents (work profile level) | `passwordBlockKeyguardFeatures` (trustAgents) | Not in SC — SC "Disable lock screen" applies at device level only (FM/Dedicated), not at work profile level. COWP work profile keyguard has no SC equivalent. |
+| Locate device (Allow) | `locateDeviceLostModeEnabled` | Not in SC — no locate device or lost mode setting in any SC category |
+| System update — maintenance window | system update settings | Not in SC — no system update category exists in SC |
 
 ---
 

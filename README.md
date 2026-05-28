@@ -103,11 +103,11 @@ The following policy and configuration areas are included in the baseline (align
 
 > **DC vs SC — conflict and coverage note:** The Settings Catalog (SC) is the modern Intune policy engine. However, SC does not expose all settings available in the legacy DeviceConfiguration (DC) template. If both a DC and SC policy are assigned to the same device with overlapping settings, Intune reports a **conflict** for those settings — neither value is reliably applied.
 >
-> **Settings confirmed missing from SC (DC-only), verified 2026-05-28:**
+> **Settings confirmed DC-only (not in SC), verified against Intune SC settings picker and Microsoft docs 2026-05-28:**
 >
-> Fully Managed: Block Google accounts (High), Play Store mode allow-list (High), Block add/remove users (Medium), Block lock screen camera / remote input / trust agents / unredacted notifications (Medium).
+> Fully Managed: Personal Google Accounts / Block (High), Allow access to all apps in Google Play store / Block (High), Add new users / Block (Medium), User removal / Block (Medium), Locate device (Medium), System update maintenance window (Low). Keyguard note: granular lock screen feature blocking (camera, trust agents, etc.) is DC-only, but SC provides "Disable lock screen" which blocks all keyguard features at once — this is now enabled in the baseline FM SC policy.
 >
-> Corporate-Owned Work Profile: Play Store mode allow-list (High), Block lock screen trust agents (Medium), Enable lost mode / locate device (Medium), System update window 00:00–06:00 (Low).
+> Corporate-Owned Work Profile: Allow access to all apps in Google Play store / Block (High), Disabled lock screen features — trust agents at work profile level (Medium — SC "Disable lock screen" applies device-level only, not work profile level), Locate device (Medium), System update maintenance window (Low).
 >
 > **Deployment options:** (1) SC only — no conflicts, accepts the gaps above; (2) DC only — full coverage, legacy engine; (3) Trim DC to only the DC-only settings above, deploy both — no conflicts and full coverage. See [SETTINGSOUTPUT.md](SETTINGSOUTPUT.md) for the full per-policy breakdown.
 
