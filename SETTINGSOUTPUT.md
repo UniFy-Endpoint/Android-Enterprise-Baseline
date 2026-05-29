@@ -313,6 +313,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Screen capture | Blocked |
 | NFC outgoing beam | Blocked |
 | Account modification | Blocked |
+| Add new users | Blocked |
 | Factory reset by user | Blocked |
 | Google accounts | Not configured |
 | Locate device (Lost Mode) | Enabled |
@@ -632,6 +633,7 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | DC UI Name | DC JSON key | SC status |
 | :--- | :--- | :--- |
 | Allow access to all apps in Google Play store (Block) | `playStoreMode` | Not in SC — Applications only has "Allow installation from unknown sources" and "App auto-updates (work profile-level)" |
+| Add new users (Block) | `usersBlockAdd` | Not in SC — no user management settings exist in SC for COPE |
 | Disabled lock screen features — trust agents (work profile level) | `passwordBlockKeyguardFeatures` (trustAgents) | Not in SC — "Disable lock screen" is not supported on COWP (COPE not listed as a supported enrollment type in MS docs). Work profile keyguard trust agents must be configured via Device Configuration (DC). |
 | Locate device (Allow) | `locateDeviceLostModeEnabled` | Not in SC — no locate device or lost mode setting in any SC category |
 | System update — maintenance window | system update settings | Not in SC — no system update category exists in SC |

@@ -125,6 +125,7 @@ The following settings are confirmed Device Configuration (DC)-only. Verified ag
 | Device Configuration (DC) Setting (UI name) | Value | Importance |
 | :--- | :--- | :--- |
 | Allow access to all apps in Google Play store | Block (allow-list only) | High |
+| Add new users | Block | Medium |
 | Disabled lock screen features — trust agents (work profile level) | Block | Medium |
 | Locate device | Allow (enables remote locate action) | Medium |
 | System update — maintenance window | Windowed 00:00–06:00 | Low |
