@@ -8,7 +8,7 @@
   "creationSource": null,
   "description": "Device Restrictions Settings for Android Enterprise Corporate-Owned with Work-Profile-Devices.",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
-  "lastModifiedDateTime": "2026-05-28T19:06:10.6512967Z",
+  "lastModifiedDateTime": "2026-05-29T10:11:22.0068094Z",
   "name": "AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile",
   "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
   "platforms": "androidEnterprise",
@@ -623,7 +623,7 @@
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.appsdefaultpermissionpolicy_prompt",
+          "value": "com.android.devicerestrictionpolicy.appsdefaultpermissionpolicy_devicedefault",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -644,7 +644,7 @@
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.locationmode_notconfigured",
+          "value": "com.android.devicerestrictionpolicy.locationmode_enforced",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -701,13 +701,13 @@
       "id": "31",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.securityrequireverifyapps",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.securitycommoncriteriamodeenabled",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.securityrequireverifyapps_true",
+          "value": "com.android.devicerestrictionpolicy.securitycommoncriteriamodeenabled_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
@@ -722,13 +722,13 @@
       "id": "32",
       "settingInstance": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
-        "settingDefinitionId": "com.android.devicerestrictionpolicy.accountsblockmodification",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.securityrequireverifyapps",
         "settingInstanceTemplateReference": null,
         "auditRuleInformation": null,
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.accountsblockmodification_true",
+          "value": "com.android.devicerestrictionpolicy.securityrequireverifyapps_true",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }

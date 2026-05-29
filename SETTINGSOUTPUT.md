@@ -1,6 +1,6 @@
 # Android Enterprise Baseline — Settings Output
 
-Baseline version: **1.3** | Last updated: **2026-05-28** | Author: **Yoennis Olmo (UniFy-Endpoint)**
+Baseline version: **1.3** | Last updated: **2026-05-29** | Author: **Yoennis Olmo (UniFy-Endpoint)**
 
 This document lists every Intune policy file included in the baseline with its key configuration settings, target enrollment type, and group assignments.
 
@@ -578,6 +578,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Network escape hatch | Disabled — see CIS Hardening Guide W-4 |
 | System update type | Windowed |
 | Apps default permission policy | Device Default |
+| Location | Location enabled — forces location services ON; prevents users from disabling; required for Locate device remote action |
 | Security Common Criteria Mode | Enabled (Samsung Knox only — see CIS Hardening Guide W-25) |
 | Disable lock screen | Enabled — blocks all keyguard lock screen features (camera, trust agents, fingerprint, notifications) |
 
@@ -587,7 +588,7 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 
 | DC UI Name | DC JSON key | SC status |
 | :--- | :--- | :--- |
-| Personal Google Accounts (Block) | `googleAccountsBlocked` | Not in SC — Users and Accounts only has "Block account changes" and "Block users from configuring credentials" |
+| Personal Google Accounts (Block) | `googleAccountsBlocked` | Not in SC — Users and Accounts category only has "Block users from configuring credentials" for FM/COWP ("Block account changes" is Dedicated/kiosk only in SC) |
 | Allow access to all apps in Google Play store (Block) | `playStoreMode` | Not in SC — Applications only has "Allow installation from unknown sources" and "App auto-updates" |
 | Add new users (Block) | `usersBlockAdd` | Not in SC — no add/remove user settings exist in SC |
 | User removal (Block) | `usersBlockRemove` | Not in SC — same as above |
@@ -620,6 +621,9 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | Require unlock | Device Default (consistent with DC COWP) |
 | Cross-profile copy/paste | Blocked |
 | Cross-profile data sharing | Work → Personal blocked |
+| Default permission policy | Device Default — OS handles runtime permission prompts (changed from Prompt) |
+| Location | Location enabled — forces location services ON; prevents users from disabling |
+| Require Common Criteria mode | Enabled (Samsung Knox only — elevated security standards for sensitive organisations) |
 
 **SC Limitation — Settings only available in DC template (not configurable via Settings Catalog)**
 
