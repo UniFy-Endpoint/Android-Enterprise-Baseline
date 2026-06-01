@@ -134,6 +134,76 @@ The following settings are confirmed Device Configuration (DC)-only. Verified ag
 
 **Deployment options:** (1) Settings Catalog (SC) only — no conflicts, accepts the gaps above; (2) Device Configuration (DC) only — full coverage, legacy engine; (3) Trim Device Configuration (DC) to only the DC-only settings listed above and deploy both — no conflicts and full coverage. See [SETTINGSOUTPUT.md](SETTINGSOUTPUT.md) for the full per-policy breakdown.
 
+## Repository Structure
+
+```
+Android-Enterprise-Baseline/
+├── README.md                                                              ← This file
+├── SETTINGSOUTPUT.md                                                      ← Complete per-policy settings reference for all policies
+├── CIS_Google_Android_Benchmark_v1.6.0.pdf                               ← CIS source benchmark (reference only)
+│
+├── Android_Enterprise_Deployment_Guides/                                  ← Step-by-step configuration guides (12 guides)
+│   ├── 1_Android_Enrollment_and_Managed_Google_Play.md
+│   ├── 2_Android_Personally_Owned_Work_Profile.md
+│   ├── 3_Android_Dedicated_Kiosk_Mode.md
+│   ├── 4_Android_Dedicated_Shared_Mode.md
+│   ├── 5_Android_Fully_Managed_Default_Or_Staging.md
+│   ├── 6_Android_Corp_Work_Profile_Default_Or_Staging.md
+│   ├── 7_Android_Mobile Application Management_MAM_Unmanaged Devices.md
+│   ├── 8_Android_Assignment_Filters.md
+│   ├── 9_Android_Enrollment_Restrictions.md
+│   ├── 10_Android_Managed_Home_Screen.md
+│   ├── 11_Defender for Endpoint for Android Devices.md
+│   └── 12_Android_CIS-Microsoft_Compliance_Settings_Guide.md
+│
+├── DeviceConfiguration_Device_Restrictions/                               ← 8 Device Configuration (DC) policy JSON files
+│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed.json
+│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile.json
+│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Kiosk.json
+│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Single-App-Kiosk.json
+│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared.json
+│   ├── AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile.json
+│   ├── AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN.json
+│   └── AND - DC - Defender-For-Endpoint - DEV - Personally-Owned - Always-On-VPN.json
+│
+├── SettingsCatalog_Device_Restrictions/                                   ← 2 Settings Catalog (SC) policy JSON files
+│   ├── AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed.json
+│   └── AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile.json
+│
+├── CompliancePolicies/                                                    ← 7 Compliance Policy JSON files
+│   ├── AND - CP - DEV - Compliance - Corporate-Fully-Managed-Devices.json
+│   ├── AND - CP - DEV - Compliance - Corporate-Owned - Work-Profile.json
+│   ├── AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Kiosk.json
+│   ├── AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Shared.json
+│   ├── AND - CP - DEV - Compliance - MDE - Corporate Devices.json
+│   ├── AND - CP - DEV - Compliance - MDE - Personal Devices.json
+│   └── AND - CP - USR - Compliance - Personally-Owned - Work-Profile.json
+│
+├── AppConfigurationPolicy/                                                ← 4 App Configuration Policy JSON files
+│   ├── AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint.json
+│   ├── AND - App-Configuration - DEV - Corporate-Owned - Outlook Settings.json
+│   ├── AND - App-Configuration - DEV - Personally-Owned - Outlook Settings.json
+│   └── AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication.json
+│
+├── AppProtection_MAM/                                                     ← 1 App Protection Policy (MAM) JSON file
+│   └── AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD.json
+│
+├── ConditionalAccess/                                                     ← 2 Conditional Access policy JSON files
+│   ├── CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice.json
+│   └── CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD.json
+│
+├── AssignmentFilters/                                                     ← 4 Assignment Filter JSON files
+│   ├── AND-COFM-DEV.json
+│   ├── AND-COWP-DEV.json
+│   ├── AND-POWP-DEV.json
+│   └── AND-UMGD-USR.json
+│
+└── DevicePlatformEnrollmentRestrictions/                                  ← 1 Enrollment Restriction JSON file
+    └── AND - Allow-Android-Enterprise (BYOD).json
+```
+
+---
+
 ## Importing the baseline into Intune
 
 The policy configurations in this repository can be imported into Intune using the **IntuneManagement** tool by Mikael Karlsson (Micke-K).
