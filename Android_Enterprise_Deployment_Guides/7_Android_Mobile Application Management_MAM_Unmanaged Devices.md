@@ -140,7 +140,7 @@ Microsoft defines three levels of App Protection Policy configuration, aligned t
 | **Level 2** | Enterprise Enhanced Data Protection | BYOD users handling sensitive data | Stronger data leakage controls, advanced PIN, offline restrictions |
 | **Level 3** | Enterprise High Data Protection | Users handling highly regulated data | Maximum restrictions, Mobile Threat Defense integration |
 
-The baseline policy in this guide implements Level 1. See the [Android Enterprise security configuration framework](https://learn.microsoft.com/en-us/mem/intune/enrollment/android-configuration-framework) and the [CIS hardening guide](12_Android_CIS_Compliance_Hardening_Guide.md) for Level 2 and Level 3 recommendations.
+The baseline policy in this guide implements Level 1. See the [Android Enterprise security configuration framework](https://learn.microsoft.com/en-us/mem/intune/enrollment/android-configuration-framework) and the [CIS & Microsoft Compliance Settings Guide](12_Android_CIS-Microsoft_Compliance_Settings_Guide.md) for Level 2 and Level 3 recommendations.
 
 ---
 

@@ -1,12 +1,12 @@
 # Managing Android Enterprise Devices with Microsoft Intune (Baseline)
 
-![GitHub Stars](https://badgen.net/github/stars/UniFy-Endpoint/Android-Enterprise-Baseline?label=Stars)  ![GitHub Forks](https://badgen.net/github/forks/UniFy-Endpoint/Android-Enterprise-Baseline?label=Forks)
+![GitHub Stars](https://badgen.net/github/stars/UniFy-Endpoint/Android-Enterprise-Baseline?label=Stars)  ![GitHub Forks](https://badgen.net/github/forks/UniFy-Endpoint/Android-Enterprise-Baseline?label=Forks)  ![Latest Release](https://badgen.net/github/release/UniFy-Endpoint/Android-Enterprise-Baseline?label=Release)
 
 | | |
 |---|---|
 | **Author** | Sr. Modern Work Consultant |
 | **CIS Reference** | CIS Google Android Benchmark v1.6.0 |
-| **Last Updated** | May 2026 |
+| **Last Updated** | June 2026 |
 
 ---
 
@@ -66,10 +66,10 @@ Supplemental guides for security capabilities that apply across enrollment types
   - Covers: MDE–Intune connector setup, Managed Google Play deployment, App Configuration Policy (low-touch onboarding), Always-On VPN for Web Protection, optional App Protection Policy risk signals, and Conditional Access exclusions.
   - Supported enrollment types: **Personally-Owned Work Profile, Corporate-Owned Work Profile, Fully Managed**. Not supported on Dedicated/Kiosk or Shared-Device configurations.
 
-- [12_Android_CIS_Compliance_Hardening_Guide.md](Android_Enterprise_Deployment_Guides/12_Android_CIS_Compliance_Hardening_Guide.md)
-  - Step-by-step guide to harden the baseline Intune policies toward CIS Benchmark and Microsoft Security Configuration Framework compliance.
-  - Covers: Compliance policy upgrades (SafetyNet, patch level, threat protection, inactivity timeout), Device Restriction corrections (camera consistency, permission policy), App Protection Policy hardening (threat level, PIN policy, device lock, patch version).
-  - Applies across all enrollment types. Each change includes the current baseline JSON value, recommended CIS-aligned value, and exact Intune admin center steps.
+- [12_Android_CIS-Microsoft_Compliance_Settings_Guide.md](Android_Enterprise_Deployment_Guides/12_Android_CIS-Microsoft_Compliance_Settings_Guide.md)
+  - Complete CIS and Microsoft Security Configuration Framework settings reference for all Android Enterprise enrollment types.
+  - Covers: Security level classification (CIS L1/L2, MS-L1/L2/L3, ADM-EXP), intentional deviations registry, per-policy settings with Level/Source per setting (FM, COPE, Dedicated, BYOD), MAM App Protection Policy, compliance policy settings, Conditional Access recommendations, operational risk warnings (W-1 through W-25), and compliance findings gap tracker (Parts A–E).
+  - Applies across all enrollment types. Settings values verified against exported Intune policy JSON files.
 
 ### 4) Supporting configuration references
 
@@ -213,6 +213,7 @@ All policy names in this baseline follow a structured naming pattern:
 
 | Version | Date | Summary |
 |---|---|---|
+| 1.4 | June 2026 | Documentation: `12_Android_CIS_Compliance_Hardening_Guide.md` replaced by `12_Android_CIS-Microsoft_Compliance_Settings_Guide.md` — full reformat to iOS-style publish-ready reference with security level classification (CIS L1/L2, MS-L1/L2/L3, ADM-EXP), per-setting Level/Source columns, deviations registry, per-enrollment policy tables verified against exported JSON, all W-xx and gap tracker entries preserved |
 | 1.3 | May 2026 | Compliance: renamed all 5 policies to `AND - CP - ...` convention; extracted MDE threat protection into 2 dedicated MDE-only compliance policies (Corporate + Personal); SC FM/COWP DC-only setting limitations documented; CIS gap tracker and compliance findings merged into hardening guide |
 | 1.2 | April 2026 | Conditional Access: CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice scoped to Intune-managed devices; CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD refined for Microsoft 365 BYOD MAM only |
 | 1.1 | April 2026 | Compliance: hardware-backed SafetyNet, 5-min inactivity, push notifications on all policies; Dedicated devices: new Shared Mode config with auto sign-out; QR code auth app config added; documentation sync and CIS hardening guide updates |
