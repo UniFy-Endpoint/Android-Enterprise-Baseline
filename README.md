@@ -1,7 +1,5 @@
 # Managing Android Enterprise Devices with Microsoft Intune (Baseline)
 
-![GitHub Stars](https://badgen.net/github/stars/UniFy-Endpoint/Android-Enterprise-Baseline?label=Stars)  ![GitHub Forks](https://badgen.net/github/forks/UniFy-Endpoint/Android-Enterprise-Baseline?label=Forks)  ![Latest Release](https://badgen.net/github/release/UniFy-Endpoint/Android-Enterprise-Baseline?label=Release)
-
 | | |
 |---|---|
 | **Author** | Sr. Modern Work Consultant |
