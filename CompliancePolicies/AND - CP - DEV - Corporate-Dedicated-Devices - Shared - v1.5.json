@@ -13,7 +13,7 @@
   "description": "This Compliance Policy applies to Android Enterprise Corporate-Owned-Dedicated-Devices in Shared Mode.",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
   "lastModifiedDateTime": "2026-04-29T10:10:01.0110485Z",
-  "displayName": "AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Shared",
+  "displayName": "AND - CP - DEV - Corporate-Dedicated-Devices - Shared - v1.5",
   "version": 13,
   "securityBlockJailbrokenDevices": true,
   "securityRequireSafetyNetAttestationBasicIntegrity": true,

@@ -17,7 +17,7 @@
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2026-04-18T19:21:24.9524197Z",
   "description": "Cnfiguration profile to deliver Defender for Endpoint web protection tunnel to Android Enterprise Corporate-Owned enrolled devices, so users don't need to manually configure a VPN during onboarding.",
-  "displayName": "AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN",
+  "displayName": "AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN - v1.5",
   "version": 5,
   "accountsBlockModification": null,
   "appsAllowInstallFromUnknownSources": null,

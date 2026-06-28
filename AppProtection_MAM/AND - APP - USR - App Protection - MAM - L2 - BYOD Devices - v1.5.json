@@ -3,7 +3,7 @@
   "@odata.type": "#microsoft.graph.androidManagedAppProtection",
   "@odata.id": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')",
   "@odata.editLink": "deviceAppManagement/androidManagedAppProtections('T_0bf995fe-0369-490f-9398-600f61c236df')",
-  "displayName": "AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD",
+  "displayName": "AND - APP - USR - App Protection - MAM - L2 - BYOD Devices - v1.5",
   "description": "App Protection Policy for Company Apps on Android Unmanaged BYOD Devices. \n\nLevel 1 enterprise basic data protection – Microsoft recommends this configuration as the minimum data protection configuration for an enterprise device.",
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2025-11-27T18:06:51.1329042Z",

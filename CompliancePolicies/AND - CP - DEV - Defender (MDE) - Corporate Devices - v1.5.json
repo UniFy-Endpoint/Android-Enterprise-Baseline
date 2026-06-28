@@ -5,7 +5,7 @@
     "0"
   ],
   "description": "MDE threat protection compliance requirement for Android Enterprise Corporate-Owned devices (Fully Managed, Work Profile, Kiosk, Shared). Assign to the same groups as the corporate device compliance policies.",
-  "displayName": "AND - CP - DEV - Compliance - MDE - Corporate Devices",
+  "displayName": "AND - CP - DEV - Defender (MDE) - Corporate Devices - v1.5",
   "deviceThreatProtectionEnabled": true,
   "deviceThreatProtectionRequiredSecurityLevel@odata.type": "#microsoft.graph.deviceThreatProtectionLevel",
   "deviceThreatProtectionRequiredSecurityLevel": "unavailable",

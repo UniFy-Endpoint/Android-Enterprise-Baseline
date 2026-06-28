@@ -13,7 +13,7 @@
   "description": "This Compliance Policy applies to Android Enterprise Corporate-Owned Work-Profile users.",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
   "lastModifiedDateTime": "2026-04-27T09:04:13.3596373Z",
-  "displayName": "AND - CP - DEV - Compliance - Corporate-Owned - Work-Profile",
+  "displayName": "AND - CP - DEV - Corporate-Owned - Work-Profile - v1.5",
   "version": 17,
   "securityBlockJailbrokenDevices": true,
   "securityRequireSafetyNetAttestationBasicIntegrity": true,

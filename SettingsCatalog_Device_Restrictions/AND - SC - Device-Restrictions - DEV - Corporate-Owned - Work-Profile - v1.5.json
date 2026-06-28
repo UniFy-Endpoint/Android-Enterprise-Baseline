@@ -9,7 +9,7 @@
   "description": "Device Restrictions Settings for Android Enterprise Corporate-Owned with Work-Profile-Devices.",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
   "lastModifiedDateTime": "2026-05-29T10:11:22.0068094Z",
-  "name": "AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile",
+  "name": "AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile - v1.5",
   "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
   "platforms": "androidEnterprise",
   "priorityMetaData": null,

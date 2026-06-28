@@ -5,7 +5,7 @@
     "0"
   ],
   "description": "MDE threat protection compliance requirement for Android Enterprise BYOD Personally-Owned Work-Profile devices. Assign to the same groups as the personal device compliance policy.",
-  "displayName": "AND - CP - DEV - Compliance - MDE - Personal Devices",
+  "displayName": "AND - CP - DEV - Defender (MDE) - Personal Devices - v1.5",
   "deviceThreatProtectionEnabled": true,
   "deviceThreatProtectionRequiredSecurityLevel@odata.type": "#microsoft.graph.deviceThreatProtectionLevel",
   "deviceThreatProtectionRequiredSecurityLevel": "unavailable",

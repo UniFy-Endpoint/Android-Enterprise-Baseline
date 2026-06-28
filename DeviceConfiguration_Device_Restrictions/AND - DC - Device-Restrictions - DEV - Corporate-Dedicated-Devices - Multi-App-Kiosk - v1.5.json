@@ -1,11 +1,11 @@
 {
   "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceConfigurations(assignments())/$entity",
   "@odata.type": "#microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration",
-  "@odata.id": "deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')",
-  "@odata.editLink": "deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration",
-  "id": "2067715d-11fa-4330-a70b-4b33b0af18a2",
+  "@odata.id": "deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')",
+  "@odata.editLink": "deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration",
+  "id": "0caabdcb-aded-4f44-b0ab-60f8c455deb3",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
-  "lastModifiedDateTime": "2026-04-29T13:48:16.8182027Z",
+  "lastModifiedDateTime": "2026-04-29T13:47:48.7532224Z",
   "roleScopeTagIds@odata.type": "#Collection(String)",
   "roleScopeTagIds": [
     "0"
@@ -15,10 +15,10 @@
   "deviceManagementApplicabilityRuleOsVersion": null,
   "deviceManagementApplicabilityRuleDeviceMode": null,
   "createdDateTime@odata.type": "#DateTimeOffset",
-  "createdDateTime": "2026-01-16T09:53:17.6229361Z",
-  "description": "Device restrictions for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode.",
-  "displayName": "AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared",
-  "version": 61,
+  "createdDateTime": "2026-01-15T17:09:04.2251637Z",
+  "description": "Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Devices Multi-App - Kiosk-Mode.",
+  "displayName": "AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Kiosk - v1.5",
+  "version": 65,
   "accountsBlockModification": true,
   "appsAllowInstallFromUnknownSources": null,
   "appsAutoUpdatePolicy@odata.type": "#microsoft.graph.androidDeviceOwnerAppAutoUpdatePolicyType",
@@ -56,14 +56,14 @@
   "factoryResetBlocked": true,
   "globalProxy": null,
   "googleAccountsBlocked": true,
-  "kioskCustomizationDeviceSettingsBlocked": false,
+  "kioskCustomizationDeviceSettingsBlocked": null,
   "kioskCustomizationPowerButtonActionsBlocked": null,
   "kioskCustomizationStatusBar@odata.type": "#microsoft.graph.androidDeviceOwnerKioskCustomizationStatusBar",
   "kioskCustomizationStatusBar": "systemInfoOnly",
   "kioskCustomizationSystemErrorWarnings": true,
   "kioskCustomizationSystemNavigation@odata.type": "#microsoft.graph.androidDeviceOwnerKioskCustomizationSystemNavigation",
   "kioskCustomizationSystemNavigation": "notConfigured",
-  "kioskModeScreenSaverConfigurationEnabled": null,
+  "kioskModeScreenSaverConfigurationEnabled": false,
   "kioskModeScreenSaverImageUrl": null,
   "kioskModeScreenSaverDisplayTimeInSeconds": null,
   "kioskModeScreenSaverStartDelayInSeconds": null,
@@ -73,7 +73,7 @@
   "isKioskModeExitCodeSet": true,
   "kioskModeVirtualHomeButtonEnabled": null,
   "kioskModeVirtualHomeButtonType@odata.type": "#microsoft.graph.androidDeviceOwnerVirtualHomeButtonType",
-  "kioskModeVirtualHomeButtonType": "floating",
+  "kioskModeVirtualHomeButtonType": "notConfigured",
   "kioskModeBluetoothConfigurationEnabled": true,
   "kioskModeWiFiConfigurationEnabled": true,
   "kioskModeFlashlightConfigurationEnabled": true,
@@ -81,13 +81,13 @@
   "kioskModeShowDeviceInfo": true,
   "kioskModeManagedSettingsEntryDisabled": null,
   "kioskModeDebugMenuEasyAccessEnabled": true,
-  "kioskModeShowAppNotificationBadge": true,
+  "kioskModeShowAppNotificationBadge": null,
   "kioskModeScreenOrientation@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeScreenOrientation",
   "kioskModeScreenOrientation": "autoRotate",
   "kioskModeIconSize@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeIconSize",
-  "kioskModeIconSize": "large",
+  "kioskModeIconSize": "notConfigured",
   "kioskModeFolderIcon@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeFolderIcon",
-  "kioskModeFolderIcon": "darkSquare",
+  "kioskModeFolderIcon": "notConfigured",
   "kioskModeWifiAllowedSsids@odata.type": "#Collection(String)",
   "kioskModeWifiAllowedSsids": [],
   "kioskModeAppOrderEnabled": true,
@@ -95,16 +95,16 @@
   "kioskModeGridHeight": 5,
   "kioskModeGridWidth": 4,
   "kioskModeLockHomeScreen": true,
-  "kioskModeManagedHomeScreenAutoSignout": true,
-  "kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds": 300,
-  "kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds": 60,
+  "kioskModeManagedHomeScreenAutoSignout": null,
+  "kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds": null,
+  "kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds": null,
   "kioskModeManagedHomeScreenPinComplexity@odata.type": "#microsoft.graph.kioskModeManagedHomeScreenPinComplexity",
   "kioskModeManagedHomeScreenPinComplexity": "notConfigured",
   "kioskModeManagedHomeScreenPinRequired": null,
   "kioskModeManagedHomeScreenPinRequiredToResume": null,
   "kioskModeManagedHomeScreenSignInBackground": null,
   "kioskModeManagedHomeScreenSignInBrandingLogo": null,
-  "kioskModeManagedHomeScreenSignInEnabled": true,
+  "kioskModeManagedHomeScreenSignInEnabled": null,
   "kioskModeUseManagedHomeScreenApp@odata.type": "#microsoft.graph.kioskModeType",
   "kioskModeUseManagedHomeScreenApp": "multiAppMode",
   "microphoneForceMute": null,
@@ -176,7 +176,7 @@
   "workProfilePasswordRequireUnlock@odata.type": "#microsoft.graph.androidDeviceOwnerRequiredPasswordUnlock",
   "workProfilePasswordRequireUnlock": "deviceDefault",
   "locateDeviceUserlessDisabled": null,
-  "locateDeviceLostModeEnabled": false,
+  "locateDeviceLostModeEnabled": null,
   "shareDeviceLocationDisabled": null,
   "deviceLocationMode@odata.type": "#microsoft.graph.androidDeviceOwnerLocationMode",
   "deviceLocationMode": "notConfigured",
@@ -186,17 +186,17 @@
   "kioskModeApps": [
     {
       "@odata.type": "#microsoft.graph.appListItem",
-      "name": "Microsoft Authenticator",
+      "name": "Microsoft Outlook",
       "publisher": "Microsoft Corporation",
       "appStoreUrl": null,
-      "appId": "com.azure.authenticator"
+      "appId": "com.microsoft.office.outlook"
     },
     {
       "@odata.type": "#microsoft.graph.appListItem",
-      "name": "Microsoft Edge: AI browser",
+      "name": "Microsoft Teams",
       "publisher": "Microsoft Corporation",
       "appStoreUrl": null,
-      "appId": "com.microsoft.emmx"
+      "appId": "com.microsoft.teams"
     },
     {
       "@odata.type": "#microsoft.graph.appListItem",
@@ -207,13 +207,6 @@
     },
     {
       "@odata.type": "#microsoft.graph.appListItem",
-      "name": "Microsoft Outlook",
-      "publisher": "Microsoft Corporation",
-      "appStoreUrl": null,
-      "appId": "com.microsoft.office.outlook"
-    },
-    {
-      "@odata.type": "#microsoft.graph.appListItem",
       "name": "Microsoft SharePoint",
       "publisher": "Microsoft Corporation",
       "appStoreUrl": null,
@@ -221,10 +214,17 @@
     },
     {
       "@odata.type": "#microsoft.graph.appListItem",
-      "name": "Microsoft Teams",
+      "name": "Microsoft Edge: AI browser",
       "publisher": "Microsoft Corporation",
       "appStoreUrl": null,
-      "appId": "com.microsoft.teams"
+      "appId": "com.microsoft.emmx"
+    },
+    {
+      "@odata.type": "#microsoft.graph.appListItem",
+      "name": "Microsoft Authenticator",
+      "publisher": "Microsoft Corporation",
+      "appStoreUrl": null,
+      "appId": "com.azure.authenticator"
     },
     {
       "@odata.type": "#microsoft.graph.appListItem",
@@ -250,7 +250,7 @@
       "position": 1,
       "item": {
         "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-        "package": "com.azure.authenticator",
+        "package": "com.microsoft.office.outlook",
         "className": null,
         "offlineAppAccessEnabled": null,
         "preSignInAppAccessEnabled": null
@@ -261,7 +261,7 @@
       "position": 2,
       "item": {
         "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-        "package": "com.microsoft.emmx",
+        "package": "com.microsoft.teams",
         "className": null,
         "offlineAppAccessEnabled": null,
         "preSignInAppAccessEnabled": null
@@ -283,7 +283,7 @@
       "position": 4,
       "item": {
         "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-        "package": "com.microsoft.office.outlook",
+        "package": "com.microsoft.sharepoint",
         "className": null,
         "offlineAppAccessEnabled": null,
         "preSignInAppAccessEnabled": null
@@ -294,7 +294,7 @@
       "position": 5,
       "item": {
         "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-        "package": "com.microsoft.sharepoint",
+        "package": "com.microsoft.emmx",
         "className": null,
         "offlineAppAccessEnabled": null,
         "preSignInAppAccessEnabled": null
@@ -305,7 +305,7 @@
       "position": 6,
       "item": {
         "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-        "package": "com.microsoft.teams",
+        "package": "com.azure.authenticator",
         "className": null,
         "offlineAppAccessEnabled": null,
         "preSignInAppAccessEnabled": null
@@ -338,14 +338,14 @@
   "kioskModeManagedHomeScreenAppSettings": [
     {
       "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-      "package": "com.azure.authenticator",
+      "package": "com.microsoft.office.outlook",
       "className": null,
       "offlineAppAccessEnabled": false,
       "preSignInAppAccessEnabled": false
     },
     {
       "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-      "package": "com.microsoft.emmx",
+      "package": "com.microsoft.teams",
       "className": null,
       "offlineAppAccessEnabled": false,
       "preSignInAppAccessEnabled": false
@@ -359,13 +359,6 @@
     },
     {
       "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-      "package": "com.microsoft.office.outlook",
-      "className": null,
-      "offlineAppAccessEnabled": false,
-      "preSignInAppAccessEnabled": false
-    },
-    {
-      "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
       "package": "com.microsoft.sharepoint",
       "className": null,
       "offlineAppAccessEnabled": false,
@@ -373,7 +366,14 @@
     },
     {
       "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
-      "package": "com.microsoft.teams",
+      "package": "com.microsoft.emmx",
+      "className": null,
+      "offlineAppAccessEnabled": false,
+      "preSignInAppAccessEnabled": false
+    },
+    {
+      "@odata.type": "#microsoft.graph.androidDeviceOwnerKioskModeApp",
+      "package": "com.azure.authenticator",
       "className": null,
       "offlineAppAccessEnabled": false,
       "preSignInAppAccessEnabled": false
@@ -399,35 +399,35 @@
   "personalProfilePersonalApplications": [],
   "androidDeviceOwnerDelegatedScopeAppSettings@odata.type": "#Collection(microsoft.graph.androidDeviceOwnerDelegatedScopeAppSetting)",
   "androidDeviceOwnerDelegatedScopeAppSettings": [],
-  "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments",
-  "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments/$ref",
-  "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments",
-  "deviceSettingStateSummaries@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceSettingStateSummaries/$ref",
-  "deviceSettingStateSummaries@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceSettingStateSummaries",
-  "deviceStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceStatuses/$ref",
-  "deviceStatuses@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceStatuses",
-  "deviceStatusOverview@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceStatusOverview/$ref",
-  "deviceStatusOverview@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceStatusOverview",
-  "groupAssignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/groupAssignments/$ref",
-  "groupAssignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/groupAssignments",
-  "userStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/userStatuses/$ref",
-  "userStatuses@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/userStatuses",
-  "userStatusOverview@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/userStatusOverview/$ref",
-  "userStatusOverview@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/userStatusOverview",
+  "assignments@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments",
+  "assignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments/$ref",
+  "assignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/assignments",
+  "deviceSettingStateSummaries@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceSettingStateSummaries/$ref",
+  "deviceSettingStateSummaries@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceSettingStateSummaries",
+  "deviceStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceStatuses/$ref",
+  "deviceStatuses@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceStatuses",
+  "deviceStatusOverview@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceStatusOverview/$ref",
+  "deviceStatusOverview@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/deviceStatusOverview",
+  "groupAssignments@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/groupAssignments/$ref",
+  "groupAssignments@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/groupAssignments",
+  "userStatuses@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/userStatuses/$ref",
+  "userStatuses@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/userStatuses",
+  "userStatusOverview@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/userStatusOverview/$ref",
+  "userStatusOverview@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration/userStatusOverview",
   "#microsoft.graph.assign": {
     "title": "microsoft.graph.assign",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.deviceConfiguration/microsoft.graph.assign"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.deviceConfiguration/microsoft.graph.assign"
   },
   "#microsoft.graph.assignedAccessMultiModeProfiles": {
     "title": "microsoft.graph.assignedAccessMultiModeProfiles",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.deviceConfiguration/microsoft.graph.assignedAccessMultiModeProfiles"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.deviceConfiguration/microsoft.graph.assignedAccessMultiModeProfiles"
   },
   "#microsoft.graph.windowsPrivacyAccessControls": {
     "title": "microsoft.graph.windowsPrivacyAccessControls",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.deviceConfiguration/microsoft.graph.windowsPrivacyAccessControls"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.deviceConfiguration/microsoft.graph.windowsPrivacyAccessControls"
   },
   "#microsoft.graph.getOmaSettingPlainTextValue": {
     "title": "microsoft.graph.getOmaSettingPlainTextValue",
-    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('2067715d-11fa-4330-a70b-4b33b0af18a2')/microsoft.graph.deviceConfiguration/microsoft.graph.getOmaSettingPlainTextValue"
+    "target": "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations('0caabdcb-aded-4f44-b0ab-60f8c455deb3')/microsoft.graph.deviceConfiguration/microsoft.graph.getOmaSettingPlainTextValue"
   }
 }

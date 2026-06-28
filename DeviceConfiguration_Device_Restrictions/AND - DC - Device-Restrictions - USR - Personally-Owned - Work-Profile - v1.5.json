@@ -17,7 +17,7 @@
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2026-01-12T13:19:08.4350756Z",
   "description": "Device Restrictions Configuration Policy for Android Enterprise Personally Owned Work Profile (BYOD).",
-  "displayName": "AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile",
+  "displayName": "AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile - v1.5",
   "version": 36,
   "passwordBlockFaceUnlock": false,
   "passwordBlockFingerprintUnlock": false,

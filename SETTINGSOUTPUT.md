@@ -25,13 +25,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Kiosk
+### AND - CP - DEV - Corporate-Dedicated-Devices - Kiosk - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Kiosk |
+| Display Name | AND - CP - DEV - Corporate-Dedicated-Devices - Kiosk - v1.5 |
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Dedicated Devices in Kiosk Mode |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Dedicated / Kiosk (Single-App + Multi-App) |
@@ -57,13 +57,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Shared
+### AND - CP - DEV - Corporate-Dedicated-Devices - Shared - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Shared |
+| Display Name | AND - CP - DEV - Corporate-Dedicated-Devices - Shared - v1.5 |
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Dedicated / Shared (Multi-App Managed Home Screen) |
@@ -89,13 +89,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - CP - DEV - Compliance - Corporate-Fully-Managed-Devices
+### AND - CP - DEV - Corporate-Fully-Managed-Devices - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - CP - DEV - Compliance - Corporate-Fully-Managed-Devices |
+| Display Name | AND - CP - DEV - Corporate-Fully-Managed-Devices - v1.5 |
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Fully Managed Devices |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Fully Managed (Default + Staging) |
@@ -121,13 +121,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - CP - DEV - Compliance - Corporate-Owned - Work-Profile
+### AND - CP - DEV - Corporate-Owned - Work-Profile - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - CP - DEV - Compliance - Corporate-Owned - Work-Profile |
+| Display Name | AND - CP - DEV - Corporate-Owned - Work-Profile - v1.5 |
 | Description | Compliance Policy for Android Enterprise Corporate-Owned Work-Profile Devices |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
@@ -153,13 +153,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - CP - USR - Compliance - Personally-Owned - Work-Profile
+### AND - CP - USR - Personally-Owned - Work-Profile - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - CP - USR - Compliance - Personally-Owned - Work-Profile |
+| Display Name | AND - CP - USR - Personally-Owned - Work-Profile - v1.5 |
 | Description | This compliance policy applies to Android Enterprise BYOD Personally-Owned Work-Profile users. |
 | Profile type | androidWorkProfileCompliancePolicy |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
@@ -196,13 +196,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - CP - DEV - Compliance - MDE - Corporate Devices
+### AND - CP - DEV - Defender (MDE) - Corporate Devices - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - CP - DEV - Compliance - MDE - Corporate Devices |
+| Display Name | AND - CP - DEV - Defender (MDE) - Corporate Devices - v1.5 |
 | Description | MDE threat protection compliance requirement for Android Enterprise Corporate-Owned devices (Fully Managed, Work Profile, Kiosk, Shared). Assign to the same groups as the corporate device compliance policies. |
 | Profile type | androidDeviceOwnerCompliancePolicy |
 | Target enrollment | Fully Managed + Corporate-Owned Work Profile + Dedicated (Kiosk + Shared) |
@@ -217,13 +217,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - CP - DEV - Compliance - MDE - Personal Devices
+### AND - CP - DEV - Defender (MDE) - Personal Devices - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - CP - DEV - Compliance - MDE - Personal Devices |
+| Display Name | AND - CP - DEV - Defender (MDE) - Personal Devices - v1.5 |
 | Description | MDE threat protection compliance requirement for Android Enterprise BYOD Personally-Owned Work-Profile devices. Assign to the same groups as the personal device compliance policy. |
 | Profile type | androidWorkProfileCompliancePolicy |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
@@ -242,13 +242,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed
+### AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed |
+| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed - v1.5 |
 | Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Fully Managed Devices |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Fully Managed (Default + Staging) |
@@ -285,15 +285,17 @@ This document lists every Intune policy file included in the baseline with its k
 | Network escape hatch | Not configured |
 | USB file transfer | Blocked |
 
+> **Note:** `wifiblockeditpolicydefinedconfigurations` (Wi-Fi policy-defined config editing) is configured in both this DC policy and the SC FM policy. If both policies are assigned to the same device, Intune will report a conflict on this setting. Remove the setting from one policy to eliminate the conflict — either trim this DC policy or remove the setting from the SC FM policy.
+
 ---
 
-### AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile
+### AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile |
+| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile - v1.5 |
 | Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Work-Profile Devices |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
@@ -318,15 +320,17 @@ This document lists every Intune policy file included in the baseline with its k
 | Google accounts | Not configured |
 | Locate device (Lost Mode) | Enabled |
 
+> **Note:** `wifiblockeditpolicydefinedconfigurations` (Wi-Fi policy-defined config editing) is configured in both this DC policy and the SC COWP policy. If both policies are assigned to the same device, Intune will report a conflict on this setting. Remove the setting from one policy to eliminate the conflict.
+
 ---
 
-### AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Single-App-Kiosk
+### AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Single-App-Kiosk - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Single-App-Kiosk |
+| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Single-App-Kiosk - v1.5 |
 | Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Devices Single-App Kiosk-Mode |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Dedicated / Single-App Kiosk |
@@ -363,13 +367,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Kiosk
+### AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Kiosk - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Kiosk |
+| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Kiosk - v1.5 |
 | Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Devices Multi-App Kiosk-Mode |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Dedicated / Multi-App Kiosk |
@@ -412,13 +416,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared
+### AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared |
+| Display Name | AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared - v1.5 |
 | Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode (Managed Home Screen) |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Dedicated / Shared (Managed Home Screen with auto sign-out) |
@@ -464,13 +468,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile
+### AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile |
+| Display Name | AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile - v1.5 |
 | Description | Device Restrictions Configuration Policy for Android Enterprise Personally Owned Work Profile (BYOD). |
 | Profile type | androidWorkProfileGeneralDeviceConfiguration |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
@@ -499,13 +503,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN
+### AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN |
+| Display Name | AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN - v1.5 |
 | Description | Configuration profile to deliver Defender for Endpoint web protection tunnel to Corporate-Owned enrolled devices |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Fully Managed + Corporate-Owned Work Profile |
@@ -520,13 +524,13 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - DC - Defender-For-Endpoint - DEV - Personally-Owned - Always-On-VPN
+### AND - DC - Defender-For-Endpoint - DEV - Personally-Owned - Always-On-VPN - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - Defender-For-Endpoint - DEV - Personally-Owned - Always-On-VPN |
+| Display Name | AND - DC - Defender-For-Endpoint - DEV - Personally-Owned - Always-On-VPN - v1.5 |
 | Description | Configuration profile to deliver Defender for Endpoint web protection tunnel to Personally-Owned enrolled devices |
 | Profile type | androidWorkProfileGeneralDeviceConfiguration |
 | Target enrollment | Personally-Owned Work Profile (BYOD) |
@@ -556,37 +560,60 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed
+### AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed |
+| Display Name | AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed - v1.5 |
 | Description | Device Restrictions Settings for Android Enterprise Corporate-Owned Fully Managed Devices |
 | Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
 | Platform | androidEnterprise |
 | Target enrollment | Fully Managed (Default + Staging) |
-| Total settings configured | 32 |
+| Total settings configured | 31 |
 
 **Key Settings**
 
 | Setting | Value |
 | :--- | :--- |
-| Camera | Not blocked (consistent with DC FM) |
-| Bluetooth configuration by user | Not blocked — intentional, consistent with DC FM. Users need to pair personal devices. |
-| Block Bluetooth sharing | Blocked — prevents content/file sharing over Bluetooth; device pairing is unaffected |
-| Data roaming | Not blocked — users travel and take devices home (consistent with DC FM) |
+| Install from unknown sources | Blocked |
+| App auto-updates | Always |
+| Disable lock screen | Enabled — blocks all keyguard features (camera, trust agents, fingerprint, notifications) |
+| Password expiration | 365 days |
+| Previous passwords blocked | 5 |
+| PIN failures before factory reset | 10 |
+| Password required type | Numeric complex — minimum 6 characters |
+| Require unlock | Daily — strong authentication required once per day; biometrics handle subsequent unlocks |
+| Developer options | Disabled |
 | Network escape hatch | Disabled — see CIS Hardening Guide W-4 |
-| System update type | Windowed |
-| Apps default permission policy | Device Default |
-| Location | Location enabled — forces location services ON; prevents users from disabling; required for Locate device remote action |
+| USB storage | Blocked |
+| Camera | Not blocked — intentional, consistent with DC FM |
+| Block Assist Content (Circle to Search) | Blocked — prevents AI assistant from capturing work screen content |
+| NFC outgoing beam | Blocked |
+| Bluetooth configuration by user | Not blocked — users need to pair headsets and car systems |
+| Date/time configuration | Blocked |
+| Factory reset by user | Blocked |
+| External storage (SD cards) | Blocked |
+| Data roaming | Not blocked — users travel and take devices home |
+| Screen capture | Blocked |
+| Wi-Fi tethering | Blocked |
+| Wi-Fi Direct | Disallowed — blocks P2P Wi-Fi connections |
+| Wi-Fi policy-defined config editing | Not blocked — see DC/SC conflict note below |
+| Default app permission policy | Device Default |
+| Location mode | Enforced — forces location services ON; prevents users from disabling; required for Locate Device remote action |
+| Skip first-use hints | Enabled |
+| USB data access | Disallowed — blocks USB data transfer (files/media) via cable |
 | Security Common Criteria Mode | Enabled (Samsung Knox only — see CIS Hardening Guide W-25) |
-| Disable lock screen | Enabled — blocks all keyguard lock screen features (camera, trust agents, fingerprint, notifications) |
+| Verify apps (Play Protect) | Required |
+| Certificate credential configuration | Disabled — users cannot manually install certificates |
+| Block Bluetooth sharing | Blocked — prevents content/file sharing over Bluetooth; device pairing is unaffected |
+
+> **Note:** `wifiblockeditpolicydefinedconfigurations` (Wi-Fi policy-defined config editing) is also configured in the DC FM policy. If both SC and DC policies are assigned to the same device, Intune will report a conflict on this setting. Remove the setting from one policy to eliminate the conflict — either trim the DC FM policy or remove this setting from the SC FM policy.
 
 **SC Limitation — Settings only available in DC template (not configurable via Settings Catalog)**
 
-The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed` have no equivalent in the Settings Catalog for Android Enterprise Fully Managed. Verified against the SC settings picker (Intune Admin Center, 2026-05-28).
+The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed - v1.5` have no equivalent in the Settings Catalog for Android Enterprise Fully Managed. Verified against the SC settings picker (Intune Admin Center, 2026-05-28).
 
 | DC UI Name | DC JSON key | SC status |
 | :--- | :--- | :--- |
@@ -597,40 +624,68 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | Locate device (Allow) | `locateDeviceLostModeEnabled` | Not in SC — no locate device or lost mode setting in any SC category |
 | System update — maintenance window | system update settings | Not in SC — no system update category exists in SC |
 
-**Keyguard note:** The DC template provides granular keyguard control (block individual features: camera, trust agents, remote input, unredacted notifications). The SC provides **"Disable lock screen"** (Device password category) which blocks all keyguard features at once. This SC setting is now enabled in this policy and covers the keyguard security requirement without needing the DC granular setting.
+**Keyguard note:** The DC template provides granular keyguard control (block individual features: camera, trust agents, remote input, unredacted notifications). The SC provides **"Disable lock screen"** (Device password category) which blocks all keyguard features at once. This SC setting is enabled in this policy and covers the keyguard security requirement without needing the DC granular setting.
 
 ---
 
-### AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile
+### AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile |
+| Display Name | AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile - v1.5 |
 | Description | Device Restrictions Settings for Android Enterprise Corporate-Owned Work-Profile Devices |
 | Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
 | Platform | androidEnterprise |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
 | Total settings configured | 35 |
 
-**Additional Key Settings**
+**Key Settings**
 
 | Setting | Value |
 | :--- | :--- |
-| Private Space Policy | Disallowed |
-| WiFi Direct Settings | Disallowed |
-| Require unlock | Device Default (consistent with DC COWP) |
+| Install from unknown sources | Blocked |
+| App auto-updates | Always |
+| Password expiration | 365 days |
+| Previous passwords blocked | 5 |
+| PIN failures before factory reset | 10 |
+| Password required type | Numeric complex — minimum 6 characters |
+| Require unlock | Device Default |
+| Developer options | Disabled |
 | Cross-profile copy/paste | Blocked |
+| Network escape hatch | Disabled |
+| USB storage | Blocked |
+| Camera | Not blocked |
+| Block Assist Content (Circle to Search) | Blocked — prevents AI assistant from capturing work screen content |
+| NFC outgoing beam | Blocked |
+| Bluetooth configuration by user | Not blocked |
+| Block Bluetooth contact sharing | Blocked |
+| Date/time configuration | Blocked |
+| Factory reset by user | Blocked |
+| External storage (SD cards) | Blocked |
+| Private Space | Disallowed — blocks creation of a private work-profile bypass space (Android 15+) |
+| Data roaming | Blocked |
+| Screen capture | Blocked |
+| Show work contacts in personal profile | Allowed — work contacts visible in personal dialler |
+| Wi-Fi tethering | Blocked |
+| Wi-Fi Direct | Disallowed — blocks P2P Wi-Fi connections |
+| Wi-Fi policy-defined config editing | Not blocked — see DC/SC conflict note below |
 | Cross-profile data sharing | Work → Personal blocked |
-| Default permission policy | Device Default — OS handles runtime permission prompts (changed from Prompt) |
-| Location | Location enabled — forces location services ON; prevents users from disabling |
-| Require Common Criteria mode | Enabled (Samsung Knox only — elevated security standards for sensitive organisations) |
+| Default app permission policy | Device Default |
+| Location mode | Enforced — forces location services ON; prevents users from disabling |
+| Skip first-use hints | Enabled |
+| USB data access | Disallowed — blocks USB data transfer via cable |
+| Security Common Criteria Mode | Enabled (Samsung Knox only — elevated security standards for sensitive organisations) |
+| Verify apps (Play Protect) | Required |
+| Certificate credential configuration | Disabled — users cannot manually install certificates |
 | Block Bluetooth sharing | Blocked — prevents content/file sharing over Bluetooth within the work profile |
+
+> **Note:** `wifiblockeditpolicydefinedconfigurations` (Wi-Fi policy-defined config editing) is also configured in the DC COWP policy. If both SC and DC policies are assigned to the same device, Intune will report a conflict on this setting. Remove the setting from one policy to eliminate the conflict.
 
 **SC Limitation — Settings only available in DC template (not configurable via Settings Catalog)**
 
-The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile` have no equivalent in the Settings Catalog for Android Enterprise Corporate-Owned Work Profile. Verified against the SC settings picker (Intune Admin Center, 2026-05-28).
+The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile - v1.5` have no equivalent in the Settings Catalog for Android Enterprise Corporate-Owned Work Profile. Verified against the SC settings picker (Intune Admin Center, 2026-05-28).
 
 | DC UI Name | DC JSON key | SC status |
 | :--- | :--- | :--- |
@@ -646,13 +701,13 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 
 ---
 
-### AND - App-Configuration - DEV - Corporate-Owned - Outlook Settings
+### AND - App-Configuration - DEV - Corporate-Owned - Outlook Settings - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - App-Configuration - DEV - Corporate-Owned - Outlook Settings |
+| Display Name | AND - App-Configuration - DEV - Corporate-Owned - Outlook Settings - v1.5 |
 | Description | Recommended Microsoft Outlook settings for Android Enterprise Corporate-Owned devices |
 | Target app | Microsoft Outlook — com.microsoft.office.outlook |
 | Profile applicability | androidDeviceOwner (corporate-enrolled devices) |
@@ -675,13 +730,13 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 
 ---
 
-### AND - App-Configuration - DEV - Personally-Owned - Outlook Settings
+### AND - App-Configuration - DEV - Personally-Owned - Outlook Settings - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - App-Configuration - DEV - Personally-Owned - Outlook Settings |
+| Display Name | AND - App-Configuration - DEV - Personally-Owned - Outlook Settings - v1.5 |
 | Description | Recommended Microsoft Outlook settings for Android Enterprise Personally-Owned (BYOD) devices |
 | Target app | Microsoft Outlook — com.microsoft.office.outlook |
 | Profile applicability | androidWorkProfile (BYOD work profile) |
@@ -700,16 +755,15 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | Suggested replies | com.microsoft.outlook.Mail.SuggestedRepliesEnabled | Disabled |
 | External recipients tooltip | com.microsoft.outlook.Mail.ExternalRecipientsTooTipEnabled | Enabled |
 
-
 ---
 
-### AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint
+### AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint |
+| Display Name | AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint - v1.5 |
 | Description | Required configuration keys for low-touch onboarding to Microsoft Defender for Endpoint on all Android Enterprise enrolled devices |
 | Target app | Microsoft Defender for Endpoint — com.microsoft.scmx |
 | Profile applicability | default (all enrollment types) |
@@ -743,13 +797,13 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 
 ---
 
-### AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication
+### AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication |
+| Display Name | AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication - v1.5 |
 | Description | Configures Microsoft Authenticator to use QR code + PIN authentication on shared dedicated devices |
 | Target app | Microsoft Authenticator — com.azure.authenticator |
 | Profile applicability | androidDeviceOwner (corporate-enrolled devices) |
@@ -767,14 +821,14 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 
 ---
 
-### AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD
+### AND - APP - USR - App Protection - MAM - L2 - BYOD Devices - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD |
-| Description | App Protection Policy for unmanaged BYOD devices — Level 1 Enterprise Basic Data Protection |
+| Display Name | AND - APP - USR - App Protection - MAM - L2 - BYOD Devices - v1.5 |
+| Description | App Protection Policy for unmanaged BYOD devices — Level 2 Enterprise Enhanced Data Protection |
 | Platform | Android (androidManagedAppProtection) |
 | Target | Unmanaged / BYOD devices (MAM without enrollment) |
 
@@ -830,14 +884,14 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 
 ---
 
-### CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice
+### CA210-USR-AllApps-Android-AnyCli-AnyLoc-ReqCompliant
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice |
-| State | Enabled |
+| Display Name | CA210-USR-AllApps-Android-AnyCli-AnyLoc-ReqCompliant |
+| State | Disabled (enable after testing in your tenant) |
 | Target enrollment | All Intune-managed (enrolled) Android devices |
 | Purpose | Require compliant device for all users accessing any cloud app from an Intune-managed Android device |
 
@@ -846,7 +900,9 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | Setting | Value |
 | :--- | :--- |
 | Users | All users |
-| Excluded groups | Emergency access group; CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice exclusion group |
+| Excluded groups | Emergency access group; CA210 exclusion group |
+| Excluded roles | 38 privileged admin roles (Global Admin, Intune Admin, Exchange Admin, and others) |
+| Excluded external user types | All guest and external user types (internalGuest, b2bCollaboration, b2bDirectConnect, otherExternal, serviceProvider) |
 | Target apps | All cloud apps |
 | Excluded apps | Skype for Business (0000000a-...); Intune Enrollment (d4ebce55-...) |
 | Client app types | All |
@@ -862,26 +918,28 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 
 ---
 
-### CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD
+### CA213-USR-AllApps-Android-AnyCli-BYOD-ReqAppProtect-AppCtrl
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD |
-| State | Enabled |
+| Display Name | CA213-USR-AllApps-Android-AnyCli-BYOD-ReqAppProtect-AppCtrl |
+| State | Disabled (enable after testing in your tenant) |
 | Target enrollment | Unmanaged Android devices (BYOD — no Intune enrollment) |
-| Purpose | Require App Protection Policy for unmanaged BYOD devices accessing Microsoft 365 apps; Intune-managed devices are excluded (covered by CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice) |
+| Purpose | Require App Protection Policy and enforce Defender for Cloud Apps session control for unmanaged BYOD devices; Intune-managed devices are excluded (covered by CA210) |
 
 **Conditions**
 
 | Setting | Value |
 | :--- | :--- |
 | Users | All users |
-| Excluded groups | CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD exclusion group |
-| Excluded roles | 16 privileged admin roles (Global Admin, Intune Admin, Exchange Admin, and others — break-glass and admin accounts are excluded) |
-| Target apps | Microsoft 365 apps (Office365) |
-| Client app types | Mobile apps and desktop clients only |
+| Excluded groups | Emergency access group; CA213 exclusion group |
+| Excluded roles | 38 privileged admin roles (Global Admin, Intune Admin, Exchange Admin, and others) |
+| Excluded external user types | All guest and external user types (internalGuest, b2bCollaboration, b2bDirectConnect, otherExternal, serviceProvider) |
+| Target apps | All cloud apps |
+| Excluded apps | Skype for Business (0000000a-...); Intune Enrollment (d4ebce55-...) |
+| Client app types | Mobile apps and desktop clients; Browser |
 | Device platforms | Android |
 | Device filter mode | Exclude |
 | Device filter rule | `device.mdmAppId -eq "0000000a-0000-0000-c000-000000000000"` — Intune-managed devices excluded; unmanaged BYOD devices targeted |
@@ -891,6 +949,12 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | Setting | Value |
 | :--- | :--- |
 | Grant access | Require app protection policy |
+
+**Session Controls**
+
+| Setting | Value |
+| :--- | :--- |
+| Defender for Cloud Apps | Block downloads (cloudAppSecurity: blockDownloads) |
 
 ---
 
@@ -942,9 +1006,9 @@ See [9_Android_Enrollment_Restrictions.md](Android_Enterprise_Deployment_Guides/
 | Compliance Policies | 7 (5 device + 2 MDE) |
 | Device Config — DC Template | 7 (5 restriction + 2 MDE VPN) |
 | Device Config — Settings Catalog | 2 |
-| App Configuration Policies | 5 |
+| App Configuration Policies | 4 |
 | App Protection Policies (MAM) | 1 |
 | Conditional Access Policies | 2 |
 | Assignment Filters | 4 |
 | Enrollment Restrictions | 1 |
-| **Total** | **29** |
+| **Total** | **28** |

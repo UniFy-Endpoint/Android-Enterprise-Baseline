@@ -17,7 +17,7 @@
   "description": "This app configuration will enable QR code authentication in the Microsoft Authenticator App for Android.",
   "lastModifiedDateTime@odata.type": "#DateTimeOffset",
   "lastModifiedDateTime": "2026-04-20T09:16:25.3193199Z",
-  "displayName": "AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication",
+  "displayName": "AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication - v1.5",
   "version": 7,
   "packageId": "app:com.azure.authenticator",
   "payloadJson": "eyJraW5kIjoiYW5kcm9pZGVudGVycHJpc2UjbWFuYWdlZENvbmZpZ3VyYXRpb24iLCJwcm9kdWN0SWQiOiJhcHA6Y29tLmF6dXJlLmF1dGhlbnRpY2F0b3IiLCJtYW5hZ2VkUHJvcGVydHkiOlt7ImtleSI6InByZWZlcnJlZF9hdXRoX2NvbmZpZyIsInZhbHVlU3RyaW5nIjoicXJwaW4ifV19",

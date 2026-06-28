@@ -116,7 +116,7 @@ The following settings are confirmed Device Configuration (DC)-only. Verified ag
 | Locate device | Allow (enables remote locate action) | Medium |
 | System update — maintenance window | Windowed 00:00–06:00 | Low |
 
-> **Keyguard:** Granular lock screen feature blocking (camera, trust agents, remote input, unredacted notifications) is Device Configuration (DC)-only. The Settings Catalog (SC) provides **"Disable lock screen"** which blocks all keyguard features at once. This setting is enabled in the baseline Settings Catalog (SC) FM policy (`AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed`) and covers the keyguard security requirement.
+> **Keyguard:** Granular lock screen feature blocking (camera, trust agents, remote input, unredacted notifications) is Device Configuration (DC)-only. The Settings Catalog (SC) provides **"Disable lock screen"** which blocks all keyguard features at once. This setting is enabled in the baseline Settings Catalog (SC) FM policy (`AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed - v1.5`) and covers the keyguard security requirement.
 
 **Corporate-Owned Work Profile (COPE)**
 
@@ -155,40 +155,40 @@ Android-Enterprise-Baseline/
 │   └── 12_Android_CIS-Microsoft_Compliance_Settings_Guide.md
 │
 ├── DeviceConfiguration_Device_Restrictions/                               ← 8 Device Configuration (DC) policy JSON files
-│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed.json
-│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile.json
-│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Kiosk.json
-│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Single-App-Kiosk.json
-│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared.json
-│   ├── AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile.json
-│   ├── AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN.json
-│   └── AND - DC - Defender-For-Endpoint - DEV - Personally-Owned - Always-On-VPN.json
+│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed - v1.5.json
+│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile - v1.5.json
+│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Multi-App-Kiosk - v1.5.json
+│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Single-App-Kiosk - v1.5.json
+│   ├── AND - DC - Device-Restrictions - DEV - Corporate-Dedicated-Devices - Shared - v1.5.json
+│   ├── AND - DC - Device-Restrictions - USR - Personally-Owned - Work-Profile - v1.5.json
+│   ├── AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN - v1.5.json
+│   └── AND - DC - Defender-For-Endpoint - DEV - Personally-Owned - Always-On-VPN - v1.5.json
 │
 ├── SettingsCatalog_Device_Restrictions/                                   ← 2 Settings Catalog (SC) policy JSON files
-│   ├── AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed.json
-│   └── AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile.json
+│   ├── AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed - v1.5.json
+│   └── AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile - v1.5.json
 │
 ├── CompliancePolicies/                                                    ← 7 Compliance Policy JSON files
-│   ├── AND - CP - DEV - Compliance - Corporate-Fully-Managed-Devices.json
-│   ├── AND - CP - DEV - Compliance - Corporate-Owned - Work-Profile.json
-│   ├── AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Kiosk.json
-│   ├── AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Shared.json
-│   ├── AND - CP - DEV - Compliance - MDE - Corporate Devices.json
-│   ├── AND - CP - DEV - Compliance - MDE - Personal Devices.json
-│   └── AND - CP - USR - Compliance - Personally-Owned - Work-Profile.json
+│   ├── AND - CP - DEV - Corporate-Fully-Managed-Devices - v1.5.json
+│   ├── AND - CP - DEV - Corporate-Owned - Work-Profile - v1.5.json
+│   ├── AND - CP - DEV - Corporate-Dedicated-Devices - Kiosk - v1.5.json
+│   ├── AND - CP - DEV - Corporate-Dedicated-Devices - Shared - v1.5.json
+│   ├── AND - CP - DEV - Defender (MDE) - Corporate Devices - v1.5.json
+│   ├── AND - CP - DEV - Defender (MDE) - Personal Devices - v1.5.json
+│   └── AND - CP - USR - Personally-Owned - Work-Profile - v1.5.json
 │
 ├── AppConfigurationPolicy/                                                ← 4 App Configuration Policy JSON files
-│   ├── AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint.json
-│   ├── AND - App-Configuration - DEV - Corporate-Owned - Outlook Settings.json
-│   ├── AND - App-Configuration - DEV - Personally-Owned - Outlook Settings.json
-│   └── AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication.json
+│   ├── AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint - v1.5.json
+│   ├── AND - App-Configuration - DEV - Corporate-Owned - Outlook Settings - v1.5.json
+│   ├── AND - App-Configuration - DEV - Personally-Owned - Outlook Settings - v1.5.json
+│   └── AND - App-Configuration - DEV - Shared-Devices - QR Code-Authentication - v1.5.json
 │
 ├── AppProtection_MAM/                                                     ← 1 App Protection Policy (MAM) JSON file
-│   └── AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD.json
+│   └── AND - APP - USR - App Protection - MAM - L2 - BYOD Devices - v1.5.json
 │
 ├── ConditionalAccess/                                                     ← 2 Conditional Access policy JSON files
-│   ├── CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice.json
-│   └── CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD.json
+│   ├── CA210-USR-AllApps-Android-AnyCli-AnyLoc-ReqCompliant.json
+│   └── CA213-USR-AllApps-Android-AnyCli-BYOD-ReqAppProtect-AppCtrl.json
 │
 ├── AssignmentFilters/                                                     ← 4 Assignment Filter JSON files
 │   ├── AND-COFM-DEV.json
@@ -267,11 +267,11 @@ All policy names in this baseline follow a structured naming pattern:
 
 | Policy Name | Type |
 | :--- | :--- |
-| `AND - CP - DEV - Compliance - Corporate-Fully-Managed-Devices` | Compliance policy — Fully Managed |
-| `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed` | DeviceConfiguration Device Restrictions — Fully Managed |
-| `AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN` | DeviceConfiguration — MDE Always-On VPN (Corporate) |
-| `AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint` | App Configuration — MDE low-touch onboarding |
-| `AND - App-Protection - USR - MAM - All Microsoft Apps - BYOD` | App Protection Policy — MAM BYOD |
+| `AND - CP - DEV - Corporate-Fully-Managed-Devices - v1.5` | Compliance policy — Fully Managed |
+| `AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed - v1.5` | DeviceConfiguration Device Restrictions — Fully Managed |
+| `AND - DC - Defender-For-Endpoint - DEV - Corporate-Owned - Always-On-VPN - v1.5` | DeviceConfiguration — MDE Always-On VPN (Corporate) |
+| `AND - App-Configuration - DEV - All-Profile-Types - Defender-For-Endpoint - v1.5` | App Configuration — MDE low-touch onboarding |
+| `AND - APP - USR - App Protection - MAM - L2 - BYOD Devices - v1.5` | App Protection Policy — MAM BYOD |
 
 > **Assignment Filters** use an abbreviated hyphenated format: `AND-[MODEL]-[SCOPE]` (e.g., `AND-COFM-DEV` = Corporate-Owned Fully Managed Devices).
 
@@ -281,7 +281,7 @@ All policy names in this baseline follow a structured naming pattern:
 
 | Version | Date | Summary |
 |---|---|---|
-| 1.5 | June 2026 | Intune June 2026 release updates: Guide 2 (BYOD) full rewrite — AMAPI web enrollment GA, migration policy, updated enrollment UX, apps-at-enrollment, Strict Tunnel Mode, Credential Manager, passkey limitation. Guide 1: removed Global Administrator from MGP requirements (Intune Administrator only); Android XR enrollment added; Direct LOB app deployment note. Guide 10 (MHS): BREAKING CHANGE exit lock task mode password → Device Config Profile; Custom Top Bar; App Silencing; remote Suspend/Restore actions. Guide 11 (MDE): MTD Enhanced Security Permissions; Strict Tunnel Mode section. Guide 12 (CIS): Location setting rename documented; Block Bluetooth Sharing (new SC setting) added. CLAUDE.md added. |
+| 1.5 | June 2026 | Intune June 2026 release updates: Guide 2 (BYOD) full rewrite — AMAPI web enrollment GA, migration policy, updated enrollment UX, apps-at-enrollment, Strict Tunnel Mode, Credential Manager, passkey limitation. Guide 1: removed Global Administrator from MGP requirements (Intune Administrator only); Android XR enrollment added; Direct LOB app deployment note; MGP Account Upgrade to Entra ID section added. Guide 10 (MHS): BREAKING CHANGE exit lock task mode password → Device Config Profile; Custom Top Bar; App Silencing; remote Suspend/Restore actions. Guide 11 (MDE): MTD Enhanced Security Permissions; Strict Tunnel Mode section. Guide 12 (CIS): Location setting rename documented; Block Bluetooth Sharing (new SC setting) added. Policy renames: all 22 policy files versioned with `- v1.5` suffix; Compliance policies simplified (removed `Compliance -` infix, `MDE` renamed to `Defender (MDE)`); App Protection renamed to `AND - APP - USR - App Protection - MAM - L2 - BYOD Devices - v1.5`. Conditional Access updated to match CA Baseline: CA210 (compliant device, 38 excluded roles, guest exclusions) and CA213 (BYOD App Protection, All apps, browser+mobile, Defender for Cloud Apps session control). SC FM fixed: removed irrelevant cross-profile setting, settingCount 32→31. SETTINGSOUTPUT.md: all 31 SC FM and 35 SC COWP settings fully documented; DC/SC Wi-Fi conflict notes added. CLAUDE.md added. |
 | 1.4 | June 2026 | Documentation: `12_Android_CIS_Compliance_Hardening_Guide.md` replaced by `12_Android_CIS-Microsoft_Compliance_Settings_Guide.md` — full reformat to iOS-style publish-ready reference with security level classification (CIS L1/L2, MS-L1/L2/L3, ADM-EXP), per-setting Level/Source columns, deviations registry, per-enrollment policy tables verified against exported JSON, all W-xx and gap tracker entries preserved |
 | 1.3 | May 2026 | Compliance: renamed all 5 policies to `AND - CP - ...` convention; extracted MDE threat protection into 2 dedicated MDE-only compliance policies (Corporate + Personal); SC FM/COWP DC-only setting limitations documented; CIS gap tracker and compliance findings merged into hardening guide |
 | 1.2 | April 2026 | Conditional Access: CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice scoped to Intune-managed devices; CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD refined for Microsoft 365 BYOD MAM only |
