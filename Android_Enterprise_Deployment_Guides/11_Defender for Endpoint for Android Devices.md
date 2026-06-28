@@ -99,7 +99,39 @@ Before deploying the app or policies, the connection between the Microsoft Defen
 
 ---
 
+### 3b. (Optional) MTD Enhanced Security Permissions for Microsoft Defender for Endpoint
+
+Introduced in Microsoft Intune Service Release 2605 (June 8, 2026), this feature grants elevated OS-level permissions to the Microsoft Defender for Endpoint app, reducing the risk of the app being suspended, hibernated, or force-stopped by the user or by Android's battery optimization routines.
+
+#### What This Grants
+
+When enabled, Defender for Endpoint receives the following system-level exemptions:
+
+| Permission | Effect |
+| :--- | :--- |
+| **Suspension exemption** | The app cannot be suspended by the OS or by Intune's app suspension mechanisms |
+| **Hibernation exemption** | The app is excluded from Android battery optimization hibernation — prevents it from being put into deep sleep |
+| **Power restrictions exemption** | The app is exempt from app standby buckets and can start foreground services regardless of battery state |
+| **User controls exemption** | Users cannot clear the app's data or force-stop it from Android Settings |
+
+> **Important:** Only one Mobile Threat Defense partner per tenant can hold these elevated permissions at a time.
+
+#### Configuration
+
+1. Go to **Endpoint Security** > **Microsoft Defender for Endpoint** in the Intune admin center.
+2. Under **Connector settings**, locate the **Mobile Threat Defense role** category.
+3. Toggle **Grant MTD role permissions** to **On** for Microsoft Defender for Endpoint.
+4. Optionally, enable **Automatically launch during setup** to ensure Defender starts during initial device provisioning.
+5. Save the connector settings.
+
+> **Applies to:** Android Enterprise corporate-owned fully managed (COBO), Android Enterprise corporate-owned work profile (COPE).
+>
+> **Reference:** [Mobile Threat Defense toggle options](https://learn.microsoft.com/en-us/intune/device-security/mobile-threat-defense/enable-connector#mobile-threat-defense-toggle-options)
+
+---
+
 ### 4. Step 2: Deploy the Microsoft Defender App via Managed Google Play
+
 
 The MDE app must be approved in Managed Google Play and assigned to the relevant device groups before policy configuration begins.
 
@@ -206,7 +238,45 @@ Two separate Device Configuration policies are included in the baseline — one 
 
 ---
 
-### 7. (Optional) App Protection Policy – MDE Risk Signals
+### 7. (Optional) Strict Tunnel Mode for Microsoft Tunnel
+
+Introduced in Microsoft Intune Service Release 2605 (June 8, 2026), Strict Tunnel Mode strengthens network security by ensuring that all work profile network traffic is routed exclusively through the Microsoft Tunnel VPN. If the VPN connection is unavailable or drops, all network access from the work profile is blocked until the tunnel reconnects — preventing work apps from reaching the internet outside the tunnel boundary.
+
+#### Standard Always-On VPN vs. Strict Tunnel Mode
+
+| Behavior | Always-On VPN (standard) | Strict Tunnel Mode |
+| :--- | :--- | :--- |
+| All traffic routed through tunnel | Yes, when connected | Yes, when connected |
+| Behavior if VPN drops | Traffic falls through to direct internet | All traffic blocked until VPN reconnects |
+| App exclusion list | Not applicable | Supported — specific apps can bypass the tunnel |
+| Enrollment requirement | Any enrollment method | Requires AMAPI enrollment |
+
+> **When to use:** Strict Tunnel Mode is appropriate for environments with strict data residency or compliance requirements where unmonitored internet access from work apps must be prevented at all times. For most organizations, standard Always-On VPN (Step 4 / 6) provides the right balance of protection and reliability.
+
+#### Requirements
+
+- Device must be enrolled using **Android Management API (AMAPI)** — web-based enrollment or migrated via the Move to Android Management API policy (see Guide 2).
+- Microsoft Tunnel infrastructure must be deployed in the tenant.
+
+#### Configuration
+
+Strict Tunnel Mode is configured within the Microsoft Tunnel site and VPN profile settings:
+
+1. Go to **Tenant administration** > **Microsoft Tunnel** > **VPN profiles**.
+2. Create or edit a VPN profile targeting the relevant Android device groups.
+3. Enable **Strict Tunnel Mode** within the profile configuration.
+4. Optionally, configure an **app exclusion list** to identify apps that are permitted to communicate outside the tunnel (for example, device management agents or apps with dedicated network paths).
+5. Assign the profile to the appropriate device groups.
+
+> **MAM (unenrolled devices):** For devices using App Protection Policies without enrollment, Strict Tunnel Mode can be enabled through a Microsoft Edge app configuration policy instead of a VPN profile.
+
+> **Applies to:** Android Enterprise corporate-owned fully managed (COBO), Android Enterprise corporate-owned work profile (COPE), Android Enterprise personally owned work profile (BYOD — AMAPI enrolled), Android (MAM, unenrolled).
+>
+> **Reference:** [Overview of Microsoft Tunnel](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/overview#capabilities)
+
+---
+
+### 8. (Optional) App Protection Policy – MDE Risk Signals
 
 MDE risk signals can be integrated into App Protection Policies to block or wipe app data based on the device's threat level. This configuration applies to both MDM-enrolled and MAM unenrolled devices.
 
@@ -230,7 +300,7 @@ MDE risk signals can be integrated into App Protection Policies to block or wipe
 
 ---
 
-### 8. (Optional) Conditional Access Considerations
+### 9. (Optional) Conditional Access Considerations
 
 MDE integrates with Microsoft Entra ID and Intune Conditional Access to enforce device risk-based access control. When App Protection Policies or Compliance Policies include MDE risk signals, ensure the following CA exclusions are in place to avoid blocking MDE's own reporting channels.
 

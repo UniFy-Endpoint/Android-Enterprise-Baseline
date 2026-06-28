@@ -17,7 +17,7 @@
   "roleScopeTagIds": [
     "0"
   ],
-  "settingCount": 34,
+  "settingCount": 35,
   "technologies@odata.type": "#microsoft.graph.deviceManagementConfigurationTechnologies",
   "technologies": "android",
   "id": "27ad8e6b-c279-43c9-8e91-c8a4704c6c06",
@@ -756,6 +756,27 @@
       },
       "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('33')/settingDefinitions/$ref",
       "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('33')/settingDefinitions"
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "@odata.id": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('34')",
+      "@odata.editLink": "deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('34')",
+      "id": "34",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.bluetoothblocksharing",
+        "settingInstanceTemplateReference": null,
+        "auditRuleInformation": null,
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "settingValueTemplateReference": null,
+          "value": "com.android.devicerestrictionpolicy.bluetoothblocksharing_true",
+          "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
+          "children": []
+        }
+      },
+      "settingDefinitions@odata.associationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('34')/settingDefinitions/$ref",
+      "settingDefinitions@odata.navigationLink": "https://graph.microsoft.com/beta/deviceManagement/configurationPolicies('27ad8e6b-c279-43c9-8e91-c8a4704c6c06')/settings('34')/settingDefinitions"
     }
   ],
   "#microsoft.graph.assign": {

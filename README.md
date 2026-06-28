@@ -6,7 +6,7 @@
 |---|---|
 | **Author** | Sr. Modern Work Consultant |
 | **CIS Reference** | CIS Google Android Benchmark v1.6.0 |
-| **Last Updated** | June 2026 |
+| **Last Updated** | June 2026 (v1.5) |
 
 ---
 
@@ -283,6 +283,7 @@ All policy names in this baseline follow a structured naming pattern:
 
 | Version | Date | Summary |
 |---|---|---|
+| 1.5 | June 2026 | Intune June 2026 release updates: Guide 2 (BYOD) full rewrite — AMAPI web enrollment GA, migration policy, updated enrollment UX, apps-at-enrollment, Strict Tunnel Mode, Credential Manager, passkey limitation. Guide 1: removed Global Administrator from MGP requirements (Intune Administrator only); Android XR enrollment added; Direct LOB app deployment note. Guide 10 (MHS): BREAKING CHANGE exit lock task mode password → Device Config Profile; Custom Top Bar; App Silencing; remote Suspend/Restore actions. Guide 11 (MDE): MTD Enhanced Security Permissions; Strict Tunnel Mode section. Guide 12 (CIS): Location setting rename documented; Block Bluetooth Sharing (new SC setting) added. CLAUDE.md added. |
 | 1.4 | June 2026 | Documentation: `12_Android_CIS_Compliance_Hardening_Guide.md` replaced by `12_Android_CIS-Microsoft_Compliance_Settings_Guide.md` — full reformat to iOS-style publish-ready reference with security level classification (CIS L1/L2, MS-L1/L2/L3, ADM-EXP), per-setting Level/Source columns, deviations registry, per-enrollment policy tables verified against exported JSON, all W-xx and gap tracker entries preserved |
 | 1.3 | May 2026 | Compliance: renamed all 5 policies to `AND - CP - ...` convention; extracted MDE threat protection into 2 dedicated MDE-only compliance policies (Corporate + Personal); SC FM/COWP DC-only setting limitations documented; CIS gap tracker and compliance findings merged into hardening guide |
 | 1.2 | April 2026 | Conditional Access: CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice scoped to Intune-managed devices; CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD refined for Microsoft 365 BYOD MAM only |

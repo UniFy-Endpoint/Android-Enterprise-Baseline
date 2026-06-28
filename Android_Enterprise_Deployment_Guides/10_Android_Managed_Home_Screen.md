@@ -62,7 +62,7 @@ The table below covers the most important Managed Home Screen configuration keys
 | Auto-enter kiosk mode | `auto_enter_kiosk_mode` | Boolean | `true` | Device auto-launches MHS on startup |
 | Enable session PIN | `com.microsoft.launcher.managed.passwordenabled` | Boolean | `true` | Requires PIN to exit kiosk or switch users |
 | Session PIN | `com.microsoft.launcher.managed.password` | String | `<PIN value>` | Static PIN for exiting kiosk mode. Use with caution — store securely |
-| Exit kiosk mode code | `exit_lock_task_mode_code` | String | `<PIN value>` | Alternative to session PIN for exiting lock task mode |
+| Exit kiosk mode code | `exit_lock_task_mode_code` | String | `<PIN value>` | **Deprecated — see breaking change note below.** Do not configure this key in the App Configuration Policy. Configure the exit PIN via a Device Configuration Profile instead. |
 | Show home button | `allow_home_button` | Boolean | `false` | Hide native Android home button |
 | Show back button | `allow_back_button` | Boolean | `false` | Hide native Android back button |
 | Show overview / recent apps button | `allow_overview_button` | Boolean | `false` | Hide recent apps button |
@@ -159,7 +159,7 @@ The `com.microsoft.launcher.managed.applications` key takes a JSON array of app 
 | `show_volume_setting` | `true` |
 | `show_notifications_setting` | `false` |
 | `com.microsoft.launcher.managed.applications` | JSON list of approved apps |
-| `exit_lock_task_mode_code` | Set a PIN — communicate to helpdesk only |
+| `exit_lock_task_mode_code` | **Do not configure here** — use a Device Configuration Profile (see breaking change note below) |
 
 #### Shared Device (QR Code Sign-In)
 
@@ -194,3 +194,83 @@ MHS configuration (via App Configuration Policy) works alongside the Device Rest
 ---
 
 > **Pilot testing:** Always test MHS configuration with a physical device before broad deployment. Some key combinations (e.g., hiding all navigation buttons with no exit PIN) can lock the device in a state requiring a factory reset to recover. Test the exit procedure with helpdesk before deploying to production.
+
+---
+
+### New Capabilities (June 2026)
+
+The following capabilities were introduced in Microsoft Intune Service Release 2605 (June 8, 2026).
+
+---
+
+#### Breaking Change — Exit Lock Task Mode Password
+
+> **Important:** The exit lock task mode password (the PIN used to leave kiosk mode) can no longer be configured via an App Configuration Policy. Any existing App Configuration Policy that sets this value is no longer the supported method and should be migrated.
+
+**Action required:**
+1. Create or update a **Device Configuration Profile** for the relevant device group (Dedicated — Multi-App Kiosk, Dedicated — Shared, or Fully Managed).
+2. Configure the exit lock task mode password within that profile.
+3. Remove the `exit_lock_task_mode_code` key from any App Configuration Policy that currently sets it.
+
+> **Applies to:** Android Enterprise corporate-owned fully managed (COBO), Android Enterprise corporate-owned dedicated (COSU).
+>
+> **Reference:** [Configure the Microsoft Managed Home Screen app for Android Enterprise](https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-home-screen)
+
+---
+
+#### Custom Top Bar Elements
+
+Display custom identifying text in the Managed Home Screen top bar to assist with device identification in the field — for example, on shared checkout devices, departmental kiosks, or devices in mixed deployments where visual identification is needed.
+
+**Configuration:** Add via App Configuration Policy (Configuration designer or JSON).
+
+| Key | Type | Maximum Length | Supported Values |
+| :--- | :--- | :--- | :--- |
+| `top_bar_element` | String | 63 characters | `serial_number`, `device_name`, `tenant_name`, or custom text |
+
+Dynamic variables can be used as the value to populate the top bar automatically from device properties:
+
+| Variable | Resolves to |
+| :--- | :--- |
+| `{{SerialNumber}}` | Device serial number |
+| `{{DeviceName}}` | Intune device name |
+| `{{TenantName}}` | Entra ID tenant display name |
+
+**Example use cases:** Label devices by department (`{{TenantName}} — Warehouse`), or display the serial number for helpdesk identification (`SN: {{SerialNumber}}`).
+
+> **Applies to:** Android Enterprise dedicated devices (COSU), Android Enterprise fully managed devices (COBO).
+
+---
+
+#### App Silencing
+
+App silencing prevents applications from interrupting or bypassing MHS authentication events — specifically, the sign-in screen and session PIN prompt. When a user is on the sign-in or PIN screen, silenced apps cannot start activities, display notifications, or trigger alerts that could distract the user or allow someone to bypass authentication by tapping through to another app.
+
+- Apps are automatically restored to their normal active state once the device is unlocked.
+- A configurable allowlist permits specific apps to remain unsilenced (for example, critical communications apps that must remain active even during sign-in).
+- App silencing is opt-in and must be enabled explicitly in the App Configuration Policy.
+
+> **Applies to:** Android Enterprise (all enrollment types where MHS is deployed).
+>
+> **Reference:** [Configure the Microsoft Managed Home Screen app for Android Enterprise](https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-home-screen)
+
+---
+
+#### Remote Actions — Suspend and Restore Managed Home Screen
+
+Two new remote device actions are available from the Intune admin center for devices running Managed Home Screen.
+
+| Action | Effect |
+| :--- | :--- |
+| **Suspend Managed Home Screen** | Temporarily exits the MHS kiosk experience for a defined duration, allowing helpdesk or on-site technicians to perform troubleshooting, install peripherals, or reconfigure the device. The kiosk session resumes automatically when the duration expires or when Restore is triggered. |
+| **Restore Managed Home Screen** | Immediately re-locks the device into the MHS kiosk experience. Use after a Suspend action is no longer needed, or if the device exits kiosk mode unexpectedly. |
+
+**Benefits:** Reduces service disruption during troubleshooting. No policies need to be removed or re-applied, and no exit PIN is required from the Intune admin side.
+
+**How to trigger:** Navigate to **Devices** > select the device > **...** (overflow menu) > **Suspend Managed Home Screen** or **Restore Managed Home Screen**.
+
+> **Applies to:** Android Enterprise corporate-owned fully managed (COBO), Android Enterprise corporate-owned dedicated (COSU).
+>
+> **References:**
+> - [Suspend Managed Home Screen](https://learn.microsoft.com/en-us/intune/device-management/actions/suspend-managed-home-screen)
+> - [Restore Managed Home Screen](https://learn.microsoft.com/en-us/intune/device-management/actions/restore-managed-home-screen)

@@ -1,6 +1,6 @@
 # Android Enterprise Baseline — Settings Output
 
-Baseline version: **1.3** | Last updated: **2026-05-29** | Author: **Yoennis Olmo (UniFy-Endpoint)**
+Baseline version: **1.5** | Last updated: **2026-06-28** | Author: **Yoennis Olmo (UniFy-Endpoint)**
 
 This document lists every Intune policy file included in the baseline with its key configuration settings, target enrollment type, and group assignments.
 
@@ -567,7 +567,7 @@ This document lists every Intune policy file included in the baseline with its k
 | Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
 | Platform | androidEnterprise |
 | Target enrollment | Fully Managed (Default + Staging) |
-| Total settings configured | 31 |
+| Total settings configured | 32 |
 
 **Key Settings**
 
@@ -575,6 +575,7 @@ This document lists every Intune policy file included in the baseline with its k
 | :--- | :--- |
 | Camera | Not blocked (consistent with DC FM) |
 | Bluetooth configuration by user | Not blocked — intentional, consistent with DC FM. Users need to pair personal devices. |
+| Block Bluetooth sharing | Blocked — prevents content/file sharing over Bluetooth; device pairing is unaffected |
 | Data roaming | Not blocked — users travel and take devices home (consistent with DC FM) |
 | Network escape hatch | Disabled — see CIS Hardening Guide W-4 |
 | System update type | Windowed |
@@ -611,7 +612,7 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
 | Platform | androidEnterprise |
 | Target enrollment | Corporate-Owned Work Profile (Default + Staging) |
-| Total settings configured | 34 |
+| Total settings configured | 35 |
 
 **Additional Key Settings**
 
@@ -625,6 +626,7 @@ The following settings from `AND - DC - Device-Restrictions - DEV - Corporate-Ow
 | Default permission policy | Device Default — OS handles runtime permission prompts (changed from Prompt) |
 | Location | Location enabled — forces location services ON; prevents users from disabling |
 | Require Common Criteria mode | Enabled (Samsung Knox only — elevated security standards for sensitive organisations) |
+| Block Bluetooth sharing | Blocked — prevents content/file sharing over Bluetooth within the work profile |
 
 **SC Limitation — Settings only available in DC template (not configurable via Settings Catalog)**
 

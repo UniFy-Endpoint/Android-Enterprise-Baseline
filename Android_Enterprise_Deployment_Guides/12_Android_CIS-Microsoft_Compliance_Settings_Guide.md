@@ -5,7 +5,7 @@
 | **Document Type** | Work Instruction – Configuration Reference |
 | **Author** | Sr. Modern Work Consultant |
 | **Last Updated** | June 2026 |
-| **Version** | 1.4 |
+| **Version** | 1.5 |
 | **Applies To** | Android 13+, Microsoft Intune, Android Enterprise |
 | **CIS Reference** | CIS Google Android Benchmark v1.6.0 |
 | **Microsoft Reference** | Android Enterprise Security Configuration Framework (updated April 2026) |
@@ -322,7 +322,7 @@ Fully Managed (COBO) devices are corporate-owned and fully managed by IT. The de
 | Add new users | Block | MS-L2 | `usersBlockAdd: true` — DC-only; no SC equivalent |
 | Remove users | Block | MS-L2 | `usersBlockRemove: true` — DC-only; no SC equivalent |
 | Date/time configuration | Blocked | CIS L1 | Prevents time manipulation; `dateTimeConfigurationBlocked: true` |
-| Location mode | Enforced | MS-L2 | `locationMode: enforced` — location services enabled and locked (required for MDE and Lost Mode) |
+| Location mode | Location enabled | MS-L2 | `locationMode: enforced` — location services enabled and locked (required for MDE and Lost Mode). **UI note (April 2026):** This setting was renamed in the Settings Catalog from "Block location" to "Location" with three states: *Device default*, *Location enabled*, *Location disabled*. The configured value (Location enabled / enforced) is unchanged. |
 | Skip first-use hints | Enabled | ADM-EXP | Suppresses onboarding wizards on managed apps |
 
 ---
@@ -348,6 +348,7 @@ Fully Managed (COBO) devices are corporate-owned and fully managed by IT. The de
 | Wi-Fi Direct | Disallowed | CIS L2 | SC FM: `wifiDirectSettings: disallowed` — blocks peer-to-peer Wi-Fi |
 | NFC outgoing beam | Blocked | CIS L2 | Prevents NFC-based data transfer |
 | Bluetooth configuration | NOT blocked | CIS L2* | **Intentional deviation** — FM users need to pair headsets and connect to home Wi-Fi; see Section 3.1 and W-3 |
+| Block Bluetooth sharing | Blocked | ADM-EXP | SC FM: `bluetoothblocksharing_true` — new Settings Catalog setting (June 2026). Controls content/file sharing over Bluetooth, separate from Bluetooth pairing control (W-3). Blocking sharing does not prevent users from pairing headsets or car systems. Explicitly configured in the baseline as Blocked. |
 | Data roaming | NOT blocked | CIS L2* | **Intentional deviation** — FM users travel and take devices home; see Section 3.1 |
 | Network escape hatch | Disabled | MS-L2 | `networkEscapeHatchAllowed: false` — no fallback network during enrollment; see W-4 |
 | Wi-Fi policy-defined configurations | NOT blocked | ADM-EXP | Users can modify Wi-Fi settings — intentional for FM; SC: `wifiBlockEditPolicyDefinedConfigurations: false` |
@@ -412,7 +413,7 @@ Corporate-Owned Work Profile (COPE) devices are corporate-owned but include a pe
 | Add new users | Block | MS-L2 | `usersBlockAdd: true` — DC-only |
 | Remove users | NOT blocked | MS-L2 | **Open gap (W-24):** `usersBlockRemove: false` on DC COPE — users can de-enroll corporate device |
 | Date/time configuration | Blocked | CIS L1 | |
-| Location mode | Enforced | MS-L2 | SC COWP: `locationMode: enforced` |
+| Location mode | Location enabled | MS-L2 | SC COWP: `locationMode: enforced`. **UI note (April 2026):** Setting renamed in Settings Catalog from "Block location" to "Location" — three states: *Device default*, *Location enabled*, *Location disabled*. Configured value unchanged. |
 | Private Space | Disallowed | CIS L2 | SC COWP: `privateSpacePolicy: disallowed` — Android 15+ feature blocked |
 | Developer settings | Disabled | CIS L1 | SC COWP |
 | Network escape hatch | Not configured | ADM-EXP | `null` on DC COPE; SC COWP: disabled |
@@ -453,6 +454,7 @@ Corporate-Owned Work Profile (COPE) devices are corporate-owned but include a pe
 | NFC outgoing beam | Blocked | CIS L2 | DC COPE + SC COWP |
 | Bluetooth configuration | NOT blocked | ADM-EXP | `bluetoothBlockConfiguration: false` — COPE users also pair personal BT devices |
 | Bluetooth contact sharing | Blocked | CIS L2 | `bluetoothBlockContactSharing: true` |
+| Block Bluetooth sharing | Blocked | ADM-EXP | SC COWP: `bluetoothblocksharing_true` — new Settings Catalog setting (June 2026). Controls content/file sharing over Bluetooth, separate from contact sharing (`bluetoothblockcontactsharing`). Explicitly configured in the baseline as Blocked rather than relying on OS default behavior. |
 | Data roaming | Blocked | CIS L2 | DC COPE + SC COWP: `dataRoamingBlocked: true` |
 | USB file transfer | Blocked | CIS L1 | SC COWP: `usbDataAccess: disallowUsbDataTransfer` |
 | External storage | Blocked | CIS L1 | SC COWP |

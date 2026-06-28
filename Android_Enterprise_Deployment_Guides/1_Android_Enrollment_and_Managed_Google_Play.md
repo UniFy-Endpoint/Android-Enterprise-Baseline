@@ -21,6 +21,7 @@ The table below summarizes the available Android enrollment methods in Microsoft
 | **Android Enterprise Fully Managed** | Corporate-owned device used exclusively for work. The entire device is under Intune management; no personal profile exists. | Corporate-owned | Field technicians, frontline workers, or any scenario requiring full device management | Android 10.0 |
 | **Android Enterprise Dedicated** | Corporate-owned, single-purpose or kiosk device. App availability and device usage is restricted to a defined scope. | Corporate-owned | Retail kiosks, digital signage, shared task devices, inventory scanners | Android 8.0 |
 | **Android Open Source Project (AOSP)** | Enrollment for devices built from AOSP that do not have Google Mobile Services (GMS). Supports both user-associated and userless configurations. | Corporate-owned | Teams Rooms devices, purpose-built non-GMS hardware | Android 9.0 |
+| **Android XR** | Enrollment for Android XR mixed-reality devices. Supports dedicated and fully managed modes. Devices appear alongside standard Android devices in the Intune admin center and support app deployment via Managed Google Play and core compliance policies. | Corporate-owned | Mixed-reality headsets, spatial computing devices | Android XR |
 
 > **Important:** Android device administrator (DA) enrollment is deprecated and is no longer supported for devices with access to Google Mobile Services (GMS). Microsoft Intune ended support for DA on GMS devices in December 2024. DA-managed devices have reduced policy coverage and will lose management capability over time. All new enrollments must use one of the Android Enterprise methods listed above. If your organization has existing DA-enrolled devices, migrate them to an Android Enterprise method.
 
@@ -92,7 +93,7 @@ The Microsoft Entra ID account used to create the Managed Google Play binding mu
 
 * **Exists in your Microsoft Entra tenant:** The account must be a member of your tenant, not a guest.
 * **Mailbox-enabled:** Google requires email verification during onboarding. The account must have an active mailbox to receive this verification.
-* **Sufficient Intune permissions:** The account must hold the Intune Administrator or Global Administrator role. For custom RBAC roles, the account requires organization *Read* and *Update* permissions.
+* **Sufficient Intune permissions:** The account must hold the **Intune Administrator** role. For custom RBAC roles, the account requires organization *Read* and *Update* permissions.
 * **Ability to consent to Google permissions:** The admin must be permitted to approve Google's required permissions. Cloud Application Administrator role or equivalent is sufficient.
 * **Interactive sign-in capable:** The account must support interactive sign-in. Service accounts and headless identities cannot complete the "Sign in with Microsoft" flow.
 * **Not blocked by Conditional Access:** Conditional Access policies must allow the account to access Google services (`play.google.com`, `enterprise.google.com`) during setup. Verify this before starting.
@@ -132,6 +133,8 @@ After the Managed Google Play connection is established, Microsoft Intune automa
 
 > **Note:** These four apps are added automatically — you do not need to search for, approve, or manually add them. They will appear in the Apps list within a few minutes of the Managed Google Play connection completing its first sync.
 
+> **Direct LOB app management (March 2026):** For corporate-owned fully managed (COBO) and dedicated (COSU) devices, Microsoft Intune now supports deploying Android line-of-business (LOB) apps directly from Intune without publishing them to Managed Google Play first. APK files can be uploaded directly to Intune, assigned as required apps, and managed through the standard Intune app lifecycle — including app configuration policies. This capability does not apply to BYOD, COPE, or MAM scenarios, which continue to require Managed Google Play for app delivery. Reference: [Add an Android line-of-business app to Microsoft Intune](https://learn.microsoft.com/en-us/intune/app-management/deployment/add-lob-android)
+
 #### Play Store Mode
 
 After connecting Managed Google Play, the work profile Play Store on enrolled devices can operate in one of two modes. The mode controls how end users browse and install approved apps.
@@ -166,7 +169,7 @@ Using a corporate Entra ID account instead of a personal or shared Gmail account
 
 The Entra ID account used for the upgrade must meet all of the following conditions:
 
-- Exists in your Microsoft Entra tenant with Intune administrative permissions (Intune Administrator or Global Administrator).
+- Exists in your Microsoft Entra tenant with Intune administrative permissions (**Intune Administrator** role).
 - Has a mailbox enabled — Google requires email verification during the process.
 - Has **first and last name** populated in the account properties. Missing name fields will cause the upgrade to fail.
 - Supports interactive sign-in (not a service account or headless identity).
