@@ -88,6 +88,12 @@ The table below covers the most important Managed Home Screen configuration keys
 | Show notifications | `show_notifications_setting` | Boolean | `false` | Hide for kiosk |
 | Show managed settings | `show_managed_settings` | Boolean | `false` | Hide device management settings from users |
 
+#### Display and Orientation
+
+| Setting Name | Key | Type | Recommended Value | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| Screen orientation | `screen_orientation` | Integer | `0` (portrait) or `1` (landscape) | Locks kiosk to portrait (`0`), landscape (`1`), or auto (`3`). **Android 16 note:** Ignored on devices with a 600 dp+ display running Android 16 or later — see [New Capabilities (June 2025)](#new-capabilities-june-2025). |
+
 #### Shared Device / Session Management
 
 | Setting Name | Key | Type | Notes |
@@ -194,6 +200,53 @@ MHS configuration (via App Configuration Policy) works alongside the Device Rest
 ---
 
 > **Pilot testing:** Always test MHS configuration with a physical device before broad deployment. Some key combinations (e.g., hiding all navigation buttons with no exit PIN) can lock the device in a state requiring a factory reset to recover. Test the exit procedure with helpdesk before deploying to production.
+
+---
+
+### New Capabilities (June 2025)
+
+#### Android 16 — Screen Orientation on Large-Form-Factor Devices
+
+Starting with Android 16, screen orientation on devices with a smallest screen dimension of 600 dp or larger (tablets and large-form-factor devices) is determined by the OS device setting, not the MHS `screen_orientation` configuration. The `screen_orientation` key is silently ignored on these devices.
+
+**Impact:** Kiosk deployments on Android 16 tablets may display in landscape or portrait based on the device's default OS orientation, regardless of the App Configuration Policy value.
+
+**Mitigation options:**
+- Mount devices in a fixed physical orientation using a stand or enclosure.
+- Set `show_rotate_setting: false` to prevent users from manually switching orientation.
+- Evaluate whether the OEM provides a device-level management setting to enforce orientation independently of MHS.
+
+> **Applies to:** Android Enterprise corporate-owned dedicated (COSU), Android Enterprise fully managed (COBO). Devices with a smallest screen dimension of 600 dp or more running Android 16 or later.
+>
+> **Reference:** [Configure the Microsoft Managed Home Screen app for Android Enterprise](https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-home-screen)
+
+---
+
+### New Capabilities (August 2025)
+
+#### Offline Mode and App Access Without Sign-In (Dedicated Devices — Entra Shared Device Mode)
+
+Two capabilities extend MHS functionality for dedicated devices enrolled in Microsoft Entra shared device mode, addressing scenarios such as warehouse, retail, or shift-worker deployments where devices may operate in areas with intermittent network connectivity.
+
+**Offline Mode**
+
+Offline mode allows MHS to remain accessible and display approved apps when the device cannot reach Entra ID for authentication. A configurable grace period determines how long offline access is permitted before a network connection is required.
+
+- Configure the offline grace period (in hours) via App Configuration Policy.
+- When the grace period expires, the device returns to the sign-in screen and requires network connectivity to re-authenticate.
+- App tiles remain visible during the offline grace period; apps requiring an active authenticated session fail independently.
+
+**App Access Without Sign-In**
+
+Designated apps can be launched directly from the MHS sign-in screen without completing Entra authentication. This enables specific apps — such as a clock-in tool, emergency communications app, or public-facing informational display — to remain accessible to users who have not yet authenticated.
+
+- Configure as a list of app package names in the App Configuration Policy.
+- Apps in this list launch in an unauthenticated context and must not require or expose corporate data.
+- Use exclusively for apps explicitly designed to operate without authenticated identity.
+
+> **Applies to:** Android Enterprise corporate-owned dedicated devices (COSU) enrolled in Microsoft Entra shared device mode.
+>
+> **Reference:** [Configure the Microsoft Managed Home Screen app for Android Enterprise](https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-home-screen)
 
 ---
 
