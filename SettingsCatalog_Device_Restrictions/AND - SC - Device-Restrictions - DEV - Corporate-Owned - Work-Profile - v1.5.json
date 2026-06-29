@@ -770,7 +770,7 @@
         "choiceSettingValue": {
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
-          "value": "com.android.devicerestrictionpolicy.bluetoothblocksharing_true",
+          "value": "com.android.devicerestrictionpolicy.bluetoothblocksharing_disallowed",
           "children@odata.type": "#Collection(microsoft.graph.deviceManagementConfigurationSettingInstance)",
           "children": []
         }
