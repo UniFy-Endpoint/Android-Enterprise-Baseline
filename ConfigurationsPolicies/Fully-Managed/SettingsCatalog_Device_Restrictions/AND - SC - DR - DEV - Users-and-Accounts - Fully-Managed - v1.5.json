@@ -1,0 +1,42 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies(assignments(),settings())/$entity",
+  "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicy",
+  "createdDateTime": "2026-06-29T00:00:00Z",
+  "creationSource": null,
+  "description": "Device Restrictions - Users and Accounts Settings for Android Enterprise Corporate-Owned Fully Managed Devices.",
+  "lastModifiedDateTime": "2026-06-29T00:00:00Z",
+  "name": "AND - SC - DR - DEV - Users-and-Accounts - Fully-Managed - v1.5",
+  "platforms": "androidEnterprise",
+  "priorityMetaData": null,
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "settingCount": 1,
+  "technologies": "android",
+  "id": "",
+  "templateReference": {
+    "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicyTemplateReference",
+    "templateId": "",
+    "templateFamily": "none",
+    "templateDisplayName": null,
+    "templateDisplayVersion": null
+  },
+  "assignments": [],
+  "settings": [
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "id": "0",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.certificatecredentialconfigurationdisabled",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "settingValueTemplateReference": null,
+          "value": "com.android.devicerestrictionpolicy.certificatecredentialconfigurationdisabled_true",
+          "children": []
+        }
+      }
+    }
+  ]
+}

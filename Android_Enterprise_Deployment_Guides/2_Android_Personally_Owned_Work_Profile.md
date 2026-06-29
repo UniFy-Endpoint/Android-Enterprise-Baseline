@@ -44,7 +44,7 @@ Microsoft Intune supports two enrollment methods for personally owned work profi
 
 ### Configuration
 
-#### 1. Create Microsoft Entra ID Group
+#### 1. Create Microsoft Entra ID Group for Personal-Work-Profile-Users & Personal-Work-Profile-Devices
 
 1. Go to **Microsoft Entra admin center** > **Groups** > **New group**.
 2. Configure:
@@ -59,6 +59,21 @@ Microsoft Intune supports two enrollment methods for personally owned work profi
 3. Add owners, then select **Create**.
 
 ---
+
+1. Go to **Microsoft Entra admin center** > **Groups** > **New group**.
+2. Configure:
+   * **Group type:** Security
+   * **Membership type:** Dynamic Device
+   * **Name:** `AND - DEV - Android-Personal-Work-Profile-Devices - BYOD`
+   * **Description:** This group includes all Android Enterprise Personal-Owned work profile devices.
+   * **Dynamic membership rule:**
+     ```
+   (device.deviceOSType -startsWith "AndroidForWork") and (device.deviceOwnership -eq "Personal") and (device.deviceTrustType -eq "Workplace") and (device.deviceManagementAppId -eq "0000000a-0000-0000-c000-000000000000")
+     ```
+3. Then select **Create**.
+
+---
+
 
 #### 2. Enable Web-Based Enrollment
 
@@ -138,9 +153,9 @@ For devices already enrolled via the legacy Company Portal flow, deploy this con
    * **Template:** **Move to Android Management API**
 3. Select **Create**.
 4. **Basics:**
-   * **Name:** `AND - Migration - Move-to-AMAPI - Personally-Owned-Work-Profile`
-   * **Description:** Migrates existing personally-owned work profile devices from Custom DPC to Android Management API policy delivery.
-5. **Assignments:** Assign to the Entra ID group created in Step 1, or to a staged sub-group for phased rollout.
+   * **Name:** `AND - DC - AMAPI - USR- Personal-Work-Profile - v1.x`
+   * **Description:** This policy migrates existing Android personally-owned work profile devices enrolled through the Company Portal App to Android Management API (AMAPI).
+5. **Assignments:** Assign to the Entra ID group created in Step 1, with all `AND - DEV - Android-Personal-Work-Profile-Devices - BYOD`, or to a staged sub-group for phased rollout.
 6. **Create**.
 
 > **Monitoring:** Track migration progress at **Devices** > **Monitor** > **Personal devices on Android Management API**. Device statuses: **AMAPI** (migrated), **Move pending**, **Error**, or **Not targeted to move**.
@@ -178,7 +193,13 @@ Configure work profile restrictions such as preventing copy/paste between work a
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Templates > **Device restrictions** (Personally-Owned Work Profile).
 
-> **Settings Catalog does not support personally-owned work profiles.** The Settings Catalog in Microsoft Intune is scoped exclusively to corporate-owned Android Enterprise devices (Fully Managed, Corporate-Owned Work Profile, Dedicated/Kiosk). It cannot be used to configure device restrictions for BYOD work profile devices. Always use **Templates > Device restrictions (Personally-Owned Work Profile)** for this scenario.
+> **Settings Catalog does not support personally-owned work profiles.** Microsoft's Android Settings Catalog platform support matrix lists only corporate-owned Android Enterprise (Fully Managed, Corporate-Owned Work Profile, Dedicated/Kiosk) and AOSP. Personally-owned work profile is not included. Intune may allow a Settings Catalog policy to be created and assigned to BYOD users, but the device restriction settings are not enforced on the device — the BYOD policy channel does not process Settings Catalog device restriction objects. Assigning Settings Catalog restriction policies to BYOD user groups creates misleading policy assignment reporting without actual enforcement. Always use **Templates > Device restrictions (Personally-Owned Work Profile)** for this scenario.
+>
+> The AMAPI enrollment migration does not change this: AMAPI modernizes policy delivery for BYOD devices but does not extend Settings Catalog device restriction support to personally-owned work profile. This distinction is explicitly maintained in Microsoft documentation.
+>
+> Microsoft references: [Android configuration list for Intune settings catalog](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/ref-android-settings) (SC platform matrix — personally-owned work profile not listed) · [Device restriction settings for Android in Microsoft Intune](https://learn.microsoft.com/en-us/intune/device-configuration/templates/ref-device-restrictions-android-enterprise) (DC template — includes a dedicated section for personally-owned work profile)
+
+> **When to reassess this decision:** Revisit if Microsoft adds personally-owned work profile to the Android Settings Catalog platform support matrix, or if the Intune admin center exposes Settings Catalog creation explicitly scoped to personally-owned work profile. Monitor [Intune What's New](https://learn.microsoft.com/en-us/intune/whats-new/) for announcements. Until then, the Device Configuration template remains the only supported and enforced path for BYOD device restrictions.
 
 4. **Basics:**
    * **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
@@ -223,19 +244,105 @@ For devices not yet migrated to AMAPI, the original Company Portal enrollment fl
 
 The following capabilities become available on personally-owned work profile devices after migration to AMAPI enrollment.
 
-#### Credential Manager Permissions
+#### Credential Manager Provider
 
-On Android 14 and later, Intune can control which apps serve as system-level credential providers — handling passkey storage and password autofill within the work profile. This allows organizations to designate Microsoft Authenticator or a supported third-party password manager as the trusted credential source for work accounts.
+Android's Credential Manager API controls which apps serve as system-level credential providers on managed devices, responsible for **passkey storage** and **password autofill** within the work profile. By default, Android blocks third-party apps from acting as credential providers on managed devices. Intune's **Credential provider** app configuration setting overrides this default — allowing organizations to designate specific apps as trusted credential sources for work accounts.
 
-- Configure via **Apps** > **Android** > **Configuration** > **Managed Devices** > **Android Enterprise**.
-- **Known limitation:** Google Password Manager cannot act as a credential provider on BYOD devices. Only apps explicitly configured as providers are eligible.
-- Reference: [Add app configuration policies for managed Android Enterprise devices](https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-android)
+**Microsoft Authenticator is permitted automatically** and does not require an app configuration policy.
+
+**Supported enrollment types:**
+
+| Enrollment Type | Support |
+| :--- | :--- |
+| Android Enterprise Fully Managed (COBO) | Supported |
+| Android Enterprise Dedicated (COSU) | Supported |
+| Android Enterprise Corporate-Owned Work Profile (COPE) | Supported |
+| Android Enterprise Personally-Owned Work Profile (BYOD) | Supported — **requires AMAPI enrollment** (web-based enrollment or migrated devices) |
+
+> **Pre-migration requirement for BYOD:** Create credential provider App Configuration Policy **before** enabling web-based enrollment or deploying the Move to Android Management API migration profile. After migration, autofill and passkey sign-in depend on the credential provider being configured. Migration cannot be reversed. If policies are not in place before migration, they can be created post-migration to restore functionality — autofill and passkey sign-in on Android 14+ may be unavailable until the policy is applied.
+
+Common third-party credential provider apps that require a policy (Microsoft Authenticator does not):
+
+| App |
+| :--- |
+| 1Password |
+| Bitwarden |
+| Dashlane |
+| LastPass |
+| Nordpass |
+| Okta |
+| Proton Pass |
+| Roboform |
+
+> **Important:** Google Password Manager cannot act as a credential provider on personally-owned work profile devices or corporate-owned work profile devices. It is blocked at the device level. Use one of the apps above as a workaround.
+
+**Configuration steps:**
+
+1. Go to **Microsoft Intune admin center** > **Apps** > **Configuration** > **Create** > **Managed devices**.
+2. **Basics:**
+   - **Name:** e.g., `AND - ACP - DEV - Credential-Provider - [AppName] - Personal-Owned - v1.5`
+   - **Description:** Configures [App Name] as a system credential provider for BYOD work profile devices.
+   - **Device enrollment type:** Managed devices
+3. **Platform:** Android Enterprise
+4. **Profile type:** Personally-Owned Work Profile
+5. **Targeted app:** Select **Select app** and choose the credential provider app from your Managed Google Play inventory. The app must be added to Managed Google Play before it can be selected here.
+6. Select **Next**.
+7. On the **Settings** page, locate **Credential provider** and set it to **Enabled**.
+8. Select **Next** (scope tags are optional).
+9. **Assignments:** Assign to the Entra ID BYOD user group (e.g., `AND - USR - Android-Personal-Work-Profile-Users - BYOD`).
+10. Select **Next** > **Create**.
+
+> **Note:** Repeat steps for each third-party credential provider app your users rely on. Microsoft Authenticator does not require a separate policy.
+
+**Reference:** [Add app configuration policies for managed Android Enterprise devices — Allow an app to be a credential provider](https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-managed-android#allow-an-app-to-be-a-credential-provider)
+
+---
 
 #### Strict Tunnel Mode for Microsoft Tunnel
 
-Strict Tunnel Mode forces all network traffic from the work profile through the Microsoft Tunnel VPN. If the VPN connection is unavailable or drops, all network access from the work profile is blocked until the VPN reconnects — preventing work profile apps from accessing the internet outside the tunnel.
+> **Optional — applies only if your organization uses Microsoft Tunnel.** Microsoft Tunnel is a VPN gateway solution that requires separate infrastructure setup (a Linux server running the Tunnel Gateway). If your organization does not use Microsoft Tunnel, this section does not apply. If you do use Microsoft Tunnel for BYOD, Strict Tunnel Mode is an optional hardening setting within the VPN profile — configure it when your security requirements demand that work profile traffic must never reach the internet outside the tunnel, even temporarily.
 
-- Requires AMAPI enrollment (web-based enrollment or migrated devices).
-- Supports an exclusion list of apps that are permitted to bypass the tunnel.
-- For unenrolled MAM devices: Strict Tunnel Mode is available through a Microsoft Edge app configuration policy.
-- Reference: [Overview of Microsoft Tunnel](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/overview)
+Strict Tunnel Mode is a Microsoft Tunnel VPN profile setting that **blocks all network traffic on the device** when the VPN connection is unavailable or drops. Without Strict Tunnel Mode, if the tunnel VPN disconnects, work profile apps can fall back to direct internet access — bypassing corporate network controls. With Strict Tunnel Mode enabled, all network access is blocked until the VPN reconnects.
+
+**What it does:**
+- Forces all work profile network traffic through the Microsoft Tunnel VPN.
+- Blocks all network access when the VPN drops — no fallback to the public internet.
+- Restores access automatically when the VPN reconnects.
+- Supports an **App exclusion list**: apps added to this list can bypass the tunnel and connect directly regardless of VPN state. Apps not on the list are blocked when the VPN is unavailable.
+
+**Requirements:**
+
+| Requirement | Detail |
+| :--- | :--- |
+| Microsoft Tunnel infrastructure | Must be deployed and operational before configuring this setting |
+| Always-on VPN | Must be set to **Enable** in the VPN profile — Strict Tunnel Mode is only available when Always-on VPN is enabled |
+| AMAPI enrollment | Required for personally-owned work profile. Devices on the legacy EMM API (pre-AMAPI) do not support Strict Tunnel Mode until migrated |
+| Microsoft Defender for Endpoint | Must be deployed as the Microsoft Tunnel client app |
+
+**Supported platforms:**
+- Android Enterprise Fully Managed (COBO)
+- Android Enterprise Corporate-Owned Work Profile (COPE)
+- Android Enterprise Personally-Owned Work Profile (BYOD) — AMAPI enrollment required
+
+**Configuration steps:**
+
+1. Go to **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy**.
+2. **Platform:** Android Enterprise
+3. **Profile type:** VPN > **Personally-Owned Work Profile**
+4. Select **Create**.
+5. **Basics:** Enter a name (e.g., `AND - VPN - MicrosoftTunnel - Personal-Owned - v1.5`) and description.
+6. **Configuration settings:**
+   - **Connection type:** Microsoft Tunnel
+   - **Connection name:** Enter a display name visible to users (e.g., `Corporate VPN`).
+   - **Microsoft Tunnel Site:** Select the deployed Tunnel site.
+   - **Always-on VPN:** Set to **Enable** — this must be enabled before Strict Tunnel Mode becomes available.
+   - **Strict Tunnel Mode:** Set to **Enable**.
+   - **App exclusion list** (optional): Add any apps that must bypass the tunnel. Apps not on this list are blocked when the VPN is unavailable.
+7. **Assignments:** Assign to the BYOD user group.
+8. Select **Next** > **Create**.
+
+> **MAM (unenrolled devices):** For unenrolled devices using Microsoft Tunnel for MAM, Strict Tunnel Mode is configured through a **Microsoft Edge app configuration policy**, not through a VPN profile.
+
+**References:**
+- [Overview of Microsoft Tunnel](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/overview)
+- [Configure the Microsoft Tunnel VPN profile](https://learn.microsoft.com/en-us/intune/device-security/microsoft-tunnel/install#create-a-vpn-profile)

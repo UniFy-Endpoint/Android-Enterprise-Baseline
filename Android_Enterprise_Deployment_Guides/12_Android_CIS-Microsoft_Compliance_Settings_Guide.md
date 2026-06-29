@@ -251,7 +251,7 @@ Settings from the Microsoft Android Enterprise Security Configuration Framework 
 
 | Setting | Intune Policy | Enrollment Type | CIS - Level | MS - Level | Notes |
 |---|---|---|---|---|---|
-| MDE threat protection — compliance | AND - CP - DEV - Compliance - MDE - Corporate Devices / Personal Devices | FM, COPE, Ded, BYOD | — | MS-L2 | Requires MDE–Intune connector; separate policy for phased deployment |
+| MDE threat protection — compliance | AND - CP - DEV - Defender - Corp-Devices - v1.5 / AND - CP - DEV - Defender - Personal-Devices - v1.5 | FM, COPE, Ded, BYOD | — | MS-L2 | Requires MDE–Intune connector; separate policy for phased deployment |
 | Conditional Access — require compliant device | CA policy | FM, COPE, Ded | — | MS-L2 | Compliance signal without CA has no enforcement power |
 | Conditional Access — MAM App Protection Policy | CA policy | BYOD | — | MS-L1 | OR logic allows MAM-only path for users who don't enroll MDM |
 | App Protection Policy (MAM) — all settings | MAM policy | BYOD | — | MS-L1 / MS-L2 | CIS does not address MAM; all settings from Microsoft framework |
@@ -285,7 +285,7 @@ Settings not required by CIS or the Microsoft Framework, configured based on pro
 
 Fully Managed (COBO) devices are corporate-owned and fully managed by IT. The device owner profile covers the entire device with no personal profile. This enrollment type supports the broadest set of MDM restrictions and is the recommended model for frontline workers and corporate-dedicated devices.
 
-> **Two-policy architecture:** Each setting category is covered by both a DC template (`AND - DC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed`) and a Settings Catalog policy (`AND - SC - Device-Restrictions - DEV - Corporate-Owned - Fully-Managed`). See README.md for DC-only settings that have no SC equivalent.
+> **Policy architecture:** FM device restrictions are split across six Settings Catalog (SC) subcategory policies (`AND - SC - DR - DEV - [Subcategory] - Fully-Managed - v1.5`, where Subcategory is Applications, Connectivity, Device-Password, General-Settings, System-Security, or Users-and-Accounts) and one DC Additional-Settings policy (`AND - DC - DR - DEV - Additional-Settings - Fully-Managed - v1.5`) containing only the settings not available in the Settings Catalog. This split prevents SC/DC conflicts. See README.md for DC-only settings.
 
 ---
 
@@ -408,7 +408,7 @@ Credential Manager is the Android 14+ system API that consolidates passkeys, pas
 
 Corporate-Owned Work Profile (COPE) devices are corporate-owned but include a personal profile that the user controls. MDM management applies to the work profile and device-level settings; the personal profile is unmanaged. COPE is the recommended model for mobile workers who also use the device personally.
 
-> **Two-policy architecture:** DC (`AND - DC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile`) and SC (`AND - SC - Device-Restrictions - DEV - Corporate-Owned - Work-Profile`) are deployed together. SC adds Private Space, cross-profile controls, and location enforcement.
+> **Policy architecture:** COWP device restrictions are split across seven Settings Catalog (SC) subcategory policies (`AND - SC - DR - DEV - [Subcategory] - Corp-Work-Profile - v1.5`, where Subcategory is Applications, Connectivity, Data-Sharing-Controls, Device-Password, General-Settings, System-Security, or Users-and-Accounts) and one DC Additional-Settings policy (`AND - DC - DR - DEV - Additional-Settings - Corp-Work-Profile - v1.5`) containing only the settings not available in the Settings Catalog. SC covers Private Space, cross-profile controls, data roaming, and location enforcement; DC covers play store allow-list, system update window, locate device, and trust agent keyguard control.
 
 ---
 
@@ -668,13 +668,13 @@ App Protection Policies (MAM) enforce data boundaries within managed apps on per
 
 Compliance policies define the minimum security requirements a device must meet to be considered compliant. Non-compliant devices are blocked from accessing corporate resources via Conditional Access. Configure compliance policies in **Intune > Devices > Compliance**.
 
-> **MDE compliance:** MDE threat protection is enforced via separate dedicated policies (`AND - CP - DEV - Compliance - MDE - Corporate Devices` and `AND - CP - DEV - Compliance - MDE - Personal Devices`) to allow independent assignment during phased MDE deployment. See Section 9.1 and C-1 in Section 12.
+> **MDE compliance:** MDE threat protection is enforced via separate dedicated policies (`AND - CP - DEV - Defender - Corp-Devices - v1.5` and `AND - CP - DEV - Defender - Personal-Devices - v1.5`) to allow independent assignment during phased MDE deployment. See Section 9.1 and C-1 in Section 12.
 
 ---
 
 ### 9.1 Fully Managed (COBO)
 
-Policy: `AND - CP - DEV - Compliance - Corporate-Fully-Managed-Devices`
+Policy: `AND - CP - DEV - Fully-Managed - v1.5`
 
 | Setting | Recommended Value | CIS Level | MS Level | Security Benefit |
 |---|---|---|---|---|
@@ -692,13 +692,13 @@ Policy: `AND - CP - DEV - Compliance - Corporate-Fully-Managed-Devices`
 | Screen lock inactivity | `5 minutes` | L1* | MS-L2 | Intentional deviation — see Section 3.1 |
 | Min OS version | `13.0` | L1 | MS-L2 | Enforces minimum Android version |
 | Min security patch level | `Not configured` | L1* | MS-L2 | Admin sets at deployment time — see Section 3.1 |
-| MDE threat level | `Low → Block` (separate policy) | — | MS-L2 | Via `AND - CP - DEV - Compliance - MDE - Corporate Devices` |
+| MDE threat level | `Low → Block` (separate policy) | — | MS-L2 | Via `AND - CP - DEV - Defender - Corp-Devices - v1.5` |
 
 ---
 
 ### 9.2 Corporate-Owned Work Profile (COPE)
 
-Policy: `AND - CP - DEV - Compliance - Corporate-Owned - Work-Profile`
+Policy: `AND - CP - DEV - Corp-Work-Profile - v1.5`
 
 Same settings as Section 9.1. The compliance policy type is `androidDeviceOwnerCompliancePolicy` — same as FM.
 
@@ -706,7 +706,7 @@ Same settings as Section 9.1. The compliance policy type is `androidDeviceOwnerC
 
 ### 9.3 Dedicated Kiosk & Shared
 
-Policies: `AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Kiosk` and `AND - CP - DEV - Compliance - Corporate-Dedicated-Devices - Shared`
+Policies: `AND - CP - DEV - Corp-Dedicated - Kiosk - v1.5` and `AND - CP - DEV - Corp-Dedicated - Shared - v1.5`
 
 Same core settings as Section 9.1. Dedicated device compliance also uses `androidDeviceOwnerCompliancePolicy`.
 
@@ -716,7 +716,7 @@ Same core settings as Section 9.1. Dedicated device compliance also uses `androi
 
 ### 9.4 Personally-Owned Work Profile (BYOD)
 
-Policy: `AND - CP - USR - Compliance - Personally-Owned - Work-Profile`
+Policy: `AND - CP - USR - Personal-Work-Profile - v1.5`
 
 | Setting | Configured Value | CIS Level | MS Level | Notes |
 |---|---|---|---|---|
@@ -739,7 +739,7 @@ Policy: `AND - CP - USR - Compliance - Personally-Owned - Work-Profile`
 | Play Integrity evaluation type | `Hardware backed` | L2 | MS-L2 | See W-18 for BYOD device breadth risk |
 | Min OS version | `13.0` | L1 | MS-L1 | |
 | Min security patch level | `Not configured` | L1* | MS-L2 | Admin sets at deployment time |
-| MDE threat level | `Low → Block` (separate policy) | — | MS-L2 | Via `AND - CP - DEV - Compliance - MDE - Personal Devices` |
+| MDE threat level | `Low → Block` (separate policy) | — | MS-L2 | Via `AND - CP - DEV - Defender - Personal-Devices - v1.5` |
 
 ---
 
@@ -1130,7 +1130,7 @@ The following settings differ between the two policies without documented justif
 | :--- | :--- | :---: | :---: | :--- |
 | CIS-01 | Screen lock timeout ≤ 2 minutes | L1 | Accepted Exception | **Intentional — 5 min.** CIS requires ≤ 2 min. Current setting is 5 min for FM/COPE/Dedicated compliance policies, 15 min for BYOD. Kept for user productivity. |
 | CIS-02 | Minimum security patch level enforced | L1/L2 | Accepted Exception | **Intentional — not configured.** Admin configures `minAndroidSecurityPatchLevel` at deployment time based on the current Android version in the environment. Quarterly review recommended. |
-| CIS-03 | Mobile Threat Defense enforced via compliance | L1 | Fixed | MDE threat protection enabled via dedicated compliance policies: `AND - CP - DEV - Compliance - MDE - Corporate Devices` and `AND - CP - DEV - Compliance - MDE - Personal Devices`. Full enforcement chain: MDE detects → non-compliant → CA blocks access. |
+| CIS-03 | Mobile Threat Defense enforced via compliance | L1 | Fixed | MDE threat protection enabled via dedicated compliance policies: `AND - CP - DEV - Defender - Corp-Devices - v1.5` and `AND - CP - DEV - Defender - Personal-Devices - v1.5`. Full enforcement chain: MDE detects → non-compliant → CA blocks access. |
 | CIS-04 | Play Store AllowList mode on FM | L1 | Fixed | `playStoreMode: allowList` now set in DC FM JSON. Only Managed Google Play-approved apps can be installed on Fully Managed devices. |
 | CIS-05 | SafetyNet / Play Integrity — explicit basic integrity | L1 | Fixed | `securityRequireSafetyNetAttestationBasicIntegrity: true` explicitly set in all 4 corporate compliance policies. Hardware-backed evaluation type (`hardwareBacked`) was already correct. |
 
@@ -1199,7 +1199,7 @@ The following CIS Level 1 and Level 2 controls are correctly implemented across 
 | Cross-profile copy/paste blocked | `crossProfilePoliciesAllowCopyPaste: false` | DC COWP; SC FM, SC COWP |
 | Cross-profile data sharing blocked | Work → Personal blocked | DC COWP; SC FM, SC COWP |
 | Security Common Criteria Mode | `securityCommonCriteriaModeEnabled: true` | SC FM, SC COWP (Samsung Knox only — see W-25) |
-| MDE threat protection | `deviceThreatProtectionEnabled: true`, `advancedThreatProtectionRequiredSecurityLevel: low` | AND - CP - DEV - Compliance - MDE - Corporate Devices; AND - CP - DEV - Compliance - MDE - Personal Devices |
+| MDE threat protection | `deviceThreatProtectionEnabled: true`, `advancedThreatProtectionRequiredSecurityLevel: low` | AND - CP - DEV - Defender - Corp-Devices - v1.5; AND - CP - DEV - Defender - Personal-Devices - v1.5 |
 | Conditional Access — managed devices | Require compliant device | CA-User-Protection-AllUsers-AllApps-Android-Req-ComplianceDevice |
 | Conditional Access — MAM BYOD | Require App Protection Policy | CA-User-Protection-AllUsers-O365-MobileApps-Android-Req-AppProtectionPolicy-BYOD |
 | MAM PIN (6-char, no simple PIN) | `minimumPinLength: 6`, `simplePinBlocked: true` | MAM policy |
