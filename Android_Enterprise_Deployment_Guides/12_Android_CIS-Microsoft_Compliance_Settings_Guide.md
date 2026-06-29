@@ -378,6 +378,32 @@ Fully Managed (COBO) devices are corporate-owned and fully managed by IT. The de
 
 ---
 
+### 4.7 Credential Manager API Permissions (Android 14+)
+
+Credential Manager is the Android 14+ system API that consolidates passkeys, passwords, and federated sign-in into a single credential provider interface. In managed environments, Intune allows administrators to designate which app(s) act as the system credential provider — for example, a corporate password manager — preventing users from switching to unapproved providers.
+
+**Configuration path:** **Apps** > **Android** > **Configuration** > **Managed Devices** — create an App Configuration Policy with a **Credential Manager** permission type.
+
+| Setting | Recommended Action | Notes |
+|---|---|---|
+| Allowed credential provider(s) | Specify corporate password manager package name(s) | Only listed apps can register as system credential providers |
+| Google Password Manager | Block (where supported) | Default Android system provider; blocking redirects passkey creation to the corporate provider. Not configurable on COPE or BYOD — see enrollment table. |
+
+**Enrollment support:**
+
+| Enrollment Type | Supported | Notes |
+|---|---|---|
+| Fully Managed (COBO) | Yes | No limitations |
+| Corporate-Owned Dedicated (COSU) | Yes | No limitations |
+| Corporate-Owned Work Profile (COPE) | Yes — with limitation | **Known limitation:** Google Password Manager is not supported on COPE devices as of April 2026. Passkeys saved to Google Password Manager will not function on COPE. Use an alternative corporate credential provider. |
+| Personally-Owned Work Profile (BYOD — AMAPI only) | Yes — with limitation | Same Google Password Manager limitation as COPE. Applies only to BYOD devices enrolled via AMAPI. |
+
+> **Note:** This feature requires Android 14 or later. Devices on Android 13 or earlier are not affected — credential provider selection cannot be restricted on those devices.
+>
+> **Reference:** [Manage Credential Manager permissions for Android Enterprise](https://learn.microsoft.com/en-us/intune/apps/android-credential-manager)
+
+---
+
 ## 5. Corporate-Owned Work Profile (COPE) — Policy Settings
 
 Corporate-Owned Work Profile (COPE) devices are corporate-owned but include a personal profile that the user controls. MDM management applies to the work profile and device-level settings; the personal profile is unmanaged. COPE is the recommended model for mobile workers who also use the device personally.
@@ -443,6 +469,8 @@ Corporate-Owned Work Profile (COPE) devices are corporate-owned but include a pe
 | Assist content | Blocked | CIS L2 | SC COWP |
 | App default permission policy | Device default | ADM-EXP | SC COWP; DC COPE uses `prompt` |
 
+> **Credential Manager (Android 14+):** COPE devices support Credential Manager API permissions to designate corporate credential providers for passkeys and passwords. **Known limitation:** Google Password Manager is not supported on COPE as of April 2026. See Section 4.7 for configuration details and enrollment support.
+
 ---
 
 ### 5.5 Connectivity & Network
@@ -505,6 +533,8 @@ Dedicated devices run in kiosk mode (single-app or multi-app) or shared mode for
 | Kiosk app list | Outlook, Teams, OneDrive, SharePoint, Edge, Authenticator, Intune, MHS | ADM-EXP | Customize for your kiosk use case — this is a sample set |
 | System update window | 00:00–06:00 | ADM-EXP | Updates install during overnight maintenance window |
 
+> **Credential Manager (Android 14+):** Dedicated (COSU) devices support Credential Manager API permissions without limitations. Designate a corporate credential provider via App Configuration Policy to control which app handles passkeys and passwords system-wide. See Section 4.7 for configuration details.
+
 ---
 
 ## 7. Personally-Owned Work Profile (BYOD) — Policy Settings
@@ -557,6 +587,8 @@ BYOD devices are personally owned. Users enroll via the Company Portal app. MDM 
 | Cross-profile copy/paste | Blocked | CIS L2 | `workProfileBlockCrossProfileCopyPaste: true` — work→personal clipboard blocked |
 | Cross-profile data sharing | Personal → Work allowed; Work → Personal blocked | CIS L1 | `workProfileDataSharingType: allowPersonalToWork` — users can share personal content into work apps; work content cannot leave to personal apps |
 | Work profile screen capture | Blocked | CIS L1 | `workProfileBlockScreenCapture: true` |
+
+> **Credential Manager (Android 14+):** BYOD devices enrolled via AMAPI (personally-owned work profile) support Credential Manager API permissions. **Known limitation:** Google Password Manager is not supported. Applies only to BYOD devices on AMAPI enrollment (GA June 2026). See Section 4.7 for configuration details.
 
 ---
 
