@@ -8,7 +8,9 @@
 
 ---
 
-A practical, ready-to-import baseline for managing Android Enterprise devices with Microsoft Intune, covering all major deployment models. Grounded in Microsoft's official deployment guidance, Android CIS Benchmark recommendations, and real-world enterprise experience.
+UniFy-Endpoint Android Enterprise Baseline is a practical, ready-to-import baseline for managing Android Enterprise devices with Microsoft Intune, covering all major deployment models. Grounded in Microsoft's official deployment guidance, Android CIS Benchmark recommendations, and real-world enterprise experience.
+
+> **Important:** This is a reference baseline, not a one-size-fits-all configuration. Assess each setting and recommendation against your organization's operational requirements, risk tolerance, and deployment model before deploying to production. Always test with a pilot group before broad rollout.
 
 - **Deployment guides** for each Android Enterprise enrollment / deployment method.
 - A **baseline configuration** set (policies and building blocks) organized by Intune policy type.
