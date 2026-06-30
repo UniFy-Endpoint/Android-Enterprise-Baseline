@@ -1,15 +1,15 @@
 {
   "@odata.context": "https://graph.microsoft.com/beta/$metadata#identity/conditionalAccess/policies/$entity",
   "@odata.type": "#microsoft.graph.conditionalAccessPolicy",
-  "@odata.id": "identity/conditionalAccess/policies('8e32fb97-8ef0-4198-9f8b-5e77cbe222c2')",
-  "@odata.editLink": "identity/conditionalAccess/policies('8e32fb97-8ef0-4198-9f8b-5e77cbe222c2')",
-  "id": "8e32fb97-8ef0-4198-9f8b-5e77cbe222c2",
+  "@odata.id": "identity/conditionalAccess/policies('3a5db89a-b45c-43c0-8483-92bec6962dd2')",
+  "@odata.editLink": "identity/conditionalAccess/policies('3a5db89a-b45c-43c0-8483-92bec6962dd2')",
+  "id": "3a5db89a-b45c-43c0-8483-92bec6962dd2",
   "templateId": null,
   "displayName": "CA210-USR-AllApps-Android-AnyCli-AnyLoc-ReqCompliant",
   "createdDateTime@odata.type": "#DateTimeOffset",
   "createdDateTime": "2026-01-28T11:19:54.670101Z",
   "modifiedDateTime@odata.type": "#DateTimeOffset",
-  "modifiedDateTime": "2026-04-29T12:49:43.2106988Z",
+  "modifiedDateTime": "2026-06-29T08:35:11.7109985Z",
   "state@odata.type": "#microsoft.graph.conditionalAccessPolicyState",
   "state": "disabled",
   "deletedDateTime": null,
@@ -59,8 +59,8 @@
       "includeGroups": [],
       "excludeGroups@odata.type": "#Collection(String)",
       "excludeGroups": [
-        "9f027ad8-042b-4c85-9727-9008f6851597",
-        "1bed65eb-3c26-449e-bb1d-eb61e193de9e"
+        "3b759791-ff9b-4190-8271-add271145392",
+        "461dec65-b460-4791-bc5b-8c469f1ff902"
       ],
       "includeRoles@odata.type": "#Collection(String)",
       "includeRoles": [],
@@ -154,10 +154,13 @@
     "customAuthenticationFactors": [],
     "termsOfUse@odata.type": "#Collection(String)",
     "termsOfUse": [],
+    "authenticationStrength@odata.context": "https://graph.microsoft.com/beta/$metadata#identity/conditionalAccess/policies('3a5db89a-b45c-43c0-8483-92bec6962dd2')/grantControls/authenticationStrength/$entity",
+    "authenticationStrength@odata.associationLink": "https://graph.microsoft.com/beta/identity/conditionalAccess/policies('3a5db89a-b45c-43c0-8483-92bec6962dd2')/grantControls/authenticationStrength/$ref",
+    "authenticationStrength@odata.navigationLink": "https://graph.microsoft.com/beta/identity/conditionalAccess/policies('3a5db89a-b45c-43c0-8483-92bec6962dd2')/grantControls/authenticationStrength",
     "authenticationStrength": null
   },
   "#microsoft.graph.restore": {
     "title": "microsoft.graph.restore",
-    "target": "https://graph.microsoft.com/beta/identity/conditionalAccess/policies('8e32fb97-8ef0-4198-9f8b-5e77cbe222c2')/microsoft.graph.restore"
+    "target": "https://graph.microsoft.com/beta/identity/conditionalAccess/policies('3a5db89a-b45c-43c0-8483-92bec6962dd2')/microsoft.graph.restore"
   }
 }

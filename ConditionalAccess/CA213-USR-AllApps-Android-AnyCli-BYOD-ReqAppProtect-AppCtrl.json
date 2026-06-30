@@ -1,15 +1,15 @@
 {
   "@odata.context": "https://graph.microsoft.com/beta/$metadata#identity/conditionalAccess/policies/$entity",
   "@odata.type": "#microsoft.graph.conditionalAccessPolicy",
-  "@odata.id": "identity/conditionalAccess/policies('bb19b550-319f-4edf-9122-0ddee34694c8')",
-  "@odata.editLink": "identity/conditionalAccess/policies('bb19b550-319f-4edf-9122-0ddee34694c8')",
-  "id": "bb19b550-319f-4edf-9122-0ddee34694c8",
+  "@odata.id": "identity/conditionalAccess/policies('e98e08ee-b3e8-4628-83f2-d461815660dd')",
+  "@odata.editLink": "identity/conditionalAccess/policies('e98e08ee-b3e8-4628-83f2-d461815660dd')",
+  "id": "e98e08ee-b3e8-4628-83f2-d461815660dd",
   "templateId": null,
   "displayName": "CA213-USR-AllApps-Android-AnyCli-BYOD-ReqAppProtect-AppCtrl",
   "createdDateTime@odata.type": "#DateTimeOffset",
-  "createdDateTime": "2026-01-28T11:21:33.123456Z",
+  "createdDateTime": "2025-11-27T17:04:46.005725Z",
   "modifiedDateTime@odata.type": "#DateTimeOffset",
-  "modifiedDateTime": "2026-04-29T12:51:02.5678901Z",
+  "modifiedDateTime": "2026-06-30T11:52:52.4993559Z",
   "state@odata.type": "#microsoft.graph.conditionalAccessPolicyState",
   "state": "disabled",
   "deletedDateTime": null,
@@ -18,17 +18,17 @@
     "@odata.type": "#microsoft.graph.conditionalAccessSessionControls",
     "disableResilienceDefaults": null,
     "applicationEnforcedRestrictions": null,
-    "persistentBrowser": null,
     "signInFrequency": null,
-    "cloudAppSecurity": {
-      "@odata.type": "#microsoft.graph.cloudAppSecuritySessionControl",
-      "isEnabled": true,
-      "cloudAppSecurityType@odata.type": "#microsoft.graph.cloudAppSecuritySessionControlType",
-      "cloudAppSecurityType": "blockDownloads"
-    },
+    "persistentBrowser": null,
     "continuousAccessEvaluation": null,
     "secureSignInSession": null,
-    "networkAccessSecurity": null
+    "blockSensitiveActions": null,
+    "cloudAppSecurity": {
+      "@odata.type": "#microsoft.graph.cloudAppSecuritySessionControl",
+      "cloudAppSecurityType@odata.type": "#microsoft.graph.cloudAppSecuritySessionControlType",
+      "cloudAppSecurityType": "blockDownloads",
+      "isEnabled": true
+    }
   },
   "conditions": {
     "@odata.type": "#microsoft.graph.conditionalAccessConditionSet",
@@ -38,8 +38,8 @@
     "signInRiskLevels": [],
     "clientAppTypes@odata.type": "#Collection(microsoft.graph.conditionalAccessClientApp)",
     "clientAppTypes": [
-      "mobileAppsAndDesktopClients",
-      "browser"
+      "browser",
+      "mobileAppsAndDesktopClients"
     ],
     "locations": null,
     "times": null,
@@ -54,8 +54,13 @@
       ],
       "excludeApplications@odata.type": "#Collection(String)",
       "excludeApplications": [
+        "ea890292-c8c8-4433-b5ea-b09d0668e1a6",
+        "0000000c-0000-0000-c000-000000000000",
         "0000000a-0000-0000-c000-000000000000",
-        "d4ebce55-015a-49b5-a083-c84d1797ae8c"
+        "7eadcef8-456d-4611-9480-4fff72b8b9e2",
+        "00000002-0000-0000-c000-000000000000",
+        "d4ebce55-015a-49b5-a083-c84d1797ae8c",
+        "6aa00308-ea33-4caa-90d6-ae905d8cb51b"
       ],
       "includeUserActions@odata.type": "#Collection(String)",
       "includeUserActions": [],
@@ -75,8 +80,8 @@
       "includeGroups": [],
       "excludeGroups@odata.type": "#Collection(String)",
       "excludeGroups": [
-        "9f027ad8-042b-4c85-9727-9008f6851597",
-        "f69eda77-3b1e-4c2a-9d5f-8a0b6c4e7f2d"
+        "3b759791-ff9b-4190-8271-add271145392",
+        "8477cc69-0656-4a41-9c9c-493c5595a8a1"
       ],
       "includeRoles@odata.type": "#Collection(String)",
       "includeRoles": [],
@@ -154,8 +159,8 @@
       "deviceFilter": {
         "@odata.type": "#microsoft.graph.conditionalAccessFilter",
         "mode@odata.type": "#microsoft.graph.filterMode",
-        "mode": "exclude",
-        "rule": "device.mdmAppId -eq \"0000000a-0000-0000-c000-000000000000\""
+        "mode": "include",
+        "rule": "device.mdmAppId -ne \"0000000a-0000-0000-c000-000000000000\" -or device.deviceOwnership -eq \"Personal\""
       }
     }
   },
@@ -170,10 +175,13 @@
     "customAuthenticationFactors": [],
     "termsOfUse@odata.type": "#Collection(String)",
     "termsOfUse": [],
+    "authenticationStrength@odata.context": "https://graph.microsoft.com/beta/$metadata#identity/conditionalAccess/policies('e98e08ee-b3e8-4628-83f2-d461815660dd')/grantControls/authenticationStrength/$entity",
+    "authenticationStrength@odata.associationLink": "https://graph.microsoft.com/beta/identity/conditionalAccess/policies('e98e08ee-b3e8-4628-83f2-d461815660dd')/grantControls/authenticationStrength/$ref",
+    "authenticationStrength@odata.navigationLink": "https://graph.microsoft.com/beta/identity/conditionalAccess/policies('e98e08ee-b3e8-4628-83f2-d461815660dd')/grantControls/authenticationStrength",
     "authenticationStrength": null
   },
   "#microsoft.graph.restore": {
     "title": "microsoft.graph.restore",
-    "target": "https://graph.microsoft.com/beta/identity/conditionalAccess/policies('bb19b550-319f-4edf-9122-0ddee34694c8')/microsoft.graph.restore"
+    "target": "https://graph.microsoft.com/beta/identity/conditionalAccess/policies('e98e08ee-b3e8-4628-83f2-d461815660dd')/microsoft.graph.restore"
   }
 }
