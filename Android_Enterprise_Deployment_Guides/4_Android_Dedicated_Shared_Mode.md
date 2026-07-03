@@ -89,23 +89,38 @@ Shared mode devices use **Enrollment Time Grouping**, so the device is placed in
 
 #### 5. Configuration Profile
 
-Managed Home Screen must be previously configured as the device launcher for Shared-Mode to function.
+Managed Home Screen must be previously configured as the device launcher for Shared Mode to function.
 
-1. **Import** the baseline JSON file for this configuration profile from the repository using the [IntuneManagement](https://github.com/Micke-K/IntuneManagement) tool or Microsoft Graph API. Once imported, review and adapt each setting to your organization's requirements.
+As of Intune June 2026 (2606), Settings Catalog (SC) support was extended to Dedicated Devices. The baseline device restrictions are now split across **5 SC subcategory policies** and **1 DC Additional-Settings policy**. Import all 6 policies from the `ConfigurationsPolicies/Dedicated-Devices - Shared/` folder and assign each to the same Entra ID group.
+
+**SC subcategory policies — import via Settings Catalog:**
+
+For each of the 5 SC policies (`Applications`, `Connectivity`, `Device-Password`, `General-Settings`, `System-Security`):
+
+1. **Import** the baseline JSON file using [IntuneManagement](https://github.com/Micke-K/IntuneManagement) or Microsoft Graph API.
+2. **Platform:** Android Enterprise.
+3. **Profile type:** Settings Catalog.
+4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for each policy name.)*
+5. **Assignments:** Assign to the Entra ID group created in Step 1.
+6. **Create**.
+
+**DC Additional-Settings policy — import via Templates:**
+
+1. **Import** the baseline JSON file (`AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Shared - v1.5`) using [IntuneManagement](https://github.com/Micke-K/IntuneManagement) or Microsoft Graph API.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Templates > **Device restrictions** (Fully Managed, Dedicated, and Corporate-Owned Work Profile).
-4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
-5. **Description:** Device restrictions for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode.
-6. Navigate to **Settings** > **Device Experience** and adapt settings after importing the baseline JSON file:
+4. Navigate to **Settings** > **Device Experience** and adapt settings after importing:
    * **Device experience type:** Kiosk mode (dedicated and fully managed).
    * **Kiosk mode:** Multi-app.
    * **Custom app layout:** Enabled.
    * **Grid size:** e.g., 4×5.
    * **Home screen:** Add the approved apps.
-7. **Assignments:** Assign to the Entra ID group created in Step 1.
-8. **Create**.
+5. **Assignments:** Assign to the Entra ID group created in Step 1.
+6. **Create**.
 
-> **Managed Home Screen — additional configuration:** The Device Restrictions policy configures core Shared Mode behavior (multi-app kiosk, Entra ID sign-in and sign-out, grid layout). For more granular control — such as session timeout, auto sign-out timer, inactivity screen, wallpaper, or virtual home button style — deploy a dedicated **App Configuration Policy** targeting the Managed Home Screen app (`com.microsoft.launcher.enterprise`). Use the Configuration Designer with **Managed devices** and assign it to the same device group. See [Guide 10 — Managed Home Screen](10_Android_Managed_Home_Screen.md) for full configuration details.
+> **Important:** Do not assign both an SC and a DC policy that configure the same setting to the same device. The SC subcategory policies and the DC Additional-Settings policy are designed to have no overlapping settings. All SC-managed settings are explicitly set to `null` in the DC policy.
+
+> **Managed Home Screen — additional configuration:** The DC Additional-Settings policy configures core Shared Mode behavior (multi-app kiosk, MHS sign-in and auto sign-out, grid layout). For more granular control — such as session timeout, auto sign-out timer, inactivity screen, wallpaper, or virtual home button style — deploy a dedicated **App Configuration Policy** targeting the Managed Home Screen app (`com.microsoft.launcher.enterprise`). Use the Configuration Designer with **Managed devices** and assign it to the same device group. See [Guide 10 — Managed Home Screen](10_Android_Managed_Home_Screen.md) for full configuration details.
 
 ---
 

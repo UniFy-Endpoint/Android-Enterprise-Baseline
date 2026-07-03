@@ -11,7 +11,7 @@
   "roleScopeTagIds": [
     "0"
   ],
-  "settingCount": 4,
+  "settingCount": 6,
   "technologies": "android",
   "id": "",
   "templateReference": {
@@ -79,6 +79,36 @@
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
           "value": "com.android.devicerestrictionpolicy.appsrecommendskippingfirstusehints_true",
+          "children": []
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "id": "4",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.appfunctions",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "settingValueTemplateReference": null,
+          "value": "com.android.devicerestrictionpolicy.appfunctions_true",
+          "children": []
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "id": "5",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.workprofilewidgetsdefault",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "settingValueTemplateReference": null,
+          "value": "com.android.devicerestrictionpolicy.workprofilewidgetsdefault_false",
           "children": []
         }
       }

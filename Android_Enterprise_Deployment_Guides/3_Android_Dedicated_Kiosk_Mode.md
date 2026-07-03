@@ -107,42 +107,70 @@ Define minimum security requirements for the device to be considered compliant.
 
 #### 5. Configuration Profile — Single-App Kiosk
 
-> **Note:** To alllow users to sign in on Microsoft 365 apps (Outlook, Teams, Edge) on an Android Dedicated device, you must use Single-App Kiosk Mode or Shared Device Mode. These apps require a "Broker" (Microsoft Authenticator) to handle the login. In a strict Single-App Kiosk, the system blocks the Authenticator from appearing.
+> **Note:** To allow users to sign in on Microsoft 365 apps (Outlook, Teams, Edge) on an Android Dedicated device, you must use Single-App Kiosk Mode or Shared Device Mode. These apps require a "Broker" (Microsoft Authenticator) to handle the login. In a strict Single-App Kiosk, the system blocks the Authenticator from appearing.
 
 Locks the device to one specific app running in full screen. No other app or system UI is accessible.
 
-1. **Import** the baseline JSON file for this configuration profile from the repository using the [IntuneManagement](https://github.com/Micke-K/IntuneManagement) tool or Microsoft Graph API. Once imported, review and adapt each setting to your organization's requirements.
+As of Intune June 2026 (2606), Settings Catalog (SC) support was extended to Dedicated Devices. The baseline device restrictions are now split across **5 SC subcategory policies** and **1 DC Additional-Settings policy** per kiosk type. Import all 6 policies from the `ConfigurationsPolicies/Dedicated-Devices - Single-App-Kiosk/` folder and assign each to the same Entra ID group.
+
+**SC subcategory policies — import via Settings Catalog:**
+
+For each of the 5 SC policies (`Applications`, `Connectivity`, `Device-Password`, `General-Settings`, `System-Security`):
+
+1. **Import** the baseline JSON file using [IntuneManagement](https://github.com/Micke-K/IntuneManagement) or Microsoft Graph API.
+2. **Platform:** Android Enterprise.
+3. **Profile type:** Settings Catalog.
+4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for each policy name.)*
+5. **Assignments:** Assign to the Entra ID group created in Step 1.
+6. **Create**.
+
+**DC Additional-Settings policy — import via Templates:**
+
+1. **Import** the baseline JSON file (`AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Single-App-Kiosk - v1.5`) using [IntuneManagement](https://github.com/Micke-K/IntuneManagement) or Microsoft Graph API.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Templates > **Device restrictions** (Fully Managed, Dedicated, and Corporate-Owned Work Profile).
-4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
-5. **Description:** Device restrictions for Android Enterprise corporate-owned dedicated devices in single-app kiosk mode.
-6. Navigate to **Settings** > **Device Experience**:
+4. Navigate to **Settings** > **Device Experience**:
    * **Enrollment type:** Dedicated device.
    * **Kiosk mode:** Single app.
-   * **Select an app to use for kiosk mode:** > Choose the kiosk app (e.g., Microsoft Edge). 
-7. **Assignments:** Assign to the Entra ID group created in Step 1.
-8. **Create**.
+   * **Select an app to use for kiosk mode:** Choose the kiosk app (e.g., Microsoft Edge).
+5. **Assignments:** Assign to the Entra ID group created in Step 1.
+6. **Create**.
+
+> **Important:** Do not assign both an SC and a DC policy that configure the same setting to the same device. The SC subcategory policies and the DC Additional-Settings policy are designed to have no overlapping settings. All SC-managed settings are explicitly set to `null` in the DC policy.
 
 
 #### 6. Configuration Profile — Multi-App Kiosk
 
 Managed Home Screen must be previously configured as the device launcher for Multi-App - Kiosk mode to function.
 
-1. **Import** the baseline JSON file for this configuration profile from the repository using the [IntuneManagement](https://github.com/Micke-K/IntuneManagement) tool or Microsoft Graph API. Once imported, review and adapt each setting to your organization's requirements.
+The baseline device restrictions are split across **5 SC subcategory policies** and **1 DC Additional-Settings policy**. Import all 6 policies from the `ConfigurationsPolicies/Dedicated-Devices - Multi-App-Kiosk/` folder and assign each to the same Entra ID group.
+
+**SC subcategory policies — import via Settings Catalog:**
+
+For each of the 5 SC policies (`Applications`, `Connectivity`, `Device-Password`, `General-Settings`, `System-Security`):
+
+1. **Import** the baseline JSON file using [IntuneManagement](https://github.com/Micke-K/IntuneManagement) or Microsoft Graph API.
+2. **Platform:** Android Enterprise.
+3. **Profile type:** Settings Catalog.
+4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for each policy name.)*
+5. **Assignments:** Assign to the Entra ID group created in Step 1.
+6. **Create**.
+
+**DC Additional-Settings policy — import via Templates:**
+
+1. **Import** the baseline JSON file (`AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Multi-App-Kiosk - v1.5`) using [IntuneManagement](https://github.com/Micke-K/IntuneManagement) or Microsoft Graph API.
 2. **Platform:** Android Enterprise.
 3. **Profile type:** Templates > **Device restrictions** (Fully Managed, Dedicated, and Corporate-Owned Work Profile).
-4. **Name:** *(See [SETTINGSOUTPUT.md](../SETTINGSOUTPUT.md) for the current baseline policy name.)*
-5. **Description:** Device restrictions for Android Enterprise corporate-owned dedicated devices in multi-app kiosk mode.
-6. Navigate to **Settings** > **Device Experience** and adapt settings after importing the baseline JSON file:
+4. Navigate to **Settings** > **Device Experience** and adapt settings after importing:
    * **Device experience type:** Kiosk mode (dedicated and fully managed).
    * **Kiosk mode:** Multi-app.
    * **Custom app layout:** Enabled.
    * **Grid size:** e.g., 4×5.
    * **Home screen:** Add the approved apps to the launcher.
-7. **Assignments:** Assign to the Entra ID group created in Step 1.
-8. **Create**.
+5. **Assignments:** Assign to the Entra ID group created in Step 1.
+6. **Create**.
 
-> **Managed Home Screen — additional configuration:** The Device Restrictions policy above configures core kiosk behavior (launcher mode, app grid). For more granular control — such as wallpaper, session timeout, sign-in method, accessibility options, or virtual navigation buttons — deploy a dedicated **App Configuration Policy** targeting the Managed Home Screen app (`com.microsoft.launcher.enterprise`). Use the Configuration Designer with **Managed devices** and assign it to the same device group. See [Guide 10 — Managed Home Screen](10_Android_Managed_Home_Screen.md) for full configuration details.
+> **Managed Home Screen — additional configuration:** The DC Additional-Settings policy configures core kiosk behavior (launcher mode, app grid). For more granular control — such as wallpaper, session timeout, sign-in method, accessibility options, or virtual navigation buttons — deploy a dedicated **App Configuration Policy** targeting the Managed Home Screen app (`com.microsoft.launcher.enterprise`). Use the Configuration Designer with **Managed devices** and assign it to the same device group. See [Guide 10 — Managed Home Screen](10_Android_Managed_Home_Screen.md) for full configuration details.
 >
 
 ---

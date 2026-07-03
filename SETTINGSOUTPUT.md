@@ -1,6 +1,6 @@
 # Android Enterprise Baseline — Settings Output
 
-Baseline version: **1.5** | Last updated: **2026-06-29** | Author: **Yoennis Olmo (UniFy-Endpoint)**
+Baseline version: **1.5.1** | Last updated: **2026-07-03** | Author: **Yoennis Olmo (UniFy-Endpoint)**
 
 This document lists every Intune policy file included in the baseline with its key configuration settings, target enrollment type, and group assignments.
 
@@ -306,14 +306,14 @@ This document lists every Intune policy file included in the baseline with its k
 
 ---
 
-### AND - DC - DR - DEV - Corp-Dedicated - Single-App-Kiosk - v1.5
+### AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Single-App-Kiosk - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - DR - DEV - Corp-Dedicated - Single-App-Kiosk - v1.5 |
-| Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Devices Single-App Kiosk-Mode |
+| Display Name | AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Single-App-Kiosk - v1.5 |
+| Description | Device Restrictions - Additional Settings for Android Enterprise Corporate-Owned Dedicated Devices Single-App Kiosk. Contains kiosk configuration and settings not available in the Settings Catalog, complementing the SC subcategory policies without overlap. |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Dedicated / Single-App Kiosk |
 
@@ -323,40 +323,35 @@ This document lists every Intune policy file included in the baseline with its k
 | :--- | :--- |
 | Enrollment profile mode | Dedicated device |
 | Kiosk mode | Single-app |
+| Kiosk app | Microsoft Edge (com.microsoft.emmx) |
+| Kiosk status bar | System info only |
+| Kiosk system error warnings | Enabled |
+| Kiosk device settings blocked | No |
 | Account modification | Blocked |
-| Apps default permission policy | Auto-grant all permissions |
-| Camera | Not blocked |
-| Bluetooth configuration | Not blocked |
-| Screen capture | Blocked |
-| External storage (SD cards / USB) | Blocked |
-| USB file transfer | Blocked |
-| Wi-Fi tethering | Blocked |
-| Data roaming | Blocked |
-| Date/time configuration | Blocked |
-| Factory reset by user | Blocked |
 | Google accounts | Blocked |
-| Users — add / remove | Blocked |
+| Users — add | Blocked |
+| Users — remove | Blocked |
+| USB file transfer | Blocked |
+| System windows | Blocked |
 | System update type | Windowed |
 | Update window start | 00:00 (midnight) |
 | Update window end | 06:00 (360 minutes after midnight) |
-| Network escape hatch | Allowed (enrollment fallback) |
-| Password type | Numeric complex |
-| Minimum password length | 6 |
-| Password expiration | 365 days |
-| Previous passwords blocked | 5 |
-| PIN failures before factory reset | 10 |
+| Always-On VPN lockdown mode | Not enabled |
+| Wi-Fi edit configurations | Not blocked |
 | Keyguard features blocked | Camera; notifications; remote input |
+
+> **Note:** All settings covered by the SC subcategory policies (`AND - SC - DR - DEV - * - Corp-Dedicated - Single-App-Kiosk - v1.5`) are explicitly set to `null` in this DC policy to prevent SC/DC conflicts. Only the settings listed above are actively configured.
 
 ---
 
-### AND - DC - DR - DEV - Corp-Dedicated - Multi-App-Kiosk - v1.5
+### AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Multi-App-Kiosk - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - DR - DEV - Corp-Dedicated - Multi-App-Kiosk - v1.5 |
-| Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Devices Multi-App Kiosk-Mode |
+| Display Name | AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Multi-App-Kiosk - v1.5 |
+| Description | Device Restrictions - Additional Settings for Android Enterprise Corporate-Owned Dedicated Devices Multi-App Kiosk. Contains kiosk configuration and settings not available in the Settings Catalog, complementing the SC subcategory policies without overlap. |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Dedicated / Multi-App Kiosk |
 
@@ -366,46 +361,45 @@ This document lists every Intune policy file included in the baseline with its k
 | :--- | :--- |
 | Enrollment profile mode | Dedicated device |
 | Kiosk mode | Multi-app (Managed Home Screen) |
-| Account modification | Blocked |
-| Apps default permission policy | Auto-grant all permissions |
-| Camera | Not blocked |
-| Bluetooth configuration | Not blocked |
-| Screen capture | Blocked |
-| External storage (SD cards / USB) | Blocked |
-| USB file transfer | Blocked |
-| Wi-Fi tethering | Blocked |
-| Data roaming | Blocked |
-| Date/time configuration | Blocked |
-| Factory reset by user | Blocked |
-| Google accounts | Blocked |
-| Users — add / remove | Blocked |
-| System update type | Windowed |
-| Update window start | 00:00 (midnight) |
-| Update window end | 06:00 (360 minutes after midnight) |
-| Network escape hatch | Allowed (enrollment fallback) |
-| Password type | Numeric complex |
-| Minimum password length | 6 |
-| Password expiration | 365 days |
-| Previous passwords blocked | 5 |
-| PIN failures before factory reset | 10 |
-| Keyguard features blocked | Camera; notifications; remote input |
-| Kiosk exit code | Configured |
+| Kiosk apps (8) | Outlook, Teams, OneDrive, SharePoint, Edge, Authenticator, Intune, Managed Home Screen |
+| Kiosk exit code | Configured (0365) |
 | Kiosk grid layout | 5 rows × 4 columns |
 | Kiosk screen orientation | Auto-rotate |
 | Kiosk status bar | System info only |
 | Kiosk system error warnings | Enabled |
-| Kiosk apps (8) | Outlook, Teams, OneDrive, SharePoint, Edge, Authenticator, Intune, Managed Home Screen |
+| Kiosk Bluetooth toggle | Enabled |
+| Kiosk Wi-Fi toggle | Enabled |
+| Kiosk flashlight toggle | Enabled |
+| Kiosk media volume toggle | Enabled |
+| Kiosk debug menu easy access | Enabled |
+| Kiosk app order | Enabled |
+| Kiosk lock home screen | Yes |
+| Kiosk show device info | Yes |
+| Account modification | Blocked |
+| Google accounts | Blocked |
+| Users — add | Blocked |
+| Users — remove | Blocked |
+| USB file transfer | Blocked |
+| System windows | Blocked |
+| System update type | Windowed |
+| Update window start | 00:00 (midnight) |
+| Update window end | 06:00 (360 minutes after midnight) |
+| Always-On VPN lockdown mode | Not enabled |
+| Wi-Fi edit configurations | Not blocked |
+| Keyguard features blocked | Camera; notifications; remote input |
+
+> **Note:** All settings covered by the SC subcategory policies (`AND - SC - DR - DEV - * - Corp-Dedicated - Multi-App-Kiosk - v1.5`) are explicitly set to `null` in this DC policy to prevent SC/DC conflicts. Only the settings listed above are actively configured.
 
 ---
 
-### AND - DC - DR - DEV - Corp-Dedicated - Shared - v1.5
+### AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Shared - v1.5
 
 **Basics**
 
 | Property | Value |
 | :--- | :--- |
-| Display Name | AND - DC - DR - DEV - Corp-Dedicated - Shared - v1.5 |
-| Description | Device Restrictions Configuration Policy for Android Enterprise Corporate-Owned Dedicated Devices in Shared Mode (Managed Home Screen) |
+| Display Name | AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Shared - v1.5 |
+| Description | Device Restrictions - Additional Settings for Android Enterprise Corporate-Owned Dedicated Devices Shared Mode. Contains kiosk configuration and settings not available in the Settings Catalog, complementing the SC subcategory policies without overlap. |
 | Profile type | androidDeviceOwnerGeneralDeviceConfiguration |
 | Target enrollment | Dedicated / Shared (Managed Home Screen with auto sign-out) |
 
@@ -415,38 +409,41 @@ This document lists every Intune policy file included in the baseline with its k
 | :--- | :--- |
 | Enrollment profile mode | Dedicated device |
 | Kiosk mode | Multi-app (Managed Home Screen) |
-| Account modification | Blocked |
-| Apps default permission policy | Auto-grant all permissions |
-| Camera | Not blocked |
-| Bluetooth configuration | Not blocked |
-| Screen capture | Blocked |
-| External storage (SD cards / USB) | Blocked |
-| USB file transfer | Blocked |
-| Wi-Fi tethering | Blocked |
-| Data roaming | Blocked |
-| Date/time configuration | Blocked |
-| Factory reset by user | Blocked |
-| Google accounts | Blocked |
-| Users — add / remove | Blocked |
-| System update type | Windowed |
-| Update window start | 00:00 (midnight) |
-| Update window end | 06:00 (360 minutes after midnight) |
-| Network escape hatch | Allowed (enrollment fallback) |
-| Password type | Numeric complex |
-| Minimum password length | 6 |
-| Password expiration | 365 days |
-| Previous passwords blocked | 5 |
-| PIN failures before factory reset | 10 |
-| Keyguard features blocked | Camera; notifications; remote input |
-| MHS sign-in enabled | Yes |
+| Kiosk apps (8) | Authenticator, Edge, OneDrive, Outlook, SharePoint, Teams, Intune, Managed Home Screen |
+| MHS sign-in | Enabled |
 | MHS auto sign-out | Enabled — 300 seconds inactive (60-second warning) |
-| Kiosk exit code | Configured |
+| Virtual home button | Floating |
+| Kiosk exit code | Configured (0365) |
 | Kiosk grid layout | 5 rows × 4 columns |
 | Kiosk icon size | Large |
+| Kiosk folder icon | Dark square |
 | Kiosk screen orientation | Auto-rotate |
 | Kiosk status bar | System info only |
 | Kiosk system error warnings | Enabled |
-| Kiosk apps (8) | Authenticator, Edge, OneDrive, Outlook, SharePoint, Teams, Intune, Managed Home Screen |
+| Kiosk app notification badges | Enabled |
+| Kiosk Bluetooth toggle | Enabled |
+| Kiosk Wi-Fi toggle | Enabled |
+| Kiosk flashlight toggle | Enabled |
+| Kiosk media volume toggle | Enabled |
+| Kiosk debug menu easy access | Enabled |
+| Kiosk app order | Enabled |
+| Kiosk lock home screen | Yes |
+| Kiosk show device info | Yes |
+| Locate device (lost mode) | Disabled |
+| Account modification | Blocked |
+| Google accounts | Blocked |
+| Users — add | Blocked |
+| Users — remove | Blocked |
+| USB file transfer | Blocked |
+| System windows | Blocked |
+| System update type | Windowed |
+| Update window start | 00:00 (midnight) |
+| Update window end | 06:00 (360 minutes after midnight) |
+| Always-On VPN lockdown mode | Not enabled |
+| Wi-Fi edit configurations | Not blocked |
+| Keyguard features blocked | Camera; notifications; remote input |
+
+> **Note:** All settings covered by the SC subcategory policies (`AND - SC - DR - DEV - * - Corp-Dedicated - Shared - v1.5`) are explicitly set to `null` in this DC policy to prevent SC/DC conflicts. Only the settings listed above are actively configured.
 
 ---
 
@@ -531,13 +528,16 @@ This document lists every Intune policy file included in the baseline with its k
 
 ## Device Configuration — Settings Catalog
 
-> **DC vs SC deployment note:** The Settings Catalog (SC) is the modern Intune policy engine and is the recommended approach going forward. For Fully Managed and Corporate-Owned Work Profile, device restrictions are split across multiple SC subcategory policies (one per Intune UI section) plus one DC Additional-Settings policy that contains only settings not available in the Settings Catalog. This structure prevents SC/DC conflicts from overlapping settings.
+> **DC vs SC deployment note:** The Settings Catalog (SC) is the modern Intune policy engine and is the recommended approach going forward. As of June 2026 (Intune 2606), SC support was extended to Dedicated Devices. Device restrictions are now split across SC subcategory policies plus one DC Additional-Settings policy (per kiosk type for Dedicated Devices) that contains only settings not available in the Settings Catalog. This structure prevents SC/DC conflicts from overlapping settings.
 >
 > **SC subcategory policy sets:**
 > - **Fully Managed (6 SC + 1 DC):** Applications, Connectivity, Device-Password, General-Settings, System-Security, Users-and-Accounts + DC Additional-Settings
 > - **Corp-Work-Profile (7 SC + 1 DC):** Applications, Connectivity, Data-Sharing-Controls, Device-Password, General-Settings, System-Security, Users-and-Accounts + DC Additional-Settings
+> - **Dedicated — Single-App-Kiosk (5 SC + 1 DC):** Applications, Connectivity, Device-Password, General-Settings, System-Security + DC Additional-Settings
+> - **Dedicated — Multi-App-Kiosk (5 SC + 1 DC):** Applications, Connectivity, Device-Password, General-Settings, System-Security + DC Additional-Settings
+> - **Dedicated — Shared (5 SC + 1 DC):** Applications, Connectivity, Device-Password, General-Settings, System-Security + DC Additional-Settings
 >
-> All SC-only settings are documented under each subcategory policy below. DC-only settings are documented in the corresponding Additional-Settings DC section above. The SC settings picker was verified against Intune Admin Center on 2026-05-28.
+> All SC-only settings are documented under each subcategory policy below. DC-only settings are documented in the corresponding Additional-Settings DC section above. The SC settings picker was verified against Intune Admin Center on 2026-07-01.
 
 ---
 
@@ -870,6 +870,423 @@ This document lists every Intune policy file included in the baseline with its k
 | Certificate credential configuration | Disabled — users cannot manually install certificates |
 
 > **Note:** Allow access to all apps in Google Play store (Block), Add new users, Locate Device (Lost Mode), and System Update maintenance window have no equivalent in the Settings Catalog for Corporate-Owned Work Profile. These are configured exclusively in `AND - DC - DR - DEV - Additional-Settings - Corp-Work-Profile - v1.5`.
+
+---
+
+### AND - SC - DR - DEV - Applications - Corp-Dedicated - Single-App-Kiosk - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - Applications - Corp-Dedicated - Single-App-Kiosk - v1.5 |
+| Description | Device Restrictions - Applications Settings for Android Enterprise Corporate-Owned Dedicated Devices Single-App Kiosk. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Single-App Kiosk |
+| Total settings configured | 3 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Apps default permission policy | Auto-grant all permissions |
+| Recommend skip first-use hints | Yes |
+| App functions | Allowed |
+
+---
+
+### AND - SC - DR - DEV - Connectivity - Corp-Dedicated - Single-App-Kiosk - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - Connectivity - Corp-Dedicated - Single-App-Kiosk - v1.5 |
+| Description | Device Restrictions - Connectivity Settings for Android Enterprise Corporate-Owned Dedicated Devices Single-App Kiosk. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Single-App Kiosk |
+| Total settings configured | 16 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Network escape hatch | Allowed (enrollment fallback if Wi-Fi fails) |
+| NFC outgoing beam | Not blocked |
+| Bluetooth configuration | Not blocked |
+| Data roaming | Blocked |
+| Wi-Fi tethering | Blocked |
+| Airplane mode | Blocked |
+| 2G cellular | Blocked |
+| Cell broadcast configuration | Blocked |
+| Mobile network configuration | Blocked |
+| VPN configuration by user | Blocked |
+| Network reset by user | Blocked |
+| Outgoing calls | Blocked |
+| SMS | Blocked |
+| Ultra-wideband (UWB) | Blocked |
+| Minimum Wi-Fi security level | Personal network security |
+| Preferential network service | Disabled |
+
+> **Note:** Network escape hatch must remain **Allowed** on Dedicated Devices. Without it, a device that fails to connect to Wi-Fi during enrollment has no recovery path and must be factory reset.
+
+---
+
+### AND - SC - DR - DEV - Device-Password - Corp-Dedicated - Single-App-Kiosk - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - Device-Password - Corp-Dedicated - Single-App-Kiosk - v1.5 |
+| Description | Device Restrictions - Device Password Settings for Android Enterprise Corporate-Owned Dedicated Devices Single-App Kiosk. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Single-App Kiosk |
+| Total settings configured | 6 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Password type | Numeric complex |
+| Minimum password length | 6 |
+| Password expiration | 365 days |
+| Previous passwords blocked | 5 |
+| PIN failures before factory reset | 10 |
+| Require unlock | Device default |
+
+---
+
+### AND - SC - DR - DEV - General-Settings - Corp-Dedicated - Single-App-Kiosk - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - General-Settings - Corp-Dedicated - Single-App-Kiosk - v1.5 |
+| Description | Device Restrictions - General Settings for Android Enterprise Corporate-Owned Dedicated Devices Single-App Kiosk. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Single-App Kiosk |
+| Total settings configured | 9 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Camera | Not blocked |
+| Date/time configuration | Blocked |
+| Factory reset by user | Blocked |
+| Screen capture | Blocked |
+| External storage (SD cards / USB) | Blocked |
+| Printing | Blocked |
+| User icon change | Blocked |
+| Wallpaper change | Blocked |
+| User-initiated eSIM settings | Blocked |
+
+---
+
+### AND - SC - DR - DEV - System-Security - Corp-Dedicated - Single-App-Kiosk - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - System-Security - Corp-Dedicated - Single-App-Kiosk - v1.5 |
+| Description | Device Restrictions - System Security Settings for Android Enterprise Corporate-Owned Dedicated Devices Single-App Kiosk. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Single-App Kiosk |
+| Total settings configured | 1 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Verify apps (Play Protect) | Required |
+
+> **Note:** Dedicated device kiosk configuration (kiosk mode, kiosk apps, exit code, grid layout, MHS sign-in, status bar, system error warnings) and DC-only settings (account modification, Google accounts, USB file transfer, system windows, system update window, Always-On VPN lockdown, keyguard features) are configured in `AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Single-App-Kiosk - v1.5`.
+
+---
+
+### AND - SC - DR - DEV - Applications - Corp-Dedicated - Multi-App-Kiosk - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - Applications - Corp-Dedicated - Multi-App-Kiosk - v1.5 |
+| Description | Device Restrictions - Applications Settings for Android Enterprise Corporate-Owned Dedicated Devices Multi-App Kiosk. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Multi-App Kiosk |
+| Total settings configured | 3 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Apps default permission policy | Auto-grant all permissions |
+| Recommend skip first-use hints | Yes |
+| App functions | Allowed |
+
+---
+
+### AND - SC - DR - DEV - Connectivity - Corp-Dedicated - Multi-App-Kiosk - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - Connectivity - Corp-Dedicated - Multi-App-Kiosk - v1.5 |
+| Description | Device Restrictions - Connectivity Settings for Android Enterprise Corporate-Owned Dedicated Devices Multi-App Kiosk. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Multi-App Kiosk |
+| Total settings configured | 16 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Network escape hatch | Allowed (enrollment fallback if Wi-Fi fails) |
+| NFC outgoing beam | Not blocked |
+| Bluetooth configuration | Not blocked |
+| Data roaming | Blocked |
+| Wi-Fi tethering | Blocked |
+| Airplane mode | Blocked |
+| 2G cellular | Blocked |
+| Cell broadcast configuration | Blocked |
+| Mobile network configuration | Blocked |
+| VPN configuration by user | Blocked |
+| Network reset by user | Blocked |
+| Outgoing calls | Blocked |
+| SMS | Blocked |
+| Ultra-wideband (UWB) | Blocked |
+| Minimum Wi-Fi security level | Personal network security |
+| Preferential network service | Disabled |
+
+> **Note:** Network escape hatch must remain **Allowed** on Dedicated Devices. Without it, a device that fails to connect to Wi-Fi during enrollment has no recovery path and must be factory reset.
+
+---
+
+### AND - SC - DR - DEV - Device-Password - Corp-Dedicated - Multi-App-Kiosk - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - Device-Password - Corp-Dedicated - Multi-App-Kiosk - v1.5 |
+| Description | Device Restrictions - Device Password Settings for Android Enterprise Corporate-Owned Dedicated Devices Multi-App Kiosk. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Multi-App Kiosk |
+| Total settings configured | 6 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Password type | Numeric complex |
+| Minimum password length | 6 |
+| Password expiration | 365 days |
+| Previous passwords blocked | 5 |
+| PIN failures before factory reset | 10 |
+| Require unlock | Device default |
+
+---
+
+### AND - SC - DR - DEV - General-Settings - Corp-Dedicated - Multi-App-Kiosk - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - General-Settings - Corp-Dedicated - Multi-App-Kiosk - v1.5 |
+| Description | Device Restrictions - General Settings for Android Enterprise Corporate-Owned Dedicated Devices Multi-App Kiosk. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Multi-App Kiosk |
+| Total settings configured | 9 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Camera | Not blocked |
+| Date/time configuration | Blocked |
+| Factory reset by user | Blocked |
+| Screen capture | Blocked |
+| External storage (SD cards / USB) | Blocked |
+| Printing | Blocked |
+| User icon change | Blocked |
+| Wallpaper change | Blocked |
+| User-initiated eSIM settings | Blocked |
+
+---
+
+### AND - SC - DR - DEV - System-Security - Corp-Dedicated - Multi-App-Kiosk - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - System-Security - Corp-Dedicated - Multi-App-Kiosk - v1.5 |
+| Description | Device Restrictions - System Security Settings for Android Enterprise Corporate-Owned Dedicated Devices Multi-App Kiosk. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Multi-App Kiosk |
+| Total settings configured | 1 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Verify apps (Play Protect) | Required |
+
+> **Note:** Dedicated device kiosk configuration (kiosk mode, kiosk apps, exit code, grid layout, screen orientation, Bluetooth/Wi-Fi/flashlight/volume toggles, status bar, system error warnings) and DC-only settings (account modification, Google accounts, USB file transfer, system windows, system update window, Always-On VPN lockdown, keyguard features) are configured in `AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Multi-App-Kiosk - v1.5`.
+
+---
+
+### AND - SC - DR - DEV - Applications - Corp-Dedicated - Shared - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - Applications - Corp-Dedicated - Shared - v1.5 |
+| Description | Device Restrictions - Applications Settings for Android Enterprise Corporate-Owned Dedicated Devices Shared Mode. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Shared Mode |
+| Total settings configured | 3 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Apps default permission policy | Auto-grant all permissions |
+| Recommend skip first-use hints | Yes |
+| App functions | Allowed |
+
+---
+
+### AND - SC - DR - DEV - Connectivity - Corp-Dedicated - Shared - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - Connectivity - Corp-Dedicated - Shared - v1.5 |
+| Description | Device Restrictions - Connectivity Settings for Android Enterprise Corporate-Owned Dedicated Devices Shared Mode. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Shared Mode |
+| Total settings configured | 16 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Network escape hatch | Allowed (enrollment fallback if Wi-Fi fails) |
+| NFC outgoing beam | Not blocked |
+| Bluetooth configuration | Not blocked |
+| Data roaming | Blocked |
+| Wi-Fi tethering | Blocked |
+| Airplane mode | Blocked |
+| 2G cellular | Blocked |
+| Cell broadcast configuration | Blocked |
+| Mobile network configuration | Blocked |
+| VPN configuration by user | Blocked |
+| Network reset by user | Blocked |
+| Outgoing calls | Blocked |
+| SMS | Blocked |
+| Ultra-wideband (UWB) | Blocked |
+| Minimum Wi-Fi security level | Personal network security |
+| Preferential network service | Disabled |
+
+> **Note:** Network escape hatch must remain **Allowed** on Dedicated Devices. Without it, a device that fails to connect to Wi-Fi during enrollment has no recovery path and must be factory reset.
+
+---
+
+### AND - SC - DR - DEV - Device-Password - Corp-Dedicated - Shared - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - Device-Password - Corp-Dedicated - Shared - v1.5 |
+| Description | Device Restrictions - Device Password Settings for Android Enterprise Corporate-Owned Dedicated Devices Shared Mode. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Shared Mode |
+| Total settings configured | 6 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Password type | Numeric complex |
+| Minimum password length | 6 |
+| Password expiration | 365 days |
+| Previous passwords blocked | 5 |
+| PIN failures before factory reset | 10 |
+| Require unlock | Device default |
+
+---
+
+### AND - SC - DR - DEV - General-Settings - Corp-Dedicated - Shared - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - General-Settings - Corp-Dedicated - Shared - v1.5 |
+| Description | Device Restrictions - General Settings for Android Enterprise Corporate-Owned Dedicated Devices Shared Mode. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Shared Mode |
+| Total settings configured | 9 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Camera | Not blocked |
+| Date/time configuration | Blocked |
+| Factory reset by user | Blocked |
+| Screen capture | Blocked |
+| External storage (SD cards / USB) | Blocked |
+| Printing | Blocked |
+| User icon change | Blocked |
+| Wallpaper change | Blocked |
+| User-initiated eSIM settings | Blocked |
+
+---
+
+### AND - SC - DR - DEV - System-Security - Corp-Dedicated - Shared - v1.5
+
+**Basics**
+
+| Property | Value |
+| :--- | :--- |
+| Display Name | AND - SC - DR - DEV - System-Security - Corp-Dedicated - Shared - v1.5 |
+| Description | Device Restrictions - System Security Settings for Android Enterprise Corporate-Owned Dedicated Devices Shared Mode. |
+| Profile type | Settings Catalog (deviceManagementConfigurationPolicy) |
+| Platform | androidEnterprise |
+| Target enrollment | Corporate-Owned Dedicated Device / Shared Mode |
+| Total settings configured | 1 |
+
+**Settings**
+
+| Setting | Value |
+| :--- | :--- |
+| Verify apps (Play Protect) | Required |
+
+> **Note:** Dedicated device kiosk configuration (kiosk mode, kiosk apps, MHS sign-in, auto sign-out, virtual home button, exit code, grid layout, icon size, screen orientation, Bluetooth/Wi-Fi/flashlight/volume toggles, status bar, system error warnings, locate device) and DC-only settings (account modification, Google accounts, USB file transfer, system windows, system update window, Always-On VPN lockdown, keyguard features) are configured in `AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Shared - v1.5`.
 
 ---
 

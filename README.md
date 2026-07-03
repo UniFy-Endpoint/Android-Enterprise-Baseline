@@ -4,7 +4,7 @@
 |---|---|
 | **Author** | Sr. Modern Work Consultant |
 | **CIS Reference** | CIS Google Android Benchmark v1.6.0 |
-| **Last Updated** | June 2026 (v1.5) |
+| **Last Updated** | July 2026 (v1.5.1) |
 
 ---
 
@@ -131,6 +131,27 @@ The following settings are confirmed Device Configuration (DC)-only. Verified ag
 
 > **Keyguard note:** Settings Catalog (SC) "Disable lock screen" is not supported on COWP — COPE is not listed as a supported enrollment type in Microsoft documentation. Work profile trust agents are configured exclusively via the DC Additional-Settings policy (`AND - DC - DR - DEV - Additional-Settings - Corp-Work-Profile - v1.5`, `passwordBlockKeyguardFeatures: trustAgents`).
 
+**Corporate-Owned Dedicated Devices (COSU) — Single-App Kiosk, Multi-App Kiosk, Shared**
+
+As of June 2026 (2606), Microsoft extended Settings Catalog support to Dedicated Devices. The baseline now uses 5 SC subcategory policies per dedicated device type (Applications, Connectivity, Device-Password, General-Settings, System-Security) plus 1 DC Additional-Settings policy per type. Each kiosk type has its own separate set of files so administrators can import only what applies to their deployment.
+
+| Device Configuration (DC) Setting (UI name) | Value | Importance |
+| :--- | :--- | :--- |
+| Enrollment profile type | Dedicated device | Required |
+| Lock screen features — camera, notifications, remote input | Block (keyguard features) | High |
+| Personal Google Accounts | Block | High |
+| Block account modifications | Block | High |
+| Add new users | Block | High |
+| User removal | Block | High |
+| USB file transfer | Block | High |
+| System update — maintenance window | Windowed 00:00–06:00 | Low |
+| Always-On VPN lockdown mode | Off (not configured) | Low |
+| Wi-Fi edit (device-level) | Allow (not blocked) | Low |
+| Kiosk mode configuration | Per kiosk type (app list, layout, exit code) | Required |
+| Shared Mode — Auto sign-out, sign-in screen, timeout | Shared-only | Required for Shared |
+
+> **Note:** The Settings Catalog does not support Dedicated Device enrollment for `certificateCredentialConfigurationDisabled`, `playStoreMode`, `wifiBlockEditConfigurations`, `storageBlockUsbFileTransfer`, or granular keyguard feature blocking. These remain in the DC Additional-Settings policy for each kiosk type.
+
 **Personally-Owned Work Profile (BYOD) — Settings Catalog not applicable**
 
 The Android Settings Catalog is scoped to corporate-owned Android Enterprise platforms (Fully Managed, Corporate-Owned Work Profile, Dedicated/Kiosk) and AOSP. Personally-owned work profile (BYOD) is explicitly excluded from the Settings Catalog platform support matrix. Intune may allow a Settings Catalog policy to be assigned to BYOD users, but device restriction settings are not enforced on the device — the BYOD policy channel does not process Settings Catalog device restriction objects. The baseline uses **Templates > Device restrictions (Personally-Owned Work Profile)** exclusively for this enrollment type.
@@ -189,14 +210,32 @@ Android-Enterprise-Baseline/
 │   │   └── DeviceConfiguration_Device_Restrictions/                      ← DC policy (SC not supported for POWP)
 │   │       └── AND - DC - DR - USR - Personal-Work-Profile - v1.5.json
 │   ├── Dedicated-Devices - Single-App-Kiosk/
-│   │   └── DeviceConfiguration_Device_Restrictions/
-│   │       └── AND - DC - DR - DEV - Corp-Dedicated - Single-App-Kiosk - v1.5.json
-│   ├── Dedicated-Devices - Shared/
-│   │   └── DeviceConfiguration_Device_Restrictions/
-│   │       └── AND - DC - DR - DEV - Corp-Dedicated - Shared - v1.5.json
+│   │   ├── SettingsCatalog_Device_Restrictions/                          ← 5 SC subcategory policies (Single-App-Kiosk)
+│   │   │   ├── AND - SC - DR - DEV - Applications - Corp-Dedicated - Single-App-Kiosk - v1.5.json
+│   │   │   ├── AND - SC - DR - DEV - Connectivity - Corp-Dedicated - Single-App-Kiosk - v1.5.json
+│   │   │   ├── AND - SC - DR - DEV - Device-Password - Corp-Dedicated - Single-App-Kiosk - v1.5.json
+│   │   │   ├── AND - SC - DR - DEV - General-Settings - Corp-Dedicated - Single-App-Kiosk - v1.5.json
+│   │   │   └── AND - SC - DR - DEV - System-Security - Corp-Dedicated - Single-App-Kiosk - v1.5.json
+│   │   └── DeviceConfiguration_Device_Restrictions/                      ← 1 DC Additional-Settings policy (Single-App-Kiosk)
+│   │       └── AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Single-App-Kiosk - v1.5.json
 │   ├── Dedicated-Devices - Multi-App-Kiosk/
-│   │   └── DeviceConfiguration_Device_Restrictions/
-│   │       └── AND - DC - DR - DEV - Corp-Dedicated - Multi-App-Kiosk - v1.5.json
+│   │   ├── SettingsCatalog_Device_Restrictions/                          ← 5 SC subcategory policies (Multi-App-Kiosk)
+│   │   │   ├── AND - SC - DR - DEV - Applications - Corp-Dedicated - Multi-App-Kiosk - v1.5.json
+│   │   │   ├── AND - SC - DR - DEV - Connectivity - Corp-Dedicated - Multi-App-Kiosk - v1.5.json
+│   │   │   ├── AND - SC - DR - DEV - Device-Password - Corp-Dedicated - Multi-App-Kiosk - v1.5.json
+│   │   │   ├── AND - SC - DR - DEV - General-Settings - Corp-Dedicated - Multi-App-Kiosk - v1.5.json
+│   │   │   └── AND - SC - DR - DEV - System-Security - Corp-Dedicated - Multi-App-Kiosk - v1.5.json
+│   │   └── DeviceConfiguration_Device_Restrictions/                      ← 1 DC Additional-Settings policy (Multi-App-Kiosk)
+│   │       └── AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Multi-App-Kiosk - v1.5.json
+│   ├── Dedicated-Devices - Shared/
+│   │   ├── SettingsCatalog_Device_Restrictions/                          ← 5 SC subcategory policies (Shared)
+│   │   │   ├── AND - SC - DR - DEV - Applications - Corp-Dedicated - Shared - v1.5.json
+│   │   │   ├── AND - SC - DR - DEV - Connectivity - Corp-Dedicated - Shared - v1.5.json
+│   │   │   ├── AND - SC - DR - DEV - Device-Password - Corp-Dedicated - Shared - v1.5.json
+│   │   │   ├── AND - SC - DR - DEV - General-Settings - Corp-Dedicated - Shared - v1.5.json
+│   │   │   └── AND - SC - DR - DEV - System-Security - Corp-Dedicated - Shared - v1.5.json
+│   │   └── DeviceConfiguration_Device_Restrictions/                      ← 1 DC Additional-Settings policy (Shared)
+│   │       └── AND - DC - DR - DEV - Additional-Settings - Corp-Dedicated - Shared - v1.5.json
 │   └── Defender-For-Endpoint/
 │       └── DeviceConfiguration/                                           ← Always-On VPN policies (DC)
 │           ├── AND - DC - MDE - DEV - Always-On-VPN - Corp-Owned - v1.5.json
@@ -320,6 +359,7 @@ Full release notes for each version are on the [GitHub Releases](https://github.
 
 | Version | Date | Summary |
 |---|---|---|
+| 1.5.1 | July 2026 | Intune 2606 update: SC subcategory policies added for Dedicated Devices (Single-App-Kiosk, Multi-App-Kiosk, Shared); June 2026 SC settings added to FM and COWP Connectivity, General-Settings, and Applications policies; DC policies for all dedicated device types refactored to Additional-Settings format |
 | 1.5 | June 2026 | SC/DC subcategory split (FM + COWP); full naming convention overhaul; ConfigurationsPolicies folder restructured by enrollment type; Intune June 2026 guide updates; SETTINGSOUTPUT.md rewritten for all 40 policies |
 | 1.4 | June 2026 | Guide 12 full reformat — CIS/Microsoft compliance reference with security levels, deviations registry, and per-enrollment policy tables |
 | 1.3 | May 2026 | Compliance policies renamed to `AND - CP - ...`; MDE threat protection split into dedicated policies; SC/DC-only setting limitations documented |

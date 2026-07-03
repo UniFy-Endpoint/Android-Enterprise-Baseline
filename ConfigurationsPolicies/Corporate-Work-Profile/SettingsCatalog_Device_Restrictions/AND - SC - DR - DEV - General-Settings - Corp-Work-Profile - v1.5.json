@@ -11,7 +11,7 @@
   "roleScopeTagIds": [
     "0"
   ],
-  "settingCount": 9,
+  "settingCount": 13,
   "technologies": "android",
   "id": "",
   "templateReference": {
@@ -154,6 +154,66 @@
           "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
           "settingValueTemplateReference": null,
           "value": "com.android.devicerestrictionpolicy.privatespacepolicy_disallowed",
+          "children": []
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "id": "9",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.printingpolicy",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "settingValueTemplateReference": null,
+          "value": "com.android.devicerestrictionpolicy.printingpolicy_true",
+          "children": []
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "id": "10",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.setusericonblocked",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "settingValueTemplateReference": null,
+          "value": "com.android.devicerestrictionpolicy.setusericonblocked_true",
+          "children": []
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "id": "11",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.setwallpaperblocked",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "settingValueTemplateReference": null,
+          "value": "com.android.devicerestrictionpolicy.setwallpaperblocked_true",
+          "children": []
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "id": "12",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "settingDefinitionId": "com.android.devicerestrictionpolicy.userinitiatedaddesimsettings",
+        "settingInstanceTemplateReference": null,
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "settingValueTemplateReference": null,
+          "value": "com.android.devicerestrictionpolicy.userinitiatedaddesimsettings_true",
           "children": []
         }
       }
